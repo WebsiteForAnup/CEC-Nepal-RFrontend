@@ -1,0 +1,107 @@
+.services {
+  padding: 100px 0;
+  scroll-margin-top: 80px;
+  background: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionHeader h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #1e293b;
+}
+
+.sectionHeader .line {
+  width: 60px;
+  height: 4px;
+  background: #10b981;
+  margin: 0 auto 20px;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.serviceCard {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.serviceCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.imgContainer {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #f8fafc;
+}
+
+.imgContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.serviceCard:hover .imgContainer img {
+  transform: scale(1.1);
+}
+
+.serviceContent {
+  padding: 2rem;
+  text-align: center;
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: #10b981;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.serviceContent h3 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+.serviceContent p {
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .sectionHeader h2 {
+    font-size: 2rem;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .imgContainer {
+    height: 150px;
+  }
+}

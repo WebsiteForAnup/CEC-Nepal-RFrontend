@@ -1,0 +1,116 @@
+/* components/Layout/Navbar.module.css */
+.navbar {
+  height: 85px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar.scrolled {
+  height: 70px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.navFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #1e293b;
+}
+
+.logo span {
+  color: #10b981;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #1e293b;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.navLinks a:hover {
+  color: #10b981;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #1e293b;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.burger.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger.toggle .line2 {
+  opacity: 0;
+}
+
+.burger.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
+  .navLinks {
+    position: absolute;
+    right: 0;
+    top: 85px;
+    flex-direction: column;
+    background: white;
+    width: 100%;
+    text-align: center;
+    transform: translateX(110%);
+    transition: transform 0.3s ease;
+    gap: 0;
+  }
+
+  .navLinks.navActive {
+    transform: translateX(0);
+  }
+
+  .navLinks li {
+    padding: 1rem 0;
+    border-bottom: 1px solid #f8fafc;
+  }
+}

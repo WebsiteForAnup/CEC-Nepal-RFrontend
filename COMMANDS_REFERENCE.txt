@@ -1,0 +1,438 @@
+"""
+COPY-PASTE COMMANDS FOR VS CODE
+
+Run these commands exactly in VS Code terminal (Ctrl+~)
+No need to understand, just copy and paste!
+"""
+
+# ============================================================================
+# STEP 1: INSTALL PYTHON PACKAGES (Run once)
+# ============================================================================
+
+# Open terminal in VS Code (Ctrl+~) and run:
+
+cd scraper
+pip install -r requirements.txt
+
+# Alternative (if above doesn't work):
+
+pip install requests beautifulsoup4
+
+# Verify installation:
+
+python -c "import requests; import bs4; print('✓ All good!')"
+
+
+# ============================================================================
+# STEP 2: RUN THE SCRAPER
+# ============================================================================
+
+# Make sure you're in the scraper folder:
+
+cd scraper
+
+# Run the scraper:
+
+python team_scraper.py
+
+# You should see output like:
+# ================================================================================
+# CEC NEPAL TEAM MEMBER SCRAPER
+# ================================================================================
+# [INFO] Fetching website...
+# [INFO] Found 6 team members
+# ... (more output)
+
+# Files created:
+# - cec_team_members.csv ✓
+# - cec_team_members.json ✓
+
+
+# ============================================================================
+# STEP 3: START REACT DEVELOPMENT SERVER
+# ============================================================================
+
+# Go back to project root:
+
+cd ..
+
+# Start the app:
+
+npm start
+
+# Your browser should open at http://localhost:3000
+# Scroll down to "Our Team" section to see the results!
+
+
+# ============================================================================
+# OPTIONAL: CONVERT DATA TO REACT FORMAT
+# ============================================================================
+
+# Go to scraper folder:
+
+cd scraper
+
+# Run converter:
+
+python convert_team_data.py
+
+# Files created:
+# - team_data.json
+# - Team_Generated.js
+
+
+# ============================================================================
+# COMMON COMMANDS REFERENCE
+# ============================================================================
+
+# Check Python version
+python --version
+
+# Check pip (Python package manager) version
+pip --version
+
+# List installed packages
+pip list
+
+# Upgrade pip
+python -m pip install --upgrade pip
+
+# Run Python file
+python filename.py
+
+# Check if package is installed
+python -c "import package_name"
+
+# Open current folder in explorer (Windows)
+start .
+
+# Open current folder in explorer (Mac)
+open .
+
+# Clear terminal screen
+cls (Windows) or clear (Mac/Linux)
+
+# Go to parent directory
+cd ..
+
+# Go to specific directory
+cd path/to/folder
+
+# List files in current directory
+dir (Windows) or ls (Mac/Linux)
+
+
+# ============================================================================
+# TROUBLESHOOTING COMMANDS
+# ============================================================================
+
+# If port 3000 is busy, use different port:
+PORT=3001 npm start
+
+# Kill process on port 3000 (Windows):
+netstat -ano | findstr :3000
+taskkill /PID <PID> /F
+
+# Kill process on port 3000 (Mac/Linux):
+lsof -ti:3000 | xargs kill -9
+
+# Reinstall packages (fresh install):
+pip install --force-reinstall -r requirements.txt
+
+# Uninstall package:
+pip uninstall requests
+
+# Reinstall everything:
+pip uninstall -r requirements.txt
+pip install -r requirements.txt
+
+
+# ============================================================================
+# VS CODE SHORTCUTS
+# ============================================================================
+
+# Open integrated terminal
+Ctrl + ~ (backtick)
+
+# Open command palette
+Ctrl + Shift + P
+
+# Select Python interpreter
+Ctrl + Shift + P → Python: Select Interpreter
+
+# Run Python file
+Ctrl + Shift + P → Python: Run Python File in Terminal
+
+# Format code
+Shift + Alt + F
+
+# Comment/Uncomment
+Ctrl + /
+
+# Toggle sidebar
+Ctrl + B
+
+# Search in files
+Ctrl + Shift + F
+
+
+# ============================================================================
+# WINDOWS SPECIFIC COMMANDS
+# ============================================================================
+
+# Run command as administrator
+Right-click on PowerShell → Run as Administrator
+
+# Check Python path
+where python
+
+# Add Python to PATH (if not recognized):
+# 1. Search "Environment Variables" in Windows
+# 2. Click "Edit the system environment variables"
+# 3. Click "Environment Variables"
+# 4. Add Python installation path
+
+# Check network connection
+ping google.com
+
+
+# ============================================================================
+# MAC/LINUX SPECIFIC COMMANDS
+# ============================================================================
+
+# Check Python path
+which python3
+
+# Install using Homebrew (Mac)
+brew install python3
+
+# Install using apt (Linux)
+sudo apt-get install python3 python3-pip
+
+# Make script executable
+chmod +x script.py
+
+# Run shell script
+./script.sh
+
+
+# ============================================================================
+# COMPLETE WORKFLOW (COPY-PASTE EVERYTHING)
+# ============================================================================
+
+"""
+Just copy and paste this entire section into your terminal one at a time.
+Don't run them all at once!
+"""
+
+# 1. Navigate to project
+cd "c:\Users\user\OneDrive\Desktop\react frontend"
+
+# 2. Install Python packages
+cd scraper
+pip install -r requirements.txt
+
+# 3. Run scraper
+python team_scraper.py
+
+# 4. Go back to project root
+cd ..
+
+# 5. Start React app
+npm start
+
+# Done! Your app is now running at http://localhost:3000
+
+
+# ============================================================================
+# IF SOMETHING GOES WRONG
+# ============================================================================
+
+"""
+Error: "pip is not recognized"
+Solution: 
+  1. Try: python -m pip install -r requirements.txt
+  2. Or reinstall Python
+"""
+
+"""
+Error: "ModuleNotFoundError: No module named 'requests'"
+Solution:
+  1. Run: pip install requests
+  2. Or run: pip install -r requirements.txt
+"""
+
+"""
+Error: "No team members found"
+Solution:
+  1. Check internet connection: ping cecnepal.com.np
+  2. The website structure might have changed
+  3. This is okay! It means you need to inspect the HTML
+"""
+
+"""
+Error: "Port 3000 already in use"
+Solution:
+  1. Use different port: PORT=3001 npm start
+  2. Or kill existing process on 3000
+"""
+
+"""
+Error: Python not found in VS Code
+Solution:
+  1. Press Ctrl+Shift+P
+  2. Type: Python: Select Interpreter
+  3. Choose your Python installation
+  4. Try again
+"""
+
+
+# ============================================================================
+# FIRST TIME SETUP (STEP BY STEP)
+# ============================================================================
+
+"""
+STEP 1: Open VS Code
+- File → Open Folder
+- Select: c:\Users\user\OneDrive\Desktop\react frontend
+- Click "Select Folder"
+
+STEP 2: Open Terminal
+- Press Ctrl+~ (backtick key)
+- Should see terminal at bottom
+
+STEP 3: Install Python packages (ONE TIME)
+- Copy this: cd scraper && pip install -r requirements.txt
+- Paste in terminal and press Enter
+- Wait for it to finish (might take 1-2 minutes)
+- You should see: "Successfully installed"
+
+STEP 4: Run Scraper
+- Copy this: python team_scraper.py
+- Paste in terminal and press Enter
+- Wait for results
+- You should see: "SCRAPING COMPLETE"
+
+STEP 5: Start React App
+- Copy this: cd .. && npm start
+- Paste in terminal and press Enter
+- Wait for "Compiled successfully" message
+- Browser should open automatically
+
+STEP 6: View Results
+- Scroll down on the website
+- Find "Our Team" section
+- See your scraped team members!
+
+DONE! 🎉
+"""
+
+
+# ============================================================================
+# NEXT COMMANDS (AFTER FIRST RUN)
+# ============================================================================
+
+# To run scraper again (get fresh data):
+cd scraper
+python team_scraper.py
+
+# To start React app (with already installed packages):
+cd ..
+npm start
+
+# To stop React app:
+# Press Ctrl+C in terminal
+
+# To stop Python script:
+# Press Ctrl+C in terminal
+
+
+# ============================================================================
+# ADVANCED COMMANDS (FOR LATER)
+# ============================================================================
+
+# Schedule scraper to run daily (Windows Task Scheduler):
+# 1. Search "Task Scheduler" in Windows
+# 2. Create Basic Task
+# 3. Set to run: python team_scraper.py
+# 4. Set to run daily
+
+# Deploy to cloud (DigitalOcean - with Student Pack credit):
+# 1. Create DigitalOcean account
+# 2. Create App Platform
+# 3. Connect GitHub repository
+# 4. Deploy React app
+# 5. Set up backend for scraper
+
+# Use GitHub Copilot (with Student Pack):
+# 1. Install GitHub Copilot extension in VS Code
+# 2. Sign in with GitHub
+# 3. In code editor, press Ctrl+I to get suggestions
+
+
+# ============================================================================
+# CHEAT SHEET
+# ============================================================================
+
+cd scraper              → Go to scraper folder
+cd ..                   → Go to parent folder
+pip install X           → Install Python package X
+python X.py             → Run Python script X
+npm start               → Start React development server
+ls                      → List files (Mac/Linux)
+dir                     → List files (Windows)
+cls                     → Clear screen (Windows)
+clear                   → Clear screen (Mac/Linux)
+Ctrl+C                  → Stop running script
+
+
+# ============================================================================
+# START HERE: THE SIMPLEST VERSION
+# ============================================================================
+
+"""
+ABSOLUTE MINIMUM TO GET IT WORKING:
+
+1. Open VS Code
+2. Press Ctrl+~
+3. Copy and paste this:
+"""
+
+cd scraper && pip install requests beautifulsoup4 && python team_scraper.py
+
+"""
+4. Then copy and paste this:
+"""
+
+cd .. && npm start
+
+"""
+5. Wait for browser to open
+6. Scroll to "Our Team" section
+7. Done!
+"""
+
+
+# ============================================================================
+# NEED HELP?
+# ============================================================================
+
+# Read these files in VS Code:
+# 1. QUICK_START.md (5 minutes)
+# 2. STUDENT_DEVELOPER_GUIDE.md (30 minutes)
+# 3. TEAM_SCRAPER_GUIDE.md (for details)
+
+# Just right-click on file → Open → VS Code
+
+
+# ============================================================================
+# GOOD LUCK! 🚀
+# ============================================================================
+
+"""
+You've got this! Follow the commands step by step.
+No need to understand everything - just run them!
+Come back and learn after you see it working.
+
+Happy coding! 💻
+"""

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEC Nepal | Clean Energy Consultant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Using JS to load sections (Or you can manually paste the code here) -->
+    <div id="header-placeholder"></div>
+    <div id="hero-placeholder"></div>
+    <div id="about-placeholder"></div>
+    <div id="services-placeholder"></div>
+    <div id="projects-placeholder"></div>
+    <div id="contact-placeholder"></div>
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Function to load external HTML into placeholders
+        function loadSection(id, file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => document.getElementById(id).innerHTML = data);
+        }
+
+        loadSection('header-placeholder', 'header.html');
+        loadSection('hero-placeholder', 'hero.html');
+        loadSection('about-placeholder', 'about.html');
+        loadSection('services-placeholder', 'services.html');
+        loadSection('projects-placeholder', 'projects.html');
+        loadSection('contact-placeholder', 'contact.html');
+        loadSection('footer-placeholder', 'footer.html');
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

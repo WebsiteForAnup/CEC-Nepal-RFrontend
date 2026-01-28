@@ -1,0 +1,247 @@
+.projects {
+  padding: 80px 20px;
+  background-color: var(--background);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionHeader h2 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.line {
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  margin: 0 auto;
+}
+
+/* Status Filter */
+.statusFilter {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.filterBtn {
+  padding: 10px 20px;
+  border: 2px solid var(--primary);
+  background-color: transparent;
+  color: var(--primary);
+  border-radius: 25px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.filterBtn:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.filterBtn.active {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+/* Projects List */
+.projectsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+.projectCard {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.projectCard:hover {
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.15);
+  border-color: var(--primary);
+  transform: translateY(-5px);
+}
+
+.projectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.projectHeader h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--secondary);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  line-height: 1.3;
+  flex: 1;
+}
+
+.capacity {
+  background: var(--primary);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+}
+
+.capacity.Generation {
+  background: #10b981;
+}
+
+.capacity.UnderConstruction {
+  background: #f59e0b;
+}
+
+.capacity.PPAStage {
+  background: #3b82f6;
+}
+
+.capacity.TestingandCommissioning {
+  background: #8b5cf6;
+}
+
+.projectDetails {
+  margin: 0;
+  line-height: 1.8;
+}
+
+.projectDetails p {
+  margin: 10px 0;
+  font-size: 0.95rem;
+  color: #6b7280;
+  font-family: 'Inter', sans-serif;
+}
+
+.projectDetails strong {
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.projectDetails p:nth-child(2) .statusBadge {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+.projectCard:hover .statusBadge {
+  background: var(--primary);
+  color: white;
+}
+
+/* Summary */
+.summary {
+  text-align: center;
+  padding: 20px;
+  background: rgba(16, 185, 129, 0.08);
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+}
+
+.summary p {
+  margin: 0;
+  color: var(--secondary);
+  font-size: 1rem;
+}
+
+.summary strong {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects {
+    padding: 60px 15px;
+  }
+
+  .sectionHeader h2 {
+    font-size: 2rem;
+  }
+
+  .statusFilter {
+    gap: 10px;
+  }
+
+  .filterBtn {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+
+  .projectsList {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .projectHeader {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .capacity {
+    width: fit-content;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects {
+    padding: 40px 10px;
+  }
+
+  .sectionHeader h2 {
+    font-size: 1.5rem;
+  }
+
+  .filterBtn {
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+
+  .projectCard {
+    padding: 15px;
+  }
+
+  .projectHeader h3 {
+    font-size: 1.1rem;
+  }
+
+  .projectDetails p {
+    font-size: 0.85rem;
+  }
+}

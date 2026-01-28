@@ -1,0 +1,89 @@
+/* components/Sections/Hero.module.css */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
+              url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding-top: 85px;
+  margin-top: -85px;
+}
+
+.heroContent {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+.heroBadge {
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid #10b981;
+  padding: 6px 18px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  line-height: 1.2;
+}
+
+.hero h1 span {
+  color: #10b981;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  opacity: 0.9;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btnPrimary, .btnSecondary {
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  font-size: 1rem;
+}
+
+.btnPrimary {
+  background: #10b981;
+  color: white;
+}
+
+.btnPrimary:hover {
+  background: #059669;
+  transform: translateY(-3px);
+}
+
+.btnSecondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.btnSecondary:hover {
+  background: white;
+  color: #1e293b;
+}
