@@ -41,6 +41,7 @@ const Navbar = () => {
             <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>Services</a></li>
             <li><a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>Projects</a></li>
             <li><a href="#team" onClick={(e) => { e.preventDefault(); scrollToSection('team'); }}>Our Team</a></li>
+            <li><a href="#news-events" onClick={(e) => { e.preventDefault(); scrollToSection('news-events'); }}>News & Events</a></li>
             <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a></li>
           </ul>
           <div className={`${styles.burger} ${mobileMenuOpen ? styles.toggle : ''}`} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>

@@ -1,0 +1,461 @@
+/* ============================================
+   NEWS & EVENTS SECTION STYLES
+   Professional, Responsive, HCEL-Inspired Design
+   ============================================ */
+
+.news-events {
+    padding: 6rem 0;
+    background: #ffffff;
+    scroll-margin-top: 80px;
+}
+
+/* ============================================
+   SECTION HEADER
+   ============================================ */
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-subtitle {
+    color: #10bffb;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-size: clamp(1.875rem, 4vw, 2.5rem);
+    color: #111827;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.section-description {
+    font-size: 1.05rem;
+    color: #6b7280;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* ============================================
+   FILTER BUTTONS
+   ============================================ */
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    background: #f9fafb;
+    border: 2px solid #e5e7eb;
+    color: #111827;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-btn:hover {
+    border-color: #10bffb;
+    color: #10bffb;
+}
+
+.filter-btn.active {
+    background: #10bffb;
+    color: #ffffff;
+    border-color: #10bffb;
+}
+
+/* ============================================
+   NEWS GRID LAYOUT
+   ============================================ */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* ============================================
+   NEWS CARD
+   ============================================ */
+
+.news-card {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.12);
+    border-color: #10bffb;
+}
+
+/* ============================================
+   CARD IMAGE
+   ============================================ */
+
+.card-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(16, 191, 251, 0.1), rgba(16, 185, 129, 0.1));
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.news-card:hover .card-image img {
+    transform: scale(1.08);
+}
+
+/* ============================================
+   CARD BADGE
+   ============================================ */
+
+.card-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+.badge.news {
+    background: #10bffb;
+}
+
+.badge.event {
+    background: #10b981;
+}
+
+/* ============================================
+   CARD CONTENT
+   ============================================ */
+
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* ============================================
+   CARD DATE
+   ============================================ */
+
+.card-date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6b7280;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+.card-date i {
+    color: #10bffb;
+    font-size: 1rem;
+}
+
+/* ============================================
+   CARD TITLE
+   ============================================ */
+
+.card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 2.8rem;
+}
+
+/* ============================================
+   CARD DESCRIPTION
+   ============================================ */
+
+.card-description {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ============================================
+   READ MORE LINK
+   ============================================ */
+
+.read-more {
+    color: #10bffb;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    align-self: flex-start;
+}
+
+.read-more:hover {
+    gap: 0.75rem;
+    color: #0da5d9;
+}
+
+.read-more i {
+    transition: transform 0.3s ease;
+    font-size: 0.75rem;
+}
+
+.read-more:hover i {
+    transform: translateX(3px);
+}
+
+/* ============================================
+   LOAD MORE BUTTON
+   ============================================ */
+
+.load-more-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.load-more-btn {
+    padding: 0.875rem 2rem;
+    background: #f9fafb;
+    border: 2px solid #10bffb;
+    color: #10bffb;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.load-more-btn:hover {
+    background: #10bffb;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   SEE ALL BUTTON CONTAINER
+   ============================================ */
+
+.see-all-container {
+    display: flex;
+    justify-content: center;
+}
+
+.see-all-btn {
+    padding: 0.875rem 2.5rem;
+    background: linear-gradient(135deg, #10bffb, #10b981);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(16, 191, 251, 0.3);
+}
+
+.see-all-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(16, 191, 251, 0.4);
+}
+
+.see-all-btn i {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.see-all-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .news-events {
+        padding: 4rem 0;
+    }
+
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .filter-buttons {
+        gap: 0.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .filter-btn {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.8rem;
+    }
+
+    .card-image {
+        height: 180px;
+    }
+
+    .card-content {
+        padding: 1.25rem;
+    }
+
+    .card-title {
+        font-size: 1.05rem;
+    }
+
+    .card-description {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .news-events {
+        padding: 3rem 0;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .section-description {
+        font-size: 0.95rem;
+    }
+
+    .filter-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .filter-btn {
+        width: 100%;
+        padding: 0.75rem 1rem;
+    }
+
+    .news-grid {
+        gap: 1rem;
+    }
+
+    .card-image {
+        height: 160px;
+    }
+
+    .card-content {
+        padding: 1rem;
+    }
+
+    .card-date {
+        font-size: 0.8rem;
+    }
+
+    .card-title {
+        font-size: 1rem;
+        min-height: auto;
+    }
+
+    .card-description {
+        font-size: 0.85rem;
+        -webkit-line-clamp: 2;
+    }
+
+    .load-more-btn,
+    .see-all-btn {
+        width: 100%;
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================================
+   ANIMATION CLASSES
+   ============================================ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.news-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.news-card:nth-child(1) { animation-delay: 0.1s; }
+.news-card:nth-child(2) { animation-delay: 0.2s; }
+.news-card:nth-child(3) { animation-delay: 0.3s; }
+.news-card:nth-child(4) { animation-delay: 0.4s; }

@@ -6,6 +6,7 @@ import About from './components/Sections/About';
 import Services from './components/Sections/Services';
 import Projects from './components/Sections/Projects';
 import Team from './components/Sections/Team';
+import NewsEvents from './components/Sections/NewsEvents';
 import Contact from './components/Sections/Contact';
 import Footer from './components/Layout/Footer';
 
@@ -19,6 +20,7 @@ function App() {
         <Services />
         <Projects />
         <Team />
+        <NewsEvents />
         <Contact />
       </main>
       <Footer />
