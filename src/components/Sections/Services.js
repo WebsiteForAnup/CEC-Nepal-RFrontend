@@ -8,42 +8,42 @@ const Services = () => {
       icon: 'fas fa-water',
       title: 'Hydropower',
       description: 'Feasibility and EPCM for hydroelectric projects.',
-      image: 'https://cecnepal.com.np/wp-content/uploads/2023/10/viber_image_2023-10-11_11-57-27-112-1536x1024.jpg'
+      image: '/images/services/hydropower.jpg'
     },
     {
       id: 2,
       icon: 'fas fa-solar-panel',
       title: 'Solar Energy',
       description: 'Utility-scale solar farms and grid integration.',
-      image: 'https://images.unsplash.com/photo-1574981520814-0bc725ba2c0e?w=800&h=200&fit=crop'
+      image: '/images/services/solar-1.jpg'
     },
     {
       id: 3,
       icon: 'fas fa-leaf',
       title: 'Environment',
       description: 'Detailed EIA/IEE assessments and green compliance.',
-      image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=200&fit=crop'
+      image: '/images/services/environment.jpg'
     },
     {
       id: 4,
       icon: 'fas fa-bridge',
       title: 'Infrastructure',
       description: 'Bridges, tunnels, and highways in Himalayan geology.',
-      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=200&fit=crop'
+      image: 'https://images.pexels.com/photos/159618/pexels-photo-159618.jpeg'
     },
     {
       id: 5,
       icon: 'fas fa-wind',
       title: 'Wind Energy',
       description: 'Resource mapping and turbine layout optimization.',
-      image: 'https://images.unsplash.com/photo-1607837343456-3047591d86d0?w=800&h=200&fit=crop'
+      image: '/images/services/wind-1.jpg'
     },
     {
       id: 6,
       icon: 'fas fa-handshake',
       title: 'Project Consulting',
       description: 'Lender\'s engineering and technical audits.',
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=200&fit=crop'
+      image: '/images/services/consulting.jpg'
     }
   ];
 

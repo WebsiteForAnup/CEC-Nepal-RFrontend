@@ -95,6 +95,60 @@
   box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
 }
 
+.contactForm form input:disabled,
+.contactForm form textarea:disabled {
+  background-color: #f1f5f9;
+  cursor: not-allowed;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.formRow input {
+  margin-bottom: 0 !important;
+}
+
+.message {
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+  animation: slideIn 0.3s ease;
+}
+
+.message i {
+  font-size: 1.2rem;
+}
+
+.message.success {
+  background-color: #ecfdf5;
+  color: #065f46;
+  border-left: 4px solid #10b981;
+}
+
+.message.error {
+  background-color: #fef2f2;
+  color: #7f1d1d;
+  border-left: 4px solid #ef4444;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .submitBtn {
   width: 100%;
   padding: 1rem;
@@ -139,6 +193,10 @@
   .contactInfo,
   .contactForm {
     padding: 2rem;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
   }
 
   .mapContainer {
