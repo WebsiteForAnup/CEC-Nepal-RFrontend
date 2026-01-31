@@ -12,7 +12,7 @@ IMAGES_DIR.mkdir(parents=True, exist_ok=True)
 # High-quality stock photo URLs
 IMAGES = {
     'hydropower.jpg': 'https://images.pexels.com/photos/279797/pexels-photo-279797.jpeg',
-    'solar-1.jpg': 'https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg',
+    'solar-1.jpg': 'https://cdn.britannica.com/94/192794-050-3F3F3DDD/panels-electricity-order-sunlight.jpg',
     'environment.jpg': 'https://images.pexels.com/photos/1105904/pexels-photo-1105904.jpeg',
     'infrastructure.jpg': 'https://images.pexels.com/photos/159618/pexels-photo-159618.jpeg',
     'wind-1.jpg': 'https://images.pexels.com/photos/60582/pexels-photo-60582.jpeg',

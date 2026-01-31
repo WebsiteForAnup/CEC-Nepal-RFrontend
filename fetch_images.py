@@ -12,7 +12,7 @@ IMAGES_DIR.mkdir(parents=True, exist_ok=True)
 # Working direct image URLs (tested)
 IMAGE_URLS = {
     'hydropower.jpg': 'https://cdn.download.ams.birds.cornell.edu/api/v1/asset/318620161/1280',
-    'solar-1.jpg': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Solar_Panels.jpg/1280px-Solar_Panels.jpg',
+    'solar-1.jpg': 'https://cdn.britannica.com/94/192794-050-3F3F3DDD/panels-electricity-order-sunlight.jpg',
     'environment.jpg': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/24701-nature-natural-beauty.jpg/1280px-24701-nature-natural-beauty.jpg',
     'infrastructure.jpg': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Tower_Crane_Raising_Load.JPG/1280px-Tower_Crane_Raising_Load.JPG',
     'wind-1.jpg': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Horns_Rev_2_wind_farm.jpg/1280px-Horns_Rev_2_wind_farm.jpg',

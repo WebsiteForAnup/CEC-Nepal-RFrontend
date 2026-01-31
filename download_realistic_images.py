@@ -14,7 +14,7 @@ IMAGES_DIR.mkdir(parents=True, exist_ok=True)
 # Real image URLs from reliable sources (direct links)
 IMAGES = {
     'hydropower.jpg': 'https://cdn.pixabay.com/photo/2018/05/18/08/41/hydroelectric-dam-3410411_1280.jpg',
-    'solar-1.jpg': 'https://cdn.pixabay.com/photo/2020/07/29/13/00/solar-panel-5442536_1280.jpg',
+    'solar-1.jpg': 'https://cdn.britannica.com/94/192794-050-3F3F3DDD/panels-electricity-order-sunlight.jpg',
     'environment.jpg': 'https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg',
     'infrastructure.jpg': 'https://cdn.pixabay.com/photo/2017/10/25/14/11/construction-site-2883036_1280.jpg',
     'wind-1.jpg': 'https://cdn.pixabay.com/photo/2018/06/13/15/41/wind-power-3472775_1280.jpg',

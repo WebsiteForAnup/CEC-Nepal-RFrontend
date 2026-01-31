@@ -29,7 +29,7 @@ const Services = () => {
       icon: 'fas fa-bridge',
       title: 'Infrastructure',
       description: 'Bridges, tunnels, and highways in Himalayan geology.',
-      image: 'https://images.pexels.com/photos/159618/pexels-photo-159618.jpeg'
+      image: '/images/services/infrastructure.jpg'
     },
     {
       id: 5,
