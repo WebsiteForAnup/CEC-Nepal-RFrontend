@@ -323,7 +323,7 @@ a:hover {
 
 .hero p {
     font-size: 1.125rem;
-    color: var(--text-gray);
+    color: #ffffff;
     margin-bottom: var(--spacing-xl);
     line-height: 1.8;
 }
