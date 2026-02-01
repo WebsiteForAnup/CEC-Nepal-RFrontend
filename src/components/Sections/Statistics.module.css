@@ -1,0 +1,260 @@
+/* components/Sections/Statistics.module.css */
+
+.statistics {
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+  opacity: 0;
+}
+
+.sectionHeader.animate {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.sectionHeader h2 {
+  font-size: 2rem;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.line {
+  height: 4px;
+  width: 60px;
+  background: linear-gradient(90deg, #10b981, #1565c0);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.statCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.statCard.slideIn {
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  border-color: #1565c0;
+}
+
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.3rem;
+}
+
+.suffix {
+  font-size: 1.2rem;
+  color: #10b981;
+  margin-left: 0.15rem;
+}
+
+.label {
+  font-size: 0.85rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+}
+
+.breakdown {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.breakdown h3 {
+  font-size: 1.25rem;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.statusBars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.statusItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.barLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.progressBar {
+  width: 100%;
+  height: 10px;
+  background: #e2e8f0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .statistics {
+    padding: 2rem 1rem;
+  }
+
+  .sectionHeader h2 {
+    font-size: 1.75rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .statCard {
+    padding: 1.25rem;
+  }
+
+  .value {
+    font-size: 1.75rem;
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+
+  .breakdown {
+    padding: 1.5rem;
+  }
+
+  .breakdown h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .statusBars {
+    gap: 1rem;
+  }
+
+  .statusItem {
+    gap: 0.4rem;
+  }
+
+  .barLabel {
+    font-size: 0.85rem;
+  }
+
+  .progressBar {
+    height: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .statistics {
+    padding: 1.5rem 1rem;
+  }
+
+  .sectionHeader h2 {
+    font-size: 1.5rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .statCard {
+    padding: 1rem;
+  }
+
+  .value {
+    font-size: 1.5rem;
+  }
+
+  .icon {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .label {
+    font-size: 0.8rem;
+  }
+
+  .breakdown {
+    padding: 1.25rem;
+  }
+
+  .breakdown h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .statusBars {
+    gap: 0.8rem;
+  }
+
+  .barLabel {
+    font-size: 0.8rem;
+  }
+
+  .progressBar {
+    height: 7px;
+  }
+}
+

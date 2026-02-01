@@ -5,6 +5,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showBookingForm, setShowBookingForm] = useState(false);
+  const [showUpdatesDropdown, setShowUpdatesDropdown] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -198,6 +199,21 @@ const Navbar = () => {
               <li><a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>Projects</a></li>
               <li><a href="#team" onClick={(e) => { e.preventDefault(); scrollToSection('team'); }}>Our Team</a></li>
               <li><a href="#news-events" onClick={(e) => { e.preventDefault(); scrollToSection('news-events'); }}>News & Events</a></li>
+              <li 
+                className={styles.dropdownContainer}
+                onMouseEnter={() => setShowUpdatesDropdown(true)}
+                onMouseLeave={() => setShowUpdatesDropdown(false)}
+              >
+                <a href="#updates">Updates</a>
+                <div className={`${styles.dropdown} ${showUpdatesDropdown ? styles.show : ''}`}>
+                  <a href="http://localhost:3002" className={styles.dropdownItem}>
+                    <span>Gallery</span>
+                  </a>
+                  <a href="http://localhost:3003" className={styles.dropdownItem}>
+                    <span>Downloads</span>
+                  </a>
+                </div>
+              </li>
               <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a></li>
             </ul>
             <button className={styles.registerBtn} onClick={() => scrollToSection('contact')}>

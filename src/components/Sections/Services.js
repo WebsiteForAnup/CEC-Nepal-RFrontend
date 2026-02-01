@@ -1,7 +1,10 @@
 import React from 'react';
 import styles from './Services.module.css';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 const Services = () => {
+  const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.2 });
+  
   const services = [
     {
       id: 1,
@@ -50,13 +53,20 @@ const Services = () => {
   return (
     <section id="services" className={styles.services}>
       <div className={styles.container}>
-        <div className={styles.sectionHeader}>
+        <div 
+          ref={headerRef}
+          className={`${styles.sectionHeader} ${headerVisible ? styles.animate : ''}`}
+        >
           <h2>Our Core Services</h2>
           <div className={styles.line}></div>
         </div>
         <div className={styles.servicesGrid}>
-          {services.map(service => (
-            <div key={service.id} className={styles.serviceCard}>
+          {services.map((service, index) => (
+            <div 
+              key={service.id} 
+              className={styles.serviceCard}
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
               <div className={styles.imgContainer}>
                 <img src={service.image} alt={service.title} />
               </div>
