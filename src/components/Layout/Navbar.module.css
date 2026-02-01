@@ -1,15 +1,84 @@
 /* components/Layout/Navbar.module.css */
+
+/* Top Announcement Bar */
+.topBar {
+  background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
+  color: white;
+  padding: 0.75rem 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.topContainer {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 2rem;
+}
+
+.announcement {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0;
+  color: #ffffff;
+  white-space: nowrap;
+  min-width: fit-content;
+  flex-shrink: 0;
+}
+
+.announcement span {
+  font-style: italic;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.callButton {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+.callButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.callButton i {
+  font-size: 1rem;
+}
+
+/* Main Navigation Bar */
 .navbar {
-  height: 85px;
-  background: rgba(255, 255, 255, 0.85);
+  height: 80px;
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(15px);
   display: flex;
   align-items: center;
   position: fixed;
-  top: 0;
+  top: 50px;
   width: 100%;
   z-index: 1000;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .navbar.scrolled {
@@ -18,34 +87,47 @@
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: auto;
-  padding: 0 2rem;
+  padding: 0 3rem;
   width: 100%;
 }
 
 .navFlex {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
+  gap: 3rem;
+  height: 100%;
 }
 
 .logo {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 700;
   text-decoration: none;
   color: #1e293b;
+  white-space: nowrap;
+  min-width: 150px;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 .logo span {
-  color: #10b981;
+  color: #1565c0;
 }
 
 .navLinks {
   display: flex;
   list-style: none;
   gap: 2.5rem;
+  flex: 1;
+  justify-content: flex-start;
+  height: 100%;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .navLinks a {
@@ -53,12 +135,57 @@
   color: #1e293b;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
   cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0;
 }
 
 .navLinks a:hover {
-  color: #10b981;
+  color: #1565c0;
+}
+
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #1565c0;
+  transition: width 0.3s ease;
+}
+
+.navLinks a:hover::after {
+  width: 100%;
+}
+
+.registerBtn {
+  background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
+  color: white;
+  padding: 0.65rem 1.8rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  margin-left: auto;
+  height: fit-content;
+}
+
+.registerBtn:hover {
+  background: linear-gradient(135deg, #0a3d7a 0%, #0d47a1 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(13, 71, 161, 0.3);
+}
+
+.registerBtn:active {
+  transform: translateY(0);
 }
 
 .burger {
@@ -88,6 +215,34 @@
 }
 
 @media (max-width: 768px) {
+  .topContainer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .announcement {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .callButton {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .navbar {
+    top: 60px;
+    height: 70px;
+  }
+
+  .navFlex {
+    gap: 1rem;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
   .burger {
     display: flex;
   }
@@ -95,7 +250,7 @@
   .navLinks {
     position: absolute;
     right: 0;
-    top: 85px;
+    top: 70px;
     flex-direction: column;
     background: white;
     width: 100%;
@@ -103,6 +258,7 @@
     transform: translateX(110%);
     transition: transform 0.3s ease;
     gap: 0;
+    z-index: 100;
   }
 
   .navLinks.navActive {
@@ -112,5 +268,175 @@
   .navLinks li {
     padding: 1rem 0;
     border-bottom: 1px solid #f8fafc;
+  }
+
+  .registerBtn {
+    display: none;
+  }
+}
+
+/* Booking Form Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease;
+}
+
+.modalContent {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.3s ease;
+  position: relative;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: #f1f5f9;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  color: #1e293b;
+}
+
+.closeBtn:hover {
+  background: #e2e8f0;
+  transform: rotate(90deg);
+}
+
+.modalContent h2 {
+  font-size: 1.8rem;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.modalSubtitle {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.modalContent form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.modalContent input,
+.modalContent textarea,
+.modalContent select {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.modalContent input:focus,
+.modalContent textarea:focus,
+.modalContent select:focus {
+  border-color: #1565c0;
+  box-shadow: 0 0 0 4px rgba(21, 101, 192, 0.1);
+}
+
+.modalContent textarea {
+  grid-column: 1 / -1;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submitBtn {
+  background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(21, 101, 192, 0.3);
+}
+
+.submitBtn:active {
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .modalContent {
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .modalContent h2 {
+    font-size: 1.5rem;
+  }
+
+  .closeBtn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
   }
 }
