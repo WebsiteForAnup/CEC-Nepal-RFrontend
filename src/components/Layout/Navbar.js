@@ -189,7 +189,8 @@ const Navbar = () => {
         <div className={styles.container}>
           <div className={styles.navFlex}>
             <a href="#home" className={styles.logo}>
-              CEC<span>Nepal</span>
+              <img src="./images/cec-logo.png" alt="CEC Nepal Logo" className={styles.logoImage} />
+              <span className={styles.logoText}>CEC<span className={styles.logoHighlight}>Nepal</span></span>
             </a>
             <ul className={styles.navLinks}>
               <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a></li>
