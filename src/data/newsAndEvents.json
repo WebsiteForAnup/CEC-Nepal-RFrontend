@@ -1,0 +1,46 @@
+{
+  "newsAndEvents": [
+    {
+      "id": 1,
+      "type": "news",
+      "title": "CEC Completes Upper Marsyandi Feasibility Study",
+      "date": "2024-01-15",
+      "category": "Project Update",
+      "image": "/images/news/upper-marsyandi.jpg",
+      "excerpt": "Clean Energy Consultants successfully completed the feasibility study for the Upper Marsyandi HPP (150 MW), one of Nepal's largest hydropower projects.",
+      "content": "The comprehensive feasibility study for the Upper Marsyandi HPP has been completed, marking a significant milestone in Nepal's renewable energy development."
+    },
+    {
+      "id": 2,
+      "type": "event",
+      "title": "Hydropower Development Workshop",
+      "date": "2024-02-20",
+      "category": "Workshop",
+      "image": "/images/events/workshop.jpg",
+      "excerpt": "CEC organized a comprehensive workshop on modern hydropower development techniques and environmental best practices.",
+      "content": "Industry experts from CEC led an interactive workshop discussing the latest trends in hydropower design and sustainable energy development.",
+      "location": "Kathmandu"
+    },
+    {
+      "id": 3,
+      "type": "news",
+      "title": "Isuwa Khola Project Enters Construction Phase",
+      "date": "2024-01-10",
+      "category": "Project Milestone",
+      "image": "/images/news/isuwa-khola.jpg",
+      "excerpt": "The 97.2 MW Isuwa Khola Hydropower Project, with CEC's technical support, has entered the active construction phase.",
+      "content": "After successful feasibility and design phases, the Isuwa Khola project has commenced full-scale construction with CEC providing continuous bank monitoring."
+    },
+    {
+      "id": 4,
+      "type": "event",
+      "title": "Renewable Energy Conference 2024",
+      "date": "2024-03-15",
+      "category": "Conference",
+      "image": "/images/events/conference.jpg",
+      "excerpt": "CEC participated as lead sponsor in Nepal's largest renewable energy conference, showcasing latest innovations.",
+      "content": "CEC presented cutting-edge research on hydropower optimization and grid integration at the national renewable energy conference.",
+      "location": "Kathmandu Convention Center"
+    }
+  ]
+}

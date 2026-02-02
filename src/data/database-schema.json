@@ -1,0 +1,294 @@
+{
+  "database_schema": {
+    "services": {
+      "collection_name": "services",
+      "description": "All services offered by CEC",
+      "fields": [
+        {
+          "name": "id",
+          "type": "number",
+          "required": true,
+          "description": "Unique service identifier"
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": true,
+          "description": "Service name"
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "required": true,
+          "description": "FontAwesome icon class"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "required": true,
+          "description": "Short service description"
+        },
+        {
+          "name": "fullDescription",
+          "type": "string",
+          "required": false,
+          "description": "Detailed service description"
+        },
+        {
+          "name": "image",
+          "type": "string",
+          "required": true,
+          "description": "Service image path"
+        }
+      ]
+    },
+    "projects": {
+      "collection_name": "projects",
+      "description": "Hydropower and energy projects",
+      "fields": [
+        {
+          "name": "id",
+          "type": "number",
+          "required": true,
+          "description": "Unique project identifier"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true,
+          "description": "Project name"
+        },
+        {
+          "name": "capacity",
+          "type": "string",
+          "required": true,
+          "description": "Project capacity (MW/kW)"
+        },
+        {
+          "name": "status",
+          "type": "enum",
+          "enum": ["Generation", "Under Construction", "PPA Stage"],
+          "required": true,
+          "description": "Project status"
+        },
+        {
+          "name": "developer",
+          "type": "string",
+          "required": true,
+          "description": "Project developer/owner"
+        },
+        {
+          "name": "location",
+          "type": "string",
+          "required": false,
+          "description": "Geographic location"
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "required": false,
+          "description": "Project type (Hydropower, Solar, Wind, etc.)"
+        },
+        {
+          "name": "cecInputs",
+          "type": "string",
+          "required": true,
+          "description": "CEC services provided"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "required": true,
+          "description": "Project description"
+        },
+        {
+          "name": "image",
+          "type": "string",
+          "required": true,
+          "description": "Project image path"
+        }
+      ]
+    },
+    "team": {
+      "collection_name": "team",
+      "description": "Team members organized by category",
+      "fields": [
+        {
+          "name": "id",
+          "type": "number",
+          "required": true,
+          "description": "Unique team member identifier"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true,
+          "description": "Full name"
+        },
+        {
+          "name": "designation",
+          "type": "string",
+          "required": true,
+          "description": "Job title"
+        },
+        {
+          "name": "education",
+          "type": "string",
+          "required": false,
+          "description": "Educational qualifications"
+        },
+        {
+          "name": "experience",
+          "type": "string",
+          "required": false,
+          "description": "Professional experience summary"
+        },
+        {
+          "name": "bio",
+          "type": "string",
+          "required": true,
+          "description": "Professional biography"
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "description": "Profile image URL"
+        },
+        {
+          "name": "category",
+          "type": "string",
+          "required": true,
+          "description": "Team category"
+        }
+      ]
+    },
+    "faq": {
+      "collection_name": "faq",
+      "description": "Frequently asked questions",
+      "fields": [
+        {
+          "name": "id",
+          "type": "number",
+          "required": true,
+          "description": "Unique FAQ identifier"
+        },
+        {
+          "name": "question",
+          "type": "string",
+          "required": true,
+          "description": "Question text"
+        },
+        {
+          "name": "answer",
+          "type": "string",
+          "required": true,
+          "description": "Answer text"
+        },
+        {
+          "name": "category",
+          "type": "string",
+          "required": true,
+          "description": "FAQ category"
+        }
+      ]
+    },
+    "news_events": {
+      "collection_name": "news_events",
+      "description": "News and events",
+      "fields": [
+        {
+          "name": "id",
+          "type": "number",
+          "required": true,
+          "description": "Unique news/event identifier"
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": true,
+          "description": "Title"
+        },
+        {
+          "name": "type",
+          "type": "enum",
+          "enum": ["news", "event"],
+          "required": true,
+          "description": "Item type"
+        },
+        {
+          "name": "date",
+          "type": "date",
+          "required": true,
+          "description": "Publication/event date"
+        },
+        {
+          "name": "category",
+          "type": "string",
+          "required": true,
+          "description": "Category"
+        },
+        {
+          "name": "excerpt",
+          "type": "string",
+          "required": true,
+          "description": "Short excerpt"
+        },
+        {
+          "name": "content",
+          "type": "string",
+          "required": true,
+          "description": "Full content"
+        },
+        {
+          "name": "image",
+          "type": "string",
+          "required": true,
+          "description": "Image path"
+        },
+        {
+          "name": "location",
+          "type": "string",
+          "required": false,
+          "description": "Event location (for events only)"
+        }
+      ]
+    },
+    "statistics": {
+      "collection_name": "statistics",
+      "description": "Company statistics",
+      "fields": [
+        {
+          "name": "id",
+          "type": "number",
+          "required": true,
+          "description": "Unique statistic identifier"
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "Statistic label"
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "required": true,
+          "description": "Statistic value"
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "required": true,
+          "description": "Icon class"
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "description": "Display color (hex)"
+        }
+      ]
+    }
+  }
+}

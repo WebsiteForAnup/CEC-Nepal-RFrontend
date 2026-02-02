@@ -1,0 +1,62 @@
+{
+  "navigation": {
+    "mainMenu": [
+      {
+        "id": 1,
+        "label": "Home",
+        "href": "#home",
+        "icon": "fas fa-home"
+      },
+      {
+        "id": 2,
+        "label": "About",
+        "href": "#about",
+        "icon": "fas fa-info-circle"
+      },
+      {
+        "id": 3,
+        "label": "Services",
+        "href": "#services",
+        "icon": "fas fa-cogs"
+      },
+      {
+        "id": 4,
+        "label": "Projects",
+        "href": "#projects",
+        "icon": "fas fa-project-diagram"
+      },
+      {
+        "id": 5,
+        "label": "Our Team",
+        "href": "#team",
+        "icon": "fas fa-users"
+      },
+      {
+        "id": 6,
+        "label": "News & Events",
+        "href": "#news-events",
+        "icon": "fas fa-newspaper"
+      },
+      {
+        "id": 7,
+        "label": "Contact",
+        "href": "#contact",
+        "icon": "fas fa-envelope"
+      }
+    ],
+    "updates": [
+      {
+        "id": 1,
+        "label": "Gallery",
+        "href": "http://localhost:3002",
+        "icon": "fas fa-images"
+      },
+      {
+        "id": 2,
+        "label": "Downloads",
+        "href": "http://localhost:3003",
+        "icon": "fas fa-download"
+      }
+    ]
+  }
+}

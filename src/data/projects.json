@@ -1,0 +1,100 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Kabeli-B HEP",
+      "capacity": "25 MW",
+      "developer": "Arun Kabeli Power Limited",
+      "status": "Generation",
+      "cecInputs": "FSR/UFSR/Bank Technical Audit",
+      "image": "/images/projects/kabeli-b.jpg",
+      "description": "A run-of-river hydroelectric project located in eastern Nepal, providing clean energy to the national grid.",
+      "location": "Eastern Nepal",
+      "type": "Run-of-river"
+    },
+    {
+      "id": 2,
+      "name": "Jogmai Khola SHP",
+      "capacity": "7.60 MW",
+      "developer": "Sanvi Energy Pvt. Ltd.",
+      "status": "Generation",
+      "cecInputs": "Bank Monitoring/Supervision",
+      "image": "/images/projects/jogmai.jpg",
+      "description": "Small hydropower project utilizing the Jogmai Khola river for sustainable electricity generation.",
+      "location": "Eastern Nepal",
+      "type": "Small Hydropower"
+    },
+    {
+      "id": 3,
+      "name": "Upper Puwa I SHP",
+      "capacity": "3.00 MW",
+      "developer": "Joshi Hydropower Company Pvt. Ltd.",
+      "status": "Generation",
+      "cecInputs": "Bank Monitoring",
+      "image": "/images/projects/upper-puwa.jpg",
+      "description": "Eco-friendly hydropower facility designed to minimize environmental impact while maximizing energy output.",
+      "location": "Central Nepal",
+      "type": "Small Hydropower"
+    },
+    {
+      "id": 4,
+      "name": "Piluwa Khola SHP",
+      "capacity": "3.0 MW",
+      "developer": "Joshi Hydropower Company Pvt. Ltd.",
+      "status": "Generation",
+      "cecInputs": "O/M and Technical Audit",
+      "image": "/images/projects/project-4.jpg",
+      "description": "Small hydropower plant providing reliable operation and maintenance with comprehensive technical audits.",
+      "location": "Central Nepal",
+      "type": "Small Hydropower"
+    },
+    {
+      "id": 5,
+      "name": "Lower Piluwa HPP",
+      "capacity": "990 kW",
+      "developer": "Baneshwor Hydropower Pvt. Ltd",
+      "status": "Generation",
+      "cecInputs": "DPR",
+      "image": "/images/projects/project-5.jpg",
+      "description": "Compact hydropower facility delivering clean energy through efficient detailed project reporting and design.",
+      "location": "Central Nepal",
+      "type": "Micro Hydropower"
+    },
+    {
+      "id": 26,
+      "name": "Upper Phawa HEP",
+      "capacity": "5.80 MW",
+      "developer": "Unitech Hydropower Company Pvt. Ltd.",
+      "status": "Under Construction",
+      "cecInputs": "Bank Monitoring",
+      "image": "/images/projects/project-26.jpg",
+      "description": "Hydropower project currently under construction with active bank monitoring for quality assurance.",
+      "location": "Western Nepal",
+      "type": "Medium Hydropower"
+    },
+    {
+      "id": 54,
+      "name": "Upper Kabeli HPP",
+      "capacity": "28.10 MW",
+      "developer": "Peace Energy Pvt. Ltd.",
+      "status": "PPA Stage",
+      "cecInputs": "FSR/UFSR/DPR",
+      "image": "/images/projects/project-54.jpg",
+      "description": "Hydropower project at PPA stage with complete feasibility studies and detailed engineering reports.",
+      "location": "Eastern Nepal",
+      "type": "Medium Hydropower"
+    },
+    {
+      "id": 62,
+      "name": "Upper Marsyandi HPP",
+      "capacity": "150 MW",
+      "developer": "Multi Modal Developers Pvt. Ltd.",
+      "status": "PPA Stage",
+      "cecInputs": "FSR",
+      "image": "/images/projects/project-62.jpg",
+      "description": "Largest hydropower project in portfolio at PPA stage, utilizing Marsyandi river potential.",
+      "location": "Central Nepal",
+      "type": "Large Hydropower"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "company": {
+    "name": "Clean Energy Consultants Pvt. Ltd.",
+    "shortName": "CEC Nepal",
+    "tagline": "From Nature to Nation: Clean Energy for All",
+    "description": "Nepal's leading hydropower and renewable energy consultancy firm.",
+    "founded": 1999,
+    "headquarters": "Kathmandu, Nepal",
+    "contact": {
+      "email": "info@cecnepal.com.np",
+      "phone": "+977-1-XXXXXXXX",
+      "address": "Kathmandu, Nepal"
+    },
+    "social": {
+      "facebook": "https://facebook.com/cecnepal",
+      "linkedin": "https://linkedin.com/company/cecnepal",
+      "twitter": "https://twitter.com/cecnepal"
+    },
+    "about": {
+      "mission": "To develop sustainable clean energy solutions for Nepal and the region.",
+      "vision": "To be the leading engineering and consultancy firm in renewable energy development.",
+      "values": [
+        "Excellence in Engineering",
+        "Sustainability",
+        "Innovation",
+        "Client Focus",
+        "Team Collaboration"
+      ]
+    },
+    "statistics": {
+      "projectsCompleted": "50+",
+      "megawattDeveloped": "1000+",
+      "teamMembers": "50+",
+      "yearsExperience": "25+"
+    }
+  }
+}

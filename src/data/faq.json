@@ -1,0 +1,40 @@
+{
+  "faq": [
+    {
+      "id": 1,
+      "category": "General",
+      "question": "What is Clean Energy Consultants (CEC)?",
+      "answer": "Clean Energy Consultants is a leading hydropower consultancy firm in Nepal specializing in feasibility studies, engineering design, environmental assessment, and project management for renewable energy projects."
+    },
+    {
+      "id": 2,
+      "category": "Services",
+      "question": "What services do you provide?",
+      "answer": "We provide comprehensive services including hydropower development, solar energy projects, wind energy assessment, environmental impact studies, infrastructure design, and project consulting."
+    },
+    {
+      "id": 3,
+      "category": "Projects",
+      "question": "How many projects has CEC completed?",
+      "answer": "CEC has successfully completed over 50 projects with combined capacity exceeding 1,000 MW across Nepal."
+    },
+    {
+      "id": 4,
+      "category": "Experience",
+      "question": "How long has CEC been in operation?",
+      "answer": "CEC was founded with 25+ years of cumulative experience in the hydropower and renewable energy sector from its founding team."
+    },
+    {
+      "id": 5,
+      "category": "Team",
+      "question": "What qualifications do your team members have?",
+      "answer": "Our team comprises experienced engineers, geologists, environmental specialists, and financial experts with advanced degrees from reputed international and national institutions."
+    },
+    {
+      "id": 6,
+      "category": "Consultation",
+      "question": "How can I book a consultation?",
+      "answer": "You can schedule a free 15-minute counseling session by clicking the 'Book a Free 15-min Call' button on our website or contacting us through the contact form."
+    }
+  ]
+}

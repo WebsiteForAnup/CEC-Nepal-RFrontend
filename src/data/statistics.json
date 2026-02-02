@@ -1,0 +1,32 @@
+{
+  "statistics": [
+    {
+      "id": 1,
+      "label": "Projects Completed",
+      "value": "50+",
+      "icon": "fas fa-check-circle",
+      "color": "#667eea"
+    },
+    {
+      "id": 2,
+      "label": "MW Capacity Developed",
+      "value": "1,000+",
+      "icon": "fas fa-bolt",
+      "color": "#764ba2"
+    },
+    {
+      "id": 3,
+      "label": "Team Members",
+      "value": "50+",
+      "icon": "fas fa-users",
+      "color": "#f093fb"
+    },
+    {
+      "id": 4,
+      "label": "Years Experience",
+      "value": "25+",
+      "icon": "fas fa-briefcase",
+      "color": "#4facfe"
+    }
+  ]
+}

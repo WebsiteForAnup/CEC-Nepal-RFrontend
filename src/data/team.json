@@ -1,0 +1,73 @@
+{
+  "team": {
+    "Board of Directors": [
+      {
+        "id": 1,
+        "name": "Mr. Mani Raj Dahal",
+        "designation": "Founder & Director",
+        "image_url": "https://cecnepal.com.np/wp-content/uploads/2024/01/mani-raj-dahal-768x576.jpg",
+        "education": "MSc Hydraulic Engineering & River Basin Development (Delft, Netherlands), BE Civil Engineering (IOE Pulchowk)",
+        "experience": "25+ years in hydropower sector, technical consultant for numerous hydropower projects",
+        "bio": "Founder and Director of Clean Energy Consultants Pvt. Ltd., one of Nepal's leading hydropower consultancy firms with extensive expertise in hydropower development and technical consultancy."
+      },
+      {
+        "id": 2,
+        "name": "Er. Santosh Dhakal",
+        "designation": "Board Director & Electrical Expert",
+        "image_url": "https://cecnepal.com.np/wp-content/uploads/2024/12/Er-S-Photo.png",
+        "education": "ME Electrical Engineering",
+        "experience": "18+ years as Electrical Engineer and Electromechanical Expert at CEC, 60+ hydropower projects designed",
+        "bio": "Board Director at Clean Energy Consultants since mid-2006. Has led the electrical and electromechanical design for approximately 60 hydropower projects with several more under feasibility and detailed design stages. Currently working with Hydro Tasmania, Australia."
+      },
+      {
+        "id": 3,
+        "name": "Mr. Narayan Poudel",
+        "designation": "Finance Director",
+        "image_url": "https://cecnepal.com.np/wp-content/uploads/2024/12/image_2024-12-24_202752759.png",
+        "education": "Chartered Accountant",
+        "experience": "Extensive professional experience in finance and project financial analysis",
+        "bio": "Finance Director at Clean Energy Consultants Pvt. Ltd. Leads financial feasibility studies, project financial analysis, and overall financial assessment for hydropower projects. Also serves as Finance Director for Aayu Entertainment Pvt. Ltd. and Chairman of Finman Services Pvt. Ltd."
+      },
+      {
+        "id": 4,
+        "name": "Er. Kosa Raj Chapagain",
+        "designation": "Project Director & Board Member",
+        "image_url": "https://cecnepal.com.np/wp-content/uploads/2023/11/Kosa-Raj-Chapagain-1536x1152.jpg",
+        "education": "BE Civil Engineering",
+        "experience": "12+ years as Senior Civil Engineer and Project Manager at CEC",
+        "bio": "Project Director and Board Member at Clean Energy Consultants since mid-2011. Brings extensive expertise in feasibility studies, detailed design, and project monitoring. Responsible for overseeing major hydropower project implementations and technical delivery."
+      }
+    ],
+    "Key Personnel": [
+      {
+        "id": 5,
+        "name": "Dr. Chhatra Basnet",
+        "designation": "Chief Executive Officer (CEO)",
+        "image_url": "https://cecnepal.com.np/wp-content/uploads/2023/11/Chhatra-Basnet-2048x1536.jpg",
+        "education": "PhD Rock Mechanics, MSc Hydropower Development",
+        "experience": "12+ years at Clean Energy Consultants Pvt. Ltd., strategic leadership and innovation",
+        "bio": "Chief Executive Officer with 12 years of pivotal experience at Clean Energy Consultants Pvt. Ltd. Dr. Basnet has shaped the company's strategic direction, driving innovation and sustainable engineering practices in the hydropower sector. Leads organizational vision and technical excellence."
+      }
+    ],
+    "Technical Directors": [
+      {
+        "id": 6,
+        "name": "Dr. Bishnu Raj Baral",
+        "designation": "Technical Director – Hydraulics & Sediment Transport",
+        "image_url": "https://cecnepal.com.np/wp-content/uploads/2023/11/Bishnu-R-Baral-1474x1536.jpg",
+        "education": "PhD/MSc Hydraulic Engineering and Sediment Transport",
+        "experience": "5 years international research (UK, Italy, Netherlands), 15+ years hydropower consulting",
+        "bio": "Technical Director specializing in river hydraulics, sediment transport, and numerical/physical modelling. Expert in feasibility studies, detailed design, and construction supervision. Founding member of Policy and Planning Commission of Gandaki Province. Brings cutting-edge international expertise to CEC's technical team."
+      },
+      {
+        "id": 7,
+        "name": "Mr. Ghan Bahadur Shrestha",
+        "designation": "Geologist / RS & GIS / Tunneling & Geophysics Expert",
+        "image_url": "https://cecnepal.com.np/wp-content/uploads/2023/11/Ghan-B-Shrestha-1536x1152.jpg",
+        "education": "MSc Geology",
+        "experience": "Major national projects: Nalsing Gad (410 MW), Melamchi Water Supply, Kabeli-3 (49 MW), Upper Chameliya (40 MW)",
+        "bio": "Geological and geophysical expert with specialized expertise in geological mapping, geophysical surveys, drilling supervision, GIS, and remote sensing. Extensive experience on significant national hydropower projects. Brings critical earth science expertise to complex feasibility and design phases."
+      }
+    ]
+  }
+}

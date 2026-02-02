@@ -1,0 +1,52 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "icon": "fas fa-water",
+      "title": "Hydropower",
+      "description": "Feasibility and EPCM for hydroelectric projects.",
+      "image": "/images/services/hydropower.jpg",
+      "fullDescription": "Comprehensive hydropower solutions from feasibility studies to engineering, procurement, and construction management."
+    },
+    {
+      "id": 2,
+      "icon": "fas fa-solar-panel",
+      "title": "Solar Energy",
+      "description": "Utility-scale solar farms and grid integration.",
+      "image": "/images/services/solar-1.jpg",
+      "fullDescription": "Expert design and implementation of utility-scale solar energy projects with seamless grid integration capabilities."
+    },
+    {
+      "id": 3,
+      "icon": "fas fa-leaf",
+      "title": "Environment",
+      "description": "Detailed EIA/IEE assessments and green compliance.",
+      "image": "/images/services/environment.jpg",
+      "fullDescription": "Environmental Impact Assessment (EIA) and Initial Environmental Examination (IEE) with comprehensive green compliance strategies."
+    },
+    {
+      "id": 4,
+      "icon": "fas fa-bridge",
+      "title": "Infrastructure",
+      "description": "Bridges, tunnels, and highways in Himalayan geology.",
+      "image": "/images/services/infrastructure.jpg",
+      "fullDescription": "Specialized infrastructure projects designed for challenging Himalayan terrain including bridges, tunnels, and highways."
+    },
+    {
+      "id": 5,
+      "icon": "fas fa-wind",
+      "title": "Wind Energy",
+      "description": "Resource mapping and turbine layout optimization.",
+      "image": "/images/services/wind-1.jpg",
+      "fullDescription": "Wind resource assessment, mapping, and optimal turbine layout design for maximum energy production."
+    },
+    {
+      "id": 6,
+      "icon": "fas fa-handshake",
+      "title": "Project Consulting",
+      "description": "Lender's engineering and technical audits.",
+      "image": "/images/services/consulting.jpg",
+      "fullDescription": "Comprehensive project consulting including lender's engineering reports and independent technical audits."
+    }
+  ]
+}

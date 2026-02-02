@@ -1,0 +1,48 @@
+{
+  "api": {
+    "endpoints": {
+      "services": "/api/services",
+      "projects": "/api/projects",
+      "team": "/api/team",
+      "faq": "/api/faq",
+      "company": "/api/company",
+      "newsAndEvents": "/api/news-events",
+      "about": "/api/about",
+      "navigation": "/api/navigation",
+      "statistics": "/api/statistics",
+      "contact": "/api/contact"
+    },
+    "filters": {
+      "projects": {
+        "status": ["Generation", "Under Construction", "PPA Stage"],
+        "type": ["Hydropower", "Solar", "Wind", "Infrastructure"],
+        "capacity": ["Small", "Medium", "Large"]
+      },
+      "team": {
+        "categories": ["Board of Directors", "Key Personnel", "Technical Directors", "Engineering Team"]
+      },
+      "news": {
+        "types": ["news", "event"],
+        "categories": ["Project Update", "Workshop", "Conference", "Announcement"]
+      }
+    },
+    "pagination": {
+      "defaultLimit": 10,
+      "maxLimit": 100
+    }
+  },
+  "database": {
+    "collections": [
+      "services",
+      "projects",
+      "team",
+      "faq",
+      "company",
+      "news_events",
+      "about",
+      "navigation",
+      "statistics",
+      "contacts"
+    ]
+  }
+}
