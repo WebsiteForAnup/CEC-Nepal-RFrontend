@@ -8,8 +8,8 @@
    Root Color Variables
    ======================== */
 :root {
-  --primary: #10bffb;         /* Light Blue */
-  --primary-dark: #0aa0d9;    /* Darker Blue for hover */
+  --primary: #3bbce7;         /* Light Blue */
+  --primary-dark: #6bc7ec;    /* Darker Blue for hover */
   --secondary: #10b981;       /* Green accent */
   --secondary-dark: #059669;  /* Darker green hover */
   --bg-light: #ffffff;        /* White background */

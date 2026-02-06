@@ -7,6 +7,32 @@ const Projects = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.2 });
 
+  // Service images from cecnepal.com.np
+  const serviceImages = [
+    'https://cecnepal.com.np/wp-content/uploads/2024/12/Survey.png',
+    'https://cecnepal.com.np/wp-content/uploads/2024/12/Desk.png',
+    'https://cecnepal.com.np/wp-content/uploads/2024/12/Mapping.png',
+    'https://cecnepal.com.np/wp-content/uploads/2024/12/Detailed-Engineering.png',
+    'https://cecnepal.com.np/wp-content/uploads/2024/12/Construction-Supervision.png',
+    'https://cecnepal.com.np/wp-content/uploads/2024/01/0-02-03-6caf56c02a149e4ba48702ff0a0e52fb25dad5469ecc879ffe5f58462b77cf18_59eccfe8a97d9d44.jpg',
+    'https://cecnepal.com.np/wp-content/uploads/2024/02/viber_image_2024-02-05_13-28-15-068.jpg',
+    'https://cecnepal.com.np/wp-content/uploads/2024/12/Discharge-Measurement.jpg',
+    'https://cecnepal.com.np/wp-content/uploads/2024/12/Road-Design-Analysis.jpg',
+    'https://cecnepal.com.np/wp-content/uploads/2024/12/Geotechnical-InvestigationCore-Drilling-1.jpg',
+  ];
+
+  const statusImages = {
+    generation: 'https://cecnepal.com.np/wp-content/uploads/2023/10/CEC-studies-Project.jpg',
+    'under construction': 'https://cecnepal.com.np/wp-content/uploads/2024/12/Construction-Supervision.png',
+    'ppa stage': 'https://cecnepal.com.np/wp-content/uploads/2024/12/Desk.png',
+    'testing and commissioning': 'https://cecnepal.com.np/wp-content/uploads/2024/02/viber_image_2024-02-05_13-28-15-068.jpg',
+  };
+
+  // Get rotated service image based on project ID
+  const getServiceImage = (projectId) => {
+    return serviceImages[projectId % serviceImages.length];
+  };
+
   const projects = [
     // Generation Status
     { id: 1, name: 'Kabeli-B HEP', capacity: '25 MW', developer: 'Arun Kabeli Power Limited', status: 'Generation', cecInputs: 'FSR/UFSR/Bank Technical Audit', image: '/images/projects/kabeli-b.jpg', description: 'A run-of-river hydroelectric project located in eastern Nepal, providing clean energy to the national grid.' },
@@ -133,16 +159,24 @@ const Projects = () => {
         <div className={styles.projectsList}>
           {filteredProjects.map(project => (
             <div key={project.id} className={styles.projectCard}>
-              {project.image && (
+              {(() => {
+                const normalizedStatus = project.status.toLowerCase();
+                const statusImage = statusImages[normalizedStatus];
+                const serviceImage = getServiceImage(project.id);
+                // Alternate between status and service images for variety
+                const imageUrl = (project.id % 2 === 0 ? statusImage : serviceImage) || project.image;
+
+                return imageUrl ? (
                 <div className={styles.projectImage}>
-                  <img src={project.image} alt={project.name} />
+                  <img src={imageUrl} alt={project.name} />
                   <div className={styles.imageOverlay}>
                     <span className={`${styles.capacity} ${styles[project.status.replace(/\s+/g, '')]}`}>
                       {project.capacity}
                     </span>
                   </div>
                 </div>
-              )}
+                ) : null;
+              })()}
               <div className={styles.projectContent}>
                 <div className={styles.projectHeader}>
                   <h3>{project.name}</h3>
