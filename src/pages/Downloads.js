@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Downloads.module.css';
-import Navbar from '../components/Layout/Navbar';
+import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Footer from '../components/Layout/Footer';
 
 const downloadResources = [
@@ -189,7 +189,7 @@ const Downloads = () => {
 
     return (
         <>
-            <Navbar />
+            <NavbarRedesigned />
             <main className={styles['main-content']}>
                 {/* Hero Section */}
                 <div className={styles['hero-section']}>

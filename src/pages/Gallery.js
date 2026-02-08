@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Gallery.module.css';
-import Navbar from '../components/Layout/Navbar';
+import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Footer from '../components/Layout/Footer';
 
 const galleryImages = [
@@ -95,7 +95,7 @@ const Gallery = () => {
 
     return (
         <>
-            <Navbar />
+            <NavbarRedesigned />
             <main className={styles['main-content']}>
                 {/* Hero Section */}
                 <div className={styles['hero-section']}>

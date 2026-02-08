@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../components/Layout/Navbar';
+import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Hero from '../components/Sections/Hero';
 import About from '../components/Sections/About';
 import Services from '../components/Sections/Services';
@@ -14,7 +14,7 @@ import Footer from '../components/Layout/Footer';
 const Home = () => {
     return (
         <>
-            <Navbar />
+            <NavbarRedesigned />
             <main>
                 <Hero />
                 <About />

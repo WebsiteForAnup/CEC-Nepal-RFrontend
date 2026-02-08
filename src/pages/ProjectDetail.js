@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import styles from './ProjectDetail.module.css';
-import Navbar from '../components/Layout/Navbar';
+import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Footer from '../components/Layout/Footer';
 
 // Image arrays from cecnepal.com.np
@@ -64,7 +64,7 @@ const ProjectDetail = () => {
     if (!project) {
         return (
             <>
-                <Navbar />
+                <NavbarRedesigned />
                 <div className={styles['container']}>
                     <div className={styles['not-found']}>
                         <h1>Project Not Found</h1>
@@ -95,7 +95,7 @@ const ProjectDetail = () => {
 
     return (
         <>
-            <Navbar />
+            <NavbarRedesigned />
             <main className={styles['main-content']}>
                 <div className={styles['container']}>
                     {/* Breadcrumb */}

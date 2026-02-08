@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import styles from './ServiceDetail.module.css';
-import Navbar from '../components/Layout/Navbar';
+import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Footer from '../components/Layout/Footer';
 
 const servicesData = [
@@ -312,7 +312,7 @@ const ServiceDetail = () => {
     if (!service) {
         return (
             <>
-                <Navbar />
+                <NavbarRedesigned />
                 <div className={styles['container']}>
                     <div className={styles['not-found']}>
                         <h1>Service Not Found</h1>
@@ -331,7 +331,7 @@ const ServiceDetail = () => {
 
     return (
         <>
-            <Navbar />
+            <NavbarRedesigned />
             <main className={styles['main-content']}>
                 <div className={styles['container']}>
                     {/* Breadcrumb */}

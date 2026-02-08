@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import styles from './NewsEventDetail.module.css';
-import Navbar from '../components/Layout/Navbar';
+import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Footer from '../components/Layout/Footer';
 
 // Sample news and events data
@@ -200,7 +200,7 @@ const NewsEventDetail = () => {
     if (!item) {
         return (
             <>
-                <Navbar />
+                <NavbarRedesigned />
                 <div className={styles['container']}>
                     <div className={styles['not-found']}>
                         <h1>News or Event Not Found</h1>
@@ -226,7 +226,7 @@ const NewsEventDetail = () => {
 
     return (
         <>
-            <Navbar />
+            <NavbarRedesigned />
             <main className={styles['main-content']}>
                 <div className={styles['container']}>
                     {/* Breadcrumb */}
