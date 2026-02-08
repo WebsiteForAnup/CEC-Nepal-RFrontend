@@ -1,34 +1,27 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import styles from './App.module.css';
-import Navbar from './components/Layout/Navbar';
-import Hero from './components/Sections/Hero';
-import About from './components/Sections/About';
-import Services from './components/Sections/Services';
-import Projects from './components/Sections/Projects';
-import Statistics from './components/Sections/Statistics';
-import FAQ from './components/Sections/FAQ';
-import Team from './components/Sections/Team';
-import NewsEvents from './components/Sections/NewsEvents';
-import Contact from './components/Sections/Contact';
-import Footer from './components/Layout/Footer';
+import Home from './pages/Home';
+import NewsEventDetail from './pages/NewsEventDetail';
+import ServiceDetail from './pages/ServiceDetail';
+import ProjectDetail from './pages/ProjectDetail';
+import Gallery from './pages/Gallery';
+import Downloads from './pages/Downloads';
 
 function App() {
   return (
-    <div className={styles.app}>
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Projects />
-        <Statistics />
-        <FAQ />
-        <Team />
-        <NewsEvents />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className={styles.app}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/news-event/:id" element={<NewsEventDetail />} />
+          <Route path="/service/:id" element={<ServiceDetail />} />
+          <Route path="/project/:id" element={<ProjectDetail />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/downloads" element={<Downloads />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

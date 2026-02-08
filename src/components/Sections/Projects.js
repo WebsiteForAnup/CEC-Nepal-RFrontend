@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Projects.module.css';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 
@@ -158,7 +159,8 @@ const Projects = () => {
         {/* Projects List */}
         <div className={styles.projectsList}>
           {filteredProjects.map(project => (
-            <div key={project.id} className={styles.projectCard}>
+            <Link to={`/project/${project.id}`} key={project.id} style={{ textDecoration: 'none' }}>
+              <div className={styles.projectCard}>
               {(() => {
                 const normalizedStatus = project.status.toLowerCase();
                 const statusImage = statusImages[normalizedStatus];
@@ -195,7 +197,8 @@ const Projects = () => {
                   <p><strong>CEC Inputs:</strong> {project.cecInputs}</p>
                 </div>
               </div>
-            </div>
+              </div>
+            </Link>
           ))}
         </div>
 

@@ -7,10 +7,22 @@
       "developer": "Arun Kabeli Power Limited",
       "status": "Generation",
       "cecInputs": "FSR/UFSR/Bank Technical Audit",
-      "image": "/images/projects/kabeli-b.jpg",
-      "description": "A run-of-river hydroelectric project located in eastern Nepal, providing clean energy to the national grid.",
+      "type": "Hydroelectric",
       "location": "Eastern Nepal",
-      "type": "Run-of-river"
+      "commissioned": "2019",
+      "description": "A run-of-river hydroelectric project located in eastern Nepal, providing clean energy to the national grid. This strategic project demonstrates excellence in sustainable energy development with comprehensive technical audit and supervision.",
+      "technicalDetails": {
+        "headHeight": "156 m",
+        "discharge": "19.5 m³/s",
+        "type": "Run-of-River",
+        "turbineType": "Pelton"
+      },
+      "timeline": [
+        "Feasibility Study - 2014",
+        "DPR Completion - 2015",
+        "Construction Start - 2016",
+        "Commissioning - 2019"
+      ]
     },
     {
       "id": 2,
@@ -19,10 +31,22 @@
       "developer": "Sanvi Energy Pvt. Ltd.",
       "status": "Generation",
       "cecInputs": "Bank Monitoring/Supervision",
-      "image": "/images/projects/jogmai.jpg",
-      "description": "Small hydropower project utilizing the Jogmai Khola river for sustainable electricity generation.",
-      "location": "Eastern Nepal",
-      "type": "Small Hydropower"
+      "type": "Small Hydro",
+      "location": "Mid-Hills",
+      "commissioned": "2020",
+      "description": "Small hydropower project utilizing the Jogmai Khola river for sustainable electricity generation. Features comprehensive bank monitoring and construction supervision ensuring quality and financial compliance.",
+      "technicalDetails": {
+        "headHeight": "127 m",
+        "discharge": "7.2 m³/s",
+        "type": "Run-of-River",
+        "turbineType": "Francis"
+      },
+      "timeline": [
+        "Planning - 2015",
+        "Approval - 2016",
+        "Construction - 2017-2019",
+        "Operation - 2020"
+      ]
     },
     {
       "id": 3,
@@ -31,10 +55,22 @@
       "developer": "Joshi Hydropower Company Pvt. Ltd.",
       "status": "Generation",
       "cecInputs": "Bank Monitoring",
-      "image": "/images/projects/upper-puwa.jpg",
-      "description": "Eco-friendly hydropower facility designed to minimize environmental impact while maximizing energy output.",
-      "location": "Central Nepal",
-      "type": "Small Hydropower"
+      "type": "Small Hydro",
+      "location": "Western Hills",
+      "commissioned": "2018",
+      "description": "Eco-friendly hydropower facility designed to minimize environmental impact while maximizing energy output. Ongoing bank monitoring ensures sustained operational excellence.",
+      "technicalDetails": {
+        "headHeight": "98 m",
+        "discharge": "4.1 m³/s",
+        "type": "Run-of-River",
+        "turbineType": "Pelton"
+      },
+      "timeline": [
+        "Feasibility - 2014",
+        "Design - 2015",
+        "Construction - 2016-2017",
+        "Commissioned - 2018"
+      ]
     },
     {
       "id": 4,
@@ -43,10 +79,22 @@
       "developer": "Joshi Hydropower Company Pvt. Ltd.",
       "status": "Generation",
       "cecInputs": "O/M and Technical Audit",
-      "image": "/images/projects/project-4.jpg",
-      "description": "Small hydropower plant providing reliable operation and maintenance with comprehensive technical audits.",
-      "location": "Central Nepal",
-      "type": "Small Hydropower"
+      "type": "Small Hydro",
+      "location": "Eastern Nepal",
+      "commissioned": "2017",
+      "description": "Small hydropower plant providing reliable operation and maintenance with comprehensive technical audits. CEC provides ongoing technical support and operational optimization services.",
+      "technicalDetails": {
+        "headHeight": "105 m",
+        "discharge": "3.8 m³/s",
+        "type": "Run-of-River",
+        "turbineType": "Pelton"
+      },
+      "timeline": [
+        "Survey - 2013",
+        "DPR - 2014",
+        "Construction - 2015-2016",
+        "Operation - 2017"
+      ]
     },
     {
       "id": 5,
@@ -55,10 +103,142 @@
       "developer": "Baneshwor Hydropower Pvt. Ltd",
       "status": "Generation",
       "cecInputs": "DPR",
-      "image": "/images/projects/project-5.jpg",
-      "description": "Compact hydropower facility delivering clean energy through efficient detailed project reporting and design.",
-      "location": "Central Nepal",
-      "type": "Micro Hydropower"
+      "type": "Micro Hydro",
+      "location": "Eastern Region",
+      "commissioned": "2019",
+      "description": "Compact hydropower facility delivering clean energy through efficient detailed project reporting and design. Demonstrates viability of micro-hydropower for rural electrification.",
+      "technicalDetails": {
+        "headHeight": "78 m",
+        "discharge": "1.8 m³/s",
+        "type": "Run-of-River",
+        "turbineType": "Cross-flow"
+      },
+      "timeline": [
+        "Planning - 2016",
+        "DPR - 2017",
+        "Construction - 2018",
+        "Commissioned - 2019"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Hewa Khola SHP",
+      "capacity": "4.5 MW",
+      "developer": "Barun Hydropower Company Limited",
+      "status": "Generation",
+      "cecInputs": "DPR",
+      "type": "Small Hydro",
+      "location": "Far-Eastern Nepal",
+      "commissioned": "2020",
+      "description": "Successfully operating hydropower project utilizing Hewa Khola river resources for sustainable energy production. CEC provided comprehensive DPR and technical guidance throughout development.",
+      "technicalDetails": {
+        "headHeight": "112 m",
+        "discharge": "5.5 m³/s",
+        "type": "Run-of-River",
+        "turbineType": "Francis"
+      },
+      "timeline": [
+        "Feasibility - 2015",
+        "DPR - 2016",
+        "Construction - 2017-2019",
+        "Operation - 2020"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Taksar Pikhuwa Khola HPP",
+      "capacity": "8.0 MW",
+      "developer": "Taksar Pikhuwa Khola Hydropower Pvt. Ltd.",
+      "status": "Generation",
+      "cecInputs": "Bank Monitoring",
+      "type": "Small Hydro",
+      "location": "Mid-Hills Region",
+      "commissioned": "2021",
+      "description": "Medium-scale hydropower facility with ongoing bank monitoring ensuring financial and operational excellence. CEC provides continuous oversight and technical support.",
+      "technicalDetails": {
+        "headHeight": "145 m",
+        "discharge": "7.2 m³/s",
+        "type": "Run-of-River",
+        "turbineType": "Pelton"
+      },
+      "timeline": [
+        "Survey - 2015",
+        "Approval - 2016",
+        "Construction - 2017-2020",
+        "Commissioned - 2021"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Upper Khorunga Khola SHP",
+      "capacity": "7.5 MW",
+      "developer": "Terhathum Power Company Limited",
+      "status": "Generation",
+      "cecInputs": "FSR/DPR/Supervision",
+      "type": "Small Hydro",
+      "location": "Terhathum District",
+      "commissioned": "2020",
+      "description": "Comprehensive hydropower project with full-cycle engineering from feasibility study to supervision and commissioning. Exemplifies CEC excellence in complete project lifecycle management.",
+      "technicalDetails": {
+        "headHeight": "128 m",
+        "discharge": "7.8 m³/s",
+        "type": "Run-of-River",
+        "turbineType": "Francis"
+      },
+      "timeline": [
+        "FSR - 2014",
+        "DPR - 2015",
+        "Construction - 2016-2019",
+        "Commissioned - 2020"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Jiri Khola SHP",
+      "capacity": "2.40 MW",
+      "developer": "Bojini Company Pvt. Ltd.",
+      "status": "Generation",
+      "cecInputs": "DPR",
+      "type": "Small Hydro",
+      "location": "Central Hills",
+      "commissioned": "2018",
+      "description": "Small-scale run-of-river project contributing to local energy security and rural electrification initiatives. CEC DPR ensured technical and economic viability.",
+      "technicalDetails": {
+        "headHeight": "92 m",
+        "discharge": "3.5 m³/s",
+        "type": "Run-of-River",
+        "turbineType": "Pelton"
+      },
+      "timeline": [
+        "Planning - 2015",
+        "DPR - 2016",
+        "Construction - 2017",
+        "Operation - 2018"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Singati Khola Hydropower Project",
+      "capacity": "25 MW",
+      "developer": "Singati HydroEergy Pvt. Ltd.",
+      "status": "Generation",
+      "cecInputs": "Due Diligence/Bank Monitoring",
+      "type": "Hydroelectric",
+      "location": "Dolakha District",
+      "commissioned": "2021",
+      "description": "Major hydropower installation with rigorous due diligence and continuous bank oversight for optimal performance. Strategic project contributing significantly to national grid.",
+      "technicalDetails": {
+        "headHeight": "168 m",
+        "discharge": "18.5 m³/s",
+        "type": "Run-of-River",
+        "turbineType": "Pelton"
+      },
+      "timeline": [
+        "Due Diligence - 2014",
+        "Approval - 2015",
+        "Construction - 2016-2020",
+        "Commissioned - 2021"
+      ]
     },
     {
       "id": 26,
@@ -67,10 +247,46 @@
       "developer": "Unitech Hydropower Company Pvt. Ltd.",
       "status": "Under Construction",
       "cecInputs": "Bank Monitoring",
-      "image": "/images/projects/project-26.jpg",
-      "description": "Hydropower project currently under construction with active bank monitoring for quality assurance.",
-      "location": "Western Nepal",
-      "type": "Medium Hydropower"
+      "type": "Small Hydro",
+      "location": "Mid-Hills",
+      "estimated": "2025",
+      "description": "Hydropower project currently under construction with active bank monitoring for quality assurance. CEC provides continuous oversight ensuring adherence to technical standards and budget compliance.",
+      "technicalDetails": {
+        "headHeight": "118 m",
+        "discharge": "6.5 m³/s",
+        "type": "Run-of-River",
+        "turbineType": "Francis"
+      },
+      "timeline": [
+        "Planning - 2020",
+        "Approval - 2021",
+        "Construction Start - 2022",
+        "Expected COD - 2025"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Mewa Khola HEP",
+      "capacity": "50.00 MW",
+      "developer": "United Mewa Khola Hydropower Pvt. Ltd.",
+      "status": "Under Construction",
+      "cecInputs": "Bank Due Diligence",
+      "type": "Medium Hydro",
+      "location": "Eastern Nepal",
+      "estimated": "2026",
+      "description": "Major hydropower development progressing with comprehensive financial oversight and construction monitoring. One of the larger projects under CEC technical guidance.",
+      "technicalDetails": {
+        "headHeight": "245 m",
+        "discharge": "25.8 m³/s",
+        "type": "Run-of-River",
+        "turbineType": "Francis"
+      },
+      "timeline": [
+        "Feasibility - 2018",
+        "DPR - 2019",
+        "Financial Close - 2021",
+        "Expected COD - 2026"
+      ]
     },
     {
       "id": 54,
@@ -79,22 +295,22 @@
       "developer": "Peace Energy Pvt. Ltd.",
       "status": "PPA Stage",
       "cecInputs": "FSR/UFSR/DPR",
-      "image": "/images/projects/project-54.jpg",
-      "description": "Hydropower project at PPA stage with complete feasibility studies and detailed engineering reports.",
-      "location": "Eastern Nepal",
-      "type": "Medium Hydropower"
-    },
-    {
-      "id": 62,
-      "name": "Upper Marsyandi HPP",
-      "capacity": "150 MW",
-      "developer": "Multi Modal Developers Pvt. Ltd.",
-      "status": "PPA Stage",
-      "cecInputs": "FSR",
-      "image": "/images/projects/project-62.jpg",
-      "description": "Largest hydropower project in portfolio at PPA stage, utilizing Marsyandi river potential.",
-      "location": "Central Nepal",
-      "type": "Large Hydropower"
+      "type": "Hydroelectric",
+      "location": "Taplejung District",
+      "estimated": "TBD",
+      "description": "Hydropower project at PPA stage with complete feasibility studies and detailed engineering reports. CEC provided comprehensive technical documentation for regulatory approvals and financing.",
+      "technicalDetails": {
+        "headHeight": "185 m",
+        "discharge": "19.2 m³/s",
+        "type": "Run-of-River",
+        "turbineType": "Pelton"
+      },
+      "timeline": [
+        "FSR - 2019",
+        "UFSR - 2020",
+        "DPR - 2021",
+        "PPA Negotiations - Ongoing"
+      ]
     }
   ]
 }

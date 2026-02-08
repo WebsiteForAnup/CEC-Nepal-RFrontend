@@ -6,7 +6,23 @@
       "title": "Hydropower",
       "description": "Feasibility and EPCM for hydroelectric projects.",
       "image": "/images/services/hydropower.jpg",
-      "fullDescription": "Comprehensive hydropower solutions from feasibility studies to engineering, procurement, and construction management."
+      "category": "Energy",
+      "fullDescription": "Hydropower development is one of our core competencies. We provide comprehensive services across the entire project lifecycle from initial feasibility studies to detailed project reports and implementation support.",
+      "benefits": [
+        "Reduced project risks through comprehensive feasibility",
+        "Optimized project design for maximum efficiency",
+        "International quality standards compliance",
+        "Timely project delivery and completion",
+        "Sustainable development practices"
+      ],
+      "process": [
+        "Initial Consultation and Site Visit",
+        "Feasibility Study and Preliminary Design",
+        "Detailed Engineering and DPR Preparation",
+        "Lender Engagement and Approval",
+        "Implementation and Construction Support",
+        "Operations and Maintenance Advisory"
+      ]
     },
     {
       "id": 2,
@@ -14,7 +30,24 @@
       "title": "Solar Energy",
       "description": "Utility-scale solar farms and grid integration.",
       "image": "/images/services/solar-1.jpg",
-      "fullDescription": "Expert design and implementation of utility-scale solar energy projects with seamless grid integration capabilities."
+      "category": "Renewable Energy",
+      "fullDescription": "Solar energy is transitioning from niche to mainstream power generation. We provide end-to-end solutions for utility-scale solar projects with focus on maximum energy yield and grid integration.",
+      "benefits": [
+        "High return on investment with predictable cash flows",
+        "Minimal environmental impact",
+        "Reduced operational complexity",
+        "Grid stability support through proper integration",
+        "Community benefits and employment generation"
+      ],
+      "process": [
+        "Site Evaluation and Resource Assessment",
+        "Technology and Layout Optimization",
+        "Detailed Design and Engineering",
+        "Environmental and Social Studies",
+        "Permitting and Approvals",
+        "Construction Support and Commissioning",
+        "Performance Monitoring and O&M"
+      ]
     },
     {
       "id": 3,
@@ -22,7 +55,25 @@
       "title": "Environment",
       "description": "Detailed EIA/IEE assessments and green compliance.",
       "image": "/images/services/environment.jpg",
-      "fullDescription": "Environmental Impact Assessment (EIA) and Initial Environmental Examination (IEE) with comprehensive green compliance strategies."
+      "category": "Environmental Services",
+      "fullDescription": "Environmental sustainability is integral to all our projects. We provide comprehensive environmental and social impact assessments ensuring compliance with international standards and national regulations.",
+      "benefits": [
+        "Regulatory compliance and reduced legal risks",
+        "Community acceptance and social license",
+        "Identification and mitigation of environmental hazards",
+        "Enhanced project sustainability",
+        "Long-term operational stability",
+        "Lender confidence and easy financing"
+      ],
+      "process": [
+        "Scope Definition and Baseline Studies",
+        "Impact Identification and Assessment",
+        "Mitigation Measures Development",
+        "Stakeholder Consultation",
+        "Final Report Preparation",
+        "Regulatory Approval Support",
+        "Monitoring and Compliance Verification"
+      ]
     },
     {
       "id": 4,
@@ -30,7 +81,25 @@
       "title": "Infrastructure",
       "description": "Bridges, tunnels, and highways in Himalayan geology.",
       "image": "/images/services/infrastructure.jpg",
-      "fullDescription": "Specialized infrastructure projects designed for challenging Himalayan terrain including bridges, tunnels, and highways."
+      "category": "Civil Works",
+      "fullDescription": "Infrastructure development in challenging Himalayan terrain requires specialized expertise. We provide comprehensive engineering support for bridges, tunnels, and road infrastructure in difficult geological and geographic conditions.",
+      "benefits": [
+        "Safe and durable infrastructure solutions",
+        "Optimized design for rugged terrain",
+        "Cost-effective construction methodology",
+        "Reduced environmental impact",
+        "Long lifespan and minimal maintenance",
+        "Enhanced regional connectivity"
+      ],
+      "process": [
+        "Site Investigation and Surveys",
+        "Geological and Geotechnical Assessment",
+        "Preliminary Design and Alignment",
+        "Detailed Engineering and DPR",
+        "Environmental and Social Clearance",
+        "Tender Document Preparation",
+        "Construction Supervision and Quality Assurance"
+      ]
     },
     {
       "id": 5,
@@ -38,7 +107,25 @@
       "title": "Wind Energy",
       "description": "Resource mapping and turbine layout optimization.",
       "image": "/images/services/wind-1.jpg",
-      "fullDescription": "Wind resource assessment, mapping, and optimal turbine layout design for maximum energy production."
+      "category": "Renewable Energy",
+      "fullDescription": "Wind energy holds significant potential in Nepal's mountain regions. We provide comprehensive feasibility and design services for wind power projects from resource assessment to implementation planning.",
+      "benefits": [
+        "Clean and renewable energy generation",
+        "Excellent resource potential in mountain regions",
+        "Low operating costs once installed",
+        "Rapid deployment capability",
+        "Community benefit through local employment",
+        "Grid stability through predictable generation"
+      ],
+      "process": [
+        "Wind Resource Assessment",
+        "Site Characterization Study",
+        "Micro-siting Analysis",
+        "Detailed Design and Layout",
+        "Environmental Impact Assessment",
+        "Feasibility Report Preparation",
+        "Project Implementation Support"
+      ]
     },
     {
       "id": 6,
@@ -46,7 +133,24 @@
       "title": "Project Consulting",
       "description": "Lender's engineering and technical audits.",
       "image": "/images/services/consulting.jpg",
-      "fullDescription": "Comprehensive project consulting including lender's engineering reports and independent technical audits."
+      "category": "Technical Advisory",
+      "fullDescription": "Technical consulting and lender's engineering services are critical for successful project financing. We provide independent technical assessment and advisory services to development banks, commercial banks, and other lenders.",
+      "benefits": [
+        "Enhanced lender confidence for easier financing",
+        "Reduced project risks through thorough assessment",
+        "Improved project management and execution",
+        "Expert guidance on technical challenges",
+        "Compliance with international standards",
+        "Career development for project teams"
+      ],
+      "process": [
+        "Scope Definition with Client",
+        "Data Collection and Review",
+        "Field Investigations and Assessments",
+        "Technical Analysis and Risk Assessment",
+        "Reporting and Recommendations",
+        "Presentation and Follow-up Support"
+      ]
     }
   ]
 }

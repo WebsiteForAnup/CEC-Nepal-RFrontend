@@ -118,6 +118,47 @@
   font-size: 0.95rem;
 }
 
+.ctaContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 2px solid #e2e8f0;
+}
+
+.getInTouchBtn {
+  padding: 16px 48px;
+  background: linear-gradient(135deg, #0066cc, #0052a3);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.getInTouchBtn:hover {
+  background: linear-gradient(135deg, #0052a3, #003d7a);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 102, 204, 0.4);
+}
+
+.getInTouchBtn i {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.getInTouchBtn:hover i {
+  transform: translateX(3px);
+}
+
 @media (max-width: 768px) {
   .sectionHeader h2 {
     font-size: 2rem;

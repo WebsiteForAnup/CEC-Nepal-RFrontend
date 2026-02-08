@@ -1,14 +1,33 @@
 import React from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import styles from './Footer.module.css';
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 150,
-        behavior: 'smooth'
-      });
+    if (location.pathname !== '/') {
+      // We're on a detail page, navigate back to home with hash
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          window.scrollTo({
+            top: element.offsetTop - 150,
+            behavior: 'smooth'
+          });
+        }
+      }, 300);
+    } else {
+      // We're already on home, scroll directly
+      const element = document.getElementById(id);
+      if (element) {
+        window.scrollTo({
+          top: element.offsetTop - 150,
+          behavior: 'smooth'
+        });
+      }
     }
   };
 
@@ -20,7 +39,7 @@ const Footer = () => {
             {/* Company Info */}
             <div className={styles.footerCol}>
               <div className={styles.footerLogo}>
-                <img src="./images/cec-logo.png" alt="CEC Nepal" />
+                <img src="/images/cec-logo.png" alt="CEC Nepal" />
                 <h3>CEC<span>Nepal</span></h3>
               </div>
               <p className={styles.footerDesc}>
@@ -58,11 +77,11 @@ const Footer = () => {
             <div className={styles.footerCol}>
               <h4>Our Services</h4>
               <ul>
-                <li><a href="#services">Hydropower Projects</a></li>
-                <li><a href="#services">Solar Energy Solutions</a></li>
-                <li><a href="#services">Environmental Assessment</a></li>
-                <li><a href="#services">Infrastructure Development</a></li>
-                <li><a href="#services">Wind Energy</a></li>
+                <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>Hydropower Projects</a></li>
+                <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>Solar Energy Solutions</a></li>
+                <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>Environmental Assessment</a></li>
+                <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>Infrastructure Development</a></li>
+                <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>Wind Energy</a></li>
               </ul>
             </div>
 

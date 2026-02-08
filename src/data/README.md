@@ -55,34 +55,24 @@ About page content
 - Company history and mission
 - Areas of expertise
 - Team information
-- Key achievements
-
-### 8. **newsAndEvents.json**
-News and events feed
 - Type: news or event
 - Categorized content
 - Dates, images, excerpts
-- Full content for details page
-
-### 9. **navigation.json**
-Site navigation structure
-- Main menu links
-- Updates dropdown
-- Icon references
+### 10. **gallery.json**
+### 12. **api-schema.json**
+- Image title and category
+### 11. **downloads.json**
+### 13. **database-schema.json**
+- Resource title, category, file type
+- Download URLs and icons
+- Categories: Templates, Guidelines, Checklists, Company, Standards, Publications, Tools, Case Studies, Annual Reports
+- File types: PDF, DOCX, XLSX
 
 ### 10. **api-schema.json**
 API endpoint configuration
-- Available endpoints mapping
-- Filter options for queries
-- Pagination settings
-- Database collection names
 
 ### 11. **database-schema.json**
 Complete database schema documentation
-- Field definitions for each collection
-- Data types and requirements
-- Field descriptions
-- Enums and constraints
 
 ## Backend Integration Guide
 

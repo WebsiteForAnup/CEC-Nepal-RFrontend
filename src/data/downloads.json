@@ -1,0 +1,164 @@
+{
+  "downloads": [
+    {
+      "id": 1,
+      "title": "Hydropower Feasibility Study Template",
+      "category": "Templates",
+      "type": "PDF",
+      "size": "2.5 MB",
+      "description": "Comprehensive template for hydropower project feasibility studies including technical and financial analysis",
+      "icon": "fas fa-file-pdf",
+      "downloadUrl": "#"
+    },
+    {
+      "id": 2,
+      "title": "EIA/IEE Guidelines Nepal",
+      "category": "Guidelines",
+      "type": "PDF",
+      "size": "1.8 MB",
+      "description": "Environmental Impact Assessment and Initial Environmental Examination guidelines for Nepal",
+      "icon": "fas fa-file-pdf",
+      "downloadUrl": "#"
+    },
+    {
+      "id": 3,
+      "title": "Solar Project Design Checklist",
+      "category": "Checklists",
+      "type": "DOCX",
+      "size": "450 KB",
+      "description": "Complete checklist for solar energy project design and implementation",
+      "icon": "fas fa-file-word",
+      "downloadUrl": "#"
+    },
+    {
+      "id": 4,
+      "title": "CEC Company Profile 2024",
+      "category": "Company",
+      "type": "PDF",
+      "size": "5.2 MB",
+      "description": "Detailed company profile including services, projects, and achievements",
+      "icon": "fas fa-file-pdf",
+      "downloadUrl": "#"
+    },
+    {
+      "id": 5,
+      "title": "Project Management Framework",
+      "category": "Templates",
+      "type": "XLSX",
+      "size": "1.2 MB",
+      "description": "Excel-based project management framework for infrastructure projects",
+      "icon": "fas fa-file-excel",
+      "downloadUrl": "#"
+    },
+    {
+      "id": 6,
+      "title": "Hydropower Technical Standards",
+      "category": "Standards",
+      "type": "PDF",
+      "size": "3.4 MB",
+      "description": "Technical standards and specifications for hydropower projects in Nepal",
+      "icon": "fas fa-file-pdf",
+      "downloadUrl": "#"
+    },
+    {
+      "id": 7,
+      "title": "Construction Supervision Report Format",
+      "category": "Templates",
+      "type": "DOCX",
+      "size": "680 KB",
+      "description": "Standard format for construction supervision and progress reports",
+      "icon": "fas fa-file-word",
+      "downloadUrl": "#"
+    },
+    {
+      "id": 8,
+      "title": "Renewable Energy Policy Brief",
+      "category": "Publications",
+      "type": "PDF",
+      "size": "2.1 MB",
+      "description": "Policy brief on renewable energy development in Nepal",
+      "icon": "fas fa-file-pdf",
+      "downloadUrl": "#"
+    },
+    {
+      "id": 9,
+      "title": "Infrastructure Safety Guidelines",
+      "category": "Guidelines",
+      "type": "PDF",
+      "size": "1.9 MB",
+      "description": "Comprehensive safety guidelines for infrastructure development projects",
+      "icon": "fas fa-file-pdf",
+      "downloadUrl": "#"
+    },
+    {
+      "id": 10,
+      "title": "Environmental Monitoring Toolkit",
+      "category": "Tools",
+      "type": "XLSX",
+      "size": "890 KB",
+      "description": "Excel toolkit for environmental monitoring and compliance tracking",
+      "icon": "fas fa-file-excel",
+      "downloadUrl": "#"
+    },
+    {
+      "id": 11,
+      "title": "Case Study: Kabeli-B HEP",
+      "category": "Case Studies",
+      "type": "PDF",
+      "size": "4.3 MB",
+      "description": "Detailed case study of the successful Kabeli-B Hydroelectric Project",
+      "icon": "fas fa-file-pdf",
+      "downloadUrl": "#"
+    },
+    {
+      "id": 12,
+      "title": "Wind Energy Assessment Guide",
+      "category": "Guidelines",
+      "type": "PDF",
+      "size": "2.7 MB",
+      "description": "Guide for wind energy resource assessment and site evaluation",
+      "icon": "fas fa-file-pdf",
+      "downloadUrl": "#"
+    },
+    {
+      "id": 13,
+      "title": "CEC Annual Report 2025",
+      "category": "Annual Reports",
+      "type": "PDF",
+      "size": "8.5 MB",
+      "description": "Comprehensive annual report covering projects, achievements, and financial performance for 2025",
+      "icon": "fas fa-file-pdf",
+      "downloadUrl": "#"
+    },
+    {
+      "id": 14,
+      "title": "CEC Annual Report 2024",
+      "category": "Annual Reports",
+      "type": "PDF",
+      "size": "7.8 MB",
+      "description": "Annual report highlighting major milestones and project deliveries in 2024",
+      "icon": "fas fa-file-pdf",
+      "downloadUrl": "#"
+    },
+    {
+      "id": 15,
+      "title": "CEC Annual Report 2023",
+      "category": "Annual Reports",
+      "type": "PDF",
+      "size": "7.2 MB",
+      "description": "Annual report showcasing company growth and completed infrastructure projects in 2023",
+      "icon": "fas fa-file-pdf",
+      "downloadUrl": "#"
+    },
+    {
+      "id": 16,
+      "title": "CEC Annual Report 2022",
+      "category": "Annual Reports",
+      "type": "PDF",
+      "size": "6.9 MB",
+      "description": "Annual report detailing renewable energy initiatives and consulting services in 2022",
+      "icon": "fas fa-file-pdf",
+      "downloadUrl": "#"
+    }
+  ]
+}

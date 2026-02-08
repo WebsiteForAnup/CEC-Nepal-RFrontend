@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showBookingForm, setShowBookingForm] = useState(false);
   const [showUpdatesDropdown, setShowUpdatesDropdown] = useState(false);
+  const [pendingSection, setPendingSection] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,14 +34,37 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Handle pending scroll when navigating back to home
+  useEffect(() => {
+    if (location.pathname === '/' && pendingSection) {
+      setTimeout(() => {
+        const element = document.getElementById(pendingSection);
+        if (element) {
+          window.scrollTo({
+            top: element.offsetTop - 150,
+            behavior: 'smooth'
+          });
+        }
+        setPendingSection(null);
+      }, 300);
+    }
+  }, [location.pathname, pendingSection]);
+
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 150,
-        behavior: 'smooth'
-      });
-      setMobileMenuOpen(false);
+    setMobileMenuOpen(false);
+    if (location.pathname !== '/') {
+      // We're on a detail page, navigate back to home and mark the section
+      setPendingSection(id);
+      navigate('/');
+    } else {
+      // We're already on home, scroll directly
+      const element = document.getElementById(id);
+      if (element) {
+        window.scrollTo({
+          top: element.offsetTop - 150,
+          behavior: 'smooth'
+        });
+      }
     }
   };
 
@@ -189,8 +216,19 @@ const Navbar = () => {
       <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
         <div className={styles.container}>
           <div className={styles.navFlex}>
-            <a href="#home" className={styles.logo}>
-              <img src="./images/cec-logo.png" alt="CEC Nepal Logo" className={styles.logoImage} />
+            <a 
+              href="#" 
+              onClick={(e) => { 
+                e.preventDefault(); 
+                if (location.pathname !== '/') {
+                  navigate('/');
+                } else {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              }} 
+              className={styles.logo}
+            >
+              <img src="/images/cec-logo.png" alt="CEC Nepal Logo" className={styles.logoImage} />
               <span className={styles.logoText}>CEC<span className={styles.logoHighlight}>Nepal</span></span>
             </a>
             <ul className={styles.navLinks}>
@@ -206,12 +244,12 @@ const Navbar = () => {
               >
                 <a href="#updates">Updates</a>
                 <div className={`${styles.dropdown} ${showUpdatesDropdown ? styles.show : ''}`}>
-                  <a href="http://localhost:3002" className={styles.dropdownItem}>
+                  <Link to="/gallery" className={styles.dropdownItem}>
                     <span>Gallery</span>
-                  </a>
-                  <a href="http://localhost:3003" className={styles.dropdownItem}>
+                  </Link>
+                  <Link to="/downloads" className={styles.dropdownItem}>
                     <span>Downloads</span>
-                  </a>
+                  </Link>
                 </div>
               </li>
               <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a></li>

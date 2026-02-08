@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './NewsEvents.module.css';
 
 // Sample news and events data
@@ -164,10 +165,10 @@ const NewsEvents = () => {
                                 </p>
 
                                 {/* Read More Link */}
-                                <a href={item.link} className={styles['read-more']}>
+                                <Link to={`/news-event/${item.id}`} className={styles['read-more']}>
                                     <span>Read More</span>
                                     <i className="fas fa-arrow-right"></i>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     ))}
@@ -187,10 +188,10 @@ const NewsEvents = () => {
 
                 {/* See All Button */}
                 <div className={styles['see-all-container']}>
-                    <a href="#" className={styles['see-all-btn']}>
+                    <button className={styles['see-all-btn']} onClick={() => window.location.href = '/#news-events'}>
                         See All News & Events
                         <i className="fas fa-arrow-right"></i>
-                    </a>
+                    </button>
                 </div>
             </div>
         </section>
