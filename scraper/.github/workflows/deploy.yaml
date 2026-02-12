@@ -59,6 +59,7 @@ jobs:
             chmod 600 ~/.ssh/id_rsa
             ssh-keyscan -H ${{ secrets.REMOTE_HOST }} >> ~/.ssh/known_hosts
             
-            # Use -t to force pseudo-terminal allocation for sudo
-            ssh -o StrictHostKeyChecking=no -t ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} "sudo bash /home/anupadkh/deploy/cec/server/activate-config.sh"
+            # Use sudo -S to read password from standard input
+            ssh -i ~/.ssh/id_rsa ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} \
+              "echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S bash /home/anupadkh/deploy/cec/server/activate-config.sh"
 
