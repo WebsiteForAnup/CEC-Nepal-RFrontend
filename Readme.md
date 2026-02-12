@@ -1,12 +1,52 @@
-# Website: cecnepal.anup.pro.np
+# CEC Nepal - Frontend
 
-# Remote Location: /home/anupadkh/deploy/cec
+Frontend application for the Consulting Engineers' Consortium (CEC) Nepal website. Built with React.
 
-# Server Files: ./server
+## Deployment Information
 
-# Remote server: nginx
+- **Website**: cecnepal.anup.pro.np
+- **Remote Location**: `/home/anupadkh/deploy/cec`
+- **Server Files**: `./server`
+- **Remote Server**: Nginx
 
-# Required files:
-    - Nginx conf
-    - Certbot renewal and activation
-    - Deployment script in yaml
+## Tech Stack
+
+- React 18
+- React Router 6
+- CSS Modules
+- EmailJS
+
+## Features
+
+- Home Page
+- News & Events Detail
+- Service Detail
+- Project Detail
+- Gallery
+- Downloads
+- Scroll to top functionality
+
+## Installation & Usage
+
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+2. **Start development server**:
+   ```bash
+   npm start
+   ```
+   Runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+3. **Build for production**:
+   ```bash
+   npm run build
+   ```
+   Builds the app for production to the `docs` folder.
+
+## Deployment Requirements
+
+- Nginx configuration
+- Certbot for SSL renewal and activation
+- Deployment script (YAML)
