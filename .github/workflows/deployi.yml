@@ -52,13 +52,13 @@ jobs:
       #       # Ensure the deployment directory exists (using standard ssh since we don't need sudo here yet, or rely on proper permissions)
       #       # The previous rsync actions likely created the directory structure.
             
-      - name: Activate Configuration (Sudo Operations)
-        run: |
-            mkdir -p ~/.ssh/
-            echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-            chmod 600 ~/.ssh/id_rsa
-            ssh-keyscan -H ${{ secrets.REMOTE_HOST }} >> ~/.ssh/known_hosts
+      # - name: Activate Configuration (Sudo Operations)
+      #   run: |
+      #       mkdir -p ~/.ssh/
+      #       echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+      #       chmod 600 ~/.ssh/id_rsa
+      #       ssh-keyscan -H ${{ secrets.REMOTE_HOST }} >> ~/.ssh/known_hosts
             
-            # Use sudo -S to read password from stdin (required for non-interactive execution)
-            ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} "echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S bash /home/anupadkh/deploy/cec/server/activate-config.sh"
+      #       # Use sudo -S to read password from stdin (required for non-interactive execution)
+      #       ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} "echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S bash /home/anupadkh/deploy/cec/server/activate-config.sh"
 
