@@ -1,0 +1,128 @@
+{
+  "website": "https://cecnepal.com.np/",
+  "scraped_at": "2026-03-02T10:50:40.860248",
+  "homepage": {
+    "page": "homepage",
+    "scraped_at": "2026-03-02T10:50:45.826359",
+    "company_name": "Clean Energy Consultants (p) Ltd",
+    "tagline": "Clean Energy For Generations",
+    "about_summary": "Clean Energy Consultants Pvt. Ltd. (CEC), established in 2006, stands as a leading national consultancy firm with a sharp focus on planning, feasibility studies, detailed engineering design, construction monitoring, and commissioning of hydropower, solar, environment, and infrastructure projects. We actively confront the evolving challenges faced by developers and investors at all project stages, turning these challenges into opportunities for impactful solutions. Our team combines extensive expertise and insights to deliver sustainable outcomes that add significant value to hydropower and solar initiatives, water resource development, environment and tunneling, river management, and other critical infrastructure projects.",
+    "stats": [
+      "Projects",
+      "Completed Projects",
+      "Current Projects",
+      "Projects",
+      "95+ Project",
+      "50+ Staffs",
+      "20+ Years of Experience",
+      "Our Project Summary",
+      "Isuwa Khola Hydropower Project",
+      "Project Development Assistance"
+    ],
+    "objectives": [],
+    "vision": "",
+    "mission": ""
+  },
+  "services": [
+    {
+      "title": "Super Madi HEP",
+      "description": "44.00 MW"
+    },
+    {
+      "title": "Upper Marsyandi HPP",
+      "description": "150 MW"
+    },
+    {
+      "title": "Isuwa Khola Hydropower Project",
+      "description": "97.20 MW"
+    },
+    {
+      "title": "Mewa Khola HEP",
+      "description": "50.00 MW"
+    },
+    {
+      "title": "Super Dordi HEP",
+      "description": "54.00 MW"
+    },
+    {
+      "title": "Marsyangdi Nadi PRoR HPP",
+      "description": "99.8 MW"
+    },
+    {
+      "title": "Feasibility study of Hydro Power",
+      "description": "We offer All kind of Feasibility ranging for technical feasibilty all the way to legal and economical feasibility"
+    },
+    {
+      "title": "Project Development Assistance",
+      "description": "We offer All kind of Feasibility ranging for technical feasibilty all the way to legal and economical feasibility"
+    },
+    {
+      "title": "Detailed Design And SuperVision",
+      "description": "We offer All kind of Feasibility ranging for technical feasibilty all the way to legal and economical feasibility"
+    },
+    {
+      "title": "Geo Technical Investigation",
+      "description": "We offer All kind of Feasibility ranging for technical feasibilty all the way to legal and economical feasibility"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Super Madi HEP",
+      "capacity": "44.00 MW"
+    },
+    {
+      "name": "Upper Marsyandi HPP",
+      "capacity": "150 MW"
+    },
+    {
+      "name": "Isuwa Khola Hydropower Project",
+      "capacity": "97.20 MW"
+    },
+    {
+      "name": "Mewa Khola HEP",
+      "capacity": "50.00 MW"
+    },
+    {
+      "name": "Super Dordi HEP",
+      "capacity": "54.00 MW"
+    },
+    {
+      "name": "Marsyangdi Nadi PRoR HPP",
+      "capacity": "99.8 MW"
+    }
+  ],
+  "partners": [
+    "akara",
+    "arun_vally",
+    "bindi",
+    "bhl",
+    "baneshwor",
+    "nyp",
+    "nyadi",
+    "metrovibes",
+    "maya",
+    "janatabank",
+    "hydrolab",
+    "electom",
+    "cmatwaterlab",
+    "chf",
+    "cemat",
+    "water",
+    "tera",
+    "task",
+    "shiva",
+    "sak",
+    "rk",
+    "ridi",
+    "rhd",
+    "peoples",
+    "pashupati",
+    "Loading"
+  ],
+  "contact": {
+    "emails": [],
+    "phones": [],
+    "address": "",
+    "social_links": []
+  }
+}
