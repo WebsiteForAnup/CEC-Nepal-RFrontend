@@ -73,7 +73,7 @@ const Home = () => {
 
                 <Services services={services} />
                 <Projects projects={projects} />
-                <Statistics stats={statCards} />
+                <Statistics stats={stats} />
                 <FAQ faqs={faqs} />
                 <NewsEvents newsAndEvents={newsAndEvents} />
                 <Contact company={company} />

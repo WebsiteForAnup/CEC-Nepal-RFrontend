@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import styles from './Projects.module.css';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 
