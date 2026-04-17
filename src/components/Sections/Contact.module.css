@@ -42,7 +42,7 @@
 .contactInfo h2 {
   font-size: 1.8rem;
   margin-bottom: 2rem;
-  color: #10b981;
+  color: var(--primary);
   font-weight: 700;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .infoItem i {
-  color: #10b981;
+  color: var(--primary);
   font-size: 1.5rem;
   margin-top: 0.3rem;
   flex-shrink: 0;
@@ -98,7 +98,7 @@
 
 .contactForm form input:focus,
 .contactForm form textarea:focus {
-  border-color: #10b981;
+  border-color: var(--primary);
   box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
 }
 
@@ -136,7 +136,7 @@
 .message.success {
   background-color: #ecfdf5;
   color: #065f46;
-  border-left: 4px solid #10b981;
+  border-left: 4px solid var(--primary);
 }
 
 .message.error {
@@ -159,7 +159,7 @@
 .submitBtn {
   width: 100%;
   padding: 1rem;
-  background: #10b981;
+  background: var(--primary);
   color: white;
   border: none;
   border-radius: 8px;
@@ -170,7 +170,7 @@
 }
 
 .submitBtn:hover {
-  background: #059669;
+  background: var(--primary-dark);
   transform: translateY(-2px);
 }
 

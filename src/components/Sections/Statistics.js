@@ -43,7 +43,7 @@ const Statistics = ({ stats = [] }) => {
                 <span>25 Projects</span>
               </div>
               <div className={styles.progressBar}>
-                <div className={styles.progress} style={{ width: '38%', backgroundColor: '#10b981' }}></div>
+                <div className={styles.progress} style={{ width: '38%', backgroundColor: 'var(--primary)' }}></div>
               </div>
             </div>
             <div className={styles.statusItem}>

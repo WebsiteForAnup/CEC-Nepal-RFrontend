@@ -8,10 +8,11 @@
    Root Color Variables
    ======================== */
 :root {
-  --primary: #3bbce7;         /* Light Blue */
-  --primary-dark: #6bc7ec;    /* Darker Blue for hover */
-  --secondary: #10b981;       /* Green accent */
-  --secondary-dark: #059669;  /* Darker green hover */
+  --primary: #46a33c;         /* Primary Green */
+  --primary-dark: #3a8732;    /* Darker Green for hover */
+  --primary-light: #f0fdf4;   /* Very Light Green background */
+  --secondary: var(--primary);       /* Emerald accent */
+  --secondary-dark: var(--primary-dark);  /* Darker emerald hover */
   --bg-light: #ffffff;        /* White background */
   --white: #ffffff;
   --text-main: #1f2937;       /* Dark gray */

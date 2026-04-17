@@ -85,7 +85,7 @@ const ProjectDetail = () => {
 
     const getStatusColor = (status) => {
         const colors = {
-            'Generation': '#10b981',
+            'Generation': 'var(--primary)',
             'Under Construction': '#f59e0b',
             'PPA Stage': '#3b82f6',
             'Testing and Commissioning': '#8b5cf6'

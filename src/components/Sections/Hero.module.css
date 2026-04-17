@@ -23,7 +23,7 @@
 
 .heroBadge {
   background: rgba(16, 185, 129, 0.2);
-  border: 1px solid #10b981;
+  border: 1px solid var(--primary);
   padding: 6px 18px;
   border-radius: 50px;
   display: inline-block;
@@ -43,7 +43,7 @@
 }
 
 .hero h1 span {
-  color: #10b981;
+  color: var(--primary);
 }
 
 .hero p {
@@ -77,12 +77,12 @@
 }
 
 .btnPrimary {
-  background: #10b981;
+  background: var(--primary);
   color: white;
 }
 
 .btnPrimary:hover {
-  background: #059669;
+  background: var(--primary-dark);
   transform: translateY(-3px) scale(1.05);
   transform: translateY(-3px);
 }

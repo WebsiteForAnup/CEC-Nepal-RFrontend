@@ -20,14 +20,14 @@
 }
 
 .breadcrumb a {
-    color: #0066cc;
+    color: var(--primary);
     text-decoration: none;
     font-weight: 500;
     transition: all 0.2s ease;
 }
 
 .breadcrumb a:hover {
-    color: #0052a3;
+    color: var(--primary-dark);
 }
 
 .breadcrumb span {
@@ -54,7 +54,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 102, 204, 0.85), rgba(16, 185, 129, 0.75));
+    background: linear-gradient(135deg, rgba(70, 163, 60, 0.85), rgba(16, 185, 129, 0.75));
     display: flex;
     align-items: flex-end;
     padding: 60px 40px;
@@ -71,7 +71,7 @@
 .hero-badge {
     display: inline-block;
     padding: 8px 20px;
-    background: #10b981;
+    background: var(--primary);
     color: white;
     border-radius: 20px;
     font-size: 14px;
@@ -130,7 +130,7 @@
     color: #1a202c;
     margin: 0 0 20px 0;
     padding-bottom: 15px;
-    border-bottom: 3px solid #0066cc;
+    border-bottom: 3px solid var(--primary);
 }
 
 .project-description p {
@@ -151,7 +151,7 @@
     color: #1a202c;
     margin: 0 0 30px 0;
     padding-bottom: 15px;
-    border-bottom: 3px solid #10b981;
+    border-bottom: 3px solid var(--primary);
 }
 
 .specs-grid {
@@ -167,19 +167,19 @@
     padding: 25px;
     background: #f8f9fa;
     border-radius: 12px;
-    border-left: 4px solid #0066cc;
+    border-left: 4px solid var(--primary);
     transition: all 0.3s ease;
 }
 
 .spec-item:hover {
-    background: linear-gradient(135deg, rgba(0, 102, 204, 0.08), rgba(16, 185, 129, 0.05));
+    background: linear-gradient(135deg, rgba(70, 163, 60, 0.08), rgba(16, 185, 129, 0.05));
     transform: translateX(4px);
-    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.1);
+    box-shadow: 0 4px 12px rgba(70, 163, 60, 0.1);
 }
 
 .spec-item i {
     font-size: 28px;
-    color: #0066cc;
+    color: var(--primary);
     flex-shrink: 0;
 }
 
@@ -211,7 +211,7 @@
     color: #1a202c;
     margin: 0 0 40px 0;
     padding-bottom: 15px;
-    border-bottom: 3px solid #10b981;
+    border-bottom: 3px solid var(--primary);
 }
 
 .timeline {
@@ -226,7 +226,7 @@
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(to bottom, #0066cc, #10b981);
+    background: linear-gradient(to bottom, var(--primary), var(--primary));
 }
 
 .timeline-item {
@@ -246,15 +246,15 @@
     height: 18px;
     border-radius: 50%;
     background: white;
-    border: 3px solid #0066cc;
-    box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);
+    border: 3px solid var(--primary);
+    box-shadow: 0 0 0 4px rgba(70, 163, 60, 0.1);
 }
 
 .timeline-content {
     background: #f8f9fa;
     padding: 20px;
     border-radius: 8px;
-    border-left: 3px solid #10b981;
+    border-left: 3px solid var(--primary);
 }
 
 .timeline-content p {
@@ -267,7 +267,7 @@
 /* CTA Section */
 .cta-section {
     padding: 50px;
-    background: linear-gradient(135deg, rgba(0, 102, 204, 0.08), rgba(16, 185, 129, 0.05));
+    background: linear-gradient(135deg, rgba(70, 163, 60, 0.08), rgba(16, 185, 129, 0.05));
     border-radius: 12px;
     text-align: center;
     margin-top: 50px;
@@ -288,7 +288,7 @@
 
 .contact-btn {
     padding: 16px 50px;
-    background: linear-gradient(135deg, #0066cc, #0052a3);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: white;
     border: none;
     border-radius: 8px;
@@ -299,15 +299,15 @@
     align-items: center;
     gap: 12px;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
+    box-shadow: 0 8px 20px rgba(70, 163, 60, 0.3);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .contact-btn:hover {
-    background: linear-gradient(135deg, #0052a3, #003d7a);
+    background: linear-gradient(135deg, var(--primary-dark), #003d7a);
     transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(0, 102, 204, 0.4);
+    box-shadow: 0 12px 28px rgba(70, 163, 60, 0.4);
 }
 
 .contact-btn i {
@@ -338,7 +338,7 @@
 .info-card:hover,
 .related-projects:hover,
 .contact-card:hover {
-    box-shadow: 0 8px 20px rgba(0, 102, 204, 0.12);
+    box-shadow: 0 8px 20px rgba(70, 163, 60, 0.12);
     transform: translateY(-2px);
 }
 
@@ -350,7 +350,7 @@
     color: #1a202c;
     margin: 0 0 20px 0;
     padding-bottom: 15px;
-    border-bottom: 3px solid #0066cc;
+    border-bottom: 3px solid var(--primary);
 }
 
 .info-item {
@@ -367,7 +367,7 @@
 }
 
 .info-item strong {
-    color: #0066cc;
+    color: var(--primary);
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -410,7 +410,7 @@
 }
 
 .project-link:hover {
-    background: linear-gradient(135deg, rgba(0, 102, 204, 0.08), rgba(16, 185, 129, 0.05));
+    background: linear-gradient(135deg, rgba(70, 163, 60, 0.08), rgba(16, 185, 129, 0.05));
     transform: translateX(5px);
 }
 
@@ -433,7 +433,7 @@
 }
 
 .project-link i {
-    color: #0066cc;
+    color: var(--primary);
     font-size: 12px;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -454,7 +454,7 @@
 .contact-btn-small {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(135deg, #0066cc, #0052a3);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: white;
     border: none;
     border-radius: 8px;
@@ -467,9 +467,9 @@
 }
 
 .contact-btn-small:hover {
-    background: linear-gradient(135deg, #0052a3, #003d7a);
+    background: linear-gradient(135deg, var(--primary-dark), #003d7a);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 102, 204, 0.3);
+    box-shadow: 0 6px 16px rgba(70, 163, 60, 0.3);
 }
 
 /* Not Found */
@@ -494,7 +494,7 @@
 
 .back-btn {
     padding: 14px 36px;
-    background: linear-gradient(135deg, #0066cc, #0052a3);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: white;
     border: none;
     border-radius: 8px;
@@ -502,15 +502,15 @@
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 6px 16px rgba(0, 102, 204, 0.3);
+    box-shadow: 0 6px 16px rgba(70, 163, 60, 0.3);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .back-btn:hover {
-    background: linear-gradient(135deg, #0052a3, #003d7a);
+    background: linear-gradient(135deg, var(--primary-dark), #003d7a);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
+    box-shadow: 0 8px 20px rgba(70, 163, 60, 0.3);
 }
 
 /* Responsive Design */

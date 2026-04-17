@@ -17,11 +17,11 @@
       { "start": 0,    "end": 150, "suffix": "+", "label": "MW Optimized",  "duration": 2000 },
       { "start": 1990, "end": 2006, "suffix": "",  "label": "Established",   "duration": 2000 }
     ],
-    "intro": "Clean Energy Consultants Pvt. Ltd. (CEC Nepal) is Nepal's leading engineering consultancy firm specializing in hydropower, renewable energy, and infrastructure development.",
+    "intro": "Clean Energy Consultants Pvt. Ltd. (CEC), established in 2006, is a leading national consultancy firm focusing on hydropower, solar, environment, and infrastructure projects across all project stages.",
     "history": {
-      "founded": "1999",
+      "founded": "2006",
       "founder": "Mr. Mani Raj Dahal",
-      "milestone": "From a small consultancy to Nepal's most trusted hydropower engineering firm"
+      "milestone": "A sharp focus on delivering impactful, sustainable solutions for hydropower and water resource development."
     }
   }
 }

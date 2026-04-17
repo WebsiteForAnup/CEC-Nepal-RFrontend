@@ -52,7 +52,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid #10b981;
+  border: 2px solid var(--primary);
   object-fit: cover;
 }
 
@@ -64,7 +64,7 @@
 }
 
 .footerLogo span {
-  color: #10b981;
+  color: var(--primary);
 }
 
 .footerDesc {
@@ -91,7 +91,7 @@
   left: 0;
   width: 40px;
   height: 3px;
-  background: linear-gradient(90deg, #10b981 0%, transparent 100%);
+  background: linear-gradient(90deg, var(--primary) 0%, transparent 100%);
 }
 
 /* Links */
@@ -122,12 +122,12 @@
   left: -15px;
   width: 0;
   height: 2px;
-  background: #10b981;
+  background: var(--primary);
   transition: width 0.3s ease;
 }
 
 .footerCol ul li a:hover {
-  color: #10b981;
+  color: var(--primary);
   padding-left: 15px;
 }
 
@@ -145,7 +145,7 @@
 }
 
 .contactInfo i {
-  color: #10b981;
+  color: var(--primary);
   font-size: 1rem;
   margin-top: 0.2rem;
   min-width: 20px;
@@ -182,7 +182,7 @@
   width: 0;
   height: 0;
   border-radius: 50%;
-  background: #10b981;
+  background: var(--primary);
   transition: all 0.5s ease;
   transform: translate(-50%, -50%);
   z-index: -1;
@@ -195,7 +195,7 @@
 
 .socials a:hover {
   color: white;
-  border-color: #10b981;
+  border-color: var(--primary);
   transform: translateY(-5px) scale(1.1);
   box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
 }
@@ -235,7 +235,7 @@
 }
 
 .footerLinks a:hover {
-  color: #10b981;
+  color: var(--primary);
 }
 
 .separator {

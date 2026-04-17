@@ -132,7 +132,7 @@
 .projectCard:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-  border-color: #10b981;
+  border-color: var(--primary);
 }
 
 .projectImage {
@@ -209,7 +209,7 @@
 }
 
 .capacity.Generation {
-  background: #10b981;
+  background: var(--primary);
 }
 
 .capacity.UnderConstruction {
@@ -252,7 +252,7 @@
 
 .projectDetails p:nth-child(2) .statusBadge {
   background: rgba(16, 185, 129, 0.1);
-  color: #059669;
+  color: var(--primary-dark);
 }
 
 .projectCard:hover .statusBadge {

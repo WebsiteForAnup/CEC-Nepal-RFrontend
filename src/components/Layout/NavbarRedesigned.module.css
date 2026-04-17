@@ -4,13 +4,11 @@
 
 /* ========== TOP UTILITY BAR ========== */
 .topBar {
-  background: linear-gradient(135deg, #004aad 0%, #003d8f 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   padding: 0.75rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative; /* Scrolls away */
+  z-index: 1001;
 }
 
 .topContainer {
@@ -32,7 +30,7 @@
 }
 
 .taglineSection i {
-  color: #10b981;
+  color: var(--primary);
   font-size: 1.1rem;
   flex-shrink: 0;
 }
@@ -53,7 +51,7 @@
   align-items: center;
   gap: 0.6rem;
   background: white;
-  color: #004aad;
+  color: var(--primary);
   border: none;
   padding: 0.5rem 1.2rem;
   border-radius: 6px;
@@ -82,17 +80,29 @@
 /* ========== MAIN NAVIGATION BAR ========== */
 .navbar {
   position: sticky;
-  top: 3.5rem;
-  z-index: 998;
+  top: 0;
+  z-index: 1000;
   background: white;
   border-bottom: 1px solid #f0f0f0;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 1rem 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 1.25rem 0;
+  width: 100%;
+  left: 0;
+  right: 0;
 }
 
 .navbar.scrolled {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 0.8rem 0;
+  top: 15px;
+  width: 95%;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 100px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 0.75rem 0;
 }
 
 .container {
@@ -141,7 +151,7 @@
 }
 
 .logoHighlight {
-  color: #004aad;
+  color: var(--primary);
   font-weight: 800;
 }
 
@@ -172,7 +182,7 @@
 }
 
 .navLink:hover {
-  color: #004aad;
+  color: var(--primary);
 }
 
 .navLink::after {
@@ -182,7 +192,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #004aad, #0066cc);
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 2px;
 }
@@ -244,7 +254,7 @@
 
 .dropdownItem:hover {
   background: #f8f9ff;
-  color: #004aad;
+  color: var(--primary);
   padding-left: 1.75rem;
 }
 
@@ -257,7 +267,7 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  background: linear-gradient(135deg, #004aad 0%, #0066cc 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   color: white;
   border: none;
   padding: 0.6rem 1.4rem;
@@ -393,7 +403,7 @@
 }
 
 .closeBtn:hover {
-  background: #004aad;
+  background: var(--primary);
   color: white;
   transform: rotate(90deg);
 }
@@ -450,9 +460,9 @@
 .modalContent textarea:focus,
 .modalContent select:focus {
   outline: none;
-  border-color: #004aad;
+  border-color: var(--primary);
   background: white;
-  box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.1);
+  box-shadow: 0 0 0 3px rgba(70, 163, 60, 0.1);
 }
 
 .modalContent input::placeholder {
@@ -466,7 +476,7 @@
 }
 
 .submitBtn {
-  background: linear-gradient(135deg, #004aad 0%, #0066cc 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   color: white;
   border: none;
   padding: 1rem 1.5rem;
@@ -536,7 +546,13 @@
   }
 
   .navbar {
-    top: 3rem;
+    top: 0;
+  }
+  
+  .navbar.scrolled {
+    top: 10px;
+    width: 96%;
+    border-radius: 12px;
   }
 
   .container {

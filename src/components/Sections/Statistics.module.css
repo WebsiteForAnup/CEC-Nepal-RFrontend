@@ -29,7 +29,7 @@
 .line {
   height: 4px;
   width: 60px;
-  background: linear-gradient(90deg, #10b981, #1565c0);
+  background: linear-gradient(90deg, var(--primary), #1565c0);
   margin: 0 auto;
   border-radius: 2px;
 }
@@ -89,7 +89,7 @@
 
 .suffix {
   font-size: 1.2rem;
-  color: #10b981;
+  color: var(--primary);
   margin-left: 0.15rem;
 }
 

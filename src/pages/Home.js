@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Hero from '../components/Sections/Hero';
 import About from '../components/Sections/About';
@@ -51,6 +51,12 @@ const Home = () => {
     const company = getCompany(companyJson);
     const profile = getCompanyProfile(profileJson);
     const faqs = getFAQs(faqJson);
+
+    useEffect(() => {
+        if (company?.name) {
+            document.title = `Home | ${company.name}`;
+        }
+    }, [company]);
 
     return (
         <>

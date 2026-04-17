@@ -35,7 +35,7 @@
 .line {
   height: 4px;
   width: 80px;
-  background: linear-gradient(90deg, #10b981, #1565c0);
+  background: linear-gradient(90deg, var(--primary), #1565c0);
   margin: 0 auto 1rem;
   border-radius: 2px;
 }
@@ -159,7 +159,7 @@
 .ctaButton {
   display: inline-block;
   padding: 0.75rem 2rem;
-  background: linear-gradient(135deg, #10b981, #059669);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: white;
   text-decoration: none;
   border-radius: 8px;
@@ -171,7 +171,7 @@
 .ctaButton:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
-  background: linear-gradient(135deg, #059669, #047857);
+  background: linear-gradient(135deg, var(--primary-dark), #047857);
 }
 
 /* Responsive */

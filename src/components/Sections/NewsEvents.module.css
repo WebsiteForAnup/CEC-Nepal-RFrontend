@@ -164,7 +164,7 @@
 }
 
 .badge.event {
-    background: #10b981;
+    background: var(--primary);
 }
 
 /* ============================================
@@ -302,7 +302,7 @@
 
 .see-all-btn {
     padding: 0.875rem 2.5rem;
-    background: linear-gradient(135deg, #10bffb, #10b981);
+    background: linear-gradient(135deg, #10bffb, var(--primary));
     color: #ffffff;
     font-weight: 600;
     font-size: 1rem;
