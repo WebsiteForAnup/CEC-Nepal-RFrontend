@@ -4,7 +4,6 @@ import styles from './Projects.module.css';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 const Projects = ({ projects = [] }) => {
-  const navigate = useNavigate();
   const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.1 });
 
   // Categorical clusters requested by the user

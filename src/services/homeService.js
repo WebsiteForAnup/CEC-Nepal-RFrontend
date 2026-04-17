@@ -57,7 +57,10 @@ export const getAllTeamMembers = (teamJson) => {
  * @returns {Array} statCards
  */
 export const getStatistics = (statisticsJson) => {
-  return statisticsJson?.statistics || [];
+  return {
+    cards: statisticsJson?.statistics || [],
+    breakdown: statisticsJson?.breakdown || []
+  };
 };
 
 // ─── Hero ─────────────────────────────────────────────────────────────────────

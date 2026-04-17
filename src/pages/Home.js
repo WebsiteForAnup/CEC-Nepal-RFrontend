@@ -44,7 +44,7 @@ const Home = () => {
     const about = getAbout(aboutJson);
     const services = getServices(servicesJson);
     const projects = getProjects(projectsJson);
-    const statCards = getStatistics(statisticsJson);
+    const stats = getStatistics(statisticsJson);
     const newsAndEvents = getNewsAndEvents(newsJson);
     const teamCategories = getTeamCategories(teamJson);
     const teamCategoryNames = getTeamCategoryNames(teamJson);
