@@ -4,77 +4,77 @@
       "id": 1,
       "title": "Survey Operations",
       "category": "Field Work",
-      "image": "https://cecnepal.com.np/wp-content/uploads/2024/12/Survey.png",
+      "image": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Survey.png_c80811bf.png",
       "description": "Advanced surveying and mapping operations for hydropower projects"
     },
     {
       "id": 2,
       "title": "Desk Studies",
       "category": "Engineering",
-      "image": "https://cecnepal.com.np/wp-content/uploads/2024/12/Desk.png",
+      "image": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Desk.png_a02f101c.png",
       "description": "Comprehensive desk studies and technical analysis"
     },
     {
       "id": 3,
       "title": "GIS Mapping",
       "category": "Technology",
-      "image": "https://cecnepal.com.np/wp-content/uploads/2024/12/Mapping.png",
+      "image": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Mapping.png_33ae0a4e.png",
       "description": "Geographic Information System mapping and spatial analysis"
     },
     {
       "id": 4,
       "title": "Detailed Engineering",
       "category": "Engineering",
-      "image": "https://cecnepal.com.np/wp-content/uploads/2024/12/Detailed-Engineering.png",
+      "image": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Detailed-Engineering.png_d970e6ca.png",
       "description": "Detailed engineering design and project planning"
     },
     {
       "id": 5,
       "title": "Construction Supervision",
       "category": "Construction",
-      "image": "https://cecnepal.com.np/wp-content/uploads/2024/12/Construction-Supervision.png",
+      "image": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Construction-Supervision-258x300.png_cc4a7b21.png",
       "description": "On-site construction supervision and quality control"
     },
     {
       "id": 6,
       "title": "Project Site Visit",
       "category": "Field Work",
-      "image": "https://cecnepal.com.np/wp-content/uploads/2024/01/0-02-03-6caf56c02a149e4ba48702ff0a0e52fb25dad5469ecc879ffe5f58462b77cf18_59eccfe8a97d9d44.jpg",
+      "image": "/images/data/cecnepal.com.np_wp-content_plugins_elementor_assets_images_placeholder.png_4a979903.png",
       "description": "Team conducting site inspection and assessment"
     },
     {
       "id": 7,
       "title": "Team Collaboration",
       "category": "Team",
-      "image": "https://cecnepal.com.np/wp-content/uploads/2024/02/viber_image_2024-02-05_13-28-15-068.jpg",
+      "image": "/images/data/cecnepal.com.np_wp-content_plugins_elementor_assets_images_placeholder.png_4a979903.png",
       "description": "Collaborative project planning and execution"
     },
     {
       "id": 8,
       "title": "Discharge Measurement",
       "category": "Hydrology",
-      "image": "https://cecnepal.com.np/wp-content/uploads/2024/12/Discharge-Measurement.jpg",
+      "image": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Discharge-Measurement.jpg_f843543f.jpeg",
       "description": "Hydrological measurements and river discharge analysis"
     },
     {
       "id": 9,
       "title": "Road Design Analysis",
       "category": "Infrastructure",
-      "image": "https://cecnepal.com.np/wp-content/uploads/2024/12/Road-Design-Analysis.jpg",
+      "image": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Road-Design-Analysis.jpg_62160715.jpeg",
       "description": "Infrastructure design and road network planning"
     },
     {
       "id": 10,
       "title": "Geotechnical Investigation",
       "category": "Geology",
-      "image": "https://cecnepal.com.np/wp-content/uploads/2024/12/Geotechnical-InvestigationCore-Drilling-1.jpg",
+      "image": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Geotechnical-InvestigationCore-Drilling-1.jpg_e22edc01.jpeg",
       "description": "Core drilling and geotechnical site investigation"
     },
     {
       "id": 11,
       "title": "Hydropower Project Studies",
       "category": "Projects",
-      "image": "https://cecnepal.com.np/wp-content/uploads/2023/10/CEC-studies-Project.jpg",
+      "image": "/images/data/cecnepal.com.np_wp-content_uploads_2023_10_CEC-studies-Project-1024x726.jpg_649bbdfd.jpeg",
       "description": "Comprehensive hydropower feasibility studies"
     }
   ]
