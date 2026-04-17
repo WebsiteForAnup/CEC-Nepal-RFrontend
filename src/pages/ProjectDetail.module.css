@@ -1,11 +1,204 @@
-.main-content {
-    min-height: calc(100vh - 200px);
-    background: #ffffff;
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+/* Category Explorer Header */
+.explorer-header {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.explorer-header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1a202c;
+    margin-bottom: 30px;
+}
+
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.category-btn {
+    padding: 12px 24px;
+    background: #f8f9fa;
+    border: 1px solid #e2e8f0;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a5568;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+    background: #edf2f7;
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.category-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(70, 163, 60, 0.25);
+}
+
+/* Two-Column Explorer Layout */
+.explorer-body {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 0;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+    margin-bottom: 80px;
+    border: 1px solid rgba(70, 163, 60, 0.1);
+    min-height: 850px;
+}
+
+/* Sidebar List */
+.sidebar-list {
+    background: #f1f5f9; /* Distinct background for sidebar */
+    border-right: 1px solid #e2e8f0;
+    overflow-y: auto;
+    max-height: 850px;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background: white;
+    border-bottom: 1px solid #edf2f7;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+.sidebar-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0;
+}
+
+.project-item {
+    padding: 24px 20px;
+    border-bottom: 1px solid #edf2f7;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.project-item:hover {
+    background: rgba(70, 163, 60, 0.05);
+}
+
+.project-item.active {
+    background: white;
+    border-left: 4px solid var(--primary);
+}
+
+.item-info h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0 0 8px 0;
+    transition: color 0.3s ease;
+}
+
+.project-item.active .item-info h4 {
+    color: var(--primary);
+}
+
+.item-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #718096;
+}
+
+/* Detail Panel */
+.detail-panel {
+    background: white;
+    overflow-y: auto;
+}
+
+.detail-hero {
+    position: relative;
+    height: 350px;
+    width: 100%;
+}
+
+.detail-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.detail-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+}
+
+.detail-overlay h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    color: white !important;
+    border: none !important;
+}
+
+.detail-inner-content {
+    padding: 40px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.info-box {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.info-box strong {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.info-box span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+/* Timeline Custom Styling */
+.timeline-section h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f1f5f9;
 }
 
 /* Breadcrumb */
@@ -513,124 +706,66 @@
     box-shadow: 0 8px 20px rgba(70, 163, 60, 0.3);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .breadcrumb {
-        padding: 20px 20px;
-        font-size: 12px;
-    }
-
-    .hero-section {
-        height: 350px;
-    }
-
-    .hero-overlay {
-        padding: 40px 20px;
-    }
-
-    .hero-content h1 {
-        font-size: 32px;
-    }
-
-    .hero-meta {
-        font-size: 14px;
-        gap: 15px;
-    }
-
-    .content-wrapper {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 40px 20px;
-    }
-
-    .project-description h2 {
-        font-size: 26px;
-    }
-
-    .technical-section h2,
-    .timeline-section h2 {
-        font-size: 24px;
-    }
-
-    .specs-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .cta-section {
-        padding: 40px 25px;
-    }
-
-    .cta-section h2 {
-        font-size: 24px;
+/* Responsive Design Update for Project Explorer */
+@media (max-width: 1024px) {
+    .explorer-body {
+        grid-template-columns: 320px 1fr;
     }
 }
 
-@media (max-width: 480px) {
-    .breadcrumb {
-        padding: 15px 15px;
+@media (max-width: 850px) {
+    .explorer-body {
+        grid-template-columns: 1fr;
+        min-height: auto;
     }
 
-    .hero-section {
-        height: 250px;
+    .sidebar-list {
+        max-height: 400px;
+        border-right: none;
+        border-bottom: 2px solid #edf2f7;
     }
 
-    .hero-overlay {
-        padding: 30px 15px;
+    .detail-overlay h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .explorer-header h1 {
+        font-size: 26px;
     }
 
-    .hero-content h1 {
-        font-size: 24px;
+    .category-buttons {
+        gap: 8px;
     }
 
-    .hero-meta {
+    .category-btn {
+        padding: 8px 16px;
         font-size: 13px;
     }
 
-    .content-wrapper {
-        padding: 30px 15px;
+    .detail-hero {
+        height: 250px;
     }
 
-    .project-description h2 {
+    .detail-overlay {
+        padding: 20px;
+    }
+
+    .detail-overlay h2 {
         font-size: 22px;
     }
 
-    .technical-section h2,
-    .timeline-section h2 {
-        font-size: 20px;
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
 
-    .spec-item {
+    .detail-inner-content {
         padding: 20px;
     }
 
-    .spec-item i {
-        font-size: 24px;
-    }
-
-    .timeline {
-        padding-left: 30px;
-    }
-
-    .cta-section {
-        padding: 30px 20px;
-    }
-
-    .cta-section h2 {
-        font-size: 20px;
-    }
-
-    .contact-btn {
-        padding: 12px 24px;
-        font-size: 14px;
-    }
-
-    .sidebar {
-        gap: 20px;
-    }
-
-    .info-card,
-    .related-projects,
-    .contact-card {
-        padding: 20px;
+    .detail-hero {
+        height: 200px;
     }
 }

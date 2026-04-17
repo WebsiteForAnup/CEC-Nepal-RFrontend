@@ -5,7 +5,13 @@
     "titleHighlight": "Sustainable",
     "titleSuffix": "Future",
     "subtitle": "Leading national consultancy for Hydropower, Solar, and Infrastructure development in Nepal.",
-    "primaryCta": { "label": "Explore Services", "scrollTo": "services" },
-    "secondaryCta": { "label": "Consult with Experts", "scrollTo": "contact" }
+    "primaryCta": {
+      "label": "Explore Services",
+      "scrollTo": "services"
+    },
+    "secondaryCta": {
+      "label": "Consult with Experts",
+      "scrollTo": "contact"
+    }
   }
 }

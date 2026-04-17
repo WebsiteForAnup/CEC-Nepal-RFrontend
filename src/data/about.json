@@ -8,14 +8,38 @@
     },
     "missionTitle": "Our Mission",
     "missionItems": [
-      { "icon": "fas fa-water",     "label": "Help Utilize Feasible Hydro Energy" },
-      { "icon": "fas fa-arrow-down","label": "Reduce Energy Import Dependency" },
-      { "icon": "fas fa-arrow-up",  "label": "Increase Export Of Hydropower" },
-      { "icon": "fas fa-leaf",      "label": "Promote Clean Energy Generation" }
+      {
+        "icon": "fas fa-water",
+        "label": "Help Utilize Feasible Hydro Energy"
+      },
+      {
+        "icon": "fas fa-arrow-down",
+        "label": "Reduce Energy Import Dependency"
+      },
+      {
+        "icon": "fas fa-arrow-up",
+        "label": "Increase Export Of Hydropower"
+      },
+      {
+        "icon": "fas fa-leaf",
+        "label": "Promote Clean Energy Generation"
+      }
     ],
     "counters": [
-      { "start": 0,    "end": 150, "suffix": "+", "label": "MW Optimized",  "duration": 2000 },
-      { "start": 1990, "end": 2006, "suffix": "",  "label": "Established",   "duration": 2000 }
+      {
+        "start": 0,
+        "end": 150,
+        "suffix": "+",
+        "label": "MW Optimized",
+        "duration": 2000
+      },
+      {
+        "start": 1990,
+        "end": 2006,
+        "suffix": "",
+        "label": "Established",
+        "duration": 2000
+      }
     ],
     "intro": "Clean Energy Consultants Pvt. Ltd. (CEC), established in 2006, is a leading national consultancy firm focusing on hydropower, solar, environment, and infrastructure projects across all project stages.",
     "history": {

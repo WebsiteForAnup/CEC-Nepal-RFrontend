@@ -48,13 +48,13 @@
       {
         "id": 1,
         "label": "Gallery",
-          "href": "/gallery",
+        "href": "/gallery",
         "icon": "fas fa-images"
       },
       {
         "id": 2,
         "label": "Downloads",
-          "href": "/downloads",
+        "href": "/downloads",
         "icon": "fas fa-download"
       }
     ]

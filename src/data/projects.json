@@ -10,10 +10,15 @@
       "type": "Hydroelectric",
       "location": "Eastern Nepal",
       "commissioned": "2019",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_10_CEC-studies-Project-1024x726.jpg_649bbdfd.jpeg",
+      "categories": [
+        "Feasibility Study",
+        "Due Diligence Audit"
+      ],
       "description": "A run-of-river hydroelectric project located in eastern Nepal, providing clean energy to the national grid. This strategic project demonstrates excellence in sustainable energy development with comprehensive technical audit and supervision.",
       "technicalDetails": {
         "headHeight": "156 m",
-        "discharge": "19.5 m³/s",
+        "discharge": "19.5 m\u00b3/s",
         "type": "Run-of-River",
         "turbineType": "Pelton"
       },
@@ -34,10 +39,15 @@
       "type": "Small Hydro",
       "location": "Mid-Hills",
       "commissioned": "2020",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Construction-Supervision-258x300.png_cc4a7b21.png",
+      "categories": [
+        "Construction Supervision",
+        "Bill Verification"
+      ],
       "description": "Small hydropower project utilizing the Jogmai Khola river for sustainable electricity generation. Features comprehensive bank monitoring and construction supervision ensuring quality and financial compliance.",
       "technicalDetails": {
         "headHeight": "127 m",
-        "discharge": "7.2 m³/s",
+        "discharge": "7.2 m\u00b3/s",
         "type": "Run-of-River",
         "turbineType": "Francis"
       },
@@ -58,10 +68,15 @@
       "type": "Small Hydro",
       "location": "Western Hills",
       "commissioned": "2018",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Desk.png_a02f101c.png",
+      "categories": [
+        "Construction Supervision",
+        "Bill Verification"
+      ],
       "description": "Eco-friendly hydropower facility designed to minimize environmental impact while maximizing energy output. Ongoing bank monitoring ensures sustained operational excellence.",
       "technicalDetails": {
         "headHeight": "98 m",
-        "discharge": "4.1 m³/s",
+        "discharge": "4.1 m\u00b3/s",
         "type": "Run-of-River",
         "turbineType": "Pelton"
       },
@@ -82,10 +97,14 @@
       "type": "Small Hydro",
       "location": "Eastern Nepal",
       "commissioned": "2017",
+      "image_url": "https://cecnepal.com.np/wp-content/uploads/2024/02/viber_image_2024-02-05_13-28-15-068.jpg",
+      "categories": [
+        "Due Diligence Audit"
+      ],
       "description": "Small hydropower plant providing reliable operation and maintenance with comprehensive technical audits. CEC provides ongoing technical support and operational optimization services.",
       "technicalDetails": {
         "headHeight": "105 m",
-        "discharge": "3.8 m³/s",
+        "discharge": "3.8 m\u00b3/s",
         "type": "Run-of-River",
         "turbineType": "Pelton"
       },
@@ -106,10 +125,14 @@
       "type": "Micro Hydro",
       "location": "Eastern Region",
       "commissioned": "2019",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Detailed-Engineering.png_d970e6ca.png",
+      "categories": [
+        "Detail Engineering Design"
+      ],
       "description": "Compact hydropower facility delivering clean energy through efficient detailed project reporting and design. Demonstrates viability of micro-hydropower for rural electrification.",
       "technicalDetails": {
         "headHeight": "78 m",
-        "discharge": "1.8 m³/s",
+        "discharge": "1.8 m\u00b3/s",
         "type": "Run-of-River",
         "turbineType": "Cross-flow"
       },
@@ -130,10 +153,14 @@
       "type": "Small Hydro",
       "location": "Far-Eastern Nepal",
       "commissioned": "2020",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Detailed-Engineering.png_d970e6ca.png",
+      "categories": [
+        "Detail Engineering Design"
+      ],
       "description": "Successfully operating hydropower project utilizing Hewa Khola river resources for sustainable energy production. CEC provided comprehensive DPR and technical guidance throughout development.",
       "technicalDetails": {
         "headHeight": "112 m",
-        "discharge": "5.5 m³/s",
+        "discharge": "5.5 m\u00b3/s",
         "type": "Run-of-River",
         "turbineType": "Francis"
       },
@@ -154,10 +181,15 @@
       "type": "Small Hydro",
       "location": "Mid-Hills Region",
       "commissioned": "2021",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Mapping.png_33ae0a4e.png",
+      "categories": [
+        "Construction Supervision",
+        "Bill Verification"
+      ],
       "description": "Medium-scale hydropower facility with ongoing bank monitoring ensuring financial and operational excellence. CEC provides continuous oversight and technical support.",
       "technicalDetails": {
         "headHeight": "145 m",
-        "discharge": "7.2 m³/s",
+        "discharge": "7.2 m\u00b3/s",
         "type": "Run-of-River",
         "turbineType": "Pelton"
       },
@@ -178,10 +210,16 @@
       "type": "Small Hydro",
       "location": "Terhathum District",
       "commissioned": "2020",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Survey.png_c80811bf.png",
+      "categories": [
+        "Feasibility Study",
+        "Detail Engineering Design",
+        "Construction Supervision"
+      ],
       "description": "Comprehensive hydropower project with full-cycle engineering from feasibility study to supervision and commissioning. Exemplifies CEC excellence in complete project lifecycle management.",
       "technicalDetails": {
         "headHeight": "128 m",
-        "discharge": "7.8 m³/s",
+        "discharge": "7.8 m\u00b3/s",
         "type": "Run-of-River",
         "turbineType": "Francis"
       },
@@ -202,10 +240,14 @@
       "type": "Small Hydro",
       "location": "Central Hills",
       "commissioned": "2018",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Detailed-Engineering.png_d970e6ca.png",
+      "categories": [
+        "Detail Engineering Design"
+      ],
       "description": "Small-scale run-of-river project contributing to local energy security and rural electrification initiatives. CEC DPR ensured technical and economic viability.",
       "technicalDetails": {
         "headHeight": "92 m",
-        "discharge": "3.5 m³/s",
+        "discharge": "3.5 m\u00b3/s",
         "type": "Run-of-River",
         "turbineType": "Pelton"
       },
@@ -226,10 +268,15 @@
       "type": "Hydroelectric",
       "location": "Dolakha District",
       "commissioned": "2021",
+      "image_url": "https://cecnepal.com.np/wp-content/uploads/2024/01/0-02-03-6caf56c02a149e4ba48702ff0a0e52fb25dad5469ecc879ffe5f58462b77cf18_59eccfe8a97d9d44.jpg",
+      "categories": [
+        "Due Diligence Audit",
+        "Construction Supervision"
+      ],
       "description": "Major hydropower installation with rigorous due diligence and continuous bank oversight for optimal performance. Strategic project contributing significantly to national grid.",
       "technicalDetails": {
         "headHeight": "168 m",
-        "discharge": "18.5 m³/s",
+        "discharge": "18.5 m\u00b3/s",
         "type": "Run-of-River",
         "turbineType": "Pelton"
       },
@@ -250,10 +297,15 @@
       "type": "Small Hydro",
       "location": "Mid-Hills",
       "estimated": "2025",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Geotechnical-InvestigationCore-Drilling-1.jpg_e22edc01.jpeg",
+      "categories": [
+        "Construction Supervision",
+        "Bill Verification"
+      ],
       "description": "Hydropower project currently under construction with active bank monitoring for quality assurance. CEC provides continuous oversight ensuring adherence to technical standards and budget compliance.",
       "technicalDetails": {
         "headHeight": "118 m",
-        "discharge": "6.5 m³/s",
+        "discharge": "6.5 m\u00b3/s",
         "type": "Run-of-River",
         "turbineType": "Francis"
       },
@@ -274,10 +326,14 @@
       "type": "Medium Hydro",
       "location": "Eastern Nepal",
       "estimated": "2026",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Desk.png_a02f101c.png",
+      "categories": [
+        "Due Diligence Audit"
+      ],
       "description": "Major hydropower development progressing with comprehensive financial oversight and construction monitoring. One of the larger projects under CEC technical guidance.",
       "technicalDetails": {
         "headHeight": "245 m",
-        "discharge": "25.8 m³/s",
+        "discharge": "25.8 m\u00b3/s",
         "type": "Run-of-River",
         "turbineType": "Francis"
       },
@@ -298,10 +354,15 @@
       "type": "Hydroelectric",
       "location": "Taplejung District",
       "estimated": "TBD",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Survey.png_c80811bf.png",
+      "categories": [
+        "Feasibility Study",
+        "Detail Engineering Design"
+      ],
       "description": "Hydropower project at PPA stage with complete feasibility studies and detailed engineering reports. CEC provided comprehensive technical documentation for regulatory approvals and financing.",
       "technicalDetails": {
         "headHeight": "185 m",
-        "discharge": "19.2 m³/s",
+        "discharge": "19.2 m\u00b3/s",
         "type": "Run-of-River",
         "turbineType": "Pelton"
       },
@@ -310,6 +371,40 @@
         "UFSR - 2020",
         "DPR - 2021",
         "PPA Negotiations - Ongoing"
+      ]
+    },
+    {
+      "id": 100,
+      "name": "Seti Khola Hydropower Project",
+      "capacity": "22 MW",
+      "developer": "Seti Khola Hydropower Pvt Ltd",
+      "status": "Feasibility Stage",
+      "cecInputs": "Feasibility Study / Detail Engineering Design",
+      "type": "RoR",
+      "location": "Pokhara Metropolitancity-33, Kaski",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Detailed-Engineering.png_d970e6ca.png",
+      "categories": [
+        "Detail Engineering Design",
+        "Feasibility Study"
+      ],
+      "description": "A significant run-of-river (RoR) hydropower project located in the Kaski district. This project features a 3151m headrace tunnel and 2 units of Francis turbines, contributing 133.432 GWh of annual deemed energy to the grid.",
+      "technicalDetails": {
+        "headHeight": "68.5 m",
+        "discharge": "39.93 m\u00b3/s",
+        "type": "RoR",
+        "turbineType": "2 Units of Francis Turbine",
+        "annualEnergy": "133.432 GWh",
+        "weir": "30 m length, 12 m height (Barrage)",
+        "intake": "4 orifices each 5.75 m x 2.8 m",
+        "desander": "2 units; 64 m x 13 m x 6 m (Surface)",
+        "headrace": "3151 m, 5.8 m diameter (Tunnel)",
+        "penstock": "1500 m, 4 m diameter (Pipe)",
+        "transmission": "3 km length 132 kV, 132 kv LILO"
+      },
+      "timeline": [
+        "Survey & Investigation - 2021",
+        "Feasibility Study - 2022",
+        "Detailed Design - Ongoing"
       ]
     }
   ]

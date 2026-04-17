@@ -67,7 +67,11 @@
         {
           "name": "status",
           "type": "enum",
-          "enum": ["Generation", "Under Construction", "PPA Stage"],
+          "enum": [
+            "Generation",
+            "Under Construction",
+            "PPA Stage"
+          ],
           "required": true,
           "description": "Project status"
         },
@@ -212,7 +216,10 @@
         {
           "name": "type",
           "type": "enum",
-          "enum": ["news", "event"],
+          "enum": [
+            "news",
+            "event"
+          ],
           "required": true,
           "description": "Item type"
         },

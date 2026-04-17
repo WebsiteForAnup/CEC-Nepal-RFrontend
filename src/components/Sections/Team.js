@@ -9,7 +9,7 @@ const Team = ({ teamCategories = {}, menuOptions = [] }) => {
 
   const renderContent = () => {
     const currentTeam = teamCategories[selectedCategory] || [];
-    
+
     return (
       <div className={styles.teamGrid}>
         {currentTeam.length === 0 ? (
@@ -18,8 +18,8 @@ const Team = ({ teamCategories = {}, menuOptions = [] }) => {
           </div>
         ) : (
           currentTeam.map(member => (
-            <div 
-              key={member.id} 
+            <div
+              key={member.id}
               className={styles.memberCard}
             >
               <div className={styles.cardImageWrapper}>
@@ -28,7 +28,7 @@ const Team = ({ teamCategories = {}, menuOptions = [] }) => {
               <div className={styles.cardBody}>
                 <h3 className={styles.memberName}>{member.name}</h3>
                 <p className={styles.memberRole}>{member.designation}</p>
-                <button 
+                <button
                   className={styles.moreInfoBtn}
                   onClick={() => {
                     setSelectedMember(member);
@@ -61,8 +61,8 @@ const Team = ({ teamCategories = {}, menuOptions = [] }) => {
 
         <div className={styles.categoryGrid}>
           {menuOptions.map(option => (
-            <button 
-              key={option} 
+            <button
+              key={option}
               className={`${styles.categoryBtn} ${selectedCategory === option ? styles.activeCategoryBtn : ''}`}
               onClick={() => {
                 setSelectedCategory(option);
@@ -82,7 +82,7 @@ const Team = ({ teamCategories = {}, menuOptions = [] }) => {
             <p>Professional Team Members</p>
           </div>
           <div className={styles.statItem}>
-            <h4>380+</h4>
+            <h4>20+</h4>
             <p>Combined Years of Experience</p>
           </div>
           <div className={styles.statItem}>
@@ -102,16 +102,16 @@ const Team = ({ teamCategories = {}, menuOptions = [] }) => {
           <div className={styles.modalOverlay} onClick={closeModal}>
             <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
               <button className={styles.closeBtn} onClick={closeModal}>&times;</button>
-              
+
               <div className={styles.modalBody}>
                 <div className={styles.modalImageSide}>
                   <img src={selectedMember.image_url} alt={selectedMember.name} />
                 </div>
-                
+
                 <div className={styles.modalInfoSide}>
                   <h2 className={styles.modalMemberName}>{selectedMember.name}</h2>
                   <p className={styles.modalMemberRole}>{selectedMember.designation}</p>
-                  
+
                   {selectedMember.education && (
                     <div className={styles.statSection}>
                       <p className={styles.statLabel}>Education</p>
