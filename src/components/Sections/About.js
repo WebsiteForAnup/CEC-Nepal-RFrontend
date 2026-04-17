@@ -2,89 +2,84 @@ import React, { useState, useEffect } from 'react';
 import styles from './About.module.css';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 
-const About = () => {
+const About = ({ about = {} }) => {
+  const {
+    subtitle = 'Welcome to CEC Nepal',
+    title = 'Pioneering Green Energy Solutions',
+    potentialBox = {},
+    missionTitle = 'Our Mission',
+    missionItems = [],
+    counters = [],
+  } = about;
+
   const [textRef, textVisible] = useScrollAnimation({ threshold: 0.2 });
   const [statsRef, statsVisible] = useScrollAnimation({ threshold: 0.2 });
-  const [count1, setCount1] = useState(0);
-  const [count2, setCount2] = useState(0);
+  const [counts, setCounts] = useState(counters.map(() => 0));
 
   useEffect(() => {
-    if (statsVisible) {
-      // Animate counter for 150+
-      let start1 = 0;
-      const end1 = 150;
-      const duration1 = 2000;
-      const increment1 = end1 / (duration1 / 16);
-      
-      const timer1 = setInterval(() => {
-        start1 += increment1;
-        if (start1 >= end1) {
-          setCount1(end1);
-          clearInterval(timer1);
+    if (!statsVisible || counters.length === 0) return;
+
+    const timers = counters.map((counter, i) => {
+      const end = counter.end;
+      const start = counter.start ?? 0;
+      const duration = counter.duration ?? 2000;
+      let current = start;
+      const increment = (end - start) / (duration / 16);
+
+      return setInterval(() => {
+        current += increment;
+        if (current >= end) {
+          setCounts(prev => { const next = [...prev]; next[i] = end; return next; });
+          clearInterval(timers[i]);
         } else {
-          setCount1(Math.floor(start1));
+          setCounts(prev => { const next = [...prev]; next[i] = Math.floor(current); return next; });
         }
       }, 16);
+    });
 
-      // Animate counter for 2006
-      let start2 = 1990;
-      const end2 = 2006;
-      const duration2 = 2000;
-      const increment2 = (end2 - start2) / (duration2 / 16);
-      
-      const timer2 = setInterval(() => {
-        start2 += increment2;
-        if (start2 >= end2) {
-          setCount2(end2);
-          clearInterval(timer2);
-        } else {
-          setCount2(Math.floor(start2));
-        }
-      }, 16);
-
-      return () => {
-        clearInterval(timer1);
-        clearInterval(timer2);
-      };
-    }
-  }, [statsVisible]);
+    return () => timers.forEach(clearInterval);
+  }, [statsVisible]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <section id="about" className={styles.about}>
       <div className={styles.container}>
         <div className={styles.aboutGrid}>
-          <div 
+          <div
             ref={textRef}
             className={`${styles.aboutText} ${textVisible ? styles.animate : ''}`}
           >
-            <span className={styles.subTitle}>Welcome to CEC Nepal</span>
-            <h2>Pioneering Green Energy Solutions</h2>
-            
-            <div className={styles.potentialBox}>
-              <h3>Nepal's Hydropower Potential</h3>
-              <p className={styles.potentialText}>Theoretically, Nepal has a hydropower potential of over <strong>83,000 MW</strong>, of which only about <strong>42,000 MW</strong> could be considered technically and economically feasible.</p>
-            </div>
+            <span className={styles.subTitle}>{subtitle}</span>
+            <h2>{title}</h2>
 
-            <h3 className={styles.intentTitle}>Our Mission</h3>
+            {potentialBox?.heading && (
+              <div className={styles.potentialBox}>
+                <h3>{potentialBox.heading}</h3>
+                <p className={styles.potentialText}
+                  dangerouslySetInnerHTML={{ __html: potentialBox.text }}
+                />
+              </div>
+            )}
+
+            <h3 className={styles.intentTitle}>{missionTitle}</h3>
             <div className={styles.aboutFeatures}>
-              <div className={styles.featItem}><i className="fas fa-water"></i> Help Utilize Feasible Hydro Energy</div>
-              <div className={styles.featItem}><i className="fas fa-arrow-down"></i> Reduce Energy Import Dependency</div>
-              <div className={styles.featItem}><i className="fas fa-arrow-up"></i> Increase Export Of Hydropower</div>
-              <div className={styles.featItem}><i className="fas fa-leaf"></i> Promote Clean Energy Generation</div>
+              {missionItems.map((item, i) => (
+                <div key={i} className={styles.featItem}>
+                  <i className={item.icon}></i> {item.label}
+                </div>
+              ))}
             </div>
           </div>
-          <div 
+
+          <div
             ref={statsRef}
             className={`${styles.aboutStats} ${statsVisible ? styles.animateStats : ''}`}
           >
-            <div className={styles.statCard}>
-              <h3>{count1}+</h3>
-              <p>MW Optimized</p>
-            </div>
-            <div className={styles.statCard}>
-              <h3>{count2}</h3>
-              <p>Established</p>
-            </div>
+            {counters.map((counter, i) => (
+              <div key={i} className={styles.statCard}>
+                <h3>{counts[i]}{counter.suffix ?? ''}</h3>
+                <p>{counter.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

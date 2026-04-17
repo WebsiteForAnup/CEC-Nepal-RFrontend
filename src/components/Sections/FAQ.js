@@ -2,44 +2,9 @@ import React, { useState } from 'react';
 import styles from './FAQ.module.css';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 
-const FAQ = () => {
+const FAQ = ({ faqs = [] }) => {
   const [expandedIndex, setExpandedIndex] = useState(null);
   const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.2 });
-
-  const faqData = [
-    {
-      question: 'What services does CEC provide?',
-      answer: 'CEC provides comprehensive consulting services including feasibility studies, detailed project reports (DPR), environmental impact assessments, design services for hydropower, solar, and wind projects, as well as bank monitoring and technical audits.'
-    },
-    {
-      question: 'How many projects has CEC studied?',
-      answer: 'CEC has successfully studied and consulted on 66 hydropower projects with a combined capacity exceeding 1,200 MW across Nepal, covering various project stages from feasibility to commissioning.'
-    },
-    {
-      question: 'What is the typical timeline for a feasibility study?',
-      answer: 'A comprehensive feasibility study typically takes 2-4 months depending on project complexity, site accessibility, and data requirements. The timeline may vary based on project size and environmental factors.'
-    },
-    {
-      question: 'Do you provide bank monitoring services?',
-      answer: 'Yes, we provide comprehensive bank monitoring and supervision services including progress monitoring, financial oversight, technical audits, and bill verification for ongoing hydropower and renewable energy projects.'
-    },
-    {
-      question: 'What regions in Nepal do you operate in?',
-      answer: 'CEC operates throughout Nepal with projects across eastern, central, and western regions. Our project portfolio includes sites in districts from far-western to far-eastern Nepal, demonstrating our nationwide presence and expertise.'
-    },
-    {
-      question: 'How can I engage CEC for my project?',
-      answer: 'You can reach out through our contact form, email, or phone. Our team will discuss your project requirements, provide a proposal, and guide you through the engagement process.'
-    },
-    {
-      question: 'What makes CEC different from other consultancies?',
-      answer: 'With 18+ years of experience since 2006, CEC brings proven expertise in Nepal\'s hydropower sector. We offer comprehensive services from conception to commissioning, with a successful track record of 66 studied projects.'
-    },
-    {
-      question: 'Do you handle solar and wind projects as well?',
-      answer: 'Yes, beyond our core hydropower expertise, we also provide consulting services for solar, wind, and other renewable energy projects, offering integrated sustainable energy solutions.'
-    },
-  ];
 
   const toggleFAQ = (index) => {
     setExpandedIndex(expandedIndex === index ? null : index);
@@ -58,9 +23,9 @@ const FAQ = () => {
         </div>
 
         <div className={styles.faqList}>
-          {faqData.map((item, index) => (
+          {faqs.map((item, index) => (
             <div 
-              key={index} 
+              key={item.id || index} 
               className={`${styles.faqItem} ${expandedIndex === index ? styles.expanded : ''}`}
               style={{ animationDelay: `${index * 0.05}s` }}
             >

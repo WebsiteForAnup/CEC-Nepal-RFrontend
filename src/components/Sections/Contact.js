@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 import styles from './Contact.module.css';
 
-const Contact = () => {
+const Contact = ({ company = {} }) => {
   const [formState, setFormState] = useState({ name: '', email: '', message: '', phone: '', subject: '' });
   const [loading, setLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState({ type: '', text: '' });
+
+  const {
+    contact = {
+      address: 'Pokhara, Nepal',
+      phone: '+977 9813774974',
+      email: 'contactatjerusha@gmail.com'
+    }
+  } = company;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -84,17 +92,17 @@ const Contact = () => {
 
             <div className={styles.infoItem}>
               <i className="fas fa-map-marker-alt"></i>
-              <p>Nayabajar, Pokhara, Nepal</p>
+              <p>{contact.address}</p>
             </div>
 
             <div className={styles.infoItem}>
               <i className="fas fa-phone-alt"></i>
-              <p>+977 9813774974</p>
+              <p>{contact.phone}</p>
             </div>
 
             <div className={styles.infoItem}>
               <i className="fas fa-envelope"></i>
-              <p>contactatjerusha@gmail.com</p>
+              <p>{contact.email}</p>
             </div>
 
             <div className={styles.infoItem}>

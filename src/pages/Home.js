@@ -11,22 +11,61 @@ import NewsEvents from '../components/Sections/NewsEvents';
 import Contact from '../components/Sections/Contact';
 import Footer from '../components/Layout/Footer';
 
+// ─── Data sources ─────────────────────────────────────────────────────────────
+// Change any import path here to swap data without touching section components.
+import heroJson        from '../data/hero.json';
+import aboutJson       from '../data/about.json';
+import servicesJson    from '../data/services.json';
+import projectsJson    from '../data/projects.json';
+import statisticsJson  from '../data/statistics.json';
+import newsJson        from '../data/newsAndEvents.json';
+import teamJson        from '../data/team.json';
+import companyJson     from '../data/company.json';
+import faqJson         from '../data/faq.json';
+
+import {
+  getHero,
+  getAbout,
+  getServices,
+  getProjects,
+  getStatistics,
+  getNewsAndEvents,
+  getTeamCategories,
+  getTeamCategoryNames,
+  getCompany,
+  getFAQs,
+} from '../services/homeService';
+
 const Home = () => {
+    const hero            = getHero(heroJson);
+    const about           = getAbout(aboutJson);
+    const services        = getServices(servicesJson);
+    const projects        = getProjects(projectsJson);
+    const statCards       = getStatistics(statisticsJson);
+    const newsAndEvents   = getNewsAndEvents(newsJson);
+    const teamCategories  = getTeamCategories(teamJson);
+    const teamCategoryNames = getTeamCategoryNames(teamJson);
+    const company         = getCompany(companyJson);
+    const faqs            = getFAQs(faqJson);
+
     return (
         <>
             <NavbarRedesigned />
             <main>
-                <Hero />
-                <About />
-                <Services />
-                <Projects />
-                <Statistics />
-                <FAQ />
-                <Team />
-                <NewsEvents />
-                <Contact />
+                <Hero       hero={hero} />
+                <About      about={about} />
+                <Services   services={services} />
+                <Projects   projects={projects} />
+                <Statistics stats={statCards} />
+                <FAQ        faqs={faqs} />
+                <Team
+                    teamCategories={teamCategories}
+                    menuOptions={teamCategoryNames}
+                />
+                <NewsEvents newsAndEvents={newsAndEvents} />
+                <Contact    company={company} />
             </main>
-            <Footer />
+            <Footer company={company} />
         </>
     );
 };

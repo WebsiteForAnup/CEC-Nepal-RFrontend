@@ -34,34 +34,52 @@
   margin: 0 auto;
 }
 
-/* Dropdown Menu */
-.dropdownContainer {
+/* Category Selection Grid */
+.categoryGrid {
   display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 0 auto 50px auto;
+  max-width: 1000px; /* Ensures max 5 columns roughly */
   justify-content: center;
-  margin-bottom: 50px;
+  width: 100%;
 }
 
-.dropdownSelect {
+.categoryBtn {
   padding: 12px 20px;
-  font-size: 1rem;
-  border: 2px solid var(--primary);
-  border-radius: 8px;
-  background-color: white;
+  min-width: 160px;
+  max-width: 250px;
+  flex: 1 1 auto;
+  font-size: 0.95rem;
+  font-weight: 600;
   color: var(--secondary);
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
   cursor: pointer;
-  min-width: 200px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: 'Poppins', sans-serif;
-  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-.dropdownSelect:hover {
+.categoryBtn:hover:not(.activeCategoryBtn) {
+  border-color: var(--primary);
+  color: var(--primary);
   background-color: #f0fdf4;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
 }
 
-.dropdownSelect:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+.activeCategoryBtn {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+  transform: scale(1.02);
 }
 
 /* Content Box */
@@ -457,9 +475,16 @@
     font-size: 2rem;
   }
 
-  .dropdownSelect {
-    min-width: 250px;
-    font-size: 0.95rem;
+  .categoryGrid {
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .categoryBtn {
+    flex: 1 1 140px;
+    padding: 10px 12px;
+    font-size: 0.85rem;
   }
 
   .memberHeader {
@@ -510,9 +535,15 @@
     font-size: 1.5rem;
   }
 
-  .dropdownSelect {
-    min-width: 100%;
-    max-width: 100%;
+  .categoryGrid {
+    gap: 8px;
+  }
+
+  .categoryBtn {
+    flex: 1 1 45%;
+    padding: 8px 10px;
+    font-size: 0.8rem;
+    min-width: 100px;
   }
 
   .memberHeader {

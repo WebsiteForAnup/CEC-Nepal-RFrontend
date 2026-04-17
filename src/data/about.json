@@ -1,62 +1,27 @@
 {
   "about": {
-    "title": "About Clean Energy Consultants",
+    "subtitle": "Welcome to CEC Nepal",
+    "title": "Pioneering Green Energy Solutions",
+    "potentialBox": {
+      "heading": "Nepal's Hydropower Potential",
+      "text": "Theoretically, Nepal has a hydropower potential of over <strong>83,000 MW</strong>, of which only about <strong>42,000 MW</strong> could be considered technically and economically feasible."
+    },
+    "missionTitle": "Our Mission",
+    "missionItems": [
+      { "icon": "fas fa-water",     "label": "Help Utilize Feasible Hydro Energy" },
+      { "icon": "fas fa-arrow-down","label": "Reduce Energy Import Dependency" },
+      { "icon": "fas fa-arrow-up",  "label": "Increase Export Of Hydropower" },
+      { "icon": "fas fa-leaf",      "label": "Promote Clean Energy Generation" }
+    ],
+    "counters": [
+      { "start": 0,    "end": 150, "suffix": "+", "label": "MW Optimized",  "duration": 2000 },
+      { "start": 1990, "end": 2006, "suffix": "",  "label": "Established",   "duration": 2000 }
+    ],
     "intro": "Clean Energy Consultants Pvt. Ltd. (CEC Nepal) is Nepal's leading engineering consultancy firm specializing in hydropower, renewable energy, and infrastructure development.",
     "history": {
       "founded": "1999",
       "founder": "Mr. Mani Raj Dahal",
       "milestone": "From a small consultancy to Nepal's most trusted hydropower engineering firm"
-    },
-    "expertise": [
-      {
-        "title": "Hydropower Engineering",
-        "description": "50+ completed projects, 1000+ MW capacity developed"
-      },
-      {
-        "title": "Feasibility Studies",
-        "description": "Comprehensive FSR, UFSR, and DPR preparation"
-      },
-      {
-        "title": "Environmental Assessment",
-        "description": "Detailed EIA/IEE studies ensuring sustainability"
-      },
-      {
-        "title": "Project Management",
-        "description": "Complete supervision and monitoring services"
-      },
-      {
-        "title": "Renewable Energy",
-        "description": "Solar, wind, and other sustainable energy solutions"
-      },
-      {
-        "title": "Infrastructure Design",
-        "description": "Specialized designs for challenging Himalayan terrain"
-      }
-    ],
-    "team": {
-      "totalMembers": 50,
-      "engineers": 35,
-      "specialists": 10,
-      "support": 5,
-      "description": "A dedicated team of experienced professionals committed to sustainable energy development"
-    },
-    "achievements": [
-      {
-        "title": "50+ Projects Delivered",
-        "description": "Successfully completed hydropower and renewable energy projects across Nepal"
-      },
-      {
-        "title": "1000+ MW Developed",
-        "description": "Contributed significantly to Nepal's clean energy capacity"
-      },
-      {
-        "title": "International Recognition",
-        "description": "Collaborated with international energy firms and development organizations"
-      },
-      {
-        "title": "Trusted Partner",
-        "description": "Preferred consultant for multilateral development banks and government agencies"
-      }
-    ]
+    }
   }
 }

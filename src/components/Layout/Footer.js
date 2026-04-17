@@ -2,9 +2,26 @@ import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import styles from './Footer.module.css';
 
-const Footer = () => {
+const Footer = ({ company = {} }) => {
   const navigate = useNavigate();
   const location = useLocation();
+
+  const {
+    name = 'Clean Energy Consultants Pvt. Ltd.',
+    shortName = 'CEC Nepal',
+    description = "Leading national consultancy for Hydropower, Solar, and Infrastructure development in Nepal since 2006.",
+    contact = {
+      address: 'Pokhara, Nepal',
+      phone: '+977 9813774974',
+      email: 'contactatjerusha@gmail.com'
+    },
+    social = {
+      facebook: 'https://facebook.com',
+      linkedin: 'https://linkedin.com',
+      twitter: 'https://twitter.com',
+      instagram: 'https://instagram.com'
+    }
+  } = company;
 
   const scrollToSection = (id) => {
     if (location.pathname !== '/') {
@@ -39,25 +56,33 @@ const Footer = () => {
             {/* Company Info */}
             <div className={styles.footerCol}>
               <div className={styles.footerLogo}>
-                <img src="/images/cec-logo.png" alt="CEC Nepal" />
+                <img src="/images/cec-logo.png" alt={name} />
                 <h3>CEC<span>Nepal</span></h3>
               </div>
               <p className={styles.footerDesc}>
-                Leading national consultancy for Hydropower, Solar, and Infrastructure development in Nepal since 2006.
+                {description}
               </p>
               <div className={styles.socials}>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                  <i className="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                  <i className="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                  <i className="fab fa-instagram"></i>
-                </a>
+                {social.facebook && (
+                  <a href={social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <i className="fab fa-facebook-f"></i>
+                  </a>
+                )}
+                {social.linkedin && (
+                  <a href={social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i className="fab fa-linkedin-in"></i>
+                  </a>
+                )}
+                {social.twitter && (
+                  <a href={social.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                    <i className="fab fa-twitter"></i>
+                  </a>
+                )}
+                {social.instagram && (
+                  <a href={social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i className="fab fa-instagram"></i>
+                  </a>
+                )}
               </div>
             </div>
 
@@ -91,15 +116,15 @@ const Footer = () => {
               <ul className={styles.contactInfo}>
                 <li>
                   <i className="fas fa-map-marker-alt"></i>
-                  <span>Pokhara, Nepal</span>
+                  <span>{contact.address}</span>
                 </li>
                 <li>
                   <i className="fas fa-phone"></i>
-                  <span>+977 9813774974</span>
+                  <span>{contact.phone}</span>
                 </li>
                 <li>
                   <i className="fas fa-envelope"></i>
-                  <span>contactatjerusha@gmail.com</span>
+                  <span>{contact.email}</span>
                 </li>
                 <li>
                   <i className="fas fa-clock"></i>
@@ -115,7 +140,7 @@ const Footer = () => {
       <div className={styles.footerBottom}>
         <div className={styles.container}>
           <div className={styles.footerBottomContent}>
-            <p>&copy; {new Date().getFullYear()} CEC Nepal. All Rights Reserved.</p>
+            <p>&copy; {new Date().getFullYear()} {shortName}. All Rights Reserved.</p>
             <div className={styles.footerLinks}>
               <a href="#privacy">Privacy Policy</a>
               <span className={styles.separator}>|</span>
