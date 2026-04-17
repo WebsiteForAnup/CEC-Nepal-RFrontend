@@ -1,0 +1,34 @@
+{
+  "title": "Company Profile",
+  "vision": {
+    "title": "Our Vision",
+    "content": "To build a prosperous Nepal through the sustainable development of hydropower and other clean and green energy related projects. We believe that economic development of Nepal is only possible through integrated and sustainable development of our water resources for mutual benefits.",
+    "icon": "fas fa-eye"
+  },
+  "mission": {
+    "title": "Our Mission",
+    "content": "To promote clean and green energy generation for sustainable development by providing high-quality services to national and international clients interested in clean energy initiatives.",
+    "icon": "fas fa-bullseye"
+  },
+  "objectives": {
+    "title": "Core Objectives",
+    "items": [
+      "Identification and development of clean energy projects from desk study to commission.",
+      "Physical and numerical modeling for structural design optimization.",
+      "Technical consultancy and troubleshooting for operational power projects.",
+      "Conducting advanced geophysical (ERT, SRT, MASW) and geotechnical investigations.",
+      "Developing sustainable renewable energy resources and innovative solutions."
+    ],
+    "icon": "fas fa-list-check"
+  },
+  "goals": {
+    "title": "Our Goals",
+    "items": [
+      "Harness Nepal's 83,000 MW hydro potential for national development.",
+      "Reduce energy import dependency and increase export of clean hydropower.",
+      "Foster international cooperation and joint ventures in clean energy.",
+      "Develop innovative water resource and river management solutions."
+    ],
+    "icon": "fas fa-flag"
+  }
+}

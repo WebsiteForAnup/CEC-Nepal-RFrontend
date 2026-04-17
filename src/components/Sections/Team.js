@@ -11,63 +11,43 @@ const Team = ({ teamCategories = {}, menuOptions = [] }) => {
     const currentTeam = teamCategories[selectedCategory] || [];
     
     return (
-      <div className={styles.teamListContainer}>
+      <div className={styles.teamGrid}>
         {currentTeam.length === 0 ? (
           <div className={styles.emptyState}>
-            <p>No team members in this category.</p>
+            <p>No team members found in this category.</p>
           </div>
         ) : (
-          <div className={styles.teamMembersList}>
-            {currentTeam.map(member => (
-              <div 
-                key={member.id} 
-                className={styles.teamMemberCard}
-                onClick={() => setSelectedMember(selectedMember?.id === member.id ? null : member)}
-              >
-                <div className={styles.memberHeader}>
-                  <div className={styles.memberHeaderContent}>
-                    {member.image_url && (
-                      <div className={styles.memberImageSmall}>
-                        <img src={member.image_url} alt={member.name} />
-                      </div>
-                    )}
-                    <div>
-                      <h3 className={styles.memberName}>{member.name}</h3>
-                      <p className={styles.memberDesignation}>{member.designation}</p>
-                    </div>
-                  </div>
-                  <button className={styles.expandBtn}>
-                    {selectedMember?.id === member.id ? '−' : '+'}
-                  </button>
-                </div>
-
-                {selectedMember?.id === member.id && (
-                  <div className={styles.memberDetails}>
-                    {member.image_url && (
-                      <div className={styles.memberImageLarge}>
-                        <img src={member.image_url} alt={member.name} />
-                      </div>
-                    )}
-                    <div className={styles.detailSection}>
-                      <p className={styles.detailLabel}>Education:</p>
-                      <p className={styles.detailText}>{member.education}</p>
-                    </div>
-                    <div className={styles.detailSection}>
-                      <p className={styles.detailLabel}>Experience:</p>
-                      <p className={styles.detailText}>{member.experience}</p>
-                    </div>
-                    <div className={styles.detailSection}>
-                      <p className={styles.detailLabel}>Overview:</p>
-                      <p className={styles.detailText}>{member.bio}</p>
-                    </div>
-                  </div>
-                )}
+          currentTeam.map(member => (
+            <div 
+              key={member.id} 
+              className={styles.memberCard}
+            >
+              <div className={styles.cardImageWrapper}>
+                <img src={member.image_url} alt={member.name} />
               </div>
-            ))}
-          </div>
+              <div className={styles.cardBody}>
+                <h3 className={styles.memberName}>{member.name}</h3>
+                <p className={styles.memberRole}>{member.designation}</p>
+                <button 
+                  className={styles.moreInfoBtn}
+                  onClick={() => {
+                    setSelectedMember(member);
+                    document.body.style.overflow = 'hidden';
+                  }}
+                >
+                  More Info
+                </button>
+              </div>
+            </div>
+          ))
         )}
       </div>
     );
+  };
+
+  const closeModal = () => {
+    setSelectedMember(null);
+    document.body.style.overflow = 'unset';
   };
 
   return (
@@ -116,6 +96,47 @@ const Team = ({ teamCategories = {}, menuOptions = [] }) => {
           <p>We're always looking for talented engineers and consultants passionate about clean energy.</p>
           <a href="#contact" className={styles.ctaButton}>Contact Us for Opportunities</a>
         </div>
+
+        {/* Member Detail Modal */}
+        {selectedMember && (
+          <div className={styles.modalOverlay} onClick={closeModal}>
+            <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
+              <button className={styles.closeBtn} onClick={closeModal}>&times;</button>
+              
+              <div className={styles.modalBody}>
+                <div className={styles.modalImageSide}>
+                  <img src={selectedMember.image_url} alt={selectedMember.name} />
+                </div>
+                
+                <div className={styles.modalInfoSide}>
+                  <h2 className={styles.modalMemberName}>{selectedMember.name}</h2>
+                  <p className={styles.modalMemberRole}>{selectedMember.designation}</p>
+                  
+                  {selectedMember.education && (
+                    <div className={styles.statSection}>
+                      <p className={styles.statLabel}>Education</p>
+                      <p className={styles.statValue}>{selectedMember.education}</p>
+                    </div>
+                  )}
+
+                  {selectedMember.experience && (
+                    <div className={styles.statSection}>
+                      <p className={styles.statLabel}>Experience</p>
+                      <p className={styles.statValue}>{selectedMember.experience}</p>
+                    </div>
+                  )}
+
+                  {selectedMember.bio && (
+                    <div className={styles.bioSection}>
+                      <p className={styles.statLabel}>Professional Biography</p>
+                      <p className={styles.bioText}>{selectedMember.bio}</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

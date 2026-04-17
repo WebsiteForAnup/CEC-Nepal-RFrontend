@@ -120,6 +120,14 @@ export const getCompany = (companyJson) => {
   return companyJson?.company || {};
 };
 
+/**
+ * @param {object} profileJson
+ * @returns {object} profile
+ */
+export const getCompanyProfile = (profileJson) => {
+  return profileJson || {};
+};
+
 // ─── FAQ ──────────────────────────────────────────────────────────────────────
 
 /**

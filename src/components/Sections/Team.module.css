@@ -110,177 +110,253 @@
   line-height: 1.8;
 }
 
-/* Team Members List Container */
-.teamListContainer {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+/* Team Grid Layout */
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
   margin-bottom: 60px;
+  width: 100%;
 }
 
-.teamMembersList {
+.emptyState {
+  grid-column: 1 / -1;
+  padding: 60px;
+  text-align: center;
+  color: #64748b;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Compact Member Card */
+.memberCard {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid #f1f5f9;
+}
+
+.memberCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: var(--primary);
+}
+
+.cardImageWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* Square aspect ratio */
+  background: #f8fafc;
+  overflow: hidden;
+}
+
+.cardImageWrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.memberCard:hover .cardImageWrapper img {
+  transform: scale(1.1);
+}
+
+.cardBody {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.memberName {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin: 0 0 5px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.memberRole {
+  font-size: 0.9rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.moreInfoBtn {
+  margin-top: auto;
+  padding: 10px 20px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.moreInfoBtn:hover {
+  background-color: #059669;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+}
+
+/* Modal Overlay System */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+.modalContent {
+  background: white;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  border-radius: 24px;
+  position: relative;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #64748b;
+  cursor: pointer;
+  z-index: 10;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.closeBtn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  transform: rotate(90deg);
+}
+
+.modalBody {
   display: flex;
   flex-direction: column;
 }
 
-.emptyState {
-  padding: 40px;
-  text-align: center;
-  color: #999;
+@media (min-width: 768px) {
+  .modalBody {
+    flex-direction: row;
+  }
 }
 
-/* Team Member Card */
-.teamMemberCard {
-  border-bottom: 1px solid #e2e8f0;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
+.modalImageSide {
+  flex: 0 0 350px;
+  background: #f8fafc;
+}
+
+.modalImageSide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modalInfoSide {
+  flex: 1;
+  padding: 40px;
+}
+
+.modalMemberName {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--secondary);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.modalMemberRole {
+  font-size: 1.1rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.statSection {
+  margin-bottom: 25px;
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.statValue {
+  font-size: 1rem;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.bioSection {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.bioText {
+  font-size: 1.05rem;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .teamMemberCard:last-child {
   border-bottom: none;
 }
 
-.teamMemberCard:hover {
-  background-color: #f8fafc;
-}
-
-.memberHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  gap: 15px;
-}
-
-.memberHeaderContent {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  flex: 1;
-}
-
-.memberImageSmall {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  overflow: hidden;
-  flex-shrink: 0;
-  background-color: #e2e8f0;
-  border: 2px solid var(--primary);
-}
-
-.memberImageSmall img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.memberImageLarge {
-  width: 100%;
-  max-width: 300px;
-  height: 300px;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 20px;
-  background-color: #e2e8f0;
-}
-
-.memberImageLarge img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.memberName {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--secondary);
-  margin: 0;
-  margin-bottom: 5px;
-  font-family: 'Poppins', sans-serif;
-}
-
-.memberDesignation {
-  font-size: 0.95rem;
-  color: var(--primary);
-  font-weight: 600;
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-}
-
-.expandBtn {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: var(--primary);
-  cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  flex-shrink: 0;
-}
-
-.expandBtn:hover {
-  background-color: rgba(16, 185, 129, 0.1);
-  transform: scale(1.1);
-}
-
-/* Member Details Section */
-.memberDetails {
-  padding: 0 20px 20px 20px;
-  background-color: #f8fafc;
-  border-top: 1px solid #e2e8f0;
-  animation: slideDown 0.3s ease;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.detailSection {
-  margin-bottom: 15px;
-}
-
-.detailSection:last-child {
-  margin-bottom: 0;
-}
-
-.detailLabel {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--primary);
-  margin: 0 0 5px 0;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-family: 'Poppins', sans-serif;
-}
-
-.detailText {
-  font-size: 0.95rem;
-  color: #64748b;
-  margin: 0;
-  line-height: 1.6;
-}
 
 /* Team Grid */
-.teamGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-bottom: 60px;
-}
 
 /* Team Card */
 .teamCard {
@@ -503,8 +579,21 @@
   }
 
   .teamGrid {
-    grid-template-columns: 1fr;
-    gap: 25px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .modalContent {
+    max-width: 100%;
+    border-radius: 16px;
+  }
+
+  .modalImageSide {
+    flex: 0 0 250px;
+  }
+
+  .modalInfoSide {
+    padding: 25px;
   }
 
   .teamStats {
@@ -580,8 +669,20 @@
     font-size: 0.9rem;
   }
 
-  .imageContainer {
-    height: 250px;
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .modalImageSide {
+    flex: 0 0 200px;
+  }
+
+  .modalInfoSide {
+    padding: 20px;
+  }
+
+  .modalMemberName {
+    font-size: 1.5rem;
   }
 
   .memberInfo {
