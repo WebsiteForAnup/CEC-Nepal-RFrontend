@@ -130,60 +130,66 @@ const ProjectDetail = () => {
                             </div>
 
                             <div className={styles['detail-inner-content']}>
-                                <div className={styles['info-grid']}>
-                                    <div className={styles['info-box']}>
-                                        <strong>Developer</strong>
-                                        <span>{activeProject.developer}</span>
-                                    </div>
-                                    <div className={styles['info-box']}>
-                                        <strong>Status</strong>
-                                        <span>{activeProject.status}</span>
-                                    </div>
-                                    <div className={styles['info-box']}>
-                                        <strong>CEC Role</strong>
-                                        <span>{activeProject.cecInputs}</span>
-                                    </div>
-                                </div>
-
                                 <section className={styles['project-description']}>
                                     <h2>Detailed Description</h2>
                                     <p>{activeProject.description}</p>
                                 </section>
 
-                                <div className={styles['info-grid']} style={{marginTop: '30px'}}>
-                                    <div className={styles['info-box']}>
-                                        <strong>Location</strong>
-                                        <span>{activeProject.location}</span>
-                                    </div>
-                                    <div className={styles['info-box']}>
-                                        <strong>Capacity</strong>
-                                        <span>{activeProject.capacity}</span>
-                                    </div>
-                                    <div className={styles['info-box']}>
-                                        <strong>Type</strong>
-                                        <span>{activeProject.type}</span>
-                                    </div>
-                                </div>
-
-                                {activeProject.technicalDetails && (
-                                    <section className={styles['technical-section']}>
-                                        <h2>Technical Data</h2>
-                                        <div className={styles['specs-grid']}>
-                                            <div className={styles['spec-item']}>
-                                                <i className="fas fa-ruler-vertical"></i>
-                                                <div>
-                                                    <strong>Head</strong>
-                                                    <span>{activeProject.technicalDetails.headHeight}</span>
-                                                </div>
-                                            </div>
-                                            <div className={styles['spec-item']}>
-                                                <i className="fas fa-water"></i>
-                                                <div>
-                                                    <strong>Discharge</strong>
-                                                    <span>{activeProject.technicalDetails.discharge}</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                {(activeProject.developer || activeProject.location || activeProject.capacity || activeProject.status || activeProject.cecInputs || activeProject.type || activeProject.technicalDetails?.headHeight || activeProject.technicalDetails?.discharge) && (
+                                    <section className={styles['technical-section']} style={{marginTop: '40px'}}>
+                                        <h2 className={styles['section-title']}>Technical Specifications</h2>
+                                        <table className={styles['technical-info-table']}>
+                                            <tbody>
+                                                {activeProject.developer && (
+                                                    <tr>
+                                                        <th>Developer</th>
+                                                        <td>{activeProject.developer}</td>
+                                                    </tr>
+                                                )}
+                                                {activeProject.location && (
+                                                    <tr>
+                                                        <th>Location</th>
+                                                        <td>{activeProject.location}</td>
+                                                    </tr>
+                                                )}
+                                                {activeProject.capacity && (
+                                                    <tr>
+                                                        <th>Capacity</th>
+                                                        <td>{activeProject.capacity}</td>
+                                                    </tr>
+                                                )}
+                                                {activeProject.status && (
+                                                    <tr>
+                                                        <th>Status</th>
+                                                        <td>{activeProject.status}</td>
+                                                    </tr>
+                                                )}
+                                                {activeProject.cecInputs && (
+                                                    <tr>
+                                                        <th>CEC Role</th>
+                                                        <td>{activeProject.cecInputs}</td>
+                                                    </tr>
+                                                )}
+                                                {activeProject.type && (
+                                                    <tr>
+                                                        <th>Type</th>
+                                                        <td>{activeProject.type}</td>
+                                                    </tr>
+                                                )}
+                                                {activeProject.technicalDetails?.headHeight && (
+                                                    <tr>
+                                                        <th>Head</th>
+                                                        <td>{activeProject.technicalDetails.headHeight}</td>
+                                                    </tr>
+                                                )}
+                                                {activeProject.technicalDetails?.discharge && (
+                                                    <tr>
+                                                        <th>Discharge</th>
+                                                        <td>{activeProject.technicalDetails.discharge}</td>
+                                                    </tr>
+                                                )}
+                                            </tbody>
+                                        </table>
                                     </section>
                                 )}
 

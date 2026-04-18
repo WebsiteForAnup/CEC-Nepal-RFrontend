@@ -333,64 +333,77 @@
     margin: 0;
 }
 
-/* Technical Specifications */
-.technical-section {
-    margin-bottom: 50px;
+/* Technical Specifications Table */
+.technical-info-table {
+    width: 100%;
+    margin: 40px 0;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid #edf2f7;
 }
 
-.technical-section h2 {
+.technical-info-table tr {
+    border-bottom: 1px solid #edf2f7;
+    transition: background 0.2s ease;
+}
+
+.technical-info-table tr:hover {
+    background: rgba(70, 163, 60, 0.02);
+}
+
+.technical-info-table tr:last-child {
+    border-bottom: none;
+}
+
+.technical-info-table tr:nth-child(even) {
+    background: #fcfdfc;
+}
+
+.technical-info-table th {
+    width: 30%;
+    padding: 20px 30px;
+    text-align: left;
+    background: #f8fafc;
+    color: #1a202c;
+    font-size: var(--fs-small);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    vertical-align: middle;
+    border-right: 1px solid #edf2f7;
+}
+
+.technical-info-table td {
+    padding: 20px 30px;
+    color: #4a5568;
+    font-size: var(--fs-body);
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.section-title {
     font-size: var(--fs-h2);
     font-weight: 700;
     color: #1a202c;
-    margin: 0 0 30px 0;
+    margin: 0 0 25px 0;
     padding-bottom: 15px;
     border-bottom: 3px solid var(--primary);
 }
 
-.specs-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.spec-item {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    padding: 25px;
-    background: #f8f9fa;
-    border-radius: 12px;
-    border-left: 4px solid var(--primary);
-    transition: all 0.3s ease;
-}
-
-.spec-item:hover {
-    background: linear-gradient(135deg, rgba(70, 163, 60, 0.08), rgba(16, 185, 129, 0.05));
-    transform: translateX(4px);
-    box-shadow: 0 4px 12px rgba(70, 163, 60, 0.1);
-}
-
-.spec-item i {
-    font-size: 28px;
-    color: var(--primary);
-    flex-shrink: 0;
-}
-
-.spec-item div {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.spec-item strong {
-    color: #1a202c;
-    font-size: var(--fs-small);
-    font-weight: 700;
-}
-
-.spec-item span {
-    color: #6c757d;
-    font-size: var(--fs-body);
+/* Mobile responsive for table */
+@media (max-width: 600px) {
+    .technical-info-table th {
+        width: 40%;
+        padding: 15px 20px;
+        font-size: 13px;
+    }
+    .technical-info-table td {
+        padding: 15px 20px;
+        font-size: 14px;
+    }
 }
 
 /* Timeline Section */
