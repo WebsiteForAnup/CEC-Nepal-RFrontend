@@ -11,7 +11,7 @@
 }
 
 .explorer-header h1 {
-    font-size: 32px;
+    font-size: var(--fs-h1);
     font-weight: 800;
     color: #1a202c;
     margin-bottom: 30px;
@@ -30,7 +30,7 @@
     background: #f8f9fa;
     border: 1px solid #e2e8f0;
     border-radius: 50px;
-    font-size: 14px;
+    font-size: var(--fs-small);
     font-weight: 600;
     color: #4a5568;
     cursor: pointer;
@@ -82,7 +82,7 @@
 }
 
 .sidebar-header h3 {
-    font-size: 16px;
+    font-size: var(--fs-body);
     font-weight: 700;
     color: #1a202c;
     margin: 0;
@@ -106,7 +106,7 @@
 }
 
 .item-info h4 {
-    font-size: 16px;
+    font-size: var(--fs-body);
     font-weight: 700;
     color: #1a202c;
     margin: 0 0 8px 0;
@@ -120,7 +120,7 @@
 .item-meta {
     display: flex;
     justify-content: space-between;
-    font-size: 13px;
+    font-size: var(--fs-small);
     color: #718096;
 }
 
@@ -153,7 +153,7 @@
 }
 
 .detail-overlay h2 {
-    font-size: 36px;
+    font-size: var(--fs-h2);
     font-weight: 800;
     margin: 0 0 10px 0;
     color: white !important;
@@ -179,21 +179,21 @@
 
 .info-box strong {
     display: block;
-    font-size: 12px;
+    font-size: var(--fs-small);
     text-transform: uppercase;
     color: var(--primary);
     margin-bottom: 8px;
 }
 
 .info-box span {
-    font-size: 15px;
+    font-size: var(--fs-body);
     font-weight: 600;
     color: #2d3748;
 }
 
 /* Timeline Custom Styling */
 .timeline-section h2 {
-    font-size: 24px;
+    font-size: var(--fs-h2);
     font-weight: 700;
     color: var(--primary);
     margin-bottom: 25px;
@@ -267,7 +267,7 @@
     background: var(--primary);
     color: white;
     border-radius: 20px;
-    font-size: 14px;
+    font-size: var(--fs-small);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -275,7 +275,7 @@
 }
 
 .hero-content h1 {
-    font-size: 48px;
+    font-size: var(--fs-h1);
     font-weight: 800;
     margin: 0;
     line-height: 1.2;
@@ -286,7 +286,7 @@
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
-    font-size: 16px;
+    font-size: var(--fs-body);
     opacity: 0.95;
 }
 
@@ -318,7 +318,7 @@
 }
 
 .project-description h2 {
-    font-size: 32px;
+    font-size: var(--fs-h2);
     font-weight: 700;
     color: #1a202c;
     margin: 0 0 20px 0;
@@ -327,7 +327,7 @@
 }
 
 .project-description p {
-    font-size: 16px;
+    font-size: var(--fs-body);
     line-height: 1.9;
     color: #495057;
     margin: 0;
@@ -339,7 +339,7 @@
 }
 
 .technical-section h2 {
-    font-size: 28px;
+    font-size: var(--fs-h2);
     font-weight: 700;
     color: #1a202c;
     margin: 0 0 30px 0;
@@ -384,13 +384,13 @@
 
 .spec-item strong {
     color: #1a202c;
-    font-size: 14px;
+    font-size: var(--fs-small);
     font-weight: 700;
 }
 
 .spec-item span {
     color: #6c757d;
-    font-size: 15px;
+    font-size: var(--fs-body);
 }
 
 /* Timeline Section */
@@ -399,7 +399,7 @@
 }
 
 .timeline-section h2 {
-    font-size: 28px;
+    font-size: var(--fs-h2);
     font-weight: 700;
     color: #1a202c;
     margin: 0 0 40px 0;
@@ -453,7 +453,7 @@
 .timeline-content p {
     margin: 0;
     color: #495057;
-    font-size: 15px;
+    font-size: var(--fs-body);
     font-weight: 500;
 }
 
@@ -467,14 +467,14 @@
 }
 
 .cta-section h2 {
-    font-size: 28px;
+    font-size: var(--fs-h2);
     font-weight: 700;
     color: #1a202c;
     margin: 0 0 10px 0;
 }
 
 .cta-section p {
-    font-size: 16px;
+    font-size: var(--fs-body);
     color: #6c757d;
     margin: 0 0 30px 0;
 }
@@ -538,7 +538,7 @@
 .info-card h3,
 .related-projects h3,
 .contact-card h3 {
-    font-size: 20px;
+    font-size: var(--fs-h4);
     font-weight: 700;
     color: #1a202c;
     margin: 0 0 20px 0;
@@ -561,7 +561,7 @@
 
 .info-item strong {
     color: var(--primary);
-    font-size: 12px;
+    font-size: var(--fs-small);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 700;
@@ -569,7 +569,7 @@
 
 .info-item span {
     color: #495057;
-    font-size: 15px;
+    font-size: var(--fs-body);
     font-weight: 500;
 }
 
@@ -578,7 +578,7 @@
     padding: 4px 12px;
     color: white;
     border-radius: 12px;
-    font-size: 13px;
+    font-size: var(--fs-small);
     font-weight: 600;
     width: fit-content;
 }
@@ -616,13 +616,13 @@
 
 .project-name {
     color: #1a202c;
-    font-size: 14px;
+    font-size: var(--fs-small);
     font-weight: 600;
 }
 
 .project-capacity {
     color: #6c757d;
-    font-size: 12px;
+    font-size: var(--fs-small);
 }
 
 .project-link i {
@@ -638,7 +638,7 @@
 
 /* Contact Card */
 .contact-card p {
-    font-size: 14px;
+    font-size: var(--fs-small);
     color: #6c757d;
     margin: 0 0 20px 0;
     line-height: 1.6;
@@ -651,7 +651,7 @@
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: var(--fs-small);
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -682,7 +682,7 @@
 .not-found p {
     color: #6c757d;
     margin: 0 0 30px 0;
-    font-size: 16px;
+    font-size: var(--fs-body);
 }
 
 .back-btn {
@@ -691,7 +691,7 @@
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 15px;
+    font-size: var(--fs-body);
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -726,13 +726,13 @@
     }
 
     .detail-overlay h2 {
-        font-size: 28px;
+        font-size: var(--fs-h2);
     }
 }
 
 @media (max-width: 600px) {
     .explorer-header h1 {
-        font-size: 26px;
+        font-size: var(--fs-h1);
     }
 
     .category-buttons {
@@ -753,7 +753,7 @@
     }
 
     .detail-overlay h2 {
-        font-size: 22px;
+        font-size: var(--fs-h2);
     }
 
     .info-grid {

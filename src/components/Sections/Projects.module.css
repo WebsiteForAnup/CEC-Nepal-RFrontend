@@ -23,7 +23,7 @@
 }
 
 .sectionHeader h2 {
-  font-size: 3rem;
+  font-size: var(--fs-h2);
   color: var(--primary);
   margin-bottom: 20px;
   font-family: 'Poppins', sans-serif;
@@ -32,7 +32,7 @@
 
 .subtitle {
   color: #64748b;
-  font-size: 1.1rem;
+  font-size: var(--fs-body);
   max-width: 700px;
   margin: 0 auto 20px;
 }
@@ -146,7 +146,7 @@
 }
 
 .itemInfo h4 {
-  font-size: 16px;
+  font-size: var(--fs-body);
   font-weight: 700;
   color: #1a202c;
   margin: 0 0 8px 0;
@@ -160,7 +160,7 @@
 .itemMeta {
   display: flex;
   justify-content: space-between;
-  font-size: 13px;
+  font-size: var(--fs-small);
   color: #718096;
 }
 
@@ -196,7 +196,7 @@
 }
 
 .detailOverlay h2 {
-  font-size: 32px;
+  font-size: var(--fs-h2);
   font-weight: 800;
   color: white;
   margin-bottom: 15px;
@@ -260,7 +260,7 @@
 }
 
 .technicalSection h3 {
-  font-size: 22px;
+  font-size: var(--fs-h3);
   font-weight: 800;
   color: #1a202c;
   margin-bottom: 20px;
@@ -326,7 +326,7 @@
 }
 
 .descriptionSection h3 {
-  font-size: 22px;
+  font-size: var(--fs-h3);
   font-weight: 800;
   color: #1a202c;
   margin-bottom: 15px;
@@ -335,7 +335,7 @@
 .descriptionSection p {
   color: #4a5568;
   line-height: 1.8;
-  font-size: 16px;
+  font-size: var(--fs-body);
 }
 
 .timelineSection h3 {
@@ -449,13 +449,13 @@
   }
   
   .detailOverlay h2 {
-    font-size: 24px;
+    font-size: var(--fs-h2);
   }
 }
 
 @media (max-width: 600px) {
   .sectionHeader h2 {
-    font-size: 2.2rem;
+    font-size: var(--fs-h2);
   }
   
   .categoryNavigation {

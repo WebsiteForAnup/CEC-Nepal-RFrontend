@@ -21,7 +21,7 @@
 }
 
 .sectionHeader h2 {
-  font-size: 2rem;
+  font-size: var(--fs-h2);
   color: #0f172a;
   margin-bottom: 0.75rem;
 }
@@ -81,20 +81,20 @@
 }
 
 .value {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: #0f172a;
   margin-bottom: 0.3rem;
 }
 
 .suffix {
-  font-size: 1.2rem;
+  font-size: var(--fs-h4);
   color: var(--primary);
   margin-left: 0.15rem;
 }
 
 .label {
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   color: #64748b;
   text-transform: uppercase;
   letter-spacing: 0.8px;
@@ -111,7 +111,7 @@
 }
 
 .breakdown h3 {
-  font-size: 1.25rem;
+  font-size: var(--fs-h4);
   color: #0f172a;
   margin-bottom: 1.5rem;
   text-align: center;
@@ -133,7 +133,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
   font-weight: 600;
   color: #0f172a;
 }
@@ -159,7 +159,7 @@
   }
 
   .sectionHeader h2 {
-    font-size: 1.75rem;
+    font-size: var(--fs-h2);
   }
 
   .statsGrid {
@@ -172,7 +172,7 @@
   }
 
   .value {
-    font-size: 1.75rem;
+    font-size: var(--fs-h1);
   }
 
   .icon {
@@ -184,7 +184,7 @@
   }
 
   .breakdown h3 {
-    font-size: 1.1rem;
+    font-size: var(--fs-h4);
     margin-bottom: 1.25rem;
   }
 
@@ -197,7 +197,7 @@
   }
 
   .barLabel {
-    font-size: 0.85rem;
+    font-size: var(--fs-small);
   }
 
   .progressBar {
@@ -211,7 +211,7 @@
   }
 
   .sectionHeader h2 {
-    font-size: 1.5rem;
+    font-size: var(--fs-h2);
   }
 
   .statsGrid {
@@ -224,7 +224,7 @@
   }
 
   .value {
-    font-size: 1.5rem;
+    font-size: var(--fs-h1);
   }
 
   .icon {
@@ -233,7 +233,7 @@
   }
 
   .label {
-    font-size: 0.8rem;
+    font-size: var(--fs-small);
   }
 
   .breakdown {
@@ -241,7 +241,7 @@
   }
 
   .breakdown h3 {
-    font-size: 1rem;
+    font-size: var(--fs-h4);
     margin-bottom: 1rem;
   }
 
@@ -250,7 +250,7 @@
   }
 
   .barLabel {
-    font-size: 0.8rem;
+    font-size: var(--fs-small);
   }
 
   .progressBar {

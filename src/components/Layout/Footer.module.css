@@ -57,7 +57,7 @@
 }
 
 .footerLogo h3 {
-  font-size: 1.5rem;
+  font-size: var(--fs-h3);
   font-weight: 700;
   color: white;
   margin: 0;
@@ -71,13 +71,13 @@
   color: #cbd5e1;
   line-height: 1.7;
   margin-bottom: 1.5rem;
-  font-size: 0.95rem;
+  font-size: var(--fs-small);
 }
 
 /* Column Headings */
 .footerCol h4 {
   color: white;
-  font-size: 1.1rem;
+  font-size: var(--fs-h4);
   font-weight: 600;
   margin-bottom: 1.5rem;
   position: relative;
@@ -108,7 +108,7 @@
 .footerCol ul li a {
   color: #cbd5e1;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: var(--fs-small);
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
@@ -141,7 +141,7 @@
   align-items: flex-start;
   gap: 0.8rem;
   color: #cbd5e1;
-  font-size: 0.95rem;
+  font-size: var(--fs-small);
 }
 
 .contactInfo i {
@@ -217,7 +217,7 @@
 
 .footerBottomContent p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
   color: #94a3b8;
 }
 
@@ -230,7 +230,7 @@
 .footerLinks a {
   color: #94a3b8;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
   transition: color 0.3s ease;
 }
 

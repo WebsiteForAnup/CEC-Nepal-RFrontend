@@ -31,14 +31,14 @@
 }
 
 .section-title {
-    font-size: clamp(1.875rem, 4vw, 2.5rem);
+    font-size: var(--fs-h2);
     color: #111827;
     margin-bottom: 1rem;
     font-weight: 800;
 }
 
 .section-description {
-    font-size: 1.05rem;
+    font-size: var(--fs-body);
     color: #6b7280;
     max-width: 700px;
     margin: 0 auto;
@@ -202,7 +202,7 @@
    ============================================ */
 
 .card-title {
-    font-size: 1.15rem;
+    font-size: var(--fs-h4);
     font-weight: 700;
     color: #111827;
     line-height: 1.4;
@@ -219,7 +219,7 @@
    ============================================ */
 
 .card-description {
-    font-size: 0.95rem;
+    font-size: var(--fs-body);
     color: #6b7280;
     line-height: 1.6;
     margin-bottom: 1.25rem;
@@ -347,7 +347,7 @@
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: var(--fs-h2);
     }
 
     .news-grid {
@@ -374,11 +374,11 @@
     }
 
     .card-title {
-        font-size: 1.05rem;
+        font-size: var(--fs-h4);
     }
 
     .card-description {
-        font-size: 0.9rem;
+        font-size: var(--fs-body);
     }
 }
 
@@ -388,11 +388,11 @@
     }
 
     .section-title {
-        font-size: 1.75rem;
+        font-size: var(--fs-h2);
     }
 
     .section-description {
-        font-size: 0.95rem;
+        font-size: var(--fs-body);
     }
 
     .filter-buttons {
@@ -427,7 +427,7 @@
     }
 
     .card-description {
-        font-size: 0.85rem;
+        font-size: var(--fs-body);
         -webkit-line-clamp: 2;
     }
 

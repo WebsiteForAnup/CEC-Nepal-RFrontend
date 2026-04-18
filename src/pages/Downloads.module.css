@@ -38,14 +38,14 @@
 }
 
 .hero-content h1 {
-    font-size: 56px;
+    font-size: var(--fs-h1);
     font-weight: 800;
     margin: 0 0 20px 0;
     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .hero-content p {
-    font-size: 20px;
+    font-size: var(--fs-body);
     opacity: 0.95;
     margin: 0;
 }
@@ -75,7 +75,7 @@
     padding: 16px 20px 16px 55px;
     border: 2px solid #e9ecef;
     border-radius: 30px;
-    font-size: 16px;
+    font-size: var(--fs-body);
     transition: all 0.3s ease;
 }
 
@@ -98,7 +98,7 @@
     color: #495057;
     border: 2px solid #e9ecef;
     border-radius: 25px;
-    font-size: 15px;
+    font-size: var(--fs-small);
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -173,7 +173,7 @@
 }
 
 .card-header h3 {
-    font-size: 18px;
+    font-size: var(--fs-h4);
     font-weight: 700;
     color: #1a202c;
     margin: 0;
@@ -195,7 +195,7 @@
 }
 
 .description {
-    font-size: 14px;
+    font-size: var(--fs-small);
     color: #6c757d;
     line-height: 1.6;
     margin: 0;
@@ -204,7 +204,7 @@
 .card-meta {
     display: flex;
     gap: 20px;
-    font-size: 13px;
+    font-size: var(--fs-small);
     color: #6c757d;
 }
 
@@ -226,7 +226,7 @@
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: var(--fs-small);
     font-weight: 700;
     cursor: pointer;
     display: inline-flex;
@@ -304,14 +304,14 @@
 }
 
 .stat-item h3 {
-    font-size: 42px;
+    font-size: var(--fs-h1);
     font-weight: 800;
     color: #1a202c;
     margin: 0 0 10px 0;
 }
 
 .stat-item p {
-    font-size: 16px;
+    font-size: var(--fs-body);
     color: #6c757d;
     margin: 0;
     font-weight: 500;
@@ -339,14 +339,14 @@
 }
 
 .info-banner h4 {
-    font-size: 20px;
+    font-size: var(--fs-h4);
     font-weight: 700;
     color: #1a202c;
     margin: 0 0 8px 0;
 }
 
 .info-banner p {
-    font-size: 15px;
+    font-size: var(--fs-body);
     color: #6c757d;
     margin: 0;
     line-height: 1.6;
@@ -391,7 +391,7 @@
     }
 
     .hero-content h1 {
-        font-size: 40px;
+        font-size: var(--fs-h1);
     }
 
     .hero-content p {
@@ -438,7 +438,7 @@
     }
 
     .hero-content h1 {
-        font-size: 32px;
+        font-size: var(--fs-h1);
     }
 
     .hero-content p {

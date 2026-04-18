@@ -28,17 +28,17 @@
   border-radius: 50px;
   display: inline-block;
   margin-bottom: 1.5rem;
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   text-transform: uppercase;
   letter-spacing: 1px;
   animation: fadeInDown 1s ease-out 0.2s both;
 }
 
 .hero h1 {
-  font-size: 4rem;
+  font-size: 4.5rem;
   margin-bottom: 1.5rem;
   color: white;
-  line-height: 1.2;
+  line-height: 1.1;
   animation: fadeInUp 1s ease-out 0.4s both;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .hero p {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   max-width: 700px;
   margin: 0 auto 2.5rem;
   color: #ffffff;
@@ -96,4 +96,26 @@
 .btnSecondary:hover {
   background: white;
   color: #1e293b;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: var(--fs-h1);
+  }
+  
+  .hero p {
+    font-size: var(--fs-body);
+  }
+
+  .btnPrimary, .btnSecondary {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+
+  .heroButtons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
 }

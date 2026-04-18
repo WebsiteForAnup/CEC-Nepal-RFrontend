@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Projects.module.css';
+import { useNavigate } from 'react-router-dom';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 const Projects = ({ projects = [] }) => {
+  const navigate = useNavigate();
   const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.1 });
 
   // Categorical clusters requested by the user
@@ -31,7 +33,7 @@ const Projects = ({ projects = [] }) => {
     if (firstInCat) setActiveProject(firstInCat);
   };
 
-  const filteredProjects = projects.filter(p => 
+  const filteredProjects = projects.filter(p =>
     p.categories && p.categories.includes(activeCategory)
   );
 
@@ -72,7 +74,7 @@ const Projects = ({ projects = [] }) => {
               </div>
               <div className={styles.itemsContainer}>
                 {filteredProjects.map(p => (
-                  <div 
+                  <div
                     key={p.id}
                     className={`${styles.projectItem} ${activeProject?.id === p.id ? styles.active : ''}`}
                     onClick={() => setActiveProject(p)}
@@ -126,7 +128,7 @@ const Projects = ({ projects = [] }) => {
                       <p>{activeProject.description}</p>
                     </article>
 
-                    {activeProject.technicalDetails && (
+                    {/* {activeProject.technicalDetails && (
                       <section className={styles.technicalSection}>
                         <h3>Technical Specifications</h3>
                         <div className={styles.specsGrid}>
@@ -170,9 +172,9 @@ const Projects = ({ projects = [] }) => {
                           })}
                         </div>
                       </section>
-                    )}
+                    )} */}
 
-                    {activeProject.timeline && activeProject.timeline.length > 0 && (
+                    {/* {activeProject.timeline && activeProject.timeline.length > 0 && (
                       <section className={styles.timelineSection}>
                         <h3>Engagement Timeline</h3>
                         <div className={styles.timelineList}>
@@ -184,18 +186,15 @@ const Projects = ({ projects = [] }) => {
                           ))}
                         </div>
                       </section>
-                    )}
+                    )} */}
 
                     <div className={styles.actions}>
-                      <button 
+                      <button
                         className={styles.inquiryBtn}
-                        onClick={() => {
-                          const contactSection = document.getElementById('contact');
-                          if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
-                        }}
+                        onClick={() => navigate(`/project/${activeProject.id}`)}
                       >
-                        Inquire About This Project
-                        <i className="fas fa-paper-plane"></i>
+                        More Information
+                        <i className="fas fa-arrow-right"></i>
                       </button>
                     </div>
                   </div>

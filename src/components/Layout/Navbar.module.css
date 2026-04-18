@@ -24,7 +24,7 @@
 }
 
 .announcement {
-  font-size: 0.95rem;
+  font-size: var(--fs-small);
   font-weight: 500;
   margin: 0;
   color: #ffffff;
@@ -46,7 +46,7 @@
   border-radius: 25px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -131,7 +131,7 @@
 }
 
 .logoText {
-  font-size: 1.1rem;
+  font-size: var(--fs-h4);
   font-weight: 700;
   color: #1e293b;
   display: flex;
@@ -163,7 +163,7 @@
   text-decoration: none;
   color: #1e293b;
   font-weight: 500;
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   transition: all 0.3s ease;
   cursor: pointer;
   position: relative;
@@ -233,7 +233,7 @@
   color: #1e293b;
   text-decoration: none;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
   transition: all 0.2s ease;
   position: relative;
 }
@@ -256,7 +256,7 @@
   border: none;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: var(--fs-small);
   cursor: pointer;
   transition: all 0.3s ease;
   white-space: nowrap;
@@ -272,6 +272,10 @@
 
 .registerBtn:active {
   transform: translateY(0);
+}
+
+.mobileOnly {
+  display: none;
 }
 
 .burger {
@@ -331,6 +335,8 @@
 
   .burger {
     display: flex;
+    margin-left: auto;
+    z-index: 1002;
   }
 
   .navLinks {
@@ -381,7 +387,11 @@
   }
 
   .registerBtn {
-    display: none;
+    display: none !important;
+  }
+
+  .mobileOnly {
+    display: block;
   }
 }
 
@@ -438,7 +448,7 @@
 }
 
 .modalContent h2 {
-  font-size: 1.8rem;
+  font-size: var(--fs-h3);
   color: #1e293b;
   margin-bottom: 0.5rem;
   font-family: 'Poppins', sans-serif;
@@ -446,7 +456,7 @@
 
 .modalSubtitle {
   color: #64748b;
-  font-size: 0.95rem;
+  font-size: var(--fs-body);
   margin-bottom: 2rem;
 }
 
@@ -470,7 +480,7 @@
   border: 1px solid #e2e8f0;
   border-radius: 10px;
   font-family: inherit;
-  font-size: 0.95rem;
+  font-size: var(--fs-body);
   transition: all 0.3s ease;
   outline: none;
 }
@@ -495,7 +505,7 @@
   border: none;
   border-radius: 10px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: var(--fs-body);
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 1rem;
@@ -541,7 +551,7 @@
   }
 
   .modalContent h2 {
-    font-size: 1.5rem;
+    font-size: var(--fs-h3);
   }
 
   .closeBtn {

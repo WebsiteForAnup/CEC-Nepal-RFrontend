@@ -19,5 +19,11 @@
 .card:hover .image { transform: scale(1.1); }
 .card:hover .overlay { background: linear-gradient(transparent, rgba(16, 185, 129, 0.9)); }
 
-.overlay h4 { font-size: 1.4rem; margin-bottom: 0.5rem; }
-.overlay p { font-weight: 600; opacity: 0.8; }
+.overlay h4 { font-size: var(--fs-h4); margin-bottom: 0.5rem; }
+.overlay p { font-size: var(--fs-small); font-weight: 600; opacity: 0.8; }
+
+@media (max-width: 768px) {
+  .overlay {
+    padding: 1.5rem;
+  }
+}

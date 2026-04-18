@@ -11,7 +11,7 @@
 }
 
 .sectionTitle {
-  font-size: 2.5rem;
+  font-size: var(--fs-h2);
   text-align: center;
   color: #1e293b;
   margin-bottom: 0.5rem;
@@ -21,7 +21,7 @@
 .sectionSubtitle {
   text-align: center;
   color: #64748b;
-  font-size: 1.1rem;
+  font-size: var(--fs-body);
   margin-bottom: 3rem;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .contactInfo h2 {
-  font-size: 1.8rem;
+  font-size: var(--fs-h3);
   margin-bottom: 2rem;
   color: var(--primary);
   font-weight: 700;
@@ -63,7 +63,7 @@
 }
 
 .infoItem p {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.6;
   color: #ffffff;
   margin: 0;
@@ -78,7 +78,7 @@
 }
 
 .contactForm h2 {
-  font-size: 1.8rem;
+  font-size: var(--fs-h3);
   margin-bottom: 2rem;
   color: #1e293b;
 }
@@ -91,7 +91,7 @@
   border: 1px solid #e2e8f0;
   border-radius: 10px;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: var(--fs-body);
   transition: all 0.3s ease;
   outline: none;
 }
@@ -166,7 +166,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 1rem;
+  font-size: var(--fs-body);
 }
 
 .submitBtn:hover {
@@ -190,7 +190,7 @@
 
 @media (max-width: 768px) {
   .sectionTitle {
-    font-size: 2rem;
+    font-size: var(--fs-h2);
   }
 
   .contactWrapper {
