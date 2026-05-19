@@ -2,8 +2,14 @@
   "title": "Our Team",
   "subtitle": "Meet the experts behind CEC Nepal's success",
   "stats": [
-    { "value": "50+", "label": "Experienced Team Members" },
-    { "value": "20+", "label": "Combined Years of Experience" }
+    {
+      "value": "50+",
+      "label": "Experienced Team Members"
+    },
+    {
+      "value": "20+",
+      "label": "Combined Years of Experience"
+    }
   ],
   "joinTeam": {
     "title": "Join Our Team",
@@ -108,6 +114,220 @@
         "isExpertStaff": true,
         "boardDesignation": "",
         "staffDesignation": "Sr. Geologist / RS & GIS / Tunneling & Geophysics Expert"
+      }
+    }
+    
+    
+  ],
+  "staffs":[
+    {
+      "slug": "dinesh-silwal",
+      "name": "Er. Dinesh Silwal",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Dinesh-Silwal-1024x768.jpg_5d9e17bf.jpeg",
+      "education": "BE Civil Engineering, PU, MSc, Construction Mgmt, PU",
+      "experience": "13 years, Full Time",
+      "bio": "",
+      "assignments": {
+        "isBoardMember": false,
+        "isExpertStaff": true,
+        "boardDesignation": "",
+        "staffDesignation": "Construction Engineer"
+      }
+    },
+    {
+      "slug": "kb-garamja",
+      "name": "Er. K.B. Garamja",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Kamal-B-Garamja-894x1024.jpg_d4935a5b.jpeg",
+      "education": "BE, Purbanchal University",
+      "experience": "10 years, Full Time",
+      "bio": "",
+      "assignments": {
+        "isBoardMember": false,
+        "isExpertStaff": true,
+        "boardDesignation": "",
+        "staffDesignation": "Civil Engineer"
+      }
+    },
+    {
+      "slug": "rabin-aryal",
+      "name": "Er. Rabin Aryal",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Rabin-Aryal-1024x768.jpg_f6f447cd.jpeg",
+      "education": "MSc. in Structural Eng., Tribhuvan University",
+      "experience": "5 years, Full Time",
+      "bio": "",
+      "assignments": {
+        "isBoardMember": false,
+        "isExpertStaff": true,
+        "boardDesignation": "",
+        "staffDesignation": "Structural Engineer"
+      }
+    },
+    {
+      "slug": "prajwal-khatiwada",
+      "name": "Er. Prajwal Khatiwada",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_12_WhatsApp-Image-2023-12-28-at-11.09.31_3e9eedbb-1024x768.jpg_7928a36b.jpeg",
+      "education": "BE Electrical Engineering, KU",
+      "experience": "4 years, Full Time",
+      "bio": "",
+      "assignments": {
+        "isBoardMember": false,
+        "isExpertStaff": true,
+        "boardDesignation": "",
+        "staffDesignation": "Electrical Engineer"
+      }
+    },
+    {
+      "slug": "nanda-lal-pal",
+      "name": "Er. Nanda Lal Pal",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Nanda-Lal-Pal.jpg_4d5ee1ed.jpeg",
+      "education": "BE, Tribhuvan University",
+      "experience": "3 years, Full Time",
+      "bio": "",
+      "assignments": {
+        "isBoardMember": false,
+        "isExpertStaff": true,
+        "boardDesignation": "",
+        "staffDesignation": "Mechanical Engineer"
+      }
+    },
+    {
+      "slug": "prajwal-poudel",
+      "name": "Er. Prajwal Poudel",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_WhatsApp-Image-2023-10-08-at-12.31.15_6360e318-990x1024.jpg_025f0470.jpeg",
+      "education": "BE Civil Engineering, TU, ME Hydropower Engineering, TU",
+      "experience": "4 years, Full Time",
+      "bio": "",
+      "assignments": {
+        "isBoardMember": false,
+        "isExpertStaff": true,
+        "boardDesignation": "",
+        "staffDesignation": "Hydropower Engineer"
+      }
+    },
+    {
+      "slug": "rajan-mahat",
+      "name": "Mr. Rajan Mahat",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Rajan-Mahat.jpg_2d628913.jpeg",
+      "education": "MSc., Engineering Geology, Tribhuvan University",
+      "experience": "4 years, Full Time",
+      "bio": "",
+      "assignments": {
+        "isBoardMember": false,
+        "isExpertStaff": true,
+        "boardDesignation": "",
+        "staffDesignation": "Engineering Geologist"
+      }
+    },
+    {
+      "slug": "charchit-khan-thakuri",
+      "name": "Er. Charchit Khan Thakuri",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Charchit-Thakuri-.jpg_6934bdff.jpeg",
+      "education": "BE Civil Engineering, PU, ME Construction Mgmt, PU",
+      "experience": "3 years, Full Time",
+      "bio": "",
+      "assignments": {
+        "isBoardMember": false,
+        "isExpertStaff": true,
+        "boardDesignation": "",
+        "staffDesignation": "Civil Engineer"
+      }
+    },
+    {
+      "slug": "bharat-bista",
+      "name": "Er. Bharat Bista",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_12_WhatsApp-Image-2023-12-28-at-11.02.31_6aeed208-768x1024.jpg_c18f943b.jpeg",
+      "education": "BE, Civil Engineering, Bangalore",
+      "experience": "1 yr experience, Full Time",
+      "bio": "",
+      "assignments": {
+        "isBoardMember": false,
+        "isExpertStaff": true,
+        "boardDesignation": "",
+        "staffDesignation": "Civil Engineer"
+      }
+    },
+    {
+      "slug": "suraj-shreesh",
+      "name": "Er. Suraj Shreesh",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Suraj-Shreesh.jpg_aed25a61.jpeg",
+      "education": "BE Civil Engineering, PoU, ME Rock & Tunnel Engineering, TU",
+      "experience": "3 years, Full Time",
+      "bio": "",
+      "assignments": {
+        "isBoardMember": false,
+        "isExpertStaff": true,
+        "boardDesignation": "",
+        "staffDesignation": "Site Engineer"
+      }
+    },
+    {
+      "slug": "minu-chitrakar",
+      "name": "Ms. Minu Chitrakar",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Minu-Chitrakar-768x1024.jpg_0da66042.jpeg",
+      "education": "Diploma, Civil Engineering",
+      "experience": "23 years,Full Time",
+      "bio": "",
+      "assignments": {
+        "isBoardMember": false,
+        "isExpertStaff": true,
+        "boardDesignation": "",
+        "staffDesignation": "Draft Person"
+      }
+    },
+    {
+      "slug": "pramod-gautam",
+      "name": "Mr. Pramod Gautam",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Pramod-Gautam-842x1024.jpg_5c7371d0.jpeg",
+      "education": "MSc., Engineering Geology, Tribhuvan University",
+      "experience": "1 year, Full Time",
+      "bio": "",
+      "assignments": {
+        "isBoardMember": false,
+        "isExpertStaff": true,
+        "boardDesignation": "",
+        "staffDesignation": "Engineering Geologist"
+      }
+    },
+    {
+      "slug": "purna-raj-tamang",
+      "name": "Mr. Purna Raj Tamang",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Purna-B-Tamang-853x1024.jpg_b5ac7ea6.jpeg",
+      "education": "Diploma in Civil Engineering, TU",
+      "experience": "1 year, Full Time",
+      "bio": "",
+      "assignments": {
+        "isBoardMember": false,
+        "isExpertStaff": true,
+        "boardDesignation": "",
+        "staffDesignation": "Site Engineer"
+      }
+    },
+    {
+      "slug": "buddha-raj-tamang",
+      "name": "Mr. Buddha Raj Tamang",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Buddha-R-Tamang.jpg_d3e54de5.jpeg",
+      "education": "+2 Management",
+      "experience": "3 years, Full Time",
+      "bio": "",
+      "assignments": {
+        "isBoardMember": false,
+        "isExpertStaff": true,
+        "boardDesignation": "",
+        "staffDesignation": "Assistant Accountant"
+      }
+    },
+    {
+      "slug": "karma-raj-tamang",
+      "name": "Mr. Karma Raj Tamang",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Karma-R-Tamang-815x1024.jpg_92416095.jpeg",
+      "education": "MBS, TU",
+      "experience": "15 years, Full Time",
+      "bio": "",
+      "assignments": {
+        "isBoardMember": false,
+        "isExpertStaff": true,
+        "boardDesignation": "",
+        "staffDesignation": "Head Accountant"
       }
     }
   ]

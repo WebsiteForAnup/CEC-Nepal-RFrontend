@@ -32,9 +32,11 @@ export const getTeamCategories = (teamJson) => {
         ...m,
         designation: m.assignments.staffDesignation
       }));
+    const staffs = teamJson.staffs;
     return {
       "Board of Directors": boardOfDirectors,
-      "Who We Are": whoWeAre
+      "Who We Are": whoWeAre,
+      "Our Staffs": staffs
     };
   }
   return teamJson?.team || {};
