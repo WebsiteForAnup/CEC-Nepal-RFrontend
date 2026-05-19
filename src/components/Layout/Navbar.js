@@ -20,7 +20,6 @@ const Navbar = () => {
     timeline: '',
     services: ''
   });
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,12 +49,6 @@ const Navbar = () => {
       }, 300);
     }
   }, [location.pathname, pendingSection]);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   const scrollToSection = (id) => {
     setMobileMenuOpen(false);
@@ -238,7 +231,7 @@ const Navbar = () => {
               <img src="/images/cec-logo.png" alt="CEC Nepal Logo" className={styles.logoImage} />
               <span className={styles.logoText}>CEC<span className={styles.logoHighlight}>Nepal</span></span>
             </a>
-            <ul className={`${styles.navLinks} ${mobileMenuOpen ? styles.navActive : ''}`}>
+            <ul className={styles.navLinks}>
               <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a></li>
               <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>Services</a></li>
               <li><a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>Projects</a></li>
@@ -246,7 +239,6 @@ const Navbar = () => {
               <li><a href="#news-events" onClick={(e) => { e.preventDefault(); scrollToSection('news-events'); }}>News & Events</a></li>
               <li 
                 className={styles.dropdownContainer}
-                onClick={() => setShowUpdatesDropdown(!showUpdatesDropdown)}
                 onMouseEnter={() => setShowUpdatesDropdown(true)}
                 onMouseLeave={() => setShowUpdatesDropdown(false)}
               >
@@ -261,11 +253,10 @@ const Navbar = () => {
                 </div>
               </li>
               <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a></li>
-              {isMobile && <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Register Now</a></li>}
             </ul>
-            {!isMobile && <button className={styles.registerBtn} onClick={() => scrollToSection('contact')}>
+            <button className={styles.registerBtn} onClick={() => scrollToSection('contact')}>
               Register Now
-            </button>}
+            </button>
             <div className={`${styles.burger} ${mobileMenuOpen ? styles.toggle : ''}`} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               <div className={styles.line1}></div>
               <div className={styles.line2}></div>

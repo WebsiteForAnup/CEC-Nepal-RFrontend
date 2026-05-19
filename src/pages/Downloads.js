@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from './Downloads.module.css';
 import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Footer from '../components/Layout/Footer';
-import downloadsJson from '../data/downloads.json';
+import downloadsJson from '../data/collections/downloads.json';
 
 const Downloads = () => {
     const downloadResources = downloadsJson.downloads;
@@ -69,7 +69,7 @@ const Downloads = () => {
                     {/* Downloads Grid */}
                     <div className={styles['downloads-grid']}>
                         {filteredResources.map(resource => (
-                            <div key={resource.id} className={styles['download-card']}>
+                            <div key={resource.slug} className={styles['download-card']}>
                                 <div className={styles['card-icon']}>
                                     <i className={resource.icon}></i>
                                 </div>

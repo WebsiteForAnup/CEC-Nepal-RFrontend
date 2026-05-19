@@ -1,28 +1,43 @@
 {
+  "hero": {
+    "badge": "Engineering Excellence Since 2006",
+    "title": "",
+    "titleHighlight": "Clean Energy",
+    "titleSuffix": "for Generations",
+    "subtitle": "Leading national consultancy for Hydropower, Solar, and Infrastructure development in Nepal.",
+    "primaryCta": {
+      "label": "Explore Services",
+      "scrollTo": "services"
+    },
+    "secondaryCta": {
+      "label": "Consult with Experts",
+      "scrollTo": "contact"
+    }
+  },
   "statistics": [
     {
-      "id": 1,
+      "id": "projects-completed",
       "label": "Projects Completed",
       "value": "60+",
       "icon": "fas fa-check-circle",
       "color": "#46a33c"
     },
     {
-      "id": 2,
+      "id": "capacity-developed",
       "label": "MW Capacity Developed",
       "value": "1,000+",
       "icon": "fas fa-bolt",
       "color": "#46a33c"
     },
     {
-      "id": 3,
+      "id": "team-members",
       "label": "Team Members",
       "value": "40+",
       "icon": "fas fa-users",
       "color": "#46a33c"
     },
     {
-      "id": 4,
+      "id": "years-experience",
       "label": "Years Experience",
       "value": "25+",
       "icon": "fas fa-briefcase",

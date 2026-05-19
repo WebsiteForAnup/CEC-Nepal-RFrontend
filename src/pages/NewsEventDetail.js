@@ -3,14 +3,14 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import styles from './NewsEventDetail.module.css';
 import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Footer from '../components/Layout/Footer';
-import newsJson from '../data/newsAndEvents.json';
+import newsJson from '../data/collections/news-events/feed.json';
 
 const NewsEventDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     
     const sampleNewsEvents = newsJson.newsAndEvents;
-    const item = sampleNewsEvents.find(item => item.id === parseInt(id));
+    const item = sampleNewsEvents.find(item => item.slug === id || item.id === parseInt(id));
 
     if (!item) {
         return (
@@ -36,7 +36,7 @@ const NewsEventDetail = () => {
     };
 
     const relatedItems = sampleNewsEvents.filter(
-        news => item.relatedNews && item.relatedNews.includes(news.id)
+        news => item.relatedNewsSlugs && item.relatedNewsSlugs.includes(news.slug)
     );
 
     return (
@@ -150,8 +150,8 @@ const NewsEventDetail = () => {
                                 <div className={styles['related-list']}>
                                     {relatedItems.map(relatedItem => (
                                         <Link 
-                                            key={relatedItem.id}
-                                            to={`/news-event/${relatedItem.id}`}
+                                            key={relatedItem.slug}
+                                            to={`/news-event/${relatedItem.slug}`}
                                             className={styles['related-item']}
                                         >
                                             <img src={relatedItem.image} alt={relatedItem.title} />

@@ -1,13 +1,32 @@
-import teamData from '../data/team.json';
+import teamRegistry from '../data/collections/team/registry.json';
 
 /**
- * Returns the full team categories object from team.json.
- * Keys are category names, values are arrays of team member objects.
+ * Returns the full team categories object from the normalized registry.
+ * Keys are category names ("Board of Directors", "Who We Are"), values are arrays of mapped member objects.
  *
  * @returns {Record<string, Array>} teamCategories
  */
 export const getTeamCategories = () => {
-  return teamData.team || {};
+  const members = teamRegistry.members || [];
+  
+  const boardOfDirectors = members
+    .filter(m => m.assignments?.isBoardMember)
+    .map(m => ({
+      ...m,
+      designation: m.assignments.boardDesignation
+    }));
+
+  const whoWeAre = members
+    .filter(m => m.assignments?.isExpertStaff)
+    .map(m => ({
+      ...m,
+      designation: m.assignments.staffDesignation
+    }));
+
+  return {
+    "Board of Directors": boardOfDirectors,
+    "Who We Are": whoWeAre
+  };
 };
 
 /**
@@ -39,3 +58,4 @@ export const getTeamByCategory = (category) => {
 export const getTeamCategoryNames = () => {
   return Object.keys(getTeamCategories());
 };
+

@@ -14,16 +14,16 @@ import Footer from '../components/Layout/Footer';
 
 // ─── Data sources ─────────────────────────────────────────────────────────────
 // Change any import path here to swap data without touching section components.
-import heroJson from '../data/hero.json';
-import aboutJson from '../data/about.json';
-import servicesJson from '../data/services.json';
-import projectsJson from '../data/projects.json';
-import statisticsJson from '../data/statistics.json';
-import newsJson from '../data/newsAndEvents.json';
-import teamJson from '../data/team.json';
-import companyJson from '../data/company.json';
-import faqJson from '../data/faq.json';
-import profileJson from '../data/company_profile.json';
+import heroJson from '../data/pages/home.json';
+import aboutJson from '../data/pages/about.json';
+import servicesJson from '../data/collections/services.json';
+import projectsJson from '../data/collections/projects.json';
+import statisticsJson from '../data/pages/home.json';
+import newsJson from '../data/collections/news-events/feed.json';
+import teamJson from '../data/collections/team/registry.json';
+import companyJson from '../data/global/site-config.json';
+import faqJson from '../data/collections/faq.json';
+import profileJson from '../data/pages/company_profile.json';
 
 import {
     getHero,

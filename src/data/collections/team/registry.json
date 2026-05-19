@@ -1,0 +1,114 @@
+{
+  "title": "Our Team",
+  "subtitle": "Meet the experts behind CEC Nepal's success",
+  "stats": [
+    { "value": "50+", "label": "Experienced Team Members" },
+    { "value": "20+", "label": "Combined Years of Experience" }
+  ],
+  "joinTeam": {
+    "title": "Join Our Team",
+    "description": "We're always looking for talented engineers and consultants passionate about clean energy.",
+    "ctaLabel": "Contact Us for Opportunities",
+    "ctaLink": "#contact"
+  },
+  "members": [
+    {
+      "slug": "mani-raj-dahal",
+      "name": "Mr. Mani Raj Dahal",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_01_mani-raj-dahal-300x225.jpg_1c40d999.jpeg",
+      "education": "MSc Hydraulic Engineering & River Basin Development (IHE Delft, Netherlands), BE Civil Engineering (IOE Pulchowk)",
+      "experience": "26+ years in hydropower sector, technical consultant for numerous hydropower projects",
+      "bio": "Founder and Director of Clean Energy Consultants Pvt. Ltd., one of Nepal's leading hydropower consultancy firms with extensive expertise in hydropower development and technical consultancy.",
+      "assignments": {
+        "isBoardMember": true,
+        "isExpertStaff": true,
+        "boardDesignation": "Executive Chairman",
+        "staffDesignation": "Hydropower and Hydraulics Expert"
+      }
+    },
+    {
+      "slug": "santosh-dhakal",
+      "name": "Er. Santosh Dhakal",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Er-S-Photo.png_36c39907.png",
+      "education": "ME Electrical Engineering",
+      "experience": "20+ years as Electrical Engineer and Electromechanical Expert at CEC, 60+ hydropower projects designed",
+      "bio": "Board Director at Clean Energy Consultants since mid-2006. Has led the electrical and electromechanical design for approximately 60 hydropower projects with several more under feasibility and detailed design stages. Currently working with Hydro Tasmania, Australia.",
+      "assignments": {
+        "isBoardMember": true,
+        "isExpertStaff": true,
+        "boardDesignation": "Director",
+        "staffDesignation": "Electrical and Electromechanical Expert"
+      }
+    },
+    {
+      "slug": "narayan-poudel",
+      "name": "Mr. Narayan Poudel",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_image_2024-12-24_202752759.png_4bbc5a34.png",
+      "education": "Chartered Accountant",
+      "experience": "Extensive professional experience in finance and project financial analysis",
+      "bio": "Finance Director at Clean Energy Consultants Pvt. Ltd. Leads financial feasibility studies, project financial analysis, and overall financial assessment for hydropower projects. Also serves as Finance Director for Aayu Entertainment Pvt. Ltd. and Chairman of Finman Services Pvt. Ltd.",
+      "assignments": {
+        "isBoardMember": true,
+        "isExpertStaff": true,
+        "boardDesignation": "Finance Director",
+        "staffDesignation": "Finance Director"
+      }
+    },
+    {
+      "slug": "kosa-raj-chapagain",
+      "name": "Er. Kosa Raj Chapagain",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Kosa-Raj-Chapagain-1024x768.jpg_61cb41ef.jpeg",
+      "education": "BE Civil Engineering",
+      "experience": "15+ years as Senior Civil Engineer and Project Manager at CEC",
+      "bio": "Project Director and Board Member at Clean Energy Consultants since mid-2011. Brings extensive expertise in feasibility studies, detailed design, and project monitoring. Responsible for overseeing major hydropower project implementations and technical delivery.",
+      "assignments": {
+        "isBoardMember": true,
+        "isExpertStaff": true,
+        "boardDesignation": "Director",
+        "staffDesignation": "Cost and Construction Quality Control Expert"
+      }
+    },
+    {
+      "slug": "chhatra-basnet",
+      "name": "Dr. Chhatra Basnet",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Chhatra-Basnet-scaled.jpg_7ead7717.jpeg",
+      "education": "PhD Rock Mechanics (NTNU Norway), MSc Hydropower Development (NTNU Norway), BE Civil (IOE Pulchowk)",
+      "experience": "18+ years at Clean Energy Consultants Pvt. Ltd., strategic leadership and innovation",
+      "bio": "Chief Executive Officer with 18 years of pivotal experience at Clean Energy Consultants Pvt. Ltd. Dr. Basnet has shaped the company's strategic direction, driving innovation and sustainable engineering practices in the hydropower sector. Leads organizational vision and technical excellence.",
+      "assignments": {
+        "isBoardMember": true,
+        "isExpertStaff": true,
+        "boardDesignation": "Director/Chief Executive Officer (CEO)",
+        "staffDesignation": "Tunneling and Geotechnical Expert"
+      }
+    },
+    {
+      "slug": "bishnu-raj-baral",
+      "name": "Dr. Bishnu Raj Baral",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Bishnu-R-Baral-982x1024.jpg_6c137cbe.jpeg",
+      "education": "PhD Sediment (QMUL, UK), MSc Hydraulic Engineering and Sediment Transport (IHE Delft, Netherlands), BE Civil (IOE, Pulchowk)",
+      "experience": "5 years international research (UK, Italy, Netherlands), 18+ years hydropower consulting",
+      "bio": "",
+      "assignments": {
+        "isBoardMember": true,
+        "isExpertStaff": true,
+        "boardDesignation": "Director",
+        "staffDesignation": "Hydraulics and Sediment Transport Expert"
+      }
+    },
+    {
+      "slug": "ghan-bahadur-shrestha",
+      "name": "Mr. Ghan Bahadur Shrestha",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Ghan-B-Shrestha-1024x768.jpg_79e1ad02.jpeg",
+      "education": "MSc Geology",
+      "experience": "Major national projects: Nalsing Gad (410 MW), Melamchi Water Supply, Kabeli-3 (49 MW), Upper Chameliya (40 MW)",
+      "bio": "Geological and geophysical expert with specialized expertise in geological mapping, geophysical surveys, drilling supervision, GIS, and remote sensing. Extensive experience on significant national hydropower projects. Brings critical earth science expertise to complex feasibility and design phases.",
+      "assignments": {
+        "isBoardMember": false,
+        "isExpertStaff": true,
+        "boardDesignation": "",
+        "staffDesignation": "Sr. Geologist / RS & GIS / Tunneling & Geophysics Expert"
+      }
+    }
+  ]
+}

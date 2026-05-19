@@ -75,8 +75,8 @@ const Projects = ({ projects = [] }) => {
               <div className={styles.itemsContainer}>
                 {filteredProjects.map(p => (
                   <div
-                    key={p.id}
-                    className={`${styles.projectItem} ${activeProject?.id === p.id ? styles.active : ''}`}
+                    key={p.slug || p.id}
+                    className={`${styles.projectItem} ${(activeProject?.slug || activeProject?.id) === (p.slug || p.id) ? styles.active : ''}`}
                     onClick={() => setActiveProject(p)}
                   >
                     <div className={styles.itemInfo}>
@@ -191,7 +191,7 @@ const Projects = ({ projects = [] }) => {
                     <div className={styles.actions}>
                       <button
                         className={styles.inquiryBtn}
-                        onClick={() => navigate(`/project/${activeProject.id}`)}
+                        onClick={() => navigate(`/project/${activeProject.slug || activeProject.id}`)}
                       >
                         More Information
                         <i className="fas fa-arrow-right"></i>

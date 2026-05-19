@@ -1,7 +1,7 @@
 {
   "downloads": [
     {
-      "id": 1,
+      "slug": "hydropower-feasibility-study-template",
       "title": "Hydropower Feasibility Study Template",
       "category": "Templates",
       "type": "PDF",
@@ -11,7 +11,7 @@
       "downloadUrl": "#"
     },
     {
-      "id": 2,
+      "slug": "eia-iee-guidelines-nepal",
       "title": "EIA/IEE Guidelines Nepal",
       "category": "Guidelines",
       "type": "PDF",
@@ -21,7 +21,7 @@
       "downloadUrl": "#"
     },
     {
-      "id": 3,
+      "slug": "solar-project-design-checklist",
       "title": "Solar Project Design Checklist",
       "category": "Checklists",
       "type": "DOCX",
@@ -31,7 +31,7 @@
       "downloadUrl": "#"
     },
     {
-      "id": 4,
+      "slug": "cec-company-profile-2024",
       "title": "CEC Company Profile 2024",
       "category": "Company",
       "type": "PDF",
@@ -41,7 +41,7 @@
       "downloadUrl": "#"
     },
     {
-      "id": 5,
+      "slug": "project-management-framework",
       "title": "Project Management Framework",
       "category": "Templates",
       "type": "XLSX",
@@ -51,7 +51,7 @@
       "downloadUrl": "#"
     },
     {
-      "id": 6,
+      "slug": "hydropower-technical-standards",
       "title": "Hydropower Technical Standards",
       "category": "Standards",
       "type": "PDF",
@@ -61,7 +61,7 @@
       "downloadUrl": "#"
     },
     {
-      "id": 7,
+      "slug": "construction-supervision-report-format",
       "title": "Construction Supervision Report Format",
       "category": "Templates",
       "type": "DOCX",
@@ -71,7 +71,7 @@
       "downloadUrl": "#"
     },
     {
-      "id": 8,
+      "slug": "renewable-energy-policy-brief",
       "title": "Renewable Energy Policy Brief",
       "category": "Publications",
       "type": "PDF",
@@ -81,7 +81,7 @@
       "downloadUrl": "#"
     },
     {
-      "id": 9,
+      "slug": "infrastructure-safety-guidelines",
       "title": "Infrastructure Safety Guidelines",
       "category": "Guidelines",
       "type": "PDF",
@@ -91,7 +91,7 @@
       "downloadUrl": "#"
     },
     {
-      "id": 10,
+      "slug": "environmental-monitoring-toolkit",
       "title": "Environmental Monitoring Toolkit",
       "category": "Tools",
       "type": "XLSX",
@@ -101,7 +101,7 @@
       "downloadUrl": "#"
     },
     {
-      "id": 11,
+      "slug": "case-study-kabeli-b-hep",
       "title": "Case Study: Kabeli-B HEP",
       "category": "Case Studies",
       "type": "PDF",
@@ -111,7 +111,7 @@
       "downloadUrl": "#"
     },
     {
-      "id": 12,
+      "slug": "wind-energy-assessment-guide",
       "title": "Wind Energy Assessment Guide",
       "category": "Guidelines",
       "type": "PDF",
@@ -121,7 +121,7 @@
       "downloadUrl": "#"
     },
     {
-      "id": 13,
+      "slug": "cec-annual-report-2025",
       "title": "CEC Annual Report 2025",
       "category": "Annual Reports",
       "type": "PDF",
@@ -131,7 +131,7 @@
       "downloadUrl": "#"
     },
     {
-      "id": 14,
+      "slug": "cec-annual-report-2024",
       "title": "CEC Annual Report 2024",
       "category": "Annual Reports",
       "type": "PDF",
@@ -141,7 +141,7 @@
       "downloadUrl": "#"
     },
     {
-      "id": 15,
+      "slug": "cec-annual-report-2023",
       "title": "CEC Annual Report 2023",
       "category": "Annual Reports",
       "type": "PDF",
@@ -151,7 +151,7 @@
       "downloadUrl": "#"
     },
     {
-      "id": 16,
+      "slug": "cec-annual-report-2022",
       "title": "CEC Annual Report 2022",
       "category": "Annual Reports",
       "type": "PDF",

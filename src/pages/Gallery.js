@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './Gallery.module.css';
 import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Footer from '../components/Layout/Footer';
-import galleryJson from '../data/gallery.json';
+import galleryJson from '../data/collections/gallery.json';
 
 const Gallery = () => {
     const galleryImages = galleryJson.gallery;
@@ -50,7 +50,7 @@ const Gallery = () => {
                     <div className={styles['gallery-grid']}>
                         {filteredImages.map(image => (
                             <div 
-                                key={image.id} 
+                                key={image.slug} 
                                 className={styles['gallery-item']}
                                 onClick={() => setSelectedImage(image)}
                             >

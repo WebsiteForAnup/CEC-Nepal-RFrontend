@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
 import styles from './Team.module.css';
+import teamRegistry from '../../data/collections/team/registry.json';
+import { getTeamCategories } from '../../services/teamService';
 
-const Team = ({ teamCategories = {}, menuOptions = [] }) => {
+const mappedCategories = getTeamCategories();
+
+const Team = ({ 
+  teamCategories = mappedCategories, 
+  menuOptions = Object.keys(mappedCategories),
+  title = teamRegistry.title || "Our Team",
+  subtitle = teamRegistry.subtitle || "Meet the experts behind CEC Nepal's success",
+  stats = teamRegistry.stats || [],
+  joinTeam = teamRegistry.joinTeam || {}
+}) => {
   const [selectedMember, setSelectedMember] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState(menuOptions[0] || '');
-
-
+  const [selectedCategory, setSelectedCategory] = useState(menuOptions[0] || Object.keys(teamCategories)[0] || '');
 
   const renderContent = () => {
     const currentTeam = teamCategories[selectedCategory] || [];
@@ -54,48 +63,52 @@ const Team = ({ teamCategories = {}, menuOptions = [] }) => {
     <section id="team" className={styles.team}>
       <div className={styles.container}>
         <div className={styles.sectionHeader}>
-          <h2>Our Team</h2>
-          <p>Meet the experts behind CEC Nepal's success</p>
+          {title && <h2>{title}</h2>}
+          {subtitle && <p>{subtitle}</p>}
           <div className={styles.line}></div>
         </div>
 
-        <div className={styles.categoryGrid}>
-          {menuOptions.map(option => (
-            <button
-              key={option}
-              className={`${styles.categoryBtn} ${selectedCategory === option ? styles.activeCategoryBtn : ''}`}
-              onClick={() => {
-                setSelectedCategory(option);
-                setSelectedMember(null);
-              }}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
+        {menuOptions.length > 0 && (
+          <div className={styles.categoryGrid}>
+            {menuOptions.map(option => (
+              <button
+                key={option}
+                className={`${styles.categoryBtn} ${selectedCategory === option ? styles.activeCategoryBtn : ''}`}
+                onClick={() => {
+                  setSelectedCategory(option);
+                  setSelectedMember(null);
+                }}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+        )}
 
         {renderContent()}
 
-        <div className={styles.teamStats}>
-          <div className={styles.statItem}>
-            <h4>23+</h4>
-            <p>Professional Team Members</p>
+        {stats && stats.length > 0 && (
+          <div className={styles.teamStats}>
+            {stats.map((stat, index) => (
+              <div key={index} className={styles.statItem}>
+                <h4>{stat.value}</h4>
+                <p>{stat.label}</p>
+              </div>
+            ))}
           </div>
-          <div className={styles.statItem}>
-            <h4>20+</h4>
-            <p>Combined Years of Experience</p>
-          </div>
-          <div className={styles.statItem}>
-            <h4>5</h4>
-            <p>Specialized Departments</p>
-          </div>
-        </div>
+        )}
 
-        <div className={styles.joinTeamBox}>
-          <h3>Join Our Team</h3>
-          <p>We're always looking for talented engineers and consultants passionate about clean energy.</p>
-          <a href="#contact" className={styles.ctaButton}>Contact Us for Opportunities</a>
-        </div>
+        {joinTeam && (joinTeam.title || joinTeam.description) && (
+          <div className={styles.joinTeamBox}>
+            {joinTeam.title && <h3>{joinTeam.title}</h3>}
+            {joinTeam.description && <p>{joinTeam.description}</p>}
+            {joinTeam.ctaLabel && (
+              <a href={joinTeam.ctaLink || "#contact"} className={styles.ctaButton}>
+                {joinTeam.ctaLabel}
+              </a>
+            )}
+          </div>
+        )}
 
         {/* Member Detail Modal */}
         {selectedMember && (

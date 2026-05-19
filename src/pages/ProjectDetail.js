@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import styles from './ProjectDetail.module.css';
 import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Footer from '../components/Layout/Footer';
-import projectsData from '../data/projects.json';
+import projectsData from '../data/collections/projects.json';
 
 const ProjectDetail = () => {
     const { id } = useParams();
@@ -20,13 +20,19 @@ const ProjectDetail = () => {
 
     const [activeCategory, setActiveCategory] = useState(categories[0]);
     const [activeProject, setActiveProject] = useState(null);
+    const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+    // Reset active image when project changes
+    useEffect(() => {
+        setActiveImageIndex(0);
+    }, [activeProject]);
 
     // Initial load and URL synchronization
     useEffect(() => {
         const allProjects = projectsData.projects;
         
         if (id) {
-            const project = allProjects.find(p => p.id === parseInt(id));
+            const project = allProjects.find(p => p.slug === id || p.id === parseInt(id));
             if (project) {
                 setActiveProject(project);
                 const matchingCategory = categories.find(cat => project.categories.includes(cat));
@@ -69,6 +75,24 @@ const ProjectDetail = () => {
         p.categories.includes(activeCategory)
     );
 
+    const formatTimelineDate = (dateRange) => {
+        if (!dateRange) return 'Ongoing';
+        if (typeof dateRange === 'string') return dateRange;
+        
+        const startYear = dateRange.start ? new Date(dateRange.start).getFullYear() : null;
+        const endYear = dateRange.end ? new Date(dateRange.end).getFullYear() : null;
+        
+        if (startYear && endYear) {
+            if (startYear === endYear) {
+                return `${startYear}`;
+            }
+            return `${startYear} - ${endYear}`;
+        } else if (startYear) {
+            return `${startYear} - Ongoing`;
+        }
+        return 'Ongoing';
+    };
+
     return (
         <>
             <NavbarRedesigned />
@@ -100,8 +124,8 @@ const ProjectDetail = () => {
                             <div className={styles['items-container']}>
                                 {filteredProjects.map(p => (
                                     <div 
-                                        key={p.id}
-                                        className={`${styles['project-item']} ${activeProject.id === p.id ? styles.active : ''}`}
+                                        key={p.slug}
+                                        className={`${styles['project-item']} ${activeProject.slug === p.slug ? styles.active : ''}`}
                                         onClick={() => setActiveProject(p)}
                                     >
                                         <div className={styles['item-info']}>
@@ -119,7 +143,12 @@ const ProjectDetail = () => {
                         {/* Column 2: Selected Project Details */}
                         <section className={styles['detail-panel']}>
                             <div className={styles['detail-hero']}>
-                                <img src={activeProject.image_url} alt={activeProject.name} />
+                                <img 
+                                    src={activeProject.images && activeProject.images.length > 0 
+                                        ? activeProject.images[activeImageIndex] 
+                                        : activeProject.image_url} 
+                                    alt={activeProject.name} 
+                                />
                                 <div className={styles['detail-overlay']}>
                                     <h2>{activeProject.name}</h2>
                                     <div className={styles['hero-meta']}>
@@ -128,6 +157,20 @@ const ProjectDetail = () => {
                                     </div>
                                 </div>
                             </div>
+
+                            {activeProject.images && activeProject.images.length > 1 && (
+                                <div className={styles['thumbnails-container']}>
+                                    {activeProject.images.map((img, idx) => (
+                                        <button 
+                                            key={idx} 
+                                            className={`${styles['thumbnail-btn']} ${activeImageIndex === idx ? styles['active-thumbnail'] : ''}`}
+                                            onClick={() => setActiveImageIndex(idx)}
+                                        >
+                                            <img src={img} alt={`${activeProject.name} gallery ${idx + 1}`} />
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
 
                             <div className={styles['detail-inner-content']}>
                                 <section className={styles['project-description']}>
@@ -201,7 +244,14 @@ const ProjectDetail = () => {
                                                 <div key={index} className={styles['timeline-item']}>
                                                     <div className={styles['timeline-marker']}></div>
                                                     <div className={styles['timeline-content']}>
-                                                        <p>{item}</p>
+                                                        {typeof item === 'string' ? (
+                                                            <p>{item}</p>
+                                                        ) : (
+                                                            <div className={styles['timeline-content-split']}>
+                                                                <span className={styles['timeline-date-range']}>{formatTimelineDate(item.dateRange)}</span>
+                                                                <p className={styles['timeline-details']}>{item.details}</p>
+                                                            </div>
+                                                        )}
                                                     </div>
                                                 </div>
                                             ))}

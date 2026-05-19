@@ -1,7 +1,7 @@
 {
   "services": [
     {
-      "id": 1,
+      "slug": "hydropower",
       "icon": "fas fa-water",
       "title": "Hydropower",
       "description": "Feasibility and EPCM for hydroelectric projects.",
@@ -25,7 +25,7 @@
       ]
     },
     {
-      "id": 2,
+      "slug": "solar-energy",
       "icon": "fas fa-solar-panel",
       "title": "Solar Energy",
       "description": "Utility-scale solar farms and grid integration.",
@@ -50,7 +50,7 @@
       ]
     },
     {
-      "id": 3,
+      "slug": "environment",
       "icon": "fas fa-leaf",
       "title": "Environment",
       "description": "Detailed EIA/IEE assessments and green compliance.",
@@ -76,7 +76,7 @@
       ]
     },
     {
-      "id": 4,
+      "slug": "infrastructure",
       "icon": "fas fa-bridge",
       "title": "Infrastructure",
       "description": "Bridges, tunnels, and highways in Himalayan geology.",
@@ -102,7 +102,7 @@
       ]
     },
     {
-      "id": 5,
+      "slug": "wind-energy",
       "icon": "fas fa-wind",
       "title": "Wind Energy",
       "description": "Resource mapping and turbine layout optimization.",
@@ -128,7 +128,7 @@
       ]
     },
     {
-      "id": 6,
+      "slug": "survey-and-investigation",
       "icon": "fas fa-handshake",
       "title": "Survey and Investigation",
       "description": "Lender's engineering and technical audits.",

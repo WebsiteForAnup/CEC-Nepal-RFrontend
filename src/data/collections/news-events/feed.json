@@ -1,7 +1,7 @@
 {
   "newsAndEvents": [
     {
-      "id": 1,
+      "slug": "cec-nepal-completes-major-infrastructure-project",
       "type": "news",
       "title": "CEC Nepal Completes Major Infrastructure Project",
       "date": "2026-01-28",
@@ -10,12 +10,12 @@
       "category": "Project Update",
       "author": "CEC Nepal Team",
       "content": "CEC Nepal is proud to announce the successful completion of the major infrastructure project. This milestone represents years of dedicated work, innovative engineering solutions, and commitment to sustainable development.\n\nThe project involved multiple phases and complex engineering challenges that were overcome through our team's expertise and dedication. We implemented cutting-edge technologies and best practices in hydroelectric project development.\n\nKey achievements include:\n- 150 MW hydroelectric capacity\n- Sustainable power generation for 500,000 households\n- Environmental impact mitigation strategies\n- Community engagement and support\n- International standard compliance\n\nThis project demonstrates CEC Nepal's capability to deliver world-class infrastructure solutions that meet both technical and environmental standards. We remain committed to advancing Nepal's energy sector while maintaining our high standards of engineering excellence.",
-      "relatedNews": [2, 3],
+      "relatedNewsSlugs": ["industry-seminar-future-of-renewable-energy", "cec-nepal-receives-international-engineering-award"],
       "location": "Eastern Nepal",
       "status": "Completed"
     },
     {
-      "id": 2,
+      "slug": "industry-seminar-future-of-renewable-energy",
       "type": "event",
       "title": "Industry Seminar: Future of Renewable Energy",
       "date": "2026-02-15",
@@ -27,10 +27,10 @@
       "location": "Kathmandu",
       "capacity": "200 participants",
       "registration": "Available on website",
-      "relatedNews": [3, 4]
+      "relatedNewsSlugs": ["cec-nepal-receives-international-engineering-award", "career-development-workshop"]
     },
     {
-      "id": 3,
+      "slug": "cec-nepal-receives-international-engineering-award",
       "type": "news",
       "title": "CEC Nepal Receives International Engineering Award",
       "date": "2026-01-20",
@@ -41,10 +41,10 @@
       "content": "CEC Nepal has been honored with the prestigious International Engineering Excellence Award 2026, recognizing our outstanding contributions to sustainable infrastructure development.\n\nThis award acknowledges:\n- Excellence in engineering design and implementation\n- Commitment to environmental sustainability\n- Innovation in renewable energy solutions\n- Professional ethics and integrity\n- Community impact and social responsibility\n\nThe award was presented at the International Engineering Conference in recognition of our work on multiple hydroelectric projects and our commitment to advancing Nepal's energy infrastructure.\n\nAwards and recognition are a testament to our team's dedication, expertise, and unwavering commitment to excellence. As we continue to grow, we remain committed to delivering world-class engineering solutions that benefit society and the environment.",
       "location": "International",
       "awardName": "International Engineering Excellence Award 2026",
-      "relatedNews": [1, 4]
+      "relatedNewsSlugs": ["cec-nepal-completes-major-infrastructure-project", "career-development-workshop"]
     },
     {
-      "id": 4,
+      "slug": "career-development-workshop",
       "type": "event",
       "title": "Career Development Workshop",
       "date": "2026-02-20",
@@ -56,10 +56,10 @@
       "location": "Kathmandu",
       "trainer": "Expert Consultants",
       "capacity": "50 participants",
-      "relatedNews": [2]
+      "relatedNewsSlugs": ["industry-seminar-future-of-renewable-energy"]
     },
     {
-      "id": 5,
+      "slug": "expansion-announcement-new-office-in-pokhara",
       "type": "news",
       "title": "Expansion Announcement: New Office in Pokhara",
       "date": "2026-01-15",
@@ -70,10 +70,10 @@
       "content": "CEC Nepal is excited to announce the opening of a new regional office in Pokhara, expanding our presence and services across Nepal.\n\nThis expansion marks a significant milestone in our growth strategy and demonstrates our commitment to serving clients throughout the country.\n\nNew Office Details:\n- Location: Pokhara Metropolitan Area\n- Services: Engineering consultation, project management, feasibility studies\n- Team: Experienced professionals with local expertise\n- Opening: Q2 2026\n\nBenefits of the Pokhara Office:\n- Closer proximity to clients in Western Nepal\n- Enhanced service delivery\n- Local employment opportunities\n- Support for regional development projects\n- Strengthened relationships with local stakeholders\n\nThis expansion will enable us to better serve our growing client base and contribute to infrastructure development in Western Nepal.",
       "location": "Pokhara",
       "team": "To be announced",
-      "relatedNews": [1, 5]
+      "relatedNewsSlugs": ["cec-nepal-completes-major-infrastructure-project", "expansion-announcement-new-office-in-pokhara"]
     },
     {
-      "id": 6,
+      "slug": "community-outreach-engineering-for-change",
       "type": "event",
       "title": "Community Outreach: Engineering for Change",
       "date": "2026-03-05",
@@ -84,7 +84,7 @@
       "content": "CEC Nepal's Community Outreach Program - Engineering for Change aims to bring sustainable engineering solutions to underserved communities across Nepal.\n\nProgram Overview:\n- Provide technical expertise and resources\n- Implement sustainable water and energy solutions\n- Build local capacity through training\n- Support community development initiatives\n- Create lasting positive impact\n\nTarget Communities:\n- Remote rural areas\n- Underserved municipalities\n- Communities affected by resource scarcity\n- Youth development programs\n\nHow to Participate:\n- Volunteer opportunities for professionals\n- Community engagement\n- Partnership opportunities\n- Sponsorship possibilities\n\nThrough this program, we aim to leverage our engineering expertise to create positive change and contribute to sustainable development in Nepal's communities.",
       "location": "Multiple Locations",
       "coordinator": "CSR Department",
-      "relatedNews": [1, 3]
+      "relatedNewsSlugs": ["cec-nepal-completes-major-infrastructure-project", "cec-nepal-receives-international-engineering-award"]
     }
   ]
 }

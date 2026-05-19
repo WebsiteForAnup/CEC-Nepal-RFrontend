@@ -1,3 +1,6 @@
+import siteConfig from '../data/global/site-config.json';
+import contactConfig from '../data/global/contact.json';
+
 /**
  * homeService.js
  *
@@ -10,10 +13,30 @@
 /**
  * Extracts the team categories object from a raw team JSON resource.
  *
- * @param {object} teamJson - The parsed JSON object (e.g. imported from team.json)
+ * @param {object} teamJson - The parsed JSON object (e.g. imported from registry.json or team.json)
  * @returns {Record<string, Array>} teamCategories
  */
 export const getTeamCategories = (teamJson) => {
+  if (!teamJson) return {};
+  if (teamJson.members) {
+    const members = teamJson.members || [];
+    const boardOfDirectors = members
+      .filter(m => m.assignments?.isBoardMember)
+      .map(m => ({
+        ...m,
+        designation: m.assignments.boardDesignation
+      }));
+    const whoWeAre = members
+      .filter(m => m.assignments?.isExpertStaff)
+      .map(m => ({
+        ...m,
+        designation: m.assignments.staffDesignation
+      }));
+    return {
+      "Board of Directors": boardOfDirectors,
+      "Who We Are": whoWeAre
+    };
+  }
   return teamJson?.team || {};
 };
 
@@ -80,7 +103,9 @@ export const getHero = (heroJson) => {
  * @returns {object} about
  */
 export const getAbout = (aboutJson) => {
-  return aboutJson?.about || {};
+  if (!aboutJson) return {};
+  if (aboutJson.about) return aboutJson.about;
+  return aboutJson;
 };
 
 // ─── Services ─────────────────────────────────────────────────────────────────
@@ -120,7 +145,45 @@ export const getNewsAndEvents = (newsJson) => {
  * @returns {object} company
  */
 export const getCompany = (companyJson) => {
-  return companyJson?.company || {};
+  const config = (companyJson && companyJson.meta) ? companyJson : siteConfig;
+  const contact = contactConfig || {};
+
+  // Helper to format office hours to string
+  const formatOfficeHours = (hoursArray) => {
+    if (!hoursArray || !hoursArray.length) return '';
+    const activeHours = hoursArray.filter(h => h.openTime !== 'Closed');
+    if (activeHours.length > 0) {
+      const h = activeHours[0];
+      return `${h.days}: ${h.openTime} - ${h.closeTime}`;
+    }
+    return '';
+  };
+
+  return {
+    id: config.siteId || 'cec-nepal',
+    name: config.meta?.name,
+    shortName: config.meta?.shortName,
+    tagline: config.meta?.tagline,
+    description: config.meta?.description,
+    founded: config.meta?.foundedYear,
+    headquarters: contact.headquarters,
+    logo: config.assets?.logoUrl,
+    favicon: config.assets?.favicon,
+    contact: {
+      email: contact.email,
+      phone: contact.phone,
+      address: contact.addressLines?.[0] || contact.headquarters,
+      openingHours: formatOfficeHours(contact.officeHours),
+      formspreeId: contact.formspreeId,
+      mapCoordinates: contact.mapCoordinates || []
+    },
+    social: {
+      facebook: config.socialMedia?.facebook,
+      linkedin: config.socialMedia?.linkedin,
+      twitter: config.socialMedia?.twitter,
+      instagram: config.socialMedia?.instagram
+    }
+  };
 };
 
 /**

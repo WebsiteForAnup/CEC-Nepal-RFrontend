@@ -3,14 +3,14 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import styles from './ServiceDetail.module.css';
 import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Footer from '../components/Layout/Footer';
-import servicesJson from '../data/services.json';
+import servicesJson from '../data/collections/services.json';
 
 const ServiceDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     
     const servicesData = servicesJson.services;
-    const service = servicesData.find(s => s.id === parseInt(id));
+    const service = servicesData.find(s => s.slug === id || s.id === parseInt(id));
 
     if (!service) {
         return (
@@ -30,7 +30,7 @@ const ServiceDetail = () => {
         );
     }
 
-    const otherServices = servicesData.filter(s => s.id !== service.id).slice(0, 3);
+    const otherServices = servicesData.filter(s => s.slug !== service.slug).slice(0, 3);
 
     return (
         <>
@@ -135,8 +135,8 @@ const ServiceDetail = () => {
                                     <div className={styles['services-list']}>
                                         {otherServices.map(s => (
                                             <Link 
-                                                key={s.id}
-                                                to={`/service/${s.id}`}
+                                                key={s.slug}
+                                                to={`/service/${s.slug}`}
                                                 className={styles['service-link']}
                                             >
                                                 <i className={s.icon}></i>
