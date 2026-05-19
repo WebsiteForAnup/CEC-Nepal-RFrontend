@@ -16,27 +16,108 @@ import contactConfig from '../data/global/contact.json';
  * @param {object} teamJson - The parsed JSON object (e.g. imported from registry.json or team.json)
  * @returns {Record<string, Array>} teamCategories
  */
+const calculateExperience = (joinDate, recruitmentType) => {
+  if (!joinDate) return "";
+  const joinYear = parseInt(String(joinDate).substring(0, 4));
+  if (isNaN(joinYear)) return "";
+  const currentYear = 2026;
+  const years = currentYear - joinYear;
+  let yearsStr;
+  if (years === 0) {
+    yearsStr = "Less than a year";
+  } else if (years === 1) {
+    yearsStr = "1 year";
+  } else {
+    const isConsultant = recruitmentType === "Consultant";
+    yearsStr = isConsultant ? `${years}+ years` : `${years} years`;
+  }
+  return recruitmentType ? `${yearsStr}, ${recruitmentType}` : yearsStr;
+};
+
+const mapExperienceDetails = (m) => {
+  if (m.experience && typeof m.experience === 'object') {
+    const { joinDate, recruitmentType, more_info } = m.experience;
+    return {
+      experience: calculateExperience(joinDate, recruitmentType),
+      more_info: more_info || ""
+    };
+  }
+  return {
+    experience: m.experience || "",
+    more_info: m.more_info || ""
+  };
+};
+
+const getCategoryDisplayName = (metaArray, categoryKey, defaultName) => {
+  if (Array.isArray(metaArray)) {
+    const found = metaArray.find(item => item && typeof item === 'object' && categoryKey in item);
+    if (found) {
+      return found[categoryKey];
+    }
+  }
+  return defaultName;
+};
+
 export const getTeamCategories = (teamJson) => {
   if (!teamJson) return {};
   if (teamJson.members) {
     const members = teamJson.members || [];
+    const meta = teamJson.meta || [];
+    
+    const boardLabel = getCategoryDisplayName(meta, "board_member", "Board of Directors");
+    const expertLabel = getCategoryDisplayName(meta, "expert_staff", "Who We Are");
+    const staffLabel = getCategoryDisplayName(meta, "staff", "Our Staffs");
+
     const boardOfDirectors = members
-      .filter(m => m.assignments?.isBoardMember)
-      .map(m => ({
-        ...m,
-        designation: m.assignments.boardDesignation
-      }));
+      .filter(m => m.assignments?.categories?.includes("board_member") || m.assignments?.isBoardMember)
+      .map(m => {
+        const expDetails = mapExperienceDetails(m);
+        return {
+          ...m,
+          experience: expDetails.experience,
+          more_info: expDetails.more_info,
+          designation: m.assignments?.meta?.board_member || m.assignments?.boardDesignation || ""
+        };
+      });
     const whoWeAre = members
-      .filter(m => m.assignments?.isExpertStaff)
-      .map(m => ({
-        ...m,
-        designation: m.assignments.staffDesignation
-      }));
-    const staffs = teamJson.staffs;
+      .filter(m => m.assignments?.categories?.includes("expert_staff") || m.assignments?.isExpertStaff)
+      .map(m => {
+        const expDetails = mapExperienceDetails(m);
+        return {
+          ...m,
+          experience: expDetails.experience,
+          more_info: expDetails.more_info,
+          designation: m.assignments?.meta?.expert_staff || m.assignments?.staffDesignation || ""
+        };
+      });
+    
+    // Check if staffs exist as a separate array for backward compatibility, or filter from merged members list
+    const staffs = teamJson.staffs 
+      ? (teamJson.staffs || []).map(m => {
+          const expDetails = mapExperienceDetails(m);
+          return {
+            ...m,
+            experience: expDetails.experience,
+            more_info: expDetails.more_info,
+            designation: m.assignments?.meta?.staff || m.assignments?.staffDesignation || ""
+          };
+        })
+      : members
+          .filter(m => m.assignments?.categories?.includes("staff"))
+          .map(m => {
+            const expDetails = mapExperienceDetails(m);
+            return {
+              ...m,
+              experience: expDetails.experience,
+              more_info: expDetails.more_info,
+              designation: m.assignments?.meta?.staff || ""
+            };
+          });
+
     return {
-      "Board of Directors": boardOfDirectors,
-      "Who We Are": whoWeAre,
-      "Our Staffs": staffs
+      [boardLabel]: boardOfDirectors,
+      [expertLabel]: whoWeAre,
+      [staffLabel]: staffs
     };
   }
   return teamJson?.team || {};

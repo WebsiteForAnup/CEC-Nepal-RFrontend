@@ -17,19 +17,29 @@
     "ctaLabel": "Contact Us for Opportunities",
     "ctaLink": "#contact"
   },
+  "meta": [
+    { "board_member": "Board of Directors" },
+    { "expert_staff": "Who We Are" },
+    { "staff": "Staffs" }
+  ],
   "members": [
     {
       "slug": "mani-raj-dahal",
       "name": "Mr. Mani Raj Dahal",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_01_mani-raj-dahal-300x225.jpg_1c40d999.jpeg",
       "education": "MSc Hydraulic Engineering & River Basin Development (IHE Delft, Netherlands), BE Civil Engineering (IOE Pulchowk)",
-      "experience": "26+ years in hydropower sector, technical consultant for numerous hydropower projects",
+      "experience": {
+        "joinDate": "2000",
+        "recruitmentType": "Consultant",
+        "more_info": "Technical consultant for numerous hydropower projects"
+      },
       "bio": "Founder and Director of Clean Energy Consultants Pvt. Ltd., one of Nepal's leading hydropower consultancy firms with extensive expertise in hydropower development and technical consultancy.",
       "assignments": {
-        "isBoardMember": true,
-        "isExpertStaff": true,
-        "boardDesignation": "Executive Chairman",
-        "staffDesignation": "Hydropower and Hydraulics Expert"
+        "categories": ["board_member", "expert_staff"],
+        "meta": {
+          "board_member": "Executive Chairman",
+          "expert_staff": "Hydropower and Hydraulics Expert"
+        }
       }
     },
     {
@@ -37,13 +47,18 @@
       "name": "Er. Santosh Dhakal",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Er-S-Photo.png_36c39907.png",
       "education": "ME Electrical Engineering",
-      "experience": "20+ years as Electrical Engineer and Electromechanical Expert at CEC, 60+ hydropower projects designed",
+      "experience": {
+        "joinDate": "2006",
+        "recruitmentType": "Consultant",
+        "more_info": "Electrical Engineer and Electromechanical Expert at CEC, 60+ hydropower projects designed"
+      },
       "bio": "Board Director at Clean Energy Consultants since mid-2006. Has led the electrical and electromechanical design for approximately 60 hydropower projects with several more under feasibility and detailed design stages. Currently working with Hydro Tasmania, Australia.",
       "assignments": {
-        "isBoardMember": true,
-        "isExpertStaff": true,
-        "boardDesignation": "Director",
-        "staffDesignation": "Electrical and Electromechanical Expert"
+        "categories": ["board_member", "expert_staff"],
+        "meta": {
+          "board_member": "Director",
+          "expert_staff": "Electrical and Electromechanical Expert"
+        }
       }
     },
     {
@@ -51,13 +66,18 @@
       "name": "Mr. Narayan Poudel",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_image_2024-12-24_202752759.png_4bbc5a34.png",
       "education": "Chartered Accountant",
-      "experience": "Extensive professional experience in finance and project financial analysis",
+      "experience": {
+        "joinDate": "2010",
+        "recruitmentType": "Consultant",
+        "more_info": "Extensive professional experience in finance and project financial analysis"
+      },
       "bio": "Finance Director at Clean Energy Consultants Pvt. Ltd. Leads financial feasibility studies, project financial analysis, and overall financial assessment for hydropower projects. Also serves as Finance Director for Aayu Entertainment Pvt. Ltd. and Chairman of Finman Services Pvt. Ltd.",
       "assignments": {
-        "isBoardMember": true,
-        "isExpertStaff": true,
-        "boardDesignation": "Finance Director",
-        "staffDesignation": "Finance Director"
+        "categories": ["board_member", "expert_staff"],
+        "meta": {
+          "board_member": "Finance Director",
+          "expert_staff": "Finance Director"
+        }
       }
     },
     {
@@ -65,13 +85,18 @@
       "name": "Er. Kosa Raj Chapagain",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Kosa-Raj-Chapagain-1024x768.jpg_61cb41ef.jpeg",
       "education": "BE Civil Engineering",
-      "experience": "15+ years as Senior Civil Engineer and Project Manager at CEC",
+      "experience": {
+        "joinDate": "2011",
+        "recruitmentType": "Consultant",
+        "more_info": "Senior Civil Engineer and Project Manager at CEC"
+      },
       "bio": "Project Director and Board Member at Clean Energy Consultants since mid-2011. Brings extensive expertise in feasibility studies, detailed design, and project monitoring. Responsible for overseeing major hydropower project implementations and technical delivery.",
       "assignments": {
-        "isBoardMember": true,
-        "isExpertStaff": true,
-        "boardDesignation": "Director",
-        "staffDesignation": "Cost and Construction Quality Control Expert"
+        "categories": ["board_member", "expert_staff"],
+        "meta": {
+          "board_member": "Director",
+          "expert_staff": "Cost and Construction Quality Control Expert"
+        }
       }
     },
     {
@@ -79,13 +104,18 @@
       "name": "Dr. Chhatra Basnet",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Chhatra-Basnet-scaled.jpg_7ead7717.jpeg",
       "education": "PhD Rock Mechanics (NTNU Norway), MSc Hydropower Development (NTNU Norway), BE Civil (IOE Pulchowk)",
-      "experience": "18+ years at Clean Energy Consultants Pvt. Ltd., strategic leadership and innovation",
+      "experience": {
+        "joinDate": "2008",
+        "recruitmentType": "Full-time",
+        "more_info": "Clean Energy Consultants Pvt. Ltd., strategic leadership and innovation"
+      },
       "bio": "Chief Executive Officer with 18 years of pivotal experience at Clean Energy Consultants Pvt. Ltd. Dr. Basnet has shaped the company's strategic direction, driving innovation and sustainable engineering practices in the hydropower sector. Leads organizational vision and technical excellence.",
       "assignments": {
-        "isBoardMember": true,
-        "isExpertStaff": true,
-        "boardDesignation": "Director/Chief Executive Officer (CEO)",
-        "staffDesignation": "Tunneling and Geotechnical Expert"
+        "categories": ["board_member", "expert_staff"],
+        "meta": {
+          "board_member": "Director/Chief Executive Officer (CEO)",
+          "expert_staff": "Tunneling and Geotechnical Expert"
+        }
       }
     },
     {
@@ -93,13 +123,18 @@
       "name": "Dr. Bishnu Raj Baral",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Bishnu-R-Baral-982x1024.jpg_6c137cbe.jpeg",
       "education": "PhD Sediment (QMUL, UK), MSc Hydraulic Engineering and Sediment Transport (IHE Delft, Netherlands), BE Civil (IOE, Pulchowk)",
-      "experience": "5 years international research (UK, Italy, Netherlands), 18+ years hydropower consulting",
+      "experience": {
+        "joinDate": "2008",
+        "recruitmentType": "Consultant",
+        "more_info": "5 years international research (UK, Italy, Netherlands), 18+ years hydropower consulting"
+      },
       "bio": "",
       "assignments": {
-        "isBoardMember": true,
-        "isExpertStaff": true,
-        "boardDesignation": "Director",
-        "staffDesignation": "Hydraulics and Sediment Transport Expert"
+        "categories": ["board_member", "expert_staff"],
+        "meta": {
+          "board_member": "Director",
+          "expert_staff": "Hydraulics and Sediment Transport Expert"
+        }
       }
     },
     {
@@ -107,31 +142,35 @@
       "name": "Mr. Ghan Bahadur Shrestha",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Ghan-B-Shrestha-1024x768.jpg_79e1ad02.jpeg",
       "education": "MSc Geology",
-      "experience": "Major national projects: Nalsing Gad (410 MW), Melamchi Water Supply, Kabeli-3 (49 MW), Upper Chameliya (40 MW)",
+      "experience": {
+        "joinDate": "2015",
+        "recruitmentType": "Consultant",
+        "more_info": "Major national projects: Nalsing Gad (410 MW), Melamchi Water Supply, Kabeli-3 (49 MW), Upper Chameliya (40 MW)"
+      },
       "bio": "Geological and geophysical expert with specialized expertise in geological mapping, geophysical surveys, drilling supervision, GIS, and remote sensing. Extensive experience on significant national hydropower projects. Brings critical earth science expertise to complex feasibility and design phases.",
       "assignments": {
-        "isBoardMember": false,
-        "isExpertStaff": true,
-        "boardDesignation": "",
-        "staffDesignation": "Sr. Geologist / RS & GIS / Tunneling & Geophysics Expert"
+        "categories": ["expert_staff"],
+        "meta": {
+          "expert_staff": "Sr. Geologist / RS & GIS / Tunneling & Geophysics Expert"
+        }
       }
-    }
-    
-    
-  ],
-  "staffs":[
+    },
     {
       "slug": "dinesh-silwal",
       "name": "Er. Dinesh Silwal",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Dinesh-Silwal-1024x768.jpg_5d9e17bf.jpeg",
       "education": "BE Civil Engineering, PU, MSc, Construction Mgmt, PU",
-      "experience": "13 years, Full Time",
+      "experience": {
+        "joinDate": "2013",
+        "recruitmentType": "Full-time",
+        "more_info": ""
+      },
       "bio": "",
       "assignments": {
-        "isBoardMember": false,
-        "isExpertStaff": true,
-        "boardDesignation": "",
-        "staffDesignation": "Construction Engineer"
+        "categories": ["staff"],
+        "meta": {
+          "staff": "Construction Engineer"
+        }
       }
     },
     {
@@ -139,13 +178,17 @@
       "name": "Er. K.B. Garamja",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Kamal-B-Garamja-894x1024.jpg_d4935a5b.jpeg",
       "education": "BE, Purbanchal University",
-      "experience": "10 years, Full Time",
+      "experience": {
+        "joinDate": "2016",
+        "recruitmentType": "Full-time",
+        "more_info": ""
+      },
       "bio": "",
       "assignments": {
-        "isBoardMember": false,
-        "isExpertStaff": true,
-        "boardDesignation": "",
-        "staffDesignation": "Civil Engineer"
+        "categories": ["staff"],
+        "meta": {
+          "staff": "Civil Engineer"
+        }
       }
     },
     {
@@ -153,13 +196,17 @@
       "name": "Er. Rabin Aryal",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Rabin-Aryal-1024x768.jpg_f6f447cd.jpeg",
       "education": "MSc. in Structural Eng., Tribhuvan University",
-      "experience": "5 years, Full Time",
+      "experience": {
+        "joinDate": "2021",
+        "recruitmentType": "Full-time",
+        "more_info": ""
+      },
       "bio": "",
       "assignments": {
-        "isBoardMember": false,
-        "isExpertStaff": true,
-        "boardDesignation": "",
-        "staffDesignation": "Structural Engineer"
+        "categories": ["staff"],
+        "meta": {
+          "staff": "Structural Engineer"
+        }
       }
     },
     {
@@ -167,13 +214,17 @@
       "name": "Er. Prajwal Khatiwada",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_12_WhatsApp-Image-2023-12-28-at-11.09.31_3e9eedbb-1024x768.jpg_7928a36b.jpeg",
       "education": "BE Electrical Engineering, KU",
-      "experience": "4 years, Full Time",
+      "experience": {
+        "joinDate": "2022",
+        "recruitmentType": "Full-time",
+        "more_info": ""
+      },
       "bio": "",
       "assignments": {
-        "isBoardMember": false,
-        "isExpertStaff": true,
-        "boardDesignation": "",
-        "staffDesignation": "Electrical Engineer"
+        "categories": ["staff"],
+        "meta": {
+          "staff": "Electrical Engineer"
+        }
       }
     },
     {
@@ -181,13 +232,17 @@
       "name": "Er. Nanda Lal Pal",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Nanda-Lal-Pal.jpg_4d5ee1ed.jpeg",
       "education": "BE, Tribhuvan University",
-      "experience": "3 years, Full Time",
+      "experience": {
+        "joinDate": "2023",
+        "recruitmentType": "Full-time",
+        "more_info": ""
+      },
       "bio": "",
       "assignments": {
-        "isBoardMember": false,
-        "isExpertStaff": true,
-        "boardDesignation": "",
-        "staffDesignation": "Mechanical Engineer"
+        "categories": ["staff"],
+        "meta": {
+          "staff": "Mechanical Engineer"
+        }
       }
     },
     {
@@ -195,13 +250,17 @@
       "name": "Er. Prajwal Poudel",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_WhatsApp-Image-2023-10-08-at-12.31.15_6360e318-990x1024.jpg_025f0470.jpeg",
       "education": "BE Civil Engineering, TU, ME Hydropower Engineering, TU",
-      "experience": "4 years, Full Time",
+      "experience": {
+        "joinDate": "2022",
+        "recruitmentType": "Full-time",
+        "more_info": ""
+      },
       "bio": "",
       "assignments": {
-        "isBoardMember": false,
-        "isExpertStaff": true,
-        "boardDesignation": "",
-        "staffDesignation": "Hydropower Engineer"
+        "categories": ["staff"],
+        "meta": {
+          "staff": "Hydropower Engineer"
+        }
       }
     },
     {
@@ -209,13 +268,17 @@
       "name": "Mr. Rajan Mahat",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Rajan-Mahat.jpg_2d628913.jpeg",
       "education": "MSc., Engineering Geology, Tribhuvan University",
-      "experience": "4 years, Full Time",
+      "experience": {
+        "joinDate": "2022",
+        "recruitmentType": "Full-time",
+        "more_info": ""
+      },
       "bio": "",
       "assignments": {
-        "isBoardMember": false,
-        "isExpertStaff": true,
-        "boardDesignation": "",
-        "staffDesignation": "Engineering Geologist"
+        "categories": ["staff"],
+        "meta": {
+          "staff": "Engineering Geologist"
+        }
       }
     },
     {
@@ -223,13 +286,17 @@
       "name": "Er. Charchit Khan Thakuri",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Charchit-Thakuri-.jpg_6934bdff.jpeg",
       "education": "BE Civil Engineering, PU, ME Construction Mgmt, PU",
-      "experience": "3 years, Full Time",
+      "experience": {
+        "joinDate": "2023",
+        "recruitmentType": "Full-time",
+        "more_info": ""
+      },
       "bio": "",
       "assignments": {
-        "isBoardMember": false,
-        "isExpertStaff": true,
-        "boardDesignation": "",
-        "staffDesignation": "Civil Engineer"
+        "categories": ["staff"],
+        "meta": {
+          "staff": "Civil Engineer"
+        }
       }
     },
     {
@@ -237,13 +304,17 @@
       "name": "Er. Bharat Bista",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_12_WhatsApp-Image-2023-12-28-at-11.02.31_6aeed208-768x1024.jpg_c18f943b.jpeg",
       "education": "BE, Civil Engineering, Bangalore",
-      "experience": "1 yr experience, Full Time",
+      "experience": {
+        "joinDate": "2025",
+        "recruitmentType": "Full-time",
+        "more_info": ""
+      },
       "bio": "",
       "assignments": {
-        "isBoardMember": false,
-        "isExpertStaff": true,
-        "boardDesignation": "",
-        "staffDesignation": "Civil Engineer"
+        "categories": ["staff"],
+        "meta": {
+          "staff": "Civil Engineer"
+        }
       }
     },
     {
@@ -251,13 +322,17 @@
       "name": "Er. Suraj Shreesh",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Suraj-Shreesh.jpg_aed25a61.jpeg",
       "education": "BE Civil Engineering, PoU, ME Rock & Tunnel Engineering, TU",
-      "experience": "3 years, Full Time",
+      "experience": {
+        "joinDate": "2023",
+        "recruitmentType": "Full-time",
+        "more_info": ""
+      },
       "bio": "",
       "assignments": {
-        "isBoardMember": false,
-        "isExpertStaff": true,
-        "boardDesignation": "",
-        "staffDesignation": "Site Engineer"
+        "categories": ["staff"],
+        "meta": {
+          "staff": "Site Engineer"
+        }
       }
     },
     {
@@ -265,13 +340,17 @@
       "name": "Ms. Minu Chitrakar",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Minu-Chitrakar-768x1024.jpg_0da66042.jpeg",
       "education": "Diploma, Civil Engineering",
-      "experience": "23 years,Full Time",
+      "experience": {
+        "joinDate": "2003",
+        "recruitmentType": "Full-time",
+        "more_info": ""
+      },
       "bio": "",
       "assignments": {
-        "isBoardMember": false,
-        "isExpertStaff": true,
-        "boardDesignation": "",
-        "staffDesignation": "Draft Person"
+        "categories": ["staff"],
+        "meta": {
+          "staff": "Draft Person"
+        }
       }
     },
     {
@@ -279,13 +358,17 @@
       "name": "Mr. Pramod Gautam",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Pramod-Gautam-842x1024.jpg_5c7371d0.jpeg",
       "education": "MSc., Engineering Geology, Tribhuvan University",
-      "experience": "1 year, Full Time",
+      "experience": {
+        "joinDate": "2025",
+        "recruitmentType": "Full-time",
+        "more_info": ""
+      },
       "bio": "",
       "assignments": {
-        "isBoardMember": false,
-        "isExpertStaff": true,
-        "boardDesignation": "",
-        "staffDesignation": "Engineering Geologist"
+        "categories": ["staff"],
+        "meta": {
+          "staff": "Engineering Geologist"
+        }
       }
     },
     {
@@ -293,13 +376,17 @@
       "name": "Mr. Purna Raj Tamang",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Purna-B-Tamang-853x1024.jpg_b5ac7ea6.jpeg",
       "education": "Diploma in Civil Engineering, TU",
-      "experience": "1 year, Full Time",
+      "experience": {
+        "joinDate": "2025",
+        "recruitmentType": "Full-time",
+        "more_info": ""
+      },
       "bio": "",
       "assignments": {
-        "isBoardMember": false,
-        "isExpertStaff": true,
-        "boardDesignation": "",
-        "staffDesignation": "Site Engineer"
+        "categories": ["staff"],
+        "meta": {
+          "staff": "Site Engineer"
+        }
       }
     },
     {
@@ -307,13 +394,17 @@
       "name": "Mr. Buddha Raj Tamang",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Buddha-R-Tamang.jpg_d3e54de5.jpeg",
       "education": "+2 Management",
-      "experience": "3 years, Full Time",
+      "experience": {
+        "joinDate": "2023",
+        "recruitmentType": "Full-time",
+        "more_info": ""
+      },
       "bio": "",
       "assignments": {
-        "isBoardMember": false,
-        "isExpertStaff": true,
-        "boardDesignation": "",
-        "staffDesignation": "Assistant Accountant"
+        "categories": ["staff"],
+        "meta": {
+          "staff": "Assistant Accountant"
+        }
       }
     },
     {
@@ -321,13 +412,17 @@
       "name": "Mr. Karma Raj Tamang",
       "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Karma-R-Tamang-815x1024.jpg_92416095.jpeg",
       "education": "MBS, TU",
-      "experience": "15 years, Full Time",
+      "experience": {
+        "joinDate": "2011",
+        "recruitmentType": "Full-time",
+        "more_info": ""
+      },
       "bio": "",
       "assignments": {
-        "isBoardMember": false,
-        "isExpertStaff": true,
-        "boardDesignation": "",
-        "staffDesignation": "Head Accountant"
+        "categories": ["staff"],
+        "meta": {
+          "staff": "Head Accountant"
+        }
       }
     }
   ]

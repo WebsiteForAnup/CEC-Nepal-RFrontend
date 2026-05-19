@@ -139,6 +139,13 @@ const Team = ({
                     </div>
                   )}
 
+                  {selectedMember.more_info && (
+                    <div className={styles.statSection}>
+                      <p className={styles.statLabel}>Additional Info</p>
+                      <p className={styles.statValue}>{selectedMember.more_info}</p>
+                    </div>
+                  )}
+
                   {selectedMember.bio && (
                     <div className={styles.bioSection}>
                       <p className={styles.statLabel}>Professional Biography</p>
