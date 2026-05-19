@@ -23,7 +23,7 @@
       "description": "A run-of-river hydroelectric project located in eastern Nepal, providing clean energy to the national grid. This strategic project demonstrates excellence in sustainable energy development with comprehensive technical audit and supervision.",
       "technicalDetails": {
         "headHeight": "156 m",
-        "discharge": "19.5 m\u00b3/s",
+        "discharge": "19.5 m³/s",
         "type": "Run-of-River",
         "turbineType": "Pelton"
       },
@@ -80,7 +80,7 @@
       "description": "Small hydropower project utilizing the Jogmai Khola river for sustainable electricity generation. Features comprehensive bank monitoring and construction supervision ensuring quality and financial compliance.",
       "technicalDetails": {
         "headHeight": "127 m",
-        "discharge": "7.2 m\u00b3/s",
+        "discharge": "7.2 m³/s",
         "type": "Run-of-River",
         "turbineType": "Francis"
       },
@@ -136,7 +136,7 @@
       "description": "Eco-friendly hydropower facility designed to minimize environmental impact while maximizing energy output. Ongoing bank monitoring ensures sustained operational excellence.",
       "technicalDetails": {
         "headHeight": "98 m",
-        "discharge": "4.1 m\u00b3/s",
+        "discharge": "4.1 m³/s",
         "type": "Run-of-River",
         "turbineType": "Pelton"
       },
@@ -191,7 +191,7 @@
       "description": "Small hydropower plant providing reliable operation and maintenance with comprehensive technical audits. CEC provides ongoing technical support and operational optimization services.",
       "technicalDetails": {
         "headHeight": "105 m",
-        "discharge": "3.8 m\u00b3/s",
+        "discharge": "3.8 m³/s",
         "type": "Run-of-River",
         "turbineType": "Pelton"
       },
@@ -246,7 +246,7 @@
       "description": "Compact hydropower facility delivering clean energy through efficient detailed project reporting and design. Demonstrates viability of micro-hydropower for rural electrification.",
       "technicalDetails": {
         "headHeight": "78 m",
-        "discharge": "1.8 m\u00b3/s",
+        "discharge": "1.8 m³/s",
         "type": "Run-of-River",
         "turbineType": "Cross-flow"
       },
@@ -291,19 +291,37 @@
       "type": "Small Hydro",
       "location": "Far-Eastern Nepal",
       "commissioned": "2020",
-      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Detailed-Engineering.png_d970e6ca.png",
+      "image_url": "/images/projects/uppwe_hewa_85_mw_image_1.png",
       "images": [
-        "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Detailed-Engineering.png_d970e6ca.png"
+        "/images/projects/uppwe_hewa_85_mw_image_1.png",
+        "/images/projects/uppwe_hewa_85_mw_image_2.png",
+        "/images/projects/uppwe_hewa_85_mw_image_3.png",
+        "/images/projects/uppwe_hewa_85_mw_image_4.png",
+        "/images/projects/uppwe_hewa_85_mw_image_5.jpg",
+        "/images/projects/uppwe_hewa_85_mw_image_6.png",
+        "/images/projects/uppwe_hewa_85_mw_image_7.png",
+        "/images/projects/uppwe_hewa_85_mw_image_8.png",
+        "/images/projects/uppwe_hewa_85_mw_image_9.png",
+        "/images/projects/uppwe_hewa_85_mw_image_10.png",
+        "/images/projects/uppwe_hewa_85_mw_image_11.png",
+        "/images/projects/uppwe_hewa_85_mw_image_12.png",
+        "/images/projects/uppwe_hewa_85_mw_image_13.png",
+        "/images/projects/uppwe_hewa_85_mw_image_14.png",
+        "/images/projects/uppwe_hewa_85_mw_image_15.png",
+        "/images/projects/uppwe_hewa_85_mw_image_16.png",
+        "/images/projects/uppwe_hewa_85_mw_image_17.png",
+        "/images/projects/uppwe_hewa_85_mw_image_18.png",
+        "/images/projects/uppwe_hewa_85_mw_image_19.png"
       ],
       "categories": [
         "Detail Engineering Design"
       ],
       "description": "Successfully operating hydropower project utilizing Hewa Khola river resources for sustainable energy production. CEC provided comprehensive DPR and technical guidance throughout development.",
       "technicalDetails": {
-        "headHeight": "112 m",
-        "discharge": "5.5 m\u00b3/s",
+        "headHeight": "253.75 m",
+        "discharge": "4.20 m3/s with 10% CoL",
         "type": "Run-of-River",
-        "turbineType": "Francis"
+        "turbineType": "2 Units of Hz. Axis Pelton Turbine"
       },
       "timeline": [
         {
@@ -358,7 +376,7 @@
       "description": "Medium-scale hydropower facility with ongoing bank monitoring ensuring financial and operational excellence. CEC provides continuous oversight and technical support.",
       "technicalDetails": {
         "headHeight": "145 m",
-        "discharge": "7.2 m\u00b3/s",
+        "discharge": "7.2 m³/s",
         "type": "Run-of-River",
         "turbineType": "Pelton"
       },
@@ -416,7 +434,7 @@
       "description": "Comprehensive hydropower project with full-cycle engineering from feasibility study to supervision and commissioning. Exemplifies CEC excellence in complete project lifecycle management.",
       "technicalDetails": {
         "headHeight": "128 m",
-        "discharge": "7.8 m\u00b3/s",
+        "discharge": "7.8 m³/s",
         "type": "Run-of-River",
         "turbineType": "Francis"
       },
@@ -471,7 +489,7 @@
       "description": "Small-scale run-of-river project contributing to local energy security and rural electrification initiatives. CEC DPR ensured technical and economic viability.",
       "technicalDetails": {
         "headHeight": "92 m",
-        "discharge": "3.5 m\u00b3/s",
+        "discharge": "3.5 m³/s",
         "type": "Run-of-River",
         "turbineType": "Pelton"
       },
@@ -527,7 +545,7 @@
       "description": "Major hydropower installation with rigorous due diligence and continuous bank oversight for optimal performance. Strategic project contributing significantly to national grid.",
       "technicalDetails": {
         "headHeight": "168 m",
-        "discharge": "18.5 m\u00b3/s",
+        "discharge": "18.5 m³/s",
         "type": "Run-of-River",
         "turbineType": "Pelton"
       },
@@ -583,7 +601,7 @@
       "description": "Hydropower project currently under construction with active bank monitoring for quality assurance. CEC provides continuous oversight ensuring adherence to technical standards and budget compliance.",
       "technicalDetails": {
         "headHeight": "118 m",
-        "discharge": "6.5 m\u00b3/s",
+        "discharge": "6.5 m³/s",
         "type": "Run-of-River",
         "turbineType": "Francis"
       },
@@ -639,7 +657,7 @@
       "description": "Major hydropower development progressing with comprehensive financial oversight and construction monitoring. One of the larger projects under CEC technical guidance.",
       "technicalDetails": {
         "headHeight": "245 m",
-        "discharge": "25.8 m\u00b3/s",
+        "discharge": "25.8 m³/s",
         "type": "Run-of-River",
         "turbineType": "Francis"
       },
@@ -695,7 +713,7 @@
       "description": "Hydropower project at PPA stage with complete feasibility studies and detailed engineering reports. CEC provided comprehensive technical documentation for regulatory approvals and financing.",
       "technicalDetails": {
         "headHeight": "185 m",
-        "discharge": "19.2 m\u00b3/s",
+        "discharge": "19.2 m³/s",
         "type": "Run-of-River",
         "turbineType": "Pelton"
       },
@@ -739,9 +757,14 @@
       "cecInputs": "Feasibility Study / Detail Engineering Design",
       "type": "RoR",
       "location": "Pokhara Metropolitancity-33, Kaski",
-      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Detailed-Engineering.png_d970e6ca.png",
+      "image_url": "/images/projects/seti_22_mw_image_1.png",
       "images": [
-        "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Detailed-Engineering.png_d970e6ca.png"
+        "/images/projects/seti_22_mw_image_1.png",
+        "/images/projects/seti_22_mw_image_2.png",
+        "/images/projects/seti_22_mw_image_3.png",
+        "/images/projects/seti_22_mw_image_4.png",
+        "/images/projects/seti_22_mw_image_5.png",
+        "/images/projects/seti_22_mw_image_6.png"
       ],
       "categories": [
         "Detail Engineering Design",
@@ -750,7 +773,7 @@
       "description": "A significant run-of-river (RoR) hydropower project located in the Kaski district. This project features a 3151m headrace tunnel and 2 units of Francis turbines, contributing 133.432 GWh of annual deemed energy to the grid.",
       "technicalDetails": {
         "headHeight": "68.5 m",
-        "discharge": "39.93 m\u00b3/s",
+        "discharge": "39.93 m3/s with 10% CoL",
         "type": "RoR",
         "turbineType": "2 Units of Francis Turbine",
         "annualEnergy": "133.432 GWh",
@@ -782,6 +805,362 @@
             "end": null
           },
           "details": "Detailed Structural Design Engineering"
+        }
+      ]
+    },
+    {
+      "slug": "dobhan-285",
+      "name": "Dobhan Khola Hydropower Project",
+      "capacity": "24.5 MW",
+      "developer": "Dobhan Khola Hydropower Company Ltd.",
+      "status": "Ongoing",
+      "cecInputs": "Feasibility Study",
+      "type": "Peaking Run of River-1 hr (PRoR)",
+      "location": "Dharche Rural Municipality, Gorkha, Gandaki Province",
+      "commissioned": "",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Detailed-Engineering.png_d970e6ca.png",
+      "images": [],
+      "categories": [
+        "Feasibility Study"
+      ],
+      "description": "The Dobhan Khola Hydropower Project is a Peaking Run of River-1 hr (PRoR) project developed by Dobhan Khola Hydropower Company Ltd.. Located in Dharche Rural Municipality, Gorkha, Gandaki Province, it represents an important contribution to sustainable clean energy.",
+      "technicalDetails": {
+        "headHeight": "1086.0 m",
+        "discharge": "2.75 m3/s",
+        "type": "Run-of-River",
+        "turbineType": ""
+      },
+      "timeline": []
+    },
+    {
+      "slug": "pema-75-mw",
+      "name": "Pelma Khola PRoR Hydropower Project",
+      "capacity": "75 MW",
+      "developer": "Pelma Hydropower Project Pvt. Ltd.",
+      "status": "Ongoing",
+      "cecInputs": "Feasibility Study",
+      "type": "Peaking Run-of-River (PRoR)",
+      "location": "Putha Uttarganga Rural Municipality, East Rukum",
+      "commissioned": "",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Detailed-Engineering.png_d970e6ca.png",
+      "images": [],
+      "categories": [
+        "Feasibility Study"
+      ],
+      "description": "The Pelma Khola PRoR Hydropower Project is a Peaking Run-of-River (PRoR) project developed by Pelma Hydropower Project Pvt. Ltd.. Located in Putha Uttarganga Rural Municipality, East Rukum, it represents an important contribution to sustainable clean energy.",
+      "technicalDetails": {
+        "headHeight": "354 m",
+        "discharge": "24.34 m3/s at Q41%",
+        "type": "Run-of-River",
+        "turbineType": ""
+      },
+      "timeline": []
+    },
+    {
+      "slug": "rudi-a-shp",
+      "name": "Rudi Khola- A Small Hydropower Project",
+      "capacity": "8.8 MW",
+      "developer": "Bindhyabasini Hydropower Development Company Ltd.",
+      "status": "Generation",
+      "cecInputs": "Feasibility Study",
+      "type": "Run of River (RoR)",
+      "location": "Madi and Koholasothar Rural Municipality, Kaski and Lamjung District, Nepal",
+      "commissioned": "",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Detailed-Engineering.png_d970e6ca.png",
+      "images": [],
+      "categories": [
+        "Feasibility Study"
+      ],
+      "description": "The Rudi Khola- A Small Hydropower Project is a Run of River (RoR) project developed by Bindhyabasini Hydropower Development Company Ltd.. Located in Madi and Koholasothar Rural Municipality, Kaski and Lamjung District, Nepal, it represents an important contribution to sustainable clean energy.",
+      "technicalDetails": {
+        "headHeight": "298.0m",
+        "discharge": "3.72 m3/s",
+        "type": "Run-of-River",
+        "turbineType": ""
+      },
+      "timeline": []
+    },
+    {
+      "slug": "upper-sani-bheri-90-mw",
+      "name": "Upper Sani Bheri PRoR Hydropower Project",
+      "capacity": "90 MW",
+      "developer": "Pelma Hydropower Project Pvt. Ltd.",
+      "status": "Ongoing",
+      "cecInputs": "Feasibility Study",
+      "type": "Peaking Run-of-River (PRoR)",
+      "location": "Putha Uttarganga Rural Municipality, East Rukum",
+      "commissioned": "",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Detailed-Engineering.png_d970e6ca.png",
+      "images": [],
+      "categories": [
+        "Feasibility Study"
+      ],
+      "description": "The Upper Sani Bheri PRoR Hydropower Project is a Peaking Run-of-River (PRoR) project developed by Pelma Hydropower Project Pvt. Ltd.. Located in Putha Uttarganga Rural Municipality, East Rukum, it represents an important contribution to sustainable clean energy.",
+      "technicalDetails": {
+        "headHeight": "265.40 m",
+        "discharge": "40.04 m3/s at Q40%",
+        "type": "Run-of-River",
+        "turbineType": ""
+      },
+      "timeline": []
+    },
+    {
+      "slug": "super-dana-storage-60",
+      "name": "Super Dona Khola Hydropower Project (Super Dona Storage Project)",
+      "capacity": "60 MW",
+      "developer": "Dona Lake Hydropower Pvt. Ltd.",
+      "status": "Ongoing",
+      "cecInputs": "Feasibility Study",
+      "type": "Storage / Reservoir Based",
+      "location": "Manang District, Gandaki Province",
+      "commissioned": "",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Detailed-Engineering.png_d970e6ca.png",
+      "images": [],
+      "categories": [
+        "Feasibility Study"
+      ],
+      "description": "The Super Dona Khola Hydropower Project (Super Dona Storage Project) is a Storage / Reservoir Based project developed by Dona Lake Hydropower Pvt. Ltd.. Located in Manang District, Gandaki Province, it represents an important contribution to sustainable clean energy.",
+      "technicalDetails": {
+        "headHeight": "Not explicitly specified in excerpt",
+        "discharge": "Not explicitly specified in excerpt",
+        "type": "PRoR",
+        "turbineType": ""
+      },
+      "timeline": []
+    },
+    {
+      "slug": "super-dordi-kha-54-mw",
+      "name": "Super Dordi Hydropower Project 'Kha'",
+      "capacity": "54 MW",
+      "developer": "Peoples Hydropower Company Ltd.",
+      "status": "Generation",
+      "cecInputs": "Feasibility Study",
+      "type": "RoR",
+      "location": "Kathmandu Metropolitancity-10, Kathmandu",
+      "commissioned": "2018",
+      "image_url": "/images/projects/super_dordi_kha_54_mw_image_1.png",
+      "images": [
+        "/images/projects/super_dordi_kha_54_mw_image_1.png",
+        "/images/projects/super_dordi_kha_54_mw_image_2.png",
+        "/images/projects/super_dordi_kha_54_mw_image_3.png",
+        "/images/projects/super_dordi_kha_54_mw_image_4.png",
+        "/images/projects/super_dordi_kha_54_mw_image_5.png",
+        "/images/projects/super_dordi_kha_54_mw_image_6.png",
+        "/images/projects/super_dordi_kha_54_mw_image_7.png",
+        "/images/projects/super_dordi_kha_54_mw_image_8.png"
+      ],
+      "categories": [
+        "Feasibility Study"
+      ],
+      "description": "The Super Dordi Hydropower Project 'Kha' is a RoR project developed by Peoples Hydropower Company Ltd.. Located in Kathmandu Metropolitancity-10, Kathmandu, it represents an important contribution to sustainable clean energy.",
+      "technicalDetails": {
+        "headHeight": "637.55 m",
+        "discharge": "9.90 m3/s with 10% CoL",
+        "type": "Run-of-River",
+        "turbineType": "2 Units of Pelton Turbine"
+      },
+      "timeline": [
+        {
+          "dateRange": {
+            "start": "2011-01-01",
+            "end": "2011-12-31"
+          },
+          "details": "Contract with CEC Signed"
+        },
+        {
+          "dateRange": {
+            "start": "2018-01-01",
+            "end": "2018-12-31"
+          },
+          "details": "Project Commissioning & Power Generation"
+        }
+      ]
+    },
+    {
+      "slug": "sisuwa-khola-hydroelectric-proj",
+      "name": "Sisuwa Khola Hydroelectric Project, 16.5 MW",
+      "capacity": "16.5 MW",
+      "developer": "Matribhumi Hydropower Development Company Pvt. Ltd",
+      "status": "Infrastructure Development",
+      "cecInputs": "Feasibility Study",
+      "type": "RoR",
+      "location": "Sankhuwasabha,Silichong Rural Municipality",
+      "commissioned": "",
+      "image_url": "/images/projects/sisuwa_khola_hydroelectric_proj_image_1.jpg",
+      "images": [
+        "/images/projects/sisuwa_khola_hydroelectric_proj_image_1.jpg",
+        "/images/projects/sisuwa_khola_hydroelectric_proj_image_2.jpg",
+        "/images/projects/sisuwa_khola_hydroelectric_proj_image_3.jpg",
+        "/images/projects/sisuwa_khola_hydroelectric_proj_image_4.jpg",
+        "/images/projects/sisuwa_khola_hydroelectric_proj_image_5.jpg"
+      ],
+      "categories": [
+        "Feasibility Study"
+      ],
+      "description": "The Sisuwa Khola Hydroelectric Project, 16.5 MW is a RoR project developed by Matribhumi Hydropower Development Company Pvt. Ltd. Located in Sankhuwasabha,Silichong Rural Municipality, it represents an important contribution to sustainable clean energy.",
+      "technicalDetails": {
+        "headHeight": "352.50 m",
+        "discharge": "5.70 m3/s with 10% CoL",
+        "type": "Run-of-River",
+        "turbineType": "2 Units of Hz. Axis Pelton Turbine"
+      },
+      "timeline": []
+    },
+    {
+      "slug": "balephi-khola-hydroelectric-pro",
+      "name": "Balephi  Khola Hydroelectric Project, 40 MW",
+      "capacity": "40 MW",
+      "developer": "Balephi Energy Pvt. Ltd.",
+      "status": "Ongoing",
+      "cecInputs": "Feasibility Study",
+      "type": "RoR",
+      "location": "Sindhupalchowk, Jugal Rural Municipality",
+      "commissioned": "2028",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Detailed-Engineering.png_d970e6ca.png",
+      "images": [],
+      "categories": [
+        "Feasibility Study"
+      ],
+      "description": "The Balephi  Khola Hydroelectric Project, 40 MW is a RoR project developed by Balephi Energy Pvt. Ltd.. Located in Sindhupalchowk, Jugal Rural Municipality, it represents an important contribution to sustainable clean energy.",
+      "technicalDetails": {
+        "headHeight": "269.10 m",
+        "discharge": "17.49 m3/s with 10% CoL",
+        "type": "Run-of-River",
+        "turbineType": "3 Units of Ver. Axis Francis Turbine"
+      },
+      "timeline": [
+        {
+          "dateRange": {
+            "start": "2011-01-01",
+            "end": "2011-12-31"
+          },
+          "details": "Contract with CEC Signed"
+        },
+        {
+          "dateRange": {
+            "start": "2028-01-01",
+            "end": "2028-12-31"
+          },
+          "details": "Project Commissioning & Power Generation"
+        }
+      ]
+    },
+    {
+      "slug": "nar-khola-hydroelectric-project",
+      "name": "Nar  Khola Hydroelectric Project, 65 MW",
+      "capacity": "65 MW",
+      "developer": "Nar Khola Hydro Energy Pvt. Ltd.",
+      "status": "Ongoing",
+      "cecInputs": "Feasibility Study",
+      "type": "PRoR",
+      "location": "Manang, Chame, Nasong, Nyesang\n Rural Municipality",
+      "commissioned": "2030",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Detailed-Engineering.png_d970e6ca.png",
+      "images": [],
+      "categories": [
+        "Feasibility Study"
+      ],
+      "description": "The Nar  Khola Hydroelectric Project, 65 MW is a PRoR project developed by Nar Khola Hydro Energy Pvt. Ltd.. Located in Manang, Chame, Nasong, Nyesang\n Rural Municipality, it represents an important contribution to sustainable clean energy.",
+      "technicalDetails": {
+        "headHeight": "559m",
+        "discharge": "13.59 m3/s",
+        "type": "Run-of-River",
+        "turbineType": "3 Units of Ver. Axis Pelton Turbine"
+      },
+      "timeline": [
+        {
+          "dateRange": {
+            "start": "2011-01-01",
+            "end": "2011-12-31"
+          },
+          "details": "Contract with CEC Signed"
+        },
+        {
+          "dateRange": {
+            "start": "2030-01-01",
+            "end": "2030-12-31"
+          },
+          "details": "Project Commissioning & Power Generation"
+        }
+      ]
+    },
+    {
+      "slug": "syalque-khola-hydropower-projec",
+      "name": "Syalque Khola Hydropower Project, 65 MW",
+      "capacity": "4.8 MW",
+      "developer": "Alliance Energy Solutions Pvt. Ltd.",
+      "status": "Ongoing",
+      "cecInputs": "Feasibility Study",
+      "type": "RoR",
+      "location": "Manang District, Chame, Nashong\n Rural Municipality",
+      "commissioned": "2028",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Detailed-Engineering.png_d970e6ca.png",
+      "images": [],
+      "categories": [
+        "Feasibility Study"
+      ],
+      "description": "The Syalque Khola Hydropower Project, 65 MW is a RoR project developed by Alliance Energy Solutions Pvt. Ltd.. Located in Manang District, Chame, Nashong\n Rural Municipality, it represents an important contribution to sustainable clean energy.",
+      "technicalDetails": {
+        "headHeight": "407.55m",
+        "discharge": "1.46 m3/s",
+        "type": "Run-of-River",
+        "turbineType": "2 Units of Hz. Axis Pelton Turbine"
+      },
+      "timeline": [
+        {
+          "dateRange": {
+            "start": "2011-01-01",
+            "end": "2011-12-31"
+          },
+          "details": "Contract with CEC Signed"
+        },
+        {
+          "dateRange": {
+            "start": "2028-01-01",
+            "end": "2028-12-31"
+          },
+          "details": "Project Commissioning & Power Generation"
+        }
+      ]
+    },
+    {
+      "slug": "upper-chameliya-hydropower-proj",
+      "name": "Upper Chameliya Hydropower Project",
+      "capacity": "40 MW",
+      "developer": "Api Power Company Limited",
+      "status": "Generation",
+      "cecInputs": "Feasibility Study",
+      "type": "RoR",
+      "location": "Kathmandu Metropolitancity, Kathmandu",
+      "commissioned": "2018",
+      "image_url": "/images/projects/upper_chameliya_hydropower_proj_image_1.jpg",
+      "images": [
+        "/images/projects/upper_chameliya_hydropower_proj_image_1.jpg"
+      ],
+      "categories": [
+        "Feasibility Study"
+      ],
+      "description": "The Upper Chameliya Hydropower Project is a RoR project developed by Api Power Company Limited. Located in Kathmandu Metropolitancity, Kathmandu, it represents an important contribution to sustainable clean energy.",
+      "technicalDetails": {
+        "headHeight": "204.80 m",
+        "discharge": "23.47 m3/s",
+        "type": "Run-of-River",
+        "turbineType": "3 Units of Hrz. Axis Francis Turbine"
+      },
+      "timeline": [
+        {
+          "dateRange": {
+            "start": "2011-01-01",
+            "end": "2011-12-31"
+          },
+          "details": "Contract with CEC Signed"
+        },
+        {
+          "dateRange": {
+            "start": "2018-01-01",
+            "end": "2018-12-31"
+          },
+          "details": "Project Commissioning & Power Generation"
         }
       ]
     }
