@@ -1,8 +1,0 @@
-{
-"type": "FeatureCollection",
-"name": "Manang",
-"features": [
-{ "type": "Feature", "properties": { "Name": "57. Dona Khola Hydrpower Project, 49.95 MW", "description": "<b>Project:</b> Dona Khola Hydrpower Project, 49.95 MW<br/><b>Developer:</b> Lalupate Hydropower Company Pvt. Ltd.<br/><b>Status:</b> PPA Stage<br/><b>CEC Inputs:</b> FSR/DPR/Supervision<br/><b>District:</b> Manang" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 84.3608333, 28.5, 0.0 ], [ 84.4055556, 28.5, 0.0 ], [ 84.4055556, 28.5216667, 0.0 ], [ 84.3608333, 28.5216667, 0.0 ], [ 84.3608333, 28.5, 0.0 ] ] ] } },
-{ "type": "Feature", "properties": { "Name": "57. Dona Khola Hydrpower Project, 49.95 MW", "description": "<b>Project:</b> Dona Khola Hydrpower Project, 49.95 MW<br/><b>Developer:</b> Lalupate Hydropower Company Pvt. Ltd.<br/><b>Status:</b> PPA Stage<br/><b>CEC Inputs:</b> FSR/DPR/Supervision<br/><b>District:</b> Manang" }, "geometry": { "type": "Point", "coordinates": [ 84.3831944, 28.5108333, 0.0 ] } }
-]
-}

@@ -1,9 +1,0 @@
-{
-"type": "FeatureCollection",
-"name": "Sindhupalchwok",
-"features": [
-{ "type": "Feature", "properties": { "Name": "37. Jhyari Khola SHP, 2.0 MW", "description": "<b>Project:</b> Jhyari Khola SHP, 2.0 MW<br/><b>Developer:</b> Electrocom Research Pvt. Ltd.<br/><b>Status:</b> Generation<br/><b>CEC Inputs:</b> Bank Due Deligence<br/><b>District:</b> Sindhupalchwok" }, "geometry": { "type": "Point", "coordinates": [ 86.1773611, 27.7590278, 0.0 ] } },
-{ "type": "Feature", "properties": { "Name": "38. Upper Chaku A HPP, 22.0 MW", "description": "<b>Project:</b> Upper Chaku A HPP, 22.0 MW<br/><b>Developer:</b> Shiva Shree Hydropower Pvt. Ltd.<br/><b>Status:</b> Generation<br/><b>CEC Inputs:</b> Design of HW, Penstock and PH<br/><b>District:</b> Sindhupalchwok" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 85.9333333, 27.8586111, 0.0 ], [ 85.9683333, 27.8586111, 0.0 ], [ 85.9683333, 27.8752778, 0.0 ], [ 85.9333333, 27.8752778, 0.0 ], [ 85.9333333, 27.8586111, 0.0 ] ] ] } },
-{ "type": "Feature", "properties": { "Name": "38. Upper Chaku A HPP, 22.0 MW", "description": "<b>Project:</b> Upper Chaku A HPP, 22.0 MW<br/><b>Developer:</b> Shiva Shree Hydropower Pvt. Ltd.<br/><b>Status:</b> Generation<br/><b>CEC Inputs:</b> Design of HW, Penstock and PH<br/><b>District:</b> Sindhupalchwok" }, "geometry": { "type": "Point", "coordinates": [ 85.9508333, 27.8669444, 0.0 ] } }
-]
-}

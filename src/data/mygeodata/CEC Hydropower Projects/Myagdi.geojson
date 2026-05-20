@@ -1,8 +1,0 @@
-{
-"type": "FeatureCollection",
-"name": "Myagdi",
-"features": [
-{ "type": "Feature", "properties": { "Name": "59. Rele Khola Hydropower Project, 6.0MW", "description": "<b>Project:</b> Rele Khola Hydropower Project, 6.0MW<br/><b>Developer:</b> Ridhi Hydropower Company Limited<br/><b>Status:</b> Under construction<br/><b>CEC Inputs:</b> FSR<br/><b>District:</b> Myagdi" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 83.6786111, 28.5066667, 0.0 ], [ 83.7, 28.5066667, 0.0 ], [ 83.7, 28.5333333, 0.0 ], [ 83.6786111, 28.5333333, 0.0 ], [ 83.6786111, 28.5066667, 0.0 ] ] ] } },
-{ "type": "Feature", "properties": { "Name": "59. Rele Khola Hydropower Project, 6.0MW", "description": "<b>Project:</b> Rele Khola Hydropower Project, 6.0MW<br/><b>Developer:</b> Ridhi Hydropower Company Limited<br/><b>Status:</b> Under construction<br/><b>CEC Inputs:</b> FSR<br/><b>District:</b> Myagdi" }, "geometry": { "type": "Point", "coordinates": [ 83.6893056, 28.52, 0.0 ] } }
-]
-}

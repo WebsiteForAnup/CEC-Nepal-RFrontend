@@ -1,17 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Hero from '../components/Sections/Hero';
-import About from '../components/Sections/About';
-import Services from '../components/Sections/Services';
-import Projects from '../components/Sections/Projects';
-import ProjectMap from '../components/Sections/ProjectMap';
-import Statistics from '../components/Sections/Statistics';
-import FAQ from '../components/Sections/FAQ';
-import Team from '../components/Sections/Team';
-import CompanyProfile from '../components/Sections/CompanyProfile';
-import NewsEvents from '../components/Sections/NewsEvents';
-import Contact from '../components/Sections/Contact';
-import Footer from '../components/Layout/Footer';
+
+const About = lazy(() => import('../components/Sections/About'));
+const Services = lazy(() => import('../components/Sections/Services'));
+const Projects = lazy(() => import('../components/Sections/Projects'));
+const ProjectMap = lazy(() => import('../components/Sections/ProjectMap'));
+const Statistics = lazy(() => import('../components/Sections/Statistics'));
+const FAQ = lazy(() => import('../components/Sections/FAQ'));
+const Team = lazy(() => import('../components/Sections/Team'));
+const CompanyProfile = lazy(() => import('../components/Sections/CompanyProfile'));
+const NewsEvents = lazy(() => import('../components/Sections/NewsEvents'));
+const Contact = lazy(() => import('../components/Sections/Contact'));
+const Footer = lazy(() => import('../components/Layout/Footer'));
 
 // ─── Data sources ─────────────────────────────────────────────────────────────
 // Change any import path here to swap data without touching section components.
@@ -64,22 +65,26 @@ const Home = () => {
             <NavbarRedesigned />
             <main>
                 <Hero hero={hero} />
-                <Team
-                    teamCategories={teamCategories}
-                    menuOptions={teamCategoryNames}
-                />
-                <CompanyProfile profile={profile} />
-                <About about={about} />
+                <Suspense fallback={<div style={{ padding: '5vh', textAlign: 'center' }}>Loading content...</div>}>
+                    <Team
+                        teamCategories={teamCategories}
+                        menuOptions={teamCategoryNames}
+                    />
+                    <CompanyProfile profile={profile} />
+                    <About about={about} />
 
-                <Services services={services} />
-                <Projects projects={projects} />
-                <ProjectMap />
-                <Statistics stats={stats} />
-                <FAQ faqs={faqs} />
-                <NewsEvents newsAndEvents={newsAndEvents} />
-                <Contact company={company} />
+                    <Services services={services} />
+                    <Projects projects={projects} />
+                    <ProjectMap />
+                    <Statistics stats={stats} />
+                    <FAQ faqs={faqs} />
+                    <NewsEvents newsAndEvents={newsAndEvents} />
+                    <Contact company={company} />
+                </Suspense>
             </main>
-            <Footer company={company} />
+            <Suspense fallback={null}>
+                <Footer company={company} />
+            </Suspense>
         </>
     );
 };

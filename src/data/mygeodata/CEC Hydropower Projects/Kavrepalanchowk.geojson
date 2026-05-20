@@ -1,8 +1,0 @@
-{
-"type": "FeatureCollection",
-"name": "Kavrepalanchowk",
-"features": [
-{ "type": "Feature", "properties": { "Name": "39. Upper Chaurikhola Hydropower Project, 6.0 MW", "description": "<b>Project:</b> Upper Chaurikhola Hydropower Project, 6.0 MW<br/><b>Developer:</b> Himalayan Water Resources and Energy Dev. Company Pvt. Ltd.<br/><b>Status:</b> Under Construction<br/><b>CEC Inputs:</b> Bank Due Deligence<br/><b>District:</b> Kavrepalanchowk" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 85.8347222, 27.5716667, 0.0 ], [ 85.8636111, 27.5716667, 0.0 ], [ 85.8636111, 27.5986111, 0.0 ], [ 85.8347222, 27.5986111, 0.0 ], [ 85.8347222, 27.5716667, 0.0 ] ] ] } },
-{ "type": "Feature", "properties": { "Name": "39. Upper Chaurikhola Hydropower Project, 6.0 MW", "description": "<b>Project:</b> Upper Chaurikhola Hydropower Project, 6.0 MW<br/><b>Developer:</b> Himalayan Water Resources and Energy Dev. Company Pvt. Ltd.<br/><b>Status:</b> Under Construction<br/><b>CEC Inputs:</b> Bank Due Deligence<br/><b>District:</b> Kavrepalanchowk" }, "geometry": { "type": "Point", "coordinates": [ 85.8491667, 27.5851389, 0.0 ] } }
-]
-}
