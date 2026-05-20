@@ -24,15 +24,11 @@ const Services = ({ services = [] }) => {
           <div className={styles.line}></div>
         </div>
         <div className={styles.servicesGrid}>
-          {services.map((service, index) => (
-            <Link
-              to={`/service/${service.id}`}
-              key={service.id}
-              style={{ textDecoration: 'none' }}
-            >
+          {services.map((service, index) => {
+            const cardContent = (
               <div
                 className={styles.serviceCard}
-                style={{ animationDelay: `${index * 0.1}s` }}
+                style={{ animationDelay: `${index * 0.1}s`, cursor: service.has_page ? 'pointer' : 'default' }}
               >
                 <div className={styles.imgContainer}>
                   <img src={service.image} alt={service.title} />
@@ -43,8 +39,22 @@ const Services = ({ services = [] }) => {
                   <p>{service.description}</p>
                 </div>
               </div>
-            </Link>
-          ))}
+            );
+
+            return service.has_page ? (
+              <Link
+                to={`/service/${service.slug}`}
+                key={service.slug}
+                style={{ textDecoration: 'none' }}
+              >
+                {cardContent}
+              </Link>
+            ) : (
+              <div key={service.slug} style={{ textDecoration: 'none' }}>
+                {cardContent}
+              </div>
+            );
+          })}
         </div>
         <div className={styles.ctaContainer}>
           <button className={styles.getInTouchBtn} onClick={handleGetInTouch}>

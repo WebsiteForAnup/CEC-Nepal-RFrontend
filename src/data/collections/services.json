@@ -1,156 +1,158 @@
 {
   "services": [
     {
-      "slug": "hydropower",
-      "icon": "fas fa-water",
-      "title": "Hydropower",
-      "description": "Feasibility and EPCM for hydroelectric projects.",
-      "image": "/images/services/hydropower.jpg",
-      "category": "Energy",
-      "fullDescription": "Hydropower development is one of our core competencies. We provide comprehensive services across the entire project lifecycle from initial feasibility studies to detailed project reports and implementation support.",
+      "slug": "feasibility-studies",
+      "icon": "fas fa-search-location",
+      "title": "Feasibility Studies",
+      "description": "Comprehensive site evaluation and project feasibility.",
+      "image": "/images/services/feasibility.jpg",
+      "category": "Consulting",
+      "fullDescription": "We conduct in-depth feasibility studies to evaluate the technical, economic, and environmental viability of projects before implementation. This ensures minimized risks and optimized planning.",
       "benefits": [
-        "Reduced project risks through comprehensive feasibility",
-        "Optimized project design for maximum efficiency",
-        "International quality standards compliance",
-        "Timely project delivery and completion",
-        "Sustainable development practices"
+        "Risk identification and mitigation",
+        "Economic viability assessment",
+        "Strategic project planning",
+        "Informed decision-making"
       ],
       "process": [
-        "Initial Consultation and Site Visit",
-        "Feasibility Study and Preliminary Design",
-        "Detailed Engineering and DPR Preparation",
-        "Lender Engagement and Approval",
-        "Implementation and Construction Support",
-        "Operations and Maintenance Advisory"
-      ]
-    },
-    {
-      "slug": "solar-energy",
-      "icon": "fas fa-solar-panel",
-      "title": "Solar Energy",
-      "description": "Utility-scale solar farms and grid integration.",
-      "image": "/images/services/solar-1.jpg",
-      "category": "Renewable Energy",
-      "fullDescription": "Solar energy is transitioning from niche to mainstream power generation. We provide end-to-end solutions for utility-scale solar projects with focus on maximum energy yield and grid integration.",
-      "benefits": [
-        "High return on investment with predictable cash flows",
-        "Minimal environmental impact",
-        "Reduced operational complexity",
-        "Grid stability support through proper integration",
-        "Community benefits and employment generation"
+        "Site Reconnaissance",
+        "Data Collection",
+        "Technical and Financial Analysis",
+        "Reporting and Recommendations"
       ],
-      "process": [
-        "Site Evaluation and Resource Assessment",
-        "Technology and Layout Optimization",
-        "Detailed Design and Engineering",
-        "Environmental and Social Studies",
-        "Permitting and Approvals",
-        "Construction Support and Commissioning",
-        "Performance Monitoring and O&M"
-      ]
+      "has_page": false
     },
     {
-      "slug": "environment",
-      "icon": "fas fa-leaf",
-      "title": "Environment",
-      "description": "Detailed EIA/IEE assessments and green compliance.",
-      "image": "/images/services/environment.jpg",
-      "category": "Environmental Services",
-      "fullDescription": "Environmental sustainability is integral to all our projects. We provide comprehensive environmental and social impact assessments ensuring compliance with international standards and national regulations.",
+      "slug": "detail-engineering-design",
+      "icon": "fas fa-drafting-compass",
+      "title": "Detail Engineering Design",
+      "description": "Precise engineering design and CAD drafting.",
+      "image": "/images/services/detail-engineering.jpg",
+      "category": "Engineering",
+      "fullDescription": "Our detailed engineering design services provide accurate blueprints, 3D models, and comprehensive technical specifications necessary for flawless construction and execution.",
       "benefits": [
-        "Regulatory compliance and reduced legal risks",
-        "Community acceptance and social license",
-        "Identification and mitigation of environmental hazards",
-        "Enhanced project sustainability",
-        "Long-term operational stability",
-        "Lender confidence and easy financing"
-      ],
-      "process": [
-        "Scope Definition and Baseline Studies",
-        "Impact Identification and Assessment",
-        "Mitigation Measures Development",
-        "Stakeholder Consultation",
-        "Final Report Preparation",
-        "Regulatory Approval Support",
-        "Monitoring and Compliance Verification"
-      ]
-    },
-    {
-      "slug": "infrastructure",
-      "icon": "fas fa-bridge",
-      "title": "Infrastructure",
-      "description": "Bridges, tunnels, and highways in Himalayan geology.",
-      "image": "/images/services/infrastructure.jpg",
-      "category": "Civil Works",
-      "fullDescription": "Infrastructure development in challenging Himalayan terrain requires specialized expertise. We provide comprehensive engineering support for bridges, tunnels, and road infrastructure in difficult geological and geographic conditions.",
-      "benefits": [
-        "Safe and durable infrastructure solutions",
-        "Optimized design for rugged terrain",
-        "Cost-effective construction methodology",
-        "Reduced environmental impact",
-        "Long lifespan and minimal maintenance",
-        "Enhanced regional connectivity"
-      ],
-      "process": [
-        "Site Investigation and Surveys",
-        "Geological and Geotechnical Assessment",
-        "Preliminary Design and Alignment",
-        "Detailed Engineering and DPR",
-        "Environmental and Social Clearance",
-        "Tender Document Preparation",
-        "Construction Supervision and Quality Assurance"
-      ]
-    },
-    {
-      "slug": "wind-energy",
-      "icon": "fas fa-wind",
-      "title": "Wind Energy",
-      "description": "Resource mapping and turbine layout optimization.",
-      "image": "/images/services/wind-1.jpg",
-      "category": "Renewable Energy",
-      "fullDescription": "Wind energy holds significant potential in Nepal's mountain regions. We provide comprehensive feasibility and design services for wind power projects from resource assessment to implementation planning.",
-      "benefits": [
-        "Clean and renewable energy generation",
-        "Excellent resource potential in mountain regions",
-        "Low operating costs once installed",
-        "Rapid deployment capability",
-        "Community benefit through local employment",
-        "Grid stability through predictable generation"
-      ],
-      "process": [
-        "Wind Resource Assessment",
-        "Site Characterization Study",
-        "Micro-siting Analysis",
-        "Detailed Design and Layout",
-        "Environmental Impact Assessment",
-        "Feasibility Report Preparation",
-        "Project Implementation Support"
-      ]
-    },
-    {
-      "slug": "survey-and-investigation",
-      "icon": "fas fa-handshake",
-      "title": "Survey and Investigation",
-      "description": "Lender's engineering and technical audits.",
-      "image": "/images/services/consulting.jpg",
-      "category": "Technical Advisory",
-      "fullDescription": "Technical consulting and lender's engineering services are critical for successful project financing. We provide independent technical assessment and advisory services to development banks, commercial banks, and other lenders.",
-      "benefits": [
-        "Enhanced lender confidence for easier financing",
-        "Reduced project risks through thorough assessment",
-        "Improved project management and execution",
-        "Expert guidance on technical challenges",
+        "High precision and accuracy",
+        "Optimized resource utilization",
         "Compliance with international standards",
-        "Career development for project teams"
+        "Clear construction guidelines"
       ],
       "process": [
-        "Scope Definition with Client",
-        "Data Collection and Review",
-        "Field Investigations and Assessments",
-        "Technical Analysis and Risk Assessment",
-        "Reporting and Recommendations",
-        "Presentation and Follow-up Support"
-      ]
+        "Concept Refinement",
+        "Structural and Civil Design",
+        "Drafting and 3D Modeling",
+        "Final Design Approval"
+      ],
+      "has_page": false
+    },
+    {
+      "slug": "due-diligence-audit",
+      "icon": "fas fa-clipboard-check",
+      "title": "Due Diligence Audit",
+      "description": "Thorough technical and financial project auditing.",
+      "image": "/images/services/due-diligence.jpg",
+      "category": "Auditing",
+      "fullDescription": "We perform meticulous due diligence audits to assess the current status, risks, and compliance of projects, providing stakeholders with transparent and actionable insights.",
+      "benefits": [
+        "Transparent project evaluation",
+        "Risk minimization for investors",
+        "Regulatory compliance assurance",
+        "Identification of technical gaps"
+      ],
+      "process": [
+        "Initial Assessment",
+        "On-site Inspection",
+        "Document and Financial Review",
+        "Comprehensive Audit Reporting"
+      ],
+      "has_page": false
+    },
+    {
+      "slug": "construction-supervision",
+      "icon": "fas fa-hard-hat",
+      "title": "Construction Supervision and Monitoring",
+      "description": "On-site supervision ensuring quality and safety.",
+      "image": "/images/services/construction-supervision.jpg",
+      "category": "Management",
+      "fullDescription": "Our construction supervision teams ensure that projects are built according to design specifications, adhering strictly to safety regulations and quality standards.",
+      "benefits": [
+        "Strict quality control",
+        "Timely project completion",
+        "Enhanced safety on site",
+        "Cost overrun prevention"
+      ],
+      "process": [
+        "Site Mobilization",
+        "Daily Monitoring",
+        "Quality Assurance Testing",
+        "Progress Reporting"
+      ],
+      "has_page": true
+    },
+    {
+      "slug": "bill-verification",
+      "icon": "fas fa-file-invoice-dollar",
+      "title": "Bill Verification",
+      "description": "Accurate assessment and verification of project bills.",
+      "image": "/images/services/bill-verification.jpg",
+      "category": "Financial",
+      "fullDescription": "We offer independent bill verification services to ensure that contractors' invoices accurately reflect the work completed, preventing overpayment and ensuring financial integrity.",
+      "benefits": [
+        "Financial transparency",
+        "Cost control",
+        "Dispute prevention",
+        "Accurate project valuation"
+      ],
+      "process": [
+        "Review of Submitted Bills",
+        "Cross-verification with Site Progress",
+        "Measurement Checks",
+        "Final Certification"
+      ],
+      "has_page": false
+    },
+    {
+      "slug": "survey-investigations",
+      "icon": "fas fa-map-marked-alt",
+      "title": "Survey and Investigations",
+      "description": "Detailed topographical and geological surveying.",
+      "image": "/images/services/survey.jpg",
+      "category": "Field Work",
+      "fullDescription": "Our advanced surveying and investigation services provide critical baseline data for engineering design, utilizing modern equipment for maximum accuracy.",
+      "benefits": [
+        "Accurate topographical data",
+        "Geological risk identification",
+        "Foundation for solid design",
+        "Comprehensive site understanding"
+      ],
+      "process": [
+        "Survey Planning",
+        "Field Data Collection",
+        "Data Processing",
+        "Map Generation and Reporting"
+      ],
+      "has_page": false
+    },
+    {
+      "slug": "physical-modelling",
+      "icon": "fas fa-cubes",
+      "title": "Physical Modelling",
+      "description": "Scale modelling for complex engineering structures.",
+      "image": "/images/services/physical-modelling.jpg",
+      "category": "Engineering",
+      "fullDescription": "We create precise physical models to simulate real-world conditions for complex hydraulic and structural engineering projects, allowing for rigorous testing before full-scale construction.",
+      "benefits": [
+        "Visualizing complex designs",
+        "Testing under simulated conditions",
+        "Design optimization",
+        "Identifying potential flaws early"
+      ],
+      "process": [
+        "Model Scaling and Design",
+        "Construction of the Physical Model",
+        "Testing and Simulation",
+        "Data Analysis and Optimization"
+      ],
+      "has_page": false
     }
   ]
 }

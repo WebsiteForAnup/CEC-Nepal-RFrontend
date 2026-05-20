@@ -1,0 +1,43 @@
+{
+  "slug": "survey-investigations",
+  "icon": "fas fa-map-marked-alt",
+  "title": "Survey and Investigations",
+  "subheadline": "High-fidelity geological and topographical baseline data.",
+  "description": "Detailed topographical and geological surveying.",
+  "image": "/images/services/survey.jpg",
+  "category": "Field Work",
+  "fullDescription": "Our advanced surveying and investigation services provide critical baseline data for engineering design, utilizing modern equipment for maximum accuracy.",
+  "painPoints": "Inaccurate baseline surveys lead to catastrophic design failures, unexpected foundation issues, and massive variations during construction.",
+  "approach": "We utilize state-of-the-art DGPS, Total Stations, and LiDAR drones to capture millimeter-accurate topographic data. Our geological teams conduct deep core drilling and ERT to map subsurface risks.",
+  "capabilities": [
+    "Topographical & Bathymetric Surveys",
+    "Geological Mapping & Core Drilling",
+    "Electrical Resistivity Tomography (ERT)",
+    "LiDAR & UAV Drone Mapping",
+    "Hydrological & Sediment Sampling"
+  ],
+  "techStack": [
+    "ArcGIS",
+    "QGIS",
+    "AutoCAD Civil 3D",
+    "Pix4D",
+    "DGPS & RTK Systems"
+  ],
+  "process": [
+    "Survey Planning & Desktop Study",
+    "Field Mobilization & Data Acquisition",
+    "Data Processing & Modeling",
+    "Final Topo-Geological Report Generation"
+  ],
+  "caseStudy": {
+    "title": "Kabeli-B HEP",
+    "metric": "Capacity: 25 MW | Status: Generation",
+    "description": "A run-of-river hydroelectric project located in eastern Nepal, providing clean energy to the national grid. This strategic project demonstrates excellence in sustainable energy development with comprehensive technical audit and supervision."
+  },
+  "testimonial": {
+    "quote": "The accuracy of CEC's geological investigation helped us completely avoid a major shear zone during tunneling. Absolutely brilliant work.",
+    "author": "Dr. Anil Shrestha",
+    "title": "Lead Geotechnical Engineer",
+    "company": "TunnelCorp Nepal"
+  }
+}
