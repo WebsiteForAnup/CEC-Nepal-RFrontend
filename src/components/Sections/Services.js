@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Services.module.css';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 const Services = ({ services = [] }) => {
   const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [expandedServices, setExpandedServices] = useState({});
+
+  const toggleExpand = (e, slug) => {
+    e.preventDefault();
+    e.stopPropagation(); // Prevents layout trigger issues
+    setExpandedServices(prev => ({ ...prev, [slug]: !prev[slug] }));
+  };
 
   const handleGetInTouch = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  // Helper to clip long grid text gracefully
+  const truncateText = (text, maxLength = 120) => {
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength).trim() + '...';
   };
 
   return (
@@ -23,20 +36,51 @@ const Services = ({ services = [] }) => {
           <h2>Our Core Services</h2>
           <div className={styles.line}></div>
         </div>
+        
         <div className={styles.servicesGrid}>
           {services.map((service, index) => {
+            const isExpanded = !!expandedServices[service.slug];
+            const displayDescription = isExpanded 
+              ? service.description 
+              : truncateText(service.description);
+            const isLongText = service.description.length > 120;
+
             const cardContent = (
               <div
-                className={styles.serviceCard}
-                style={{ animationDelay: `${index * 0.1}s`, cursor: service.has_page ? 'pointer' : 'default' }}
+                className={`${styles.serviceCard} ${service.has_page ? styles.clickableCard : ''}`}
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className={styles.imgContainer}>
                   <img src={service.image} alt={service.title} />
+                  <span className={styles.categoryBadge}>{service.category}</span>
                 </div>
                 <div className={styles.serviceContent}>
-                  <i className={`${service.icon} ${styles.icon}`}></i>
+                  <div className={styles.iconWrapper}>
+                    <i className={`${service.icon} ${styles.icon}`}></i>
+                  </div>
                   <h3>{service.title}</h3>
-                  <p>{service.description}</p>
+                  
+                  <p className={`${styles.description} ${isExpanded ? styles.expanded : ''}`}>
+                    {displayDescription}
+                  </p>
+
+                  {/* Contextual Action Footers based on layout state */}
+                  {service.has_page ? (
+                    <div className={styles.cardFooterLink}>
+                      Learn More <i className="fas fa-chevron-right"></i>
+                    </div>
+                  ) : (
+                    isLongText && (
+                      <button 
+                        onClick={(e) => toggleExpand(e, service.slug)} 
+                        className={styles.readMoreBtn}
+                        aria-expanded={isExpanded}
+                      >
+                        {isExpanded ? 'Show Less' : 'Read Full Scope'}
+                        <i className={`fas ${isExpanded ? 'fa-chevron-up' : 'fa-chevron-down'}`}></i>
+                      </button>
+                    )
+                  )}
                 </div>
               </div>
             );
@@ -45,17 +89,18 @@ const Services = ({ services = [] }) => {
               <Link
                 to={`/service/${service.slug}`}
                 key={service.slug}
-                style={{ textDecoration: 'none' }}
+                style={{ textDecoration: 'none', display: 'flex' }}
               >
                 {cardContent}
               </Link>
             ) : (
-              <div key={service.slug} style={{ textDecoration: 'none' }}>
+              <div key={service.slug} className={styles.wrapperDiv}>
                 {cardContent}
               </div>
             );
           })}
         </div>
+        
         <div className={styles.ctaContainer}>
           <button className={styles.getInTouchBtn} onClick={handleGetInTouch}>
             Get in Touch

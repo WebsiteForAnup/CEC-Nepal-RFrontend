@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "Bhojpur",
+"features": [
+{ "type": "Feature", "properties": { "Name": "24. Taksar Pikhuwa Khola HPP, 8.0 MW", "description": "<b>Project:</b> Taksar Pikhuwa Khola HPP, 8.0 MW<br/><b>Developer:</b> Taksar Pikhuwa Khola Hydropower Pvt. Ltd.<br/><b>Status:</b> Generation<br/><b>CEC Inputs:</b> Bank Monitoring<br/><b>District:</b> Bhojpur" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 87.0277778, 27.1166667, 0.0 ], [ 87.0708333, 27.1166667, 0.0 ], [ 87.0708333, 27.1472222, 0.0 ], [ 87.0277778, 27.1472222, 0.0 ], [ 87.0277778, 27.1166667, 0.0 ] ] ] } },
+{ "type": "Feature", "properties": { "Name": "24. Taksar Pikhuwa Khola HPP, 8.0 MW", "description": "<b>Project:</b> Taksar Pikhuwa Khola HPP, 8.0 MW<br/><b>Developer:</b> Taksar Pikhuwa Khola Hydropower Pvt. Ltd.<br/><b>Status:</b> Generation<br/><b>CEC Inputs:</b> Bank Monitoring<br/><b>District:</b> Bhojpur" }, "geometry": { "type": "Point", "coordinates": [ 87.0493056, 27.1319444, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "25. Pikhuwa Khola (Khawa) SHP, 7.6 MW", "description": "<b>Project:</b> Pikhuwa Khola (Khawa) SHP, 7.6 MW<br/><b>Developer:</b> Salpa Hydropower Company Pvt. Ltd.<br/><b>Status:</b> <br/><b>CEC Inputs:</b> FSR<br/><b>District:</b> Bhojpur<br/><i>(No coordinates available)</i>" }, "geometry": { "type": "Point", "coordinates": [ 0.0, 0.0, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "26. Irkhuwa Khola 'Ka' Hydropower Project, 15 MW", "description": "<b>Project:</b> Irkhuwa Khola 'Ka' Hydropower Project, 15 MW<br/><b>Developer:</b> Estern Energy Pvt. Ltd.<br/><b>Status:</b> PPA Stage<br/><b>CEC Inputs:</b> Feasibility Survey/Progress Report<br/><b>District:</b> Bhojpur" }, "geometry": { "type": "Point", "coordinates": [ 86.4993056, 27.3979167, 0.0 ] } }
+]
+}

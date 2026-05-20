@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "Lalitpur",
+"features": [
+{ "type": "Feature", "properties": { "Name": "40. Tungun-Thosne SHP, 4.30 MW", "description": "<b>Project:</b> Tungun-Thosne SHP, 4.30 MW<br/><b>Developer:</b> Khani Khola Hydropower Company Limited<br/><b>Status:</b> Generation<br/><b>CEC Inputs:</b> UFSR/DPR<br/><b>District:</b> Lalitpur" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 85.3055556, 27.4875, 0.0 ], [ 85.3313889, 27.4875, 0.0 ], [ 85.3313889, 27.4972222, 0.0 ], [ 85.3055556, 27.4972222, 0.0 ], [ 85.3055556, 27.4875, 0.0 ] ] ] } },
+{ "type": "Feature", "properties": { "Name": "40. Tungun-Thosne SHP, 4.30 MW", "description": "<b>Project:</b> Tungun-Thosne SHP, 4.30 MW<br/><b>Developer:</b> Khani Khola Hydropower Company Limited<br/><b>Status:</b> Generation<br/><b>CEC Inputs:</b> UFSR/DPR<br/><b>District:</b> Lalitpur" }, "geometry": { "type": "Point", "coordinates": [ 85.3184722, 27.4923611, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "41. Khani Khola SHP, 2.0 MW", "description": "<b>Project:</b> Khani Khola SHP, 2.0 MW<br/><b>Developer:</b> Khani Khola Hydropower Company Limited<br/><b>Status:</b> Generation<br/><b>CEC Inputs:</b> UFSR/DPR<br/><b>District:</b> Lalitpur" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 85.2838889, 27.4861111, 0.0 ], [ 85.3055556, 27.4861111, 0.0 ], [ 85.3055556, 27.4955556, 0.0 ], [ 85.2838889, 27.4955556, 0.0 ], [ 85.2838889, 27.4861111, 0.0 ] ] ] } },
+{ "type": "Feature", "properties": { "Name": "41. Khani Khola SHP, 2.0 MW", "description": "<b>Project:</b> Khani Khola SHP, 2.0 MW<br/><b>Developer:</b> Khani Khola Hydropower Company Limited<br/><b>Status:</b> Generation<br/><b>CEC Inputs:</b> UFSR/DPR<br/><b>District:</b> Lalitpur" }, "geometry": { "type": "Point", "coordinates": [ 85.2947222, 27.4908333, 0.0 ] } }
+]
+}

@@ -4,6 +4,7 @@ import Hero from '../components/Sections/Hero';
 import About from '../components/Sections/About';
 import Services from '../components/Sections/Services';
 import Projects from '../components/Sections/Projects';
+import ProjectMap from '../components/Sections/ProjectMap';
 import Statistics from '../components/Sections/Statistics';
 import FAQ from '../components/Sections/FAQ';
 import Team from '../components/Sections/Team';
@@ -62,7 +63,6 @@ const Home = () => {
         <>
             <NavbarRedesigned />
             <main>
-
                 <Hero hero={hero} />
                 <Team
                     teamCategories={teamCategories}
@@ -73,6 +73,7 @@ const Home = () => {
 
                 <Services services={services} />
                 <Projects projects={projects} />
+                <ProjectMap />
                 <Statistics stats={stats} />
                 <FAQ faqs={faqs} />
                 <NewsEvents newsAndEvents={newsAndEvents} />

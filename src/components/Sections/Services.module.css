@@ -1,7 +1,7 @@
 .services {
   padding: 100px 0;
   scroll-margin-top: 80px;
-  background: white;
+  background: #f8fafc; /* Switched to an off-white to make the crisp white cards pop */
 }
 
 .container {
@@ -24,41 +24,50 @@
 }
 
 .sectionHeader h2 {
-  font-size: var(--fs-h2);
+  font-size: var(--fs-h2, 2.25rem);
   margin-bottom: 10px;
   color: #1e293b;
+  font-weight: 800;
 }
 
 .sectionHeader .line {
   width: 60px;
   height: 4px;
-  background: var(--primary);
-  margin: 0 auto 20px;
+  background: var(--primary, #46a33c);
+  margin: 0 auto;
 }
 
+/* Flex wrapper elements to fix React-Router Link dimension collapsing */
 .servicesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 2.5rem;
+  align-items: stretch;
+}
+
+.wrapperDiv {
+  display: flex;
 }
 
 .serviceCard {
   background: white;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   opacity: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   transform: translateY(40px);
   animation: fadeInUp 0.6s ease-out forwards;
 }
 
+.clickableCard {
+  cursor: pointer;
+}
+
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
   to {
     opacity: 1;
     transform: translateY(0);
@@ -66,56 +75,135 @@
 }
 
 .serviceCard:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
 }
 
 .imgContainer {
   width: 100%;
   height: 200px;
   overflow: hidden;
-  background: #f8fafc;
+  position: relative;
+  background: #cbd5e1;
 }
 
 .imgContainer img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .serviceCard:hover .imgContainer img {
-  transform: scale(1.15) rotate(2deg);
+  transform: scale(1.08);
+}
+
+.categoryBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .serviceContent {
   padding: 2rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Pushes child links/buttons uniformly to the base edge */
+}
+
+.iconWrapper {
+  width: 50px;
+  height: 50px;
+  background: #f0fdf4;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: all 0.3s ease;
 }
 
 .icon {
-  font-size: 2.5rem;
-  color: var(--primary);
-  margin-bottom: 1rem;
-  display: inline-block;
-  transition: transform 0.3s ease;
+  font-size: 1.5rem;
+  color: var(--primary, #46a33c);
+}
+
+.serviceCard:hover .iconWrapper {
+  background: var(--primary, #46a33c);
 }
 
 .serviceCard:hover .icon {
-  transform: scale(1.1) translateY(-5px);
+  color: white;
 }
 
 .serviceContent h3 {
-  font-size: var(--fs-h3);
-  color: #1e293b;
-  margin-bottom: 0.8rem;
+  font-size: var(--fs-h3, 1.35rem);
+  color: #0f172a;
+  margin-bottom: 0.75rem;
   font-weight: 700;
+  text-align: left;
 }
 
-.serviceContent p {
-  color: #64748b;
+.description {
+  color: #475569;
   line-height: 1.6;
-  font-size: var(--fs-body);
+  font-size: calc(var(--fs-body, 1rem) - 0.05rem);
+  text-align: left;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  transition: all 0.3s linear;
+}
+
+/* Explicit treatment for expanded paragraphs so they don't choke layouts */
+.description.expanded {
+  font-size: 0.925rem;
+  color: #1e293b;
+}
+
+/* Bottom Action Elements styled cleanly */
+.cardFooterLink, .readMoreBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--primary, #46a33c);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: auto;
+  border: none;
+  background: none;
+  padding: 0;
+  text-align: left;
+  width: max-content;
+}
+
+.readMoreBtn {
+  cursor: pointer;
+  color: #64748b;
+  transition: color 0.2s ease;
+}
+
+.readMoreBtn:hover {
+  color: var(--primary, #46a33c);
+}
+
+.cardFooterLink i, .readMoreBtn i {
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.serviceCard:hover .cardFooterLink i {
+  transform: translateX(4px);
 }
 
 .ctaContainer {
@@ -123,57 +211,43 @@
   justify-content: center;
   margin-top: 60px;
   padding-top: 40px;
-  border-top: 2px solid #e2e8f0;
+  border-top: 1px solid #e2e8f0;
 }
 
 .getInTouchBtn {
-  padding: 16px 48px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  padding: 16px 44px;
+  background: linear-gradient(135deg, var(--primary, #46a33c), var(--primary-dark, #2d7d26));
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 0.95rem;
   font-weight: 700;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 12px;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(70, 163, 60, 0.3);
+  box-shadow: 0 10px 25px rgba(70, 163, 60, 0.2);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .getInTouchBtn:hover {
-  background: linear-gradient(135deg, var(--primary-dark), #2d7d26);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(70, 163, 60, 0.4);
-}
-
-.getInTouchBtn i {
-  font-size: 14px;
-  transition: transform 0.3s ease;
-}
-
-.getInTouchBtn:hover i {
-  transform: translateX(3px);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(70, 163, 60, 0.35);
 }
 
 @media (max-width: 768px) {
-  .sectionHeader h2 {
-    font-size: var(--fs-h2);
+  .services {
+    padding: 60px 0;
   }
-
-  .serviceContent h3 {
-    font-size: var(--fs-h3);
-  }
-
+  
   .servicesGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
   .imgContainer {
-    height: 150px;
+    height: 180px;
   }
 }

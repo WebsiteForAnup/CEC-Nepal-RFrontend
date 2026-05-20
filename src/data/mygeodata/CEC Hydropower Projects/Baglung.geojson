@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "Baglung",
+"features": [
+{ "type": "Feature", "properties": { "Name": "60. Badhigad Khola Hydropower Project, 6.6 MW", "description": "<b>Project:</b> Badhigad Khola Hydropower Project, 6.6 MW<br/><b>Developer:</b> Water and Energy Pvt. Ltd.<br/><b>Status:</b> <br/><b>CEC Inputs:</b> FSR<br/><b>District:</b> Baglung" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 83.1541667, 28.3202778, 0.0 ], [ 83.1916667, 28.3202778, 0.0 ], [ 83.1916667, 28.3372222, 0.0 ], [ 83.1541667, 28.3372222, 0.0 ], [ 83.1541667, 28.3202778, 0.0 ] ] ] } },
+{ "type": "Feature", "properties": { "Name": "60. Badhigad Khola Hydropower Project, 6.6 MW", "description": "<b>Project:</b> Badhigad Khola Hydropower Project, 6.6 MW<br/><b>Developer:</b> Water and Energy Pvt. Ltd.<br/><b>Status:</b> <br/><b>CEC Inputs:</b> FSR<br/><b>District:</b> Baglung" }, "geometry": { "type": "Point", "coordinates": [ 83.1729167, 28.32875, 0.0 ] } }
+]
+}

@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+"name": "Gulmi",
+"features": [
+{ "type": "Feature", "properties": { "Name": "58. Ridhi Hydropower Project, 2.40 MW", "description": "<b>Project:</b> Ridhi Hydropower Project, 2.40 MW<br/><b>Developer:</b> Ridhi Hydropower Company Limited<br/><b>Status:</b> Generation<br/><b>CEC Inputs:</b> Detailed Design<br/><b>District:</b> Gulmi<br/><i>(No coordinates available)</i>" }, "geometry": { "type": "Point", "coordinates": [ 0.0, 0.0, 0.0 ] } }
+]
+}

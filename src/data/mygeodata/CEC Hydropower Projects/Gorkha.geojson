@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "Gorkha",
+"features": [
+{ "type": "Feature", "properties": { "Name": "56. Doodhpokhari Chepe Hydropower Project, 8.8 MW", "description": "<b>Project:</b> Doodhpokhari Chepe Hydropower Project, 8.8 MW<br/><b>Developer:</b> Doodhpokhari Chepe Hydropower Company Pvt. Ltd.<br/><b>Status:</b> Under Construction<br/><b>CEC Inputs:</b> Bank Due Deligence<br/><b>District:</b> Gorkha" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 84.6416667, 28.2505556, 0.0 ], [ 84.6736111, 28.2505556, 0.0 ], [ 84.6736111, 28.2811111, 0.0 ], [ 84.6416667, 28.2811111, 0.0 ], [ 84.6416667, 28.2505556, 0.0 ] ] ] } },
+{ "type": "Feature", "properties": { "Name": "56. Doodhpokhari Chepe Hydropower Project, 8.8 MW", "description": "<b>Project:</b> Doodhpokhari Chepe Hydropower Project, 8.8 MW<br/><b>Developer:</b> Doodhpokhari Chepe Hydropower Company Pvt. Ltd.<br/><b>Status:</b> Under Construction<br/><b>CEC Inputs:</b> Bank Due Deligence<br/><b>District:</b> Gorkha" }, "geometry": { "type": "Point", "coordinates": [ 84.6576389, 28.2658333, 0.0 ] } }
+]
+}
