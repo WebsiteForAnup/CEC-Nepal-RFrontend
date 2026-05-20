@@ -1,19 +1,6 @@
 import React, { useEffect, Suspense, lazy } from 'react';
 import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Hero from '../components/Sections/Hero';
-
-const About = lazy(() => import('../components/Sections/About'));
-const Services = lazy(() => import('../components/Sections/Services'));
-const Projects = lazy(() => import('../components/Sections/Projects'));
-const ProjectMap = lazy(() => import('../components/Sections/ProjectMap'));
-const Statistics = lazy(() => import('../components/Sections/Statistics'));
-const FAQ = lazy(() => import('../components/Sections/FAQ'));
-const Team = lazy(() => import('../components/Sections/Team'));
-const CompanyProfile = lazy(() => import('../components/Sections/CompanyProfile'));
-const NewsEvents = lazy(() => import('../components/Sections/NewsEvents'));
-const Contact = lazy(() => import('../components/Sections/Contact'));
-const Footer = lazy(() => import('../components/Layout/Footer'));
-
 // ─── Data sources ─────────────────────────────────────────────────────────────
 // Change any import path here to swap data without touching section components.
 import heroJson from '../data/pages/home.json';
@@ -40,6 +27,18 @@ import {
     getCompanyProfile,
     getFAQs,
 } from '../services/homeService';
+
+const About = lazy(() => import('../components/Sections/About'));
+const Services = lazy(() => import('../components/Sections/Services'));
+const Projects = lazy(() => import('../components/Sections/Projects'));
+const ProjectMap = lazy(() => import('../components/Sections/ProjectMap'));
+const Statistics = lazy(() => import('../components/Sections/Statistics'));
+const FAQ = lazy(() => import('../components/Sections/FAQ'));
+const Team = lazy(() => import('../components/Sections/Team'));
+const CompanyProfile = lazy(() => import('../components/Sections/CompanyProfile'));
+const NewsEvents = lazy(() => import('../components/Sections/NewsEvents'));
+const Contact = lazy(() => import('../components/Sections/Contact'));
+const Footer = lazy(() => import('../components/Layout/Footer'));
 
 const Home = () => {
     const hero = getHero(heroJson);
