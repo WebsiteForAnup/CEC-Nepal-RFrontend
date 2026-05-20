@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import styles from './Footer.module.css';
 import contactConfig from '../../data/global/contact.json';
 import { getCompany } from '../../services/homeService';
@@ -405,9 +405,9 @@ const Footer = ({ company = {} }) => {
           <div className={styles.footerBottomContent}>
             <p>&copy; {new Date().getFullYear()} {shortName || name || 'Company'}. All Rights Reserved.</p>
             <div className={styles.footerLinks}>
-              <a href="#privacy">Privacy Policy</a>
+              <Link to="/privacy">Privacy Policy</Link>
               <span className={styles.separator}>|</span>
-              <a href="#terms">Terms of Service</a>
+              <Link to="/terms">Terms of Service</Link>
             </div>
           </div>
         </div>

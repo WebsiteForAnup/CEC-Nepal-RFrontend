@@ -7,6 +7,8 @@ import ServiceDetail from './pages/ServiceDetail';
 import ProjectDetail from './pages/ProjectDetail';
 import Gallery from './pages/Gallery';
 import Downloads from './pages/Downloads';
+import TermsOfService from './pages/TermsOfService';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import useScrollToTop from './hooks/useScrollToTop';
 
 function AppContent() {
@@ -22,6 +24,8 @@ function AppContent() {
         <Route path="/project/:id" element={<ProjectDetail />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/downloads" element={<Downloads />} />
+        <Route path="/terms" element={<TermsOfService />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
     </div>
   );

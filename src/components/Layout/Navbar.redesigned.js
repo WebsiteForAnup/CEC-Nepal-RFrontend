@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import styles from './NavbarRedesigned.module.css';
+import siteConfig from '../../data/global/site-config.json';
 
 const NavbarRedesigned = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [logoFirst, logoSecond] = siteConfig.meta.shortName.split(' ');
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showBookingForm, setShowBookingForm] = useState(false);
@@ -91,16 +93,16 @@ const NavbarRedesigned = () => {
         <div className={styles.topContainer}>
           <div className={styles.taglineSection}>
             <i className="fas fa-leaf"></i>
-            <p className={styles.tagline}>From Nature to Nation: Clean Energy for All</p>
+            <p className={styles.tagline}>{siteConfig.meta.tagline}</p>
           </div>
-          <button 
+          {/* <button 
             className={styles.callButton}
             onClick={() => setShowBookingForm(true)}
             aria-label="Book a call"
           >
             <i className="fas fa-phone-alt"></i>
             <span>Book a Free Call</span>
-          </button>
+          </button> */}
         </div>
       </div>
 
@@ -115,11 +117,11 @@ const NavbarRedesigned = () => {
                 navigate('/');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              aria-label="CEC Nepal Home"
+              aria-label={`${siteConfig.meta.shortName} Home`}
             >
-              <img src="/images/cec-logo.png" alt="CEC Nepal" className={styles.logoImage} />
+              <img src={siteConfig.assets.logoUrl} alt={siteConfig.assets.logoAlt} className={styles.logoImage} />
               <span className={styles.logoText}>
-                CEC<span className={styles.logoHighlight}>Nepal</span>
+                {logoFirst}<span className={styles.logoHighlight}>{logoSecond}</span>
               </span>
             </button>
           </div>
@@ -233,42 +235,38 @@ const NavbarRedesigned = () => {
             </div>
 
             <form onSubmit={handleFormSubmit} className={styles.form}>
-              <div className={styles.formRow}>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Full Name"
-                  required
-                  value={formData.name}
-                  onChange={handleFormChange}
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
-                  required
-                  value={formData.email}
-                  onChange={handleFormChange}
-                />
-              </div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                required
+                value={formData.name}
+                onChange={handleFormChange}
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required
+                value={formData.email}
+                onChange={handleFormChange}
+              />
 
-              <div className={styles.formRow}>
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone Number"
-                  required
-                  value={formData.phone}
-                  onChange={handleFormChange}
-                />
-                <input
-                  type="text"
-                  name="company"
-                  placeholder="Company/Organization"
-                  value={formData.company}
-                  onChange={handleFormChange}
-                />
-              </div>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                required
+                value={formData.phone}
+                onChange={handleFormChange}
+              />
+              <input
+                type="text"
+                name="company"
+                placeholder="Company/Organization"
+                value={formData.company}
+                onChange={handleFormChange}
+              />
 
               <textarea
                 name="projectDetails"
@@ -279,47 +277,43 @@ const NavbarRedesigned = () => {
                 onChange={handleFormChange}
               ></textarea>
 
-              <div className={styles.formRow}>
-                <select
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleFormChange}
-                >
-                  <option value="">Select Budget Range</option>
-                  <option value="under-10k">Under $10K</option>
-                  <option value="10k-50k">$10K - $50K</option>
-                  <option value="50k-100k">$50K - $100K</option>
-                  <option value="above-100k">Above $100K</option>
-                </select>
+              <select
+                name="budget"
+                value={formData.budget}
+                onChange={handleFormChange}
+              >
+                <option value="">Select Budget Range</option>
+                <option value="under-10k">Under $10K</option>
+                <option value="10k-50k">$10K - $50K</option>
+                <option value="50k-100k">$50K - $100K</option>
+                <option value="above-100k">Above $100K</option>
+              </select>
 
-                <select
-                  name="timeline"
-                  value={formData.timeline}
-                  onChange={handleFormChange}
-                >
-                  <option value="">Project Timeline</option>
-                  <option value="urgent">Urgent (1-3 months)</option>
-                  <option value="3-6months">3-6 months</option>
-                  <option value="6-12months">6-12 months</option>
-                  <option value="flexible">Flexible</option>
-                </select>
-              </div>
+              <select
+                name="timeline"
+                value={formData.timeline}
+                onChange={handleFormChange}
+              >
+                <option value="">Project Timeline</option>
+                <option value="urgent">Urgent (1-3 months)</option>
+                <option value="3-6months">3-6 months</option>
+                <option value="6-12months">6-12 months</option>
+                <option value="flexible">Flexible</option>
+              </select>
 
-              <div className={styles.formRow}>
-                <select
-                  name="services"
-                  value={formData.services}
-                  onChange={handleFormChange}
-                >
-                  <option value="">Services Interested In</option>
-                  <option value="hydropower">Hydropower</option>
-                  <option value="solar">Solar Energy</option>
-                  <option value="wind">Wind Energy</option>
-                  <option value="infrastructure">Infrastructure</option>
-                  <option value="environment">Environment</option>
-                  <option value="consulting">Consulting</option>
-                </select>
-              </div>
+              <select
+                name="services"
+                value={formData.services}
+                onChange={handleFormChange}
+              >
+                <option value="">Services Interested In</option>
+                <option value="hydropower">Hydropower</option>
+                <option value="solar">Solar Energy</option>
+                <option value="wind">Wind Energy</option>
+                <option value="infrastructure">Infrastructure</option>
+                <option value="environment">Environment</option>
+                <option value="consulting">Consulting</option>
+              </select>
 
               <button type="submit" className={styles.submitBtn}>
                 Schedule Free Consultation

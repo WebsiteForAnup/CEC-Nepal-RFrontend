@@ -2,14 +2,14 @@
   "siteId": "cec-nepal",
   "meta": {
     "name": "Clean Energy Consultants Pvt. Ltd.",
-    "shortName": "CEC Nepal",
+    "shortName": "cEc NEPAL",
     "tagline": "From Nature to Nation: Clean Energy for All",
     "description": "Nepal's leading hydropower and renewable energy consultancy firm.",
     "foundedYear": 1999
   },
   "assets": {
-    "favicon": "/images/cec-logo.png",
-    "logoUrl": "/images/cec-logo.png",
+    "favicon": "/images/cec-logo-trans.png",
+    "logoUrl": "/images/cec-logo-trans.png",
     "logoAlt": "Clean Energy Consultants Logo"
   },
   "socialMedia": {

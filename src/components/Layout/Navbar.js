@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
+import siteConfig from '../../data/global/site-config.json';
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [logoFirst, logoSecond] = siteConfig.meta.shortName.split(' ');
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showBookingForm, setShowBookingForm] = useState(false);
@@ -97,7 +99,7 @@ const Navbar = () => {
       <div className={styles.topBar}>
         <div className={styles.topContainer}>
           <p className={styles.announcement}>
-            "From Nature to Nation: Clean Energy for All" 
+            "{siteConfig.meta.tagline}" 
           </p>
           <a href="#!" onClick={() => setShowBookingForm(true)} className={styles.callButton}>
             <i className="fas fa-phone"></i>
@@ -117,42 +119,38 @@ const Navbar = () => {
             <p className={styles.modalSubtitle}>Tell us about your project and we'll get back to you within 24 hours</p>
             
             <form onSubmit={handleFormSubmit}>
-              <div className={styles.formRow}>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Full Name *"
-                  required
-                  value={formData.name}
-                  onChange={handleFormChange}
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email Address *"
-                  required
-                  value={formData.email}
-                  onChange={handleFormChange}
-                />
-              </div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name *"
+                required
+                value={formData.name}
+                onChange={handleFormChange}
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address *"
+                required
+                value={formData.email}
+                onChange={handleFormChange}
+              />
 
-              <div className={styles.formRow}>
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone Number *"
-                  required
-                  value={formData.phone}
-                  onChange={handleFormChange}
-                />
-                <input
-                  type="text"
-                  name="company"
-                  placeholder="Company/Organization"
-                  value={formData.company}
-                  onChange={handleFormChange}
-                />
-              </div>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number *"
+                required
+                value={formData.phone}
+                onChange={handleFormChange}
+              />
+              <input
+                type="text"
+                name="company"
+                placeholder="Company/Organization"
+                value={formData.company}
+                onChange={handleFormChange}
+              />
 
               <textarea
                 name="projectDetails"
@@ -163,46 +161,42 @@ const Navbar = () => {
                 onChange={handleFormChange}
               ></textarea>
 
-              <div className={styles.formRow}>
-                <select
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleFormChange}
-                >
-                  <option value="">Select Budget Range</option>
-                  <option value="under-10k">Under $10K</option>
-                  <option value="10k-50k">$10K - $50K</option>
-                  <option value="50k-100k">$50K - $100K</option>
-                  <option value="above-100k">Above $100K</option>
-                </select>
+              <select
+                name="budget"
+                value={formData.budget}
+                onChange={handleFormChange}
+              >
+                <option value="">Select Budget Range</option>
+                <option value="under-10k">Under $10K</option>
+                <option value="10k-50k">$10K - $50K</option>
+                <option value="50k-100k">$50K - $100K</option>
+                <option value="above-100k">Above $100K</option>
+              </select>
 
-                <select
-                  name="timeline"
-                  value={formData.timeline}
-                  onChange={handleFormChange}
-                >
-                  <option value="">Project Timeline</option>
-                  <option value="urgent">Urgent (1-3 months)</option>
-                  <option value="3-6months">3-6 months</option>
-                  <option value="6-12months">6-12 months</option>
-                  <option value="flexible">Flexible</option>
-                </select>
-              </div>
+              <select
+                name="timeline"
+                value={formData.timeline}
+                onChange={handleFormChange}
+              >
+                <option value="">Project Timeline</option>
+                <option value="urgent">Urgent (1-3 months)</option>
+                <option value="3-6months">3-6 months</option>
+                <option value="6-12months">6-12 months</option>
+                <option value="flexible">Flexible</option>
+              </select>
 
-              <div className={styles.formRow}>
-                <select
-                  name="services"
-                  value={formData.services}
-                  onChange={handleFormChange}
-                >
-                  <option value="">Services Interested In</option>
-                  <option value="consulting">Consulting</option>
-                  <option value="design">Design</option>
-                  <option value="development">Development</option>
-                  <option value="deployment">Deployment</option>
-                  <option value="all">All Services</option>
-                </select>
-              </div>
+              <select
+                name="services"
+                value={formData.services}
+                onChange={handleFormChange}
+              >
+                <option value="">Services Interested In</option>
+                <option value="consulting">Consulting</option>
+                <option value="design">Design</option>
+                <option value="development">Development</option>
+                <option value="deployment">Deployment</option>
+                <option value="all">All Services</option>
+              </select>
 
               <button type="submit" className={styles.submitBtn}>
                 Schedule Free Session
@@ -228,8 +222,8 @@ const Navbar = () => {
               }} 
               className={styles.logo}
             >
-              <img src="/images/cec-logo.png" alt="CEC Nepal Logo" className={styles.logoImage} />
-              <span className={styles.logoText}>CEC<span className={styles.logoHighlight}>Nepal</span></span>
+              <img src={siteConfig.assets.logoUrl} alt={siteConfig.assets.logoAlt} className={styles.logoImage} />
+              <span className={styles.logoText}>{logoFirst}<span className={styles.logoHighlight}>{logoSecond}</span></span>
             </a>
             <ul className={styles.navLinks}>
               <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a></li>
