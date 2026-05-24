@@ -1,7 +1,31 @@
 {
   "services": [
     {
+      "slug": "project-inception-analysis",
+      "ordering_rank": 1,
+      "icon": "fas fa-book-open",
+      "title": "Project Inception Analysis/Desk Study",
+      "description": "Initial assessment and desk study to outline the project's scope, objectives, and preliminary feasibility based on existing data.",
+      "image": "/images/services/inception.jpg",
+      "category": "Consulting",
+      "fullDescription": "Our project inception and desk studies provide an essential first step in evaluating project potential, relying on comprehensive data review and preliminary analysis to guide future actions.",
+      "benefits": [
+        "Early identification of project viability",
+        "Cost-effective initial assessment",
+        "Clear project scoping",
+        "Foundation for detailed studies"
+      ],
+      "process": [
+        "Data Gathering",
+        "Literature Review",
+        "Preliminary Analysis",
+        "Inception Report Generation"
+      ],
+      "has_page": false
+    },
+    {
       "slug": "feasibility-studies",
+      "ordering_rank": 2,
       "icon": "fas fa-search-location",
       "title": "Feasibility Studies",
       "description": "Detailed technical, economic, environmental, and social assessment to determine whether a hydropower project is practical, sustainable, and financially viable before construction.",
@@ -24,6 +48,7 @@
     },
     {
       "slug": "detail-engineering-design",
+      "ordering_rank": 3,
       "icon": "fas fa-drafting-compass",
       "title": "Detail Engineering Design",
       "description": "A Comprehensive engineering design, analysis, sizing, detailing, and preparation of construction-ready drawings for all civil, hydraulic, hydromechanical, and electromechanical systems.",
@@ -46,6 +71,7 @@
     },
     {
       "slug": "due-diligence-audit",
+      "ordering_rank": 4,
       "icon": "fas fa-clipboard-check",
       "title": "Due Diligence Audit",
       "description": "Comprehensive independent assessment to evaluate the technical, financial, legal, environmental, and contractual aspects of the project before investment, financing, acquisition, or major decision-making.",
@@ -67,9 +93,33 @@
       "has_page": false
     },
     {
+      "slug": "tender-evaluations",
+      "ordering_rank": 5,
+      "icon": "fas fa-file-contract",
+      "title": "Tender Evaluations",
+      "description": "Expert evaluation of tender documents, bids, and proposals to ensure selection of the most capable and cost-effective contractors and suppliers.",
+      "image": "/images/services/tender-evaluations.jpg",
+      "category": "Management",
+      "fullDescription": "We offer comprehensive tender evaluation services, analyzing bids for technical compliance, financial viability, and overall value to help clients make informed procurement decisions.",
+      "benefits": [
+        "Fair and transparent bidding process",
+        "Selection of best-value contractors",
+        "Risk mitigation in procurement",
+        "Contractual compliance assurance"
+      ],
+      "process": [
+        "Bid Opening and Review",
+        "Technical Evaluation",
+        "Financial Evaluation",
+        "Award Recommendation"
+      ],
+      "has_page": false
+    },
+    {
       "slug": "construction-supervision",
+      "ordering_rank": 6,
       "icon": "fas fa-hard-hat",
-      "title": "Construction Supervision",
+      "title": "Construction Supervision and Monitoring",
       "description": "Continuous site inspection, material testing, measurement and verification of quantities, and monitoring of construction progress to ensure safety and environmental compliance, and to confirm that all civil, hydromechanical, and electromechanical works are executed in accordance with approved design drawings, technical specifications, quality standards, and contract requirements.",
       "image": "/images/services/construction-supervision.jpg",
       "category": "Management",
@@ -90,8 +140,9 @@
     },
     {
       "slug": "bill-verification",
+      "ordering_rank": 7,
       "icon": "fas fa-file-invoice-dollar",
-      "title": "Bill Verification and Monitoring",
+      "title": "Bill Verification",
       "description": "Checking, reviewing, and certifying payment bills based on physical progress of work at site.",
       "image": "/images/services/bill-verification.jpg",
       "category": "Financial",
@@ -111,7 +162,31 @@
       "has_page": false
     },
     {
+      "slug": "testing-commissioning",
+      "ordering_rank": 8,
+      "icon": "fas fa-power-off",
+      "title": "Testing and Commissioning",
+      "description": "Systematic process of ensuring all project components perform according to design intent and operational requirements before final handover.",
+      "image": "/images/services/testing-commissioning.jpg",
+      "category": "Engineering",
+      "fullDescription": "Our testing and commissioning services verify that all systems, equipment, and structures function as designed, ensuring safe and efficient operation from day one.",
+      "benefits": [
+        "Verified operational readiness",
+        "Minimized start-up issues",
+        "Safety and compliance validation",
+        "Smooth project handover"
+      ],
+      "process": [
+        "Pre-commissioning Checks",
+        "System Testing",
+        "Performance Verification",
+        "Final Handover Documentation"
+      ],
+      "has_page": false
+    },
+    {
       "slug": "survey-investigations",
+      "ordering_rank": 9,
       "icon": "fas fa-map-marked-alt",
       "title": "Survey and Investigations",
       "description": "Detailed Topographic Survey; Geophysical Survey (ERT, SRT, MASW); Core Drilling, Soil and Material Testing; Hydrology, Sediment, Geological Mapping, and Environmental Survey.",
@@ -134,12 +209,13 @@
     },
     {
       "slug": "physical-modelling",
+      "ordering_rank": 10,
       "icon": "fas fa-cubes",
-      "title": "Physical Modelling",
-      "description": "Scale modelling for complex engineering structures.",
+      "title": "Physical/Numerical Modelling",
+      "description": "Scale modelling and numerical simulations for complex engineering structures and fluid dynamics.",
       "image": "/images/services/physical-modelling.jpg",
       "category": "Engineering",
-      "fullDescription": "We create precise physical models to simulate real-world conditions for complex hydraulic and structural engineering projects, allowing for rigorous testing before full-scale construction.",
+      "fullDescription": "We create precise physical models and conduct advanced numerical simulations to analyze complex hydraulic and structural engineering projects, allowing for rigorous testing before full-scale construction.",
       "benefits": [
         "Visualizing complex designs",
         "Testing under simulated conditions",
@@ -148,9 +224,32 @@
       ],
       "process": [
         "Model Scaling and Design",
-        "Construction of the Physical Model",
+        "Construction/Setup",
         "Testing and Simulation",
         "Data Analysis and Optimization"
+      ],
+      "has_page": false
+    },
+    {
+      "slug": "repair-maintenance-rehabilitation",
+      "ordering_rank": 11,
+      "icon": "fas fa-tools",
+      "title": "Repair, Maintenance, Rehabilitation and Upgradation during Plant Operation",
+      "description": "Ongoing support services including routine maintenance, major repairs, facility rehabilitation, and system upgrades to ensure optimal plant performance and longevity.",
+      "image": "/images/services/repair-maintenance.jpg",
+      "category": "Management",
+      "fullDescription": "Our operation and maintenance services provide comprehensive solutions for keeping your plant running at peak efficiency, extending its lifespan, and adapting to new operational requirements.",
+      "benefits": [
+        "Extended asset lifespan",
+        "Minimized downtime",
+        "Improved operational efficiency",
+        "Cost-effective system upgrades"
+      ],
+      "process": [
+        "Condition Assessment",
+        "Maintenance Planning",
+        "Execution of Repairs/Upgrades",
+        "Post-upgrade Testing and Monitoring"
       ],
       "has_page": false
     }

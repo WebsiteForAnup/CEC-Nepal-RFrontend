@@ -1,13 +1,13 @@
 .mainContent {
   min-height: calc(100vh - 200px);
-  background: #f8f9fa;
+  background: #f1f5f9; /* Soft, cool gray background for optimal contrast with white card */
 }
 
 .heroSection {
   position: relative;
   width: 100%;
-  height: 250px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  height: 280px;
+  background: linear-gradient(135deg, var(--primary, #0f172a), var(--primary-dark, #1e293b));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,108 +18,116 @@
   position: relative;
   z-index: 1;
   text-align: center;
-  color: white;
+  color: #ffffff;
 }
 
 .heroContent h1 {
-  font-size: var(--fs-h1);
+  font-size: calc(var(--fs-h1) * 1.1);
   font-weight: 800;
   margin: 0 0 10px 0;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  letter-spacing: -0.02em;
 }
 
 .heroContent p {
-  font-size: var(--fs-small);
-  opacity: 0.9;
+  font-size: 1.1rem;
+  color: #e2e8f0; /* Higher contrast than opacity: 0.9 */
   margin: 0;
   font-weight: 500;
 }
 
 .container {
   max-width: 900px;
-  margin: 0 auto;
-  padding: 50px 20px;
+  margin: -60px auto 80px; /* Pull-up effect over the hero section */
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .articleCard {
-  background: white;
-  border-radius: 12px;
-  padding: 40px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 50px 60px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  color: #334155; /* Dark slate for high contrast readability */
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 .introText {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #374151;
+  color: #334155;
   margin-bottom: 35px;
   font-weight: 500;
 }
 
 .section {
-  margin-bottom: 35px;
+  margin-bottom: 40px;
 }
 
 .section h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1a202c;
-  margin: 0 0 15px 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 30px 0 15px 0;
+  line-height: 1.4;
   padding-bottom: 10px;
-  border-bottom: 2px solid #edf2f7;
+  border-bottom: 2px solid #e2e8f0;
 }
 
 .section p {
-  font-size: var(--fs-body);
+  font-size: 1.05rem;
   line-height: 1.8;
-  color: #4b5563;
-  margin: 0 0 15px 0;
+  color: #334155;
+  margin-bottom: 20px;
 }
 
 .section ul {
-  padding-left: 20px;
-  margin: 0 0 15px 0;
+  padding-left: 24px;
+  margin: 0 0 20px 0;
+  color: #334155;
+  line-height: 1.8;
 }
 
 .section li {
-  font-size: var(--fs-body);
+  font-size: 1.05rem;
   line-height: 1.8;
-  color: #4b5563;
-  margin-bottom: 10px;
+  color: #334155;
+  margin-bottom: 12px;
 }
 
 .contactSection {
-  margin-top: 40px;
-  padding-top: 30px;
-  border-top: 2px dashed #e2e8f0;
+  margin-top: 50px;
+  padding-top: 40px;
+  border-top: 2px dashed #cbd5e1;
 }
 
 .contactSection h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1a202c;
-  margin: 0 0 15px 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 20px 0;
 }
 
 .contactSection p {
-  font-size: var(--fs-body);
-  color: #4b5563;
-  margin-bottom: 15px;
+  font-size: 1.05rem;
+  color: #334155;
+  margin-bottom: 20px;
 }
 
 .contactDetails {
   background: #f8fafc;
-  border-radius: 8px;
-  padding: 20px;
+  border-radius: 12px;
+  padding: 24px;
   border: 1px solid #e2e8f0;
 }
 
 .contactDetails p {
-  margin: 0 0 10px 0;
-  font-size: var(--fs-body);
+  margin: 0 0 12px 0;
+  font-size: 1.05rem;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .contactDetails p:last-child {
@@ -129,18 +137,35 @@
 .contactDetails i {
   color: var(--primary);
   width: 20px;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
   .heroSection {
-    height: 200px;
+    height: 240px;
+  }
+  
+  .container {
+    margin-top: -40px;
+    margin-bottom: 50px;
   }
   
   .articleCard {
-    padding: 25px 20px;
+    padding: 30px 25px;
+    border-radius: 12px;
+  }
+  
+  .heroContent h1 {
+    font-size: 2rem;
   }
   
   .section h2 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
+  }
+  
+  .section p,
+  .section li,
+  .contactDetails p {
+    font-size: 1rem;
   }
 }

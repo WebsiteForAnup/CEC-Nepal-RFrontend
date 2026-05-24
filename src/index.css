@@ -11,15 +11,21 @@
   --primary: #46a33c;         /* Primary Green */
   --primary-dark: #3a8732;    /* Darker Green for hover */
   --primary-light: #f0fdf4;   /* Very Light Green background */
-  --secondary: var(--primary);       /* Emerald accent */
-  --secondary-dark: var(--primary-dark);  /* Darker emerald hover */
-  --bg-light: #ffffff;        /* White background */
+  --primary-transparent: rgba(70, 163, 60, 0.1);
+  --secondary: #1e293b;       /* Dark slate / navy */
+  --secondary-dark: #0f172a;  /* Darker slate hover */
+  --bg-light: #f8fafc;        /* Soft modern gray */
+  --bg-white: #ffffff;        /* White background */
   --white: #ffffff;
-  --text-main: #1f2937;       /* Dark gray */
-  --text-muted: #4b5563;      /* Muted text */
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  --border-radius: 8px;
+  --text-main: #334155;       /* Slate text */
+  --text-dark: #0f172a;       /* Darker headings */
+  --text-muted: #64748b;      /* Muted text */
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 40px -5px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 20px rgba(70, 163, 60, 0.3);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --border-radius: 12px;
   --spacing: 1.5rem;
 
   /* Typography Tokens - Desktop */
@@ -45,13 +51,12 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   color: var(--text-main);
   line-height: 1.7;
   background: var(--bg-light);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  animation: fadeIn 0.5s ease-in;
 }
 
 /* ========================
@@ -59,8 +64,10 @@ body {
    ======================== */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
-  color: var(--primary);
+  color: var(--text-dark);
   margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 h1 { font-size: var(--fs-h1); line-height: 1.2; }
@@ -84,7 +91,7 @@ a {
 }
 
 a:hover {
-  color: var(--secondary);
+  color: var(--primary-dark);
 }
 
 /* ========================
@@ -93,34 +100,43 @@ a:hover {
 button, .btn {
   background-color: var(--primary);
   color: var(--white);
-  padding: 0.75rem 1.5rem;
+  padding: 0.875rem 2rem;
   font-weight: 600;
+  font-family: 'Inter', sans-serif;
   border: none;
-  border-radius: var(--border-radius);
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: var(--shadow);
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .button:hover, .btn:hover {
   background-color: var(--primary-dark);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
-  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .btn-secondary {
-  background-color: var(--secondary);
+  background-color: transparent;
+  color: var(--secondary);
+  border: 2px solid var(--secondary);
 }
 
 .btn-secondary:hover {
-  background-color: var(--secondary-dark);
+  background-color: var(--secondary);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
 }
 
 /* ========================
    Sections & Containers
    ======================== */
 section {
-  padding: 6rem 2rem;
+  padding: 5rem 2rem;
 }
 
 .container {
@@ -130,230 +146,54 @@ section {
 }
 
 /* ========================
-   Header & Navigation
-   ======================== */
-header {
-  background: var(--white);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
-}
-
-nav a {
-  margin-left: 2rem;
-  font-weight: 500;
-}
-
-/* ========================
-   Hero Section (HCEL style)
-   ======================== */
-.hero {
-  background-color: var(--bg-light);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 6rem 2rem;
-  text-align: center;
-}
-
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  color: var(--primary);
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.25rem;
-  color: var(--text-muted);
-}
-
-/* ========================
    Cards / Highlights
    ======================== */
 .card {
-  background: var(--white);
+  background: var(--bg-white);
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  padding: 2rem;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+  padding: 2.5rem;
+  transition: var(--transition);
+  border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
-}
-
-/* ========================
-   Footer
-   ======================== */
-footer {
-  background: var(--primary);
-  color: var(--white);
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-footer a {
-  color: var(--white);
-}
-
-footer a:hover {
-  color: var(--secondary);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
 }
 
 /* ========================
    Animations
    ======================== */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes fadeInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
-
-/* Animation Classes */
-.animate-fadeIn {
-  animation: fadeIn 1s ease-out forwards;
-}
-
-.animate-fadeInUp {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.animate-fadeInDown {
-  animation: fadeInDown 0.8s ease-out forwards;
-}
-
-.animate-fadeInLeft {
-  animation: fadeInLeft 0.8s ease-out forwards;
-}
-
-.animate-fadeInRight {
-  animation: fadeInRight 0.8s ease-out forwards;
-}
-
-.animate-scaleIn {
-  animation: scaleIn 0.6s ease-out forwards;
-}
+.animate-fadeIn { animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.animate-fadeInUp { animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.animate-fadeInDown { animation: fadeInDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.animate-fadeInLeft { animation: fadeInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.animate-fadeInRight { animation: fadeInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.animate-scaleIn { animation: scaleIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
 
 .delay-1 { animation-delay: 0.1s; }
 .delay-2 { animation-delay: 0.2s; }
 .delay-3 { animation-delay: 0.3s; }
 .delay-4 { animation-delay: 0.4s; }
-.delay-5 { animation-delay: 0.5s; }
-.delay-6 { animation-delay: 0.6s; }
 
-/* ========================
-   Responsive Helpers
-   ======================== */
+/* Responsive Helpers */
 @media (max-width: 768px) {
   :root {
-    --fs-h1: 2.25rem;
-    --fs-h2: 1.85rem;
-    --fs-h3: 1.55rem;
-    --fs-h4: 1.35rem;
+    --fs-h1: 2.5rem;
+    --fs-h2: 2rem;
+    --fs-h3: 1.75rem;
+    --fs-h4: 1.5rem;
     --fs-body: 1rem;
     --fs-small: 0.875rem;
   }
-
-  nav {
-    flex-direction: column;
-  }
-
-  nav a {
-    margin: 1rem 0;
-  }
-
-  .hero h1 {
-    font-size: var(--fs-h1);
-  }
-
-  .hero p {
-    font-size: var(--fs-body);
-  }
+  section { padding: 3rem 1.5rem; }
 }
