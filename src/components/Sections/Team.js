@@ -16,6 +16,11 @@ const Team = ({
   const [selectedMember, setSelectedMember] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(menuOptions[0] || Object.keys(teamCategories)[0] || '');
 
+  React.useEffect(() => {
+    if (menuOptions.length > 0 && !menuOptions.includes(selectedCategory)) {
+      setSelectedCategory(menuOptions[0]);
+    }
+  }, [menuOptions, selectedCategory]);
   const renderContent = () => {
     const currentTeam = teamCategories[selectedCategory] || [];
 
@@ -26,9 +31,9 @@ const Team = ({
             <p>No team members found in this category.</p>
           </div>
         ) : (
-          currentTeam.map(member => (
+          currentTeam.map((member, index) => (
             <div
-              key={member.id}
+              key={member.id || index}
               className={styles.memberCard}
             >
               <div className={styles.cardImageWrapper}>

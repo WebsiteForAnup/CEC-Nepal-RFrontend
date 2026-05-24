@@ -7,7 +7,7 @@
 
 .news-events {
     padding: 6rem 0;
-    background: #ffffff;
+    background: var(--white);
     scroll-margin-top: 80px;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .section-subtitle {
-    color: #10bffb;
+    color: var(--secondary);
     font-weight: 700;
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -32,14 +32,14 @@
 
 .section-title {
     font-size: var(--fs-h2);
-    color: #111827;
+    color: var(--text-dark);
     margin-bottom: 1rem;
     font-weight: 800;
 }
 
 .section-description {
     font-size: var(--fs-body);
-    color: #6b7280;
+    color: var(--text-muted);
     max-width: 700px;
     margin: 0 auto;
     line-height: 1.8;
@@ -59,9 +59,9 @@
 
 .filter-btn {
     padding: 0.75rem 1.5rem;
-    background: #f9fafb;
-    border: 2px solid #e5e7eb;
-    color: #111827;
+    background: var(--bg-light);
+    border: 2px solid var(--border-light);
+    color: var(--text-dark);
     font-weight: 600;
     font-size: 0.9rem;
     border-radius: 6px;
@@ -72,14 +72,14 @@
 }
 
 .filter-btn:hover {
-    border-color: #10bffb;
-    color: #10bffb;
+    border-color: var(--secondary);
+    color: var(--secondary);
 }
 
 .filter-btn.active {
-    background: #10bffb;
-    color: #ffffff;
-    border-color: #10bffb;
+    background: var(--secondary);
+    color: var(--white);
+    border-color: var(--secondary);
 }
 
 /* ============================================
@@ -98,12 +98,12 @@
    ============================================ */
 
 .news-card {
-    background: #ffffff;
+    background: var(--white);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--border-light);
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -112,7 +112,7 @@
 .news-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.12);
-    border-color: #10bffb;
+    border-color: var(--secondary);
 }
 
 /* ============================================
@@ -124,7 +124,7 @@
     width: 100%;
     height: 200px;
     overflow: hidden;
-    background: linear-gradient(135deg, rgba(16, 191, 251, 0.1), rgba(16, 185, 129, 0.1));
+    background: linear-gradient(135deg, rgba(16, 191, 251, 0.1), var(--bg-hover));
 }
 
 .card-image img {
@@ -156,11 +156,11 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: #ffffff;
+    color: var(--white);
 }
 
 .badge.news {
-    background: #10bffb;
+    background: var(--secondary);
 }
 
 .badge.event {
@@ -186,14 +186,14 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: #6b7280;
+    color: var(--text-muted);
     font-size: 0.85rem;
     font-weight: 500;
     margin-bottom: 0.75rem;
 }
 
 .card-date i {
-    color: #10bffb;
+    color: var(--secondary);
     font-size: 1rem;
 }
 
@@ -204,7 +204,7 @@
 .card-title {
     font-size: var(--fs-h4);
     font-weight: 700;
-    color: #111827;
+    color: var(--text-dark);
     line-height: 1.4;
     margin-bottom: 0.75rem;
     display: -webkit-box;
@@ -220,7 +220,7 @@
 
 .card-description {
     font-size: var(--fs-body);
-    color: #6b7280;
+    color: var(--text-muted);
     line-height: 1.6;
     margin-bottom: 1.25rem;
     flex: 1;
@@ -235,7 +235,7 @@
    ============================================ */
 
 .read-more {
-    color: #10bffb;
+    color: var(--secondary);
     font-weight: 600;
     display: inline-flex;
     align-items: center;
@@ -250,7 +250,7 @@
 
 .read-more:hover {
     gap: 0.75rem;
-    color: #0da5d9;
+    color: var(--secondary);
 }
 
 .read-more i {
@@ -273,9 +273,9 @@
 
 .load-more-btn {
     padding: 0.875rem 2rem;
-    background: #f9fafb;
-    border: 2px solid #10bffb;
-    color: #10bffb;
+    background: var(--bg-light);
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
     font-weight: 600;
     font-size: 0.95rem;
     border-radius: 6px;
@@ -286,8 +286,8 @@
 }
 
 .load-more-btn:hover {
-    background: #10bffb;
-    color: #ffffff;
+    background: var(--secondary);
+    color: var(--white);
     transform: translateY(-2px);
 }
 
@@ -302,8 +302,8 @@
 
 .see-all-btn {
     padding: 0.875rem 2.5rem;
-    background: linear-gradient(135deg, #10bffb, var(--primary));
-    color: #ffffff;
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    color: var(--white);
     font-weight: 600;
     font-size: 1rem;
     border-radius: 6px;

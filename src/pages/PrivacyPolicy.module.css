@@ -1,13 +1,13 @@
 .mainContent {
   min-height: calc(100vh - 200px);
-  background: #f1f5f9; /* Soft, cool gray background for optimal contrast with white card */
+  background: #f1f5f9; /* Soft, cool gray background for optimal contrast with var(--white) card */
 }
 
 .heroSection {
   position: relative;
   width: 100%;
   height: 280px;
-  background: linear-gradient(135deg, var(--primary, #0f172a), var(--primary-dark, #1e293b));
+  background: linear-gradient(135deg, var(--primary, var(--text-dark)), var(--primary-dark, var(--text-dark)));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +18,7 @@
   position: relative;
   z-index: 1;
   text-align: center;
-  color: #ffffff;
+  color: var(--white);
 }
 
 .heroContent h1 {
@@ -31,7 +31,7 @@
 
 .heroContent p {
   font-size: 1.1rem;
-  color: #e2e8f0; /* Higher contrast than opacity: 0.9 */
+  color: var(--border-light); /* Higher contrast than opacity: 0.9 */
   margin: 0;
   font-weight: 500;
 }
@@ -45,18 +45,18 @@
 }
 
 .articleCard {
-  background: #ffffff;
+  background: var(--white);
   border-radius: 16px;
   padding: 50px 60px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  color: #334155; /* Dark slate for high contrast readability */
+  color: var(--text-dark); /* Dark slate for high contrast readability */
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 .introText {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #334155;
+  color: var(--text-dark);
   margin-bottom: 35px;
   font-weight: 500;
 }
@@ -68,58 +68,58 @@
 .section h2 {
   font-size: 1.35rem;
   font-weight: 600;
-  color: #1e293b;
+  color: var(--text-dark);
   margin: 30px 0 15px 0;
   line-height: 1.4;
   padding-bottom: 10px;
-  border-bottom: 2px solid #e2e8f0;
+  border-bottom: 2px solid var(--border-light);
 }
 
 .section p {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: #334155;
+  color: var(--text-dark);
   margin-bottom: 20px;
 }
 
 .section ul {
   padding-left: 24px;
   margin: 0 0 20px 0;
-  color: #334155;
+  color: var(--text-dark);
   line-height: 1.8;
 }
 
 .section li {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: #334155;
+  color: var(--text-dark);
   margin-bottom: 12px;
 }
 
 .contactSection {
   margin-top: 50px;
   padding-top: 40px;
-  border-top: 2px dashed #cbd5e1;
+  border-top: 2px dashed var(--border-light);
 }
 
 .contactSection h2 {
   font-size: 1.35rem;
   font-weight: 600;
-  color: #1e293b;
+  color: var(--text-dark);
   margin: 0 0 20px 0;
 }
 
 .contactSection p {
   font-size: 1.05rem;
-  color: #334155;
+  color: var(--text-dark);
   margin-bottom: 20px;
 }
 
 .contactDetails {
-  background: #f8fafc;
+  background: var(--bg-light);
   border-radius: 12px;
   padding: 24px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border-light);
 }
 
 .contactDetails p {

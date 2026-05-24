@@ -17,10 +17,22 @@
     "ctaLabel": "Contact Us for Opportunities",
     "ctaLink": "#contact"
   },
-  "meta": [
-    { "board_member": "Board of Directors" },
-    { "expert_staff": "Who We Are" },
-    { "staff": "Staffs" }
+  "tabs": [
+    {
+      "id": "board_member",
+      "label": "Board of Directors",
+      "categories": [
+        "board_member"
+      ]
+    },
+    {
+      "id": "expert_staff",
+      "label": "Key Personnels & Staffs",
+      "categories": [
+        "expert_staff",
+        "staff"
+      ]
+    }
   ],
   "members": [
     {
@@ -35,11 +47,15 @@
       },
       "bio": "Founder and Director of Clean Energy Consultants Pvt. Ltd., one of Nepal's leading hydropower consultancy firms with extensive expertise in hydropower development and technical consultancy.",
       "assignments": {
-        "categories": ["board_member", "expert_staff"],
+        "categories": [
+          "board_member",
+          "expert_staff"
+        ],
         "meta": {
           "board_member": "Executive Chairman",
           "expert_staff": "Hydropower and Hydraulics Expert"
-        }
+        },
+        "ordering": 1
       }
     },
     {
@@ -54,11 +70,15 @@
       },
       "bio": "Board Director at Clean Energy Consultants since mid-2006. Has led the electrical and electromechanical design for approximately 60 hydropower projects with several more under feasibility and detailed design stages. Currently working with Hydro Tasmania, Australia.",
       "assignments": {
-        "categories": ["board_member", "expert_staff"],
+        "categories": [
+          "board_member",
+          "expert_staff"
+        ],
         "meta": {
           "board_member": "Director",
           "expert_staff": "Electrical and Electromechanical Expert"
-        }
+        },
+        "ordering": 2
       }
     },
     {
@@ -73,11 +93,15 @@
       },
       "bio": "Finance Director at Clean Energy Consultants Pvt. Ltd. Leads financial feasibility studies, project financial analysis, and overall financial assessment for hydropower projects. Also serves as Finance Director for Aayu Entertainment Pvt. Ltd. and Chairman of Finman Services Pvt. Ltd.",
       "assignments": {
-        "categories": ["board_member", "expert_staff"],
+        "categories": [
+          "board_member",
+          "expert_staff"
+        ],
         "meta": {
           "board_member": "Finance Director",
           "expert_staff": "Finance Director"
-        }
+        },
+        "ordering": 3
       }
     },
     {
@@ -92,11 +116,15 @@
       },
       "bio": "Project Director and Board Member at Clean Energy Consultants since mid-2011. Brings extensive expertise in feasibility studies, detailed design, and project monitoring. Responsible for overseeing major hydropower project implementations and technical delivery.",
       "assignments": {
-        "categories": ["board_member", "expert_staff"],
+        "categories": [
+          "board_member",
+          "expert_staff"
+        ],
         "meta": {
           "board_member": "Director",
           "expert_staff": "Cost and Construction Quality Control Expert"
-        }
+        },
+        "ordering": 4
       }
     },
     {
@@ -111,11 +139,15 @@
       },
       "bio": "Chief Executive Officer with 18 years of pivotal experience at Clean Energy Consultants Pvt. Ltd. Dr. Basnet has shaped the company's strategic direction, driving innovation and sustainable engineering practices in the hydropower sector. Leads organizational vision and technical excellence.",
       "assignments": {
-        "categories": ["board_member", "expert_staff"],
+        "categories": [
+          "board_member",
+          "expert_staff"
+        ],
         "meta": {
           "board_member": "Director/Chief Executive Officer (CEO)",
           "expert_staff": "Tunneling and Geotechnical Expert"
-        }
+        },
+        "ordering": 5
       }
     },
     {
@@ -130,11 +162,15 @@
       },
       "bio": "",
       "assignments": {
-        "categories": ["board_member", "expert_staff"],
+        "categories": [
+          "board_member",
+          "expert_staff"
+        ],
         "meta": {
           "board_member": "Director",
           "expert_staff": "Hydraulics and Sediment Transport Expert"
-        }
+        },
+        "ordering": 6
       }
     },
     {
@@ -149,10 +185,13 @@
       },
       "bio": "Geological and geophysical expert with specialized expertise in geological mapping, geophysical surveys, drilling supervision, GIS, and remote sensing. Extensive experience on significant national hydropower projects. Brings critical earth science expertise to complex feasibility and design phases.",
       "assignments": {
-        "categories": ["expert_staff"],
+        "categories": [
+          "expert_staff"
+        ],
         "meta": {
           "expert_staff": "Sr. Geologist / RS & GIS / Tunneling & Geophysics Expert"
-        }
+        },
+        "ordering": 7
       }
     },
     {
@@ -167,10 +206,13 @@
       },
       "bio": "",
       "assignments": {
-        "categories": ["staff"],
+        "categories": [
+          "staff"
+        ],
         "meta": {
           "staff": "Construction Engineer"
-        }
+        },
+        "ordering": 8
       }
     },
     {
@@ -185,28 +227,13 @@
       },
       "bio": "",
       "assignments": {
-        "categories": ["staff"],
+        "categories": [
+          "staff"
+        ],
         "meta": {
           "staff": "Civil Engineer"
-        }
-      }
-    },
-    {
-      "slug": "rabin-aryal",
-      "name": "Er. Rabin Aryal",
-      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Rabin-Aryal-1024x768.jpg_f6f447cd.jpeg",
-      "education": "MSc. in Structural Eng., Tribhuvan University",
-      "experience": {
-        "joinDate": "2021",
-        "recruitmentType": "Full-time",
-        "more_info": ""
-      },
-      "bio": "",
-      "assignments": {
-        "categories": ["staff"],
-        "meta": {
-          "staff": "Structural Engineer"
-        }
+        },
+        "ordering": 9
       }
     },
     {
@@ -221,10 +248,13 @@
       },
       "bio": "",
       "assignments": {
-        "categories": ["staff"],
+        "categories": [
+          "staff"
+        ],
         "meta": {
           "staff": "Electrical Engineer"
-        }
+        },
+        "ordering": 11
       }
     },
     {
@@ -239,10 +269,13 @@
       },
       "bio": "",
       "assignments": {
-        "categories": ["staff"],
+        "categories": [
+          "staff"
+        ],
         "meta": {
           "staff": "Mechanical Engineer"
-        }
+        },
+        "ordering": 12
       }
     },
     {
@@ -257,10 +290,13 @@
       },
       "bio": "",
       "assignments": {
-        "categories": ["staff"],
+        "categories": [
+          "staff"
+        ],
         "meta": {
           "staff": "Hydropower Engineer"
-        }
+        },
+        "ordering": 13
       }
     },
     {
@@ -275,10 +311,13 @@
       },
       "bio": "",
       "assignments": {
-        "categories": ["staff"],
+        "categories": [
+          "staff"
+        ],
         "meta": {
           "staff": "Engineering Geologist"
-        }
+        },
+        "ordering": 14
       }
     },
     {
@@ -293,28 +332,13 @@
       },
       "bio": "",
       "assignments": {
-        "categories": ["staff"],
+        "categories": [
+          "staff"
+        ],
         "meta": {
           "staff": "Civil Engineer"
-        }
-      }
-    },
-    {
-      "slug": "bharat-bista",
-      "name": "Er. Bharat Bista",
-      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_12_WhatsApp-Image-2023-12-28-at-11.02.31_6aeed208-768x1024.jpg_c18f943b.jpeg",
-      "education": "BE, Civil Engineering, Bangalore",
-      "experience": {
-        "joinDate": "2025",
-        "recruitmentType": "Full-time",
-        "more_info": ""
-      },
-      "bio": "",
-      "assignments": {
-        "categories": ["staff"],
-        "meta": {
-          "staff": "Civil Engineer"
-        }
+        },
+        "ordering": 15
       }
     },
     {
@@ -329,10 +353,13 @@
       },
       "bio": "",
       "assignments": {
-        "categories": ["staff"],
+        "categories": [
+          "staff"
+        ],
         "meta": {
           "staff": "Site Engineer"
-        }
+        },
+        "ordering": 17
       }
     },
     {
@@ -347,10 +374,13 @@
       },
       "bio": "",
       "assignments": {
-        "categories": ["staff"],
+        "categories": [
+          "staff"
+        ],
         "meta": {
           "staff": "Draft Person"
-        }
+        },
+        "ordering": 18
       }
     },
     {
@@ -365,10 +395,13 @@
       },
       "bio": "",
       "assignments": {
-        "categories": ["staff"],
+        "categories": [
+          "staff"
+        ],
         "meta": {
           "staff": "Engineering Geologist"
-        }
+        },
+        "ordering": 19
       }
     },
     {
@@ -383,10 +416,13 @@
       },
       "bio": "",
       "assignments": {
-        "categories": ["staff"],
+        "categories": [
+          "staff"
+        ],
         "meta": {
           "staff": "Site Engineer"
-        }
+        },
+        "ordering": 20
       }
     },
     {
@@ -401,28 +437,13 @@
       },
       "bio": "",
       "assignments": {
-        "categories": ["staff"],
+        "categories": [
+          "staff"
+        ],
         "meta": {
           "staff": "Assistant Accountant"
-        }
-      }
-    },
-    {
-      "slug": "karma-raj-tamang",
-      "name": "Mr. Karma Raj Tamang",
-      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Karma-R-Tamang-815x1024.jpg_92416095.jpeg",
-      "education": "MBS, TU",
-      "experience": {
-        "joinDate": "2011",
-        "recruitmentType": "Full-time",
-        "more_info": ""
-      },
-      "bio": "",
-      "assignments": {
-        "categories": ["staff"],
-        "meta": {
-          "staff": "Head Accountant"
-        }
+        },
+        "ordering": 21
       }
     }
   ]

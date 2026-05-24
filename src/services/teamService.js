@@ -2,7 +2,7 @@ import teamRegistry from '../data/collections/team/registry.json';
 
 /**
  * Returns the full team categories object from the normalized registry.
- * Keys are category names ("Board of Directors", "Who We Are"), values are arrays of mapped member objects.
+ * Keys are tab labels ("Board of Directors", "Experts & Staffs"), values are arrays of mapped member objects.
  *
  * @returns {Record<string, Array>} teamCategories
  */
@@ -38,65 +38,53 @@ const mapExperienceDetails = (m) => {
   };
 };
 
-const getCategoryDisplayName = (metaArray, categoryKey, defaultName) => {
-  if (Array.isArray(metaArray)) {
-    const found = metaArray.find(item => item && typeof item === 'object' && categoryKey in item);
-    if (found) {
-      return found[categoryKey];
-    }
-  }
-  return defaultName;
-};
-
 export const getTeamCategories = () => {
   const members = teamRegistry.members || [];
-  const meta = teamRegistry.meta || [];
+  const tabs = teamRegistry.tabs || [];
   
-  const boardLabel = getCategoryDisplayName(meta, "board_member", "Board of Directors");
-  const expertLabel = getCategoryDisplayName(meta, "expert_staff", "Who We Are");
-  const staffLabel = getCategoryDisplayName(meta, "staff", "Staffs");
+  const mappedCategories = {};
 
-  const boardOfDirectors = members
-    .filter(m => m.assignments?.categories?.includes("board_member") || m.assignments?.isBoardMember)
-    .map(m => {
+  tabs.forEach(tab => {
+    // 1. Filter members that match ANY of the categories in the tab
+    const matchedMembers = members.filter(m => {
+      const memberCats = m.assignments?.categories || [];
+      return tab.categories.some(cat => memberCats.includes(cat));
+    });
+
+    // 2. Map the members to include calculated experience and their designation
+    const mappedMembers = matchedMembers.map(m => {
       const expDetails = mapExperienceDetails(m);
+      
+      // Find the first matching category to use as their primary group for this tab
+      const primaryCat = tab.categories.find(cat => (m.assignments?.categories || []).includes(cat));
+      
+      // Get their specific designation for this category
+      const designation = m.assignments?.meta?.[primaryCat] || m.assignments?.designation || "";
+
       return {
         ...m,
         experience: expDetails.experience,
         more_info: expDetails.more_info,
-        designation: m.assignments?.meta?.board_member || m.assignments?.boardDesignation || ""
+        designation: designation,
+        _primaryCatIndex: tab.categories.indexOf(primaryCat), // Used for primary sort (Group)
+        _ordering: m.assignments?.ordering || 999 // Used for secondary sort (Ordering Meta)
       };
     });
 
-  const whoWeAre = members
-    .filter(m => m.assignments?.categories?.includes("expert_staff") || m.assignments?.isExpertStaff)
-    .map(m => {
-      const expDetails = mapExperienceDetails(m);
-      return {
-        ...m,
-        experience: expDetails.experience,
-        more_info: expDetails.more_info,
-        designation: m.assignments?.meta?.expert_staff || m.assignments?.staffDesignation || ""
-      };
+    // 3. Multi-level sort:
+    // First, by group (the index of their matched category within the tab's `categories` array)
+    // Then, by their explicit ordering meta defined in registry.json
+    mappedMembers.sort((a, b) => {
+      if (a._primaryCatIndex !== b._primaryCatIndex) {
+        return a._primaryCatIndex - b._primaryCatIndex;
+      }
+      return a._ordering - b._ordering;
     });
 
-  const staffsList = members
-    .filter(m => m.assignments?.categories?.includes("staff"))
-    .map(m => {
-      const expDetails = mapExperienceDetails(m);
-      return {
-        ...m,
-        experience: expDetails.experience,
-        more_info: expDetails.more_info,
-        designation: m.assignments?.meta?.staff || ""
-      };
-    });
+    mappedCategories[tab.label] = mappedMembers;
+  });
 
-  return {
-    [boardLabel]: boardOfDirectors,
-    [expertLabel]: whoWeAre,
-    [staffLabel]: staffsList
-  };
+  return mappedCategories;
 };
 
 /**
@@ -128,4 +116,3 @@ export const getTeamByCategory = (category) => {
 export const getTeamCategoryNames = () => {
   return Object.keys(getTeamCategories());
 };
-

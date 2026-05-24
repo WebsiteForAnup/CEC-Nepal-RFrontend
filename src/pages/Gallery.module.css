@@ -1,6 +1,6 @@
 .main-content {
     min-height: calc(100vh - 200px);
-    background: #f8f9fa;
+    background: var(--bg-light);
 }
 
 .container {
@@ -26,7 +26,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="2" height="2" fill="white" opacity="0.1"/></svg>') repeat;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="2" height="2" fill="var(--white)" opacity="0.1"/></svg>') repeat;
     opacity: 0.3;
 }
 
@@ -34,7 +34,7 @@
     position: relative;
     z-index: 1;
     text-align: center;
-    color: white;
+    color: var(--white);
 }
 
 .hero-content h1 {
@@ -59,7 +59,7 @@
 .filter-section h2 {
     font-size: var(--fs-h2);
     font-weight: 700;
-    color: #1a202c;
+    color: var(--text-dark);
     margin: 0 0 30px 0;
 }
 
@@ -72,9 +72,9 @@
 
 .filter-btn {
     padding: 12px 28px;
-    background: white;
-    color: #495057;
-    border: 2px solid #e9ecef;
+    background: var(--white);
+    color: var(--text-main);
+    border: 2px solid var(--border-light);
     border-radius: 25px;
     font-size: var(--fs-small);
     font-weight: 600;
@@ -87,14 +87,14 @@
     border-color: var(--primary);
     color: var(--primary);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(70, 163, 60, 0.15);
+    box-shadow: 0 4px 12px var(--bg-hover);
 }
 
 .filter-btn.active {
     background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: white;
+    color: var(--white);
     border-color: var(--primary);
-    box-shadow: 0 6px 16px rgba(70, 163, 60, 0.3);
+    box-shadow: 0 6px 16px var(--bg-hover);
 }
 
 /* Gallery Grid */
@@ -117,7 +117,7 @@
 
 .gallery-item:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 28px rgba(70, 163, 60, 0.2);
+    box-shadow: 0 12px 28px var(--bg-hover);
 }
 
 .gallery-item img {
@@ -147,14 +147,14 @@
 }
 
 .image-info {
-    color: white;
+    color: var(--white);
 }
 
 .category-badge {
     display: inline-block;
     padding: 4px 12px;
-    background: rgba(70, 163, 60, 0.9);
-    color: white;
+    background: var(--bg-hover);
+    color: var(--white);
     border-radius: 12px;
     font-size: var(--fs-small);
     font-weight: 600;
@@ -182,13 +182,13 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     padding: 60px 0;
-    border-top: 2px solid #e9ecef;
+    border-top: 2px solid var(--border-light);
 }
 
 .stat-item {
     text-align: center;
     padding: 30px;
-    background: white;
+    background: var(--white);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
@@ -196,7 +196,7 @@
 
 .stat-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(70, 163, 60, 0.15);
+    box-shadow: 0 8px 20px var(--bg-hover);
 }
 
 .stat-item i {
@@ -208,13 +208,13 @@
 .stat-item h3 {
     font-size: var(--fs-h1);
     font-weight: 800;
-    color: #1a202c;
+    color: var(--text-dark);
     margin: 0 0 10px 0;
 }
 
 .stat-item p {
     font-size: var(--fs-body);
-    color: #6c757d;
+    color: var(--text-muted);
     margin: 0;
     font-weight: 500;
 }
@@ -248,7 +248,7 @@
     position: relative;
     max-width: 1200px;
     max-height: 90vh;
-    background: white;
+    background: var(--white);
     border-radius: 12px;
     overflow: hidden;
     animation: zoomIn 0.3s ease;
@@ -267,24 +267,24 @@
     width: 100%;
     max-height: 70vh;
     object-fit: contain;
-    background: #000;
+    background: var(--text-dark);
 }
 
 .lightbox-info {
     padding: 30px;
-    background: white;
+    background: var(--white);
 }
 
 .lightbox-info h2 {
     font-size: var(--fs-h2);
     font-weight: 700;
-    color: #1a202c;
+    color: var(--text-dark);
     margin: 10px 0 15px 0;
 }
 
 .lightbox-info p {
     font-size: var(--fs-body);
-    color: #6c757d;
+    color: var(--text-muted);
     line-height: 1.7;
     margin: 0;
 }
@@ -295,10 +295,10 @@
     right: 20px;
     width: 50px;
     height: 50px;
-    background: white;
+    background: var(--white);
     border: none;
     border-radius: 50%;
-    color: #1a202c;
+    color: var(--text-dark);
     font-size: var(--fs-h4);
     cursor: pointer;
     display: flex;
@@ -311,7 +311,7 @@
 
 .close-btn:hover {
     background: var(--primary);
-    color: white;
+    color: var(--white);
     transform: rotate(90deg);
 }
 

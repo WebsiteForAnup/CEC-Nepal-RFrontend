@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   text-align: center;
-  color: white;
+  color: var(--white);
   padding-top: 85px;
   margin-top: -85px;
   position: relative;
@@ -51,7 +51,7 @@
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-weight: 600;
-  color: #f8fafc;
+  color: var(--bg-light);
   animation: fadeInDown 1s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
@@ -63,7 +63,7 @@
 .hero h1 {
   font-size: clamp(3rem, 5vw, 5rem); /* Responsive typography */
   margin-bottom: 1.5rem;
-  color: white;
+  color: var(--white);
   line-height: 1.1;
   font-weight: 800;
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
@@ -71,7 +71,7 @@
 }
 
 .hero h1 span {
-  background: linear-gradient(135deg, #4ce040 0%, var(--primary) 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -81,7 +81,7 @@
   font-size: clamp(1.1rem, 2vw, 1.35rem);
   max-width: 800px;
   margin: 0 auto 3rem;
-  color: #e2e8f0;
+  color: var(--border-light);
   font-weight: 400;
   line-height: 1.6;
   text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -111,25 +111,25 @@
 
 .btnPrimary {
   background: var(--primary);
-  color: white;
-  box-shadow: 0 4px 15px rgba(70, 163, 60, 0.4);
+  color: var(--white);
+  box-shadow: 0 4px 15px var(--bg-hover);
 }
 
 .btnPrimary:hover {
   background: var(--primary-dark);
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(70, 163, 60, 0.5);
+  box-shadow: 0 10px 25px var(--bg-hover);
 }
 
 .btnSecondary {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.5);
-  color: white;
+  color: var(--white);
 }
 
 .btnSecondary:hover {
-  background: white;
+  background: var(--white);
   color: var(--text-dark);
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);

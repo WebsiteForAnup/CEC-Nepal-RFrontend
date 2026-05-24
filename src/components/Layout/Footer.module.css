@@ -1,6 +1,6 @@
 .footer {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--text-main) 100%);
+  color: var(--white);
   position: relative;
   overflow: hidden;
 }
@@ -14,7 +14,7 @@
   height: 1px;
   background: linear-gradient(90deg, 
     transparent 0%, 
-    rgba(16, 185, 129, 0.5) 50%, 
+    var(--primary) 50%, 
     transparent 100%
   );
 }
@@ -46,6 +46,9 @@
   align-items: center;
   gap: 0.8rem;
   margin-bottom: 1.5rem;
+ background-color: var(--white);
+  border-radius: 20px;
+  padding: 5px;
 }
 
 .footerLogo img {
@@ -57,9 +60,10 @@
 }
 
 .footerLogo h3 {
+  
   font-size: var(--fs-h3);
   font-weight: 700;
-  color: white;
+  color: var(--secondary-dark);
   margin: 0;
 }
 
@@ -68,7 +72,7 @@
 }
 
 .footerDesc {
-  color: #cbd5e1;
+  color: var(--bg-light);
   line-height: 1.7;
   margin-bottom: 1.5rem;
   font-size: var(--fs-small);
@@ -76,7 +80,7 @@
 
 /* Column Headings */
 .footerCol h4 {
-  color: white;
+  color: var(--white);
   font-size: var(--fs-h4);
   font-weight: 600;
   margin-bottom: 1.5rem;
@@ -106,7 +110,7 @@
 }
 
 .footerCol ul li a {
-  color: #cbd5e1;
+  color: var(--bg-light);
   text-decoration: none;
   font-size: var(--fs-small);
   transition: all 0.3s ease;
@@ -140,7 +144,7 @@
   display: flex;
   align-items: flex-start;
   gap: 0.8rem;
-  color: #cbd5e1;
+  color: var(--bg-light);
   font-size: var(--fs-small);
 }
 
@@ -165,7 +169,7 @@
 .mapTabBtn {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #cbd5e1;
+  color: var(--bg-light);
   padding: 0.3rem 0.6rem;
   border-radius: 4px;
   font-size: 11px;
@@ -175,25 +179,25 @@
 }
 
 .mapTabBtn:hover {
-  background: rgba(16, 185, 129, 0.1);
-  border-color: rgba(16, 185, 129, 0.3);
-  color: white;
+  background: var(--primary-transparent);
+  border-color: var(--primary);
+  color: var(--white);
 }
 
 .activeMapTab {
   background: var(--primary) !important;
   border-color: var(--primary) !important;
-  color: white !important;
-  box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+  color: var(--white) !important;
+  box-shadow: var(--shadow-glow);
 }
 
 .mapContainer {
   width: 100%;
   height: 180px;
   border-radius: 8px;
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  border: 1px solid var(--primary);
   overflow: hidden;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-md);
   z-index: 10;
 }
 
@@ -201,14 +205,14 @@
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  background: rgba(16, 185, 129, 0.15);
-  color: #10b981;
+  background: var(--primary-transparent);
+  color: var(--primary);
   padding: 0.1rem 0.5rem;
   border-radius: 12px;
   font-size: 10px;
   font-weight: 600;
   margin-left: 0.6rem;
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  border: 1px solid var(--primary);
 }
 
 .statusClosed {
@@ -216,7 +220,7 @@
   align-items: center;
   gap: 0.3rem;
   background: rgba(239, 68, 68, 0.15);
-  color: #ef4444;
+  color: var(--error);
   padding: 0.1rem 0.5rem;
   border-radius: 12px;
   font-size: 10px;
@@ -266,7 +270,7 @@
 }
 
 .socials a {
-  color: white;
+  color: var(--white);
   font-size: 1.1rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
@@ -274,9 +278,9 @@
   justify-content: center;
   width: 45px;
   height: 45px;
-  background: rgba(16, 185, 129, 0.1);
+  background: var(--primary-transparent);
   border-radius: 50%;
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  border: 1px solid var(--primary);
   position: relative;
   overflow: hidden;
 }
@@ -301,10 +305,10 @@
 }
 
 .socials a:hover {
-  color: white;
+  color: var(--white);
   border-color: var(--primary);
   transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+  box-shadow: var(--shadow-glow);
 }
 
 /* Footer Bottom */
@@ -325,7 +329,7 @@
 .footerBottomContent p {
   margin: 0;
   font-size: var(--fs-small);
-  color: #94a3b8;
+  color: var(--white);
 }
 
 .footerLinks {
@@ -335,7 +339,7 @@
 }
 
 .footerLinks a {
-  color: #94a3b8;
+  color: var(--white);
   text-decoration: none;
   font-size: var(--fs-small);
   transition: color 0.3s ease;
@@ -346,7 +350,7 @@
 }
 
 .separator {
-  color: #475569;
+  color: var(--text-main);
 }
 
 /* Responsive Design */

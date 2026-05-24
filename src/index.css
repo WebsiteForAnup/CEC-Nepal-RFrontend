@@ -1,29 +1,37 @@
 /* ========================
    Import Fonts & Icons
    ======================== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
 /* ========================
    Root Color Variables
    ======================== */
 :root {
-  --primary: #46a33c;         /* Primary Green */
-  --primary-dark: #3a8732;    /* Darker Green for hover */
+  --primary: #00954a;         /* Logo Green */
+  --primary-dark: #00b82e;    /* Bright Logo Green (used for hover) */
   --primary-light: #f0fdf4;   /* Very Light Green background */
-  --primary-transparent: rgba(70, 163, 60, 0.1);
-  --secondary: #1e293b;       /* Dark slate / navy */
-  --secondary-dark: #0f172a;  /* Darker slate hover */
+  --primary-transparent: rgba(0, 149, 74, 0.1);
+  --secondary: #0000fe;       /* Logo Blue */
+  --secondary-dark: #0000cc;  /* Darker Logo Blue hover */
+  --accent: #ff5d00;          /* Logo Orange */
   --bg-light: #f8fafc;        /* Soft modern gray */
   --bg-white: #ffffff;        /* White background */
   --white: #ffffff;
-  --text-main: #334155;       /* Slate text */
-  --text-dark: #0f172a;       /* Darker headings */
+  --text-main: #565656;       /* Logo Gray for text */
+  --text-dark: #000000;       /* Logo Black for headings */
   --text-muted: #64748b;      /* Muted text */
+  
+  /* Helper Variables */
+  --border-light: #e2e8f0;    /* Borders */
+  --bg-hover: rgba(0, 149, 74, 0.05);
+  --error: #ef4444;
+  --success: #10b981;
+  
   --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 20px 40px -5px rgba(0, 0, 0, 0.12);
-  --shadow-glow: 0 0 20px rgba(70, 163, 60, 0.3);
+  --shadow-glow: 0 0 20px rgba(0, 149, 74, 0.3);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --border-radius: 12px;
   --spacing: 1.5rem;
@@ -63,7 +71,7 @@ body {
    Headings
    ======================== */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: var(--text-dark);
   margin-bottom: 1rem;
   font-weight: 700;

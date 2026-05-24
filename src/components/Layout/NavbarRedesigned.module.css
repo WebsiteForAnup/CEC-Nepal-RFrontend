@@ -36,7 +36,7 @@
 }
 
 .tagline {
-  color: white;
+  color: var(--white);
   font-size: var(--fs-small);
   font-weight: 500;
   margin: 0;
@@ -50,7 +50,7 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  background: white;
+  background: var(--white);
   color: var(--primary);
   border: none;
   padding: 0.5rem 1.2rem;
@@ -66,7 +66,7 @@
 .callButton:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  background: #f0f9ff;
+  background: var(--bg-light);
 }
 
 .callButton:active {
@@ -82,8 +82,8 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: white;
-  border-bottom: 1px solid #f0f0f0;
+  background: var(--white);
+  border-bottom: 1px solid var(--white);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   padding: 1.25rem 0;
   width: 100%;
@@ -150,7 +150,7 @@
 .logoText {
   font-size: var(--fs-h4);
   font-weight: 700;
-  color: #0000fe;
+  color: var(--secondary);
   letter-spacing: -0.5px;
   /* text-transform: uppercase; */
   font-family: 'Montserrat', 'Inter', sans-serif;
@@ -174,7 +174,7 @@
   background: transparent;
   background-color: transparent;
   border: none;
-  color: #404040;
+  color: var(--text-main);
   font-size: var(--fs-small);
   font-weight: 500;
   cursor: pointer;
@@ -225,8 +225,8 @@
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: white;
-  border: 1px solid #f0f0f0;
+  background: var(--white);
+  border: 1px solid var(--white);
   border-radius: 8px;
   min-width: 200px;
   margin-top: 1rem;
@@ -251,7 +251,7 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.75rem 1.5rem;
-  color: #404040;
+  color: var(--text-main);
   text-decoration: none;
   font-size: var(--fs-small);
   font-weight: 500;
@@ -265,7 +265,7 @@
 }
 
 .dropdownItem:hover {
-  background: #f8f9ff;
+  background: var(--bg-light);
   color: var(--primary);
   padding-left: 1.75rem;
 }
@@ -280,7 +280,7 @@
   align-items: center;
   gap: 0.6rem;
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  color: white;
+  color: var(--white);
   border: none;
   padding: 0.6rem 1.4rem;
   border-radius: 8px;
@@ -336,7 +336,7 @@
 .hamburgerLine {
   width: 24px;
   height: 2.5px;
-  background: #1a1a1a;
+  background: var(--text-dark);
   border-radius: 2px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -381,7 +381,7 @@
 }
 
 .modalContent {
-  background: white;
+  background: var(--white);
   border-radius: 12px;
   padding: 2.5rem;
   max-width: 600px;
@@ -408,7 +408,7 @@
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  background: #f5f5f5;
+  background: var(--white);
   border: none;
   width: 36px;
   height: 36px;
@@ -417,7 +417,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #1a1a1a;
+  color: var(--text-dark);
   font-size: 1.2rem;
   transition: all 0.2s ease;
   z-index: 10;
@@ -425,26 +425,26 @@
 
 .closeBtn:hover {
   background: var(--primary);
-  color: white;
+  color: var(--white);
   transform: rotate(90deg);
 }
 
 .modalHeader {
   margin-bottom: 2rem;
-  border-bottom: 2px solid #f0f0f0;
+  border-bottom: 2px solid var(--white);
   padding-bottom: 1.5rem;
 }
 
 .modalHeader h2 {
   font-size: var(--fs-h3);
-  color: #1a1a1a;
+  color: var(--text-dark);
   margin: 0 0 0.5rem 0;
   font-weight: 700;
   font-family: 'Montserrat', 'Inter', sans-serif;
 }
 
 .modalHeader p {
-  color: #666;
+  color: var(--text-main);
   font-size: 0.95rem;
   margin: 0;
   line-height: 1.5;
@@ -468,13 +468,13 @@
 .modalContent select {
   width: 100%;
   padding: 0.85rem 1rem;
-  border: 1.5px solid #e0e0e0;
+  border: 1.5px solid var(--border-light);
   border-radius: 8px;
   font-size: var(--fs-body);
   font-family: 'Inter', 'Montserrat', sans-serif;
   transition: all 0.2s ease;
-  background: #fafafa;
-  color: #1a1a1a;
+  background: var(--white);
+  color: var(--text-dark);
 }
 
 .modalContent input:focus,
@@ -482,12 +482,12 @@
 .modalContent select:focus {
   outline: none;
   border-color: var(--primary);
-  background: white;
-  box-shadow: 0 0 0 3px rgba(70, 163, 60, 0.1);
+  background: var(--white);
+  box-shadow: 0 0 0 3px var(--bg-hover);
 }
 
 .modalContent input::placeholder {
-  color: #999;
+  color: var(--text-muted);
 }
 
 .modalContent textarea {
@@ -498,7 +498,7 @@
 
 .submitBtn {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  color: white;
+  color: var(--white);
   border: none;
   padding: 1rem 1.5rem;
   border-radius: 8px;
@@ -587,8 +587,8 @@
     right: 0;
     flex-direction: column;
     gap: 0;
-    background: white;
-    border-bottom: 1px solid #f0f0f0;
+    background: var(--white);
+    border-bottom: 1px solid var(--white);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -602,7 +602,7 @@
 
   .navLink {
     padding: 1rem 1.5rem;
-    border-bottom: 1px solid #f5f5f5;
+    border-bottom: 1px solid var(--white);
     justify-content: flex-start;
     gap: 1rem;
   }
@@ -612,7 +612,7 @@
   }
 
   .navLink:hover {
-    background: #f8f9ff;
+    background: var(--bg-light);
   }
 
   .dropdownContainer {
@@ -629,7 +629,7 @@
     transition: all 0.3s ease;
     margin: 0;
     box-shadow: none;
-    background: #f8f9ff;
+    background: var(--bg-light);
     border: none;
   }
 

@@ -1,6 +1,6 @@
 .main-content {
     min-height: calc(100vh - 200px);
-    background: #ffffff;
+    background: var(--white);
 }
 
 .container {
@@ -14,7 +14,7 @@
     position: relative;
     width: 100%;
     height: 400px;
-    background: #111;
+    background: var(--text-dark);
 }
 
 .hero-bg {
@@ -47,23 +47,23 @@
 }
 
 .breadcrumb a {
-    color: #4CAF50;
+    color: var(--primary);
     text-decoration: none;
     font-weight: 500;
 }
 
 .breadcrumb span {
-    color: #888;
+    color: var(--text-muted);
 }
 
 .breadcrumb-current {
-    color: #fff !important;
+    color: var(--white) !important;
 }
 
 .hero-text h1 {
     font-size: 46px;
     font-weight: 800;
-    color: #fff;
+    color: var(--white);
     margin: 0 0 15px 0;
     max-width: 800px;
     line-height: 1.2;
@@ -71,7 +71,7 @@
 
 .hero-subheadline {
     font-size: 20px;
-    color: #ddd;
+    color: var(--border-light);
     margin: 0;
     max-width: 700px;
     line-height: 1.5;
@@ -93,7 +93,7 @@
 .section-block h2 {
     font-size: 28px;
     font-weight: 700;
-    color: #1a202c;
+    color: var(--text-dark);
     margin: 0 0 25px 0;
     position: relative;
     padding-bottom: 12px;
@@ -106,13 +106,13 @@
     left: 0;
     width: 60px;
     height: 4px;
-    background: #4CAF50;
+    background: var(--primary);
     border-radius: 2px;
 }
 
 .section-intro {
     font-size: 16px;
-    color: #495057;
+    color: var(--text-main);
     margin-bottom: 25px;
     line-height: 1.6;
 }
@@ -127,30 +127,30 @@
 .problem-box, .solution-box {
     padding: 30px;
     border-radius: 8px;
-    background: #f8f9fa;
-    border-top: 4px solid #e9ecef;
+    background: var(--bg-light);
+    border-top: 4px solid var(--border-light);
 }
 
-.problem-box { border-top-color: #f56565; }
-.solution-box { border-top-color: #4CAF50; background: #f0fdf4; }
+.problem-box { border-top-color: var(--error); }
+.solution-box { border-top-color: var(--primary); background: var(--primary-light); }
 
 .problem-box h3, .solution-box h3 {
     margin: 0 0 15px 0;
     font-size: 18px;
-    color: #2d3748;
+    color: var(--text-dark);
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.problem-box h3 i { color: #f56565; }
-.solution-box h3 i { color: #4CAF50; }
+.problem-box h3 i { color: var(--error); }
+.solution-box h3 i { color: var(--primary); }
 
 .problem-box p, .solution-box p {
     margin: 0;
     font-size: 15px;
     line-height: 1.7;
-    color: #4a5568;
+    color: var(--text-main);
 }
 
 /* 3. Capabilities Grid */
@@ -165,19 +165,19 @@
     align-items: flex-start;
     gap: 12px;
     padding: 20px;
-    background: #fff;
-    border: 1px solid #e2e8f0;
+    background: var(--white);
+    border: 1px solid var(--border-light);
     border-radius: 6px;
     transition: all 0.2s ease;
 }
 
 .capability-card:hover {
-    border-color: #4CAF50;
+    border-color: var(--primary);
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 .capability-card i {
-    color: #4CAF50;
+    color: var(--primary);
     font-size: 18px;
     margin-top: 2px;
 }
@@ -185,7 +185,7 @@
 .capability-card span {
     font-size: 15px;
     font-weight: 500;
-    color: #2d3748;
+    color: var(--text-dark);
 }
 
 /* 4. Tech Stack */
@@ -197,12 +197,12 @@
 
 .tech-badge {
     padding: 8px 16px;
-    background: #edf2f7;
-    color: #2d3748;
+    background: var(--border-light);
+    color: var(--text-dark);
     border-radius: 20px;
     font-size: 14px;
     font-weight: 600;
-    border: 1px solid #cbd5e0;
+    border: 1px solid var(--border-light);
 }
 
 /* 5. Process Timeline */
@@ -216,8 +216,8 @@
     display: flex;
     gap: 25px;
     padding: 20px;
-    background: #fff;
-    border: 1px solid #e2e8f0;
+    background: var(--white);
+    border: 1px solid var(--border-light);
     border-radius: 8px;
     align-items: center;
 }
@@ -225,26 +225,26 @@
 .step-number {
     font-size: 24px;
     font-weight: 800;
-    color: #cbd5e0;
+    color: var(--border-light);
     width: 50px;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #edf2f7;
+    border: 2px solid var(--border-light);
     border-radius: 50%;
     flex-shrink: 0;
 }
 
 .process-step:hover .step-number {
-    border-color: #4CAF50;
-    color: #4CAF50;
+    border-color: var(--primary);
+    color: var(--primary);
 }
 
 .step-content h4 {
     margin: 0 0 5px 0;
     font-size: 16px;
-    color: #2d3748;
+    color: var(--text-dark);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -252,7 +252,7 @@
 .step-content p {
     margin: 0;
     font-size: 15px;
-    color: #4a5568;
+    color: var(--text-main);
 }
 
 /* 6. Social Proof */
@@ -264,17 +264,17 @@
 
 .case-study-card, .testimonial-card {
     padding: 30px;
-    background: #fff;
+    background: var(--white);
     border-radius: 8px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border-light);
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
 }
 
 .card-label {
     display: inline-block;
     padding: 4px 10px;
-    background: #ebf8ff;
-    color: #3182ce;
+    background: var(--bg-light);
+    color: var(--secondary);
     font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
@@ -285,7 +285,7 @@
 .case-study-card h3 {
     margin: 0 0 15px 0;
     font-size: 18px;
-    color: #2d3748;
+    color: var(--text-dark);
 }
 
 .metric-highlight {
@@ -294,40 +294,40 @@
     gap: 10px;
     font-size: 20px;
     font-weight: 800;
-    color: #4CAF50;
+    color: var(--primary);
     margin-bottom: 15px;
 }
 
 .case-study-card p {
     margin: 0;
     font-size: 14px;
-    color: #718096;
+    color: var(--text-muted);
     line-height: 1.6;
 }
 
 .testimonial-card i {
     font-size: 24px;
-    color: #cbd5e0;
+    color: var(--border-light);
     margin-bottom: 15px;
 }
 
 .quote {
     font-size: 15px;
     font-style: italic;
-    color: #4a5568;
+    color: var(--text-main);
     line-height: 1.7;
     margin: 0 0 20px 0;
 }
 
 .author-info strong {
     display: block;
-    color: #2d3748;
+    color: var(--text-dark);
     font-size: 15px;
 }
 
 .author-info span {
     display: block;
-    color: #718096;
+    color: var(--text-muted);
     font-size: 13px;
     margin-top: 4px;
 }
@@ -341,20 +341,20 @@
 
 .sidebar-card {
     padding: 30px;
-    background: #f8f9fa;
+    background: var(--bg-light);
     border-radius: 8px;
-    border-top: 4px solid #2d3748;
+    border-top: 4px solid var(--text-dark);
 }
 
 .sidebar-card h3 {
     margin: 0 0 15px 0;
     font-size: 20px;
-    color: #1a202c;
+    color: var(--text-dark);
 }
 
 .sidebar-card p {
     font-size: 14px;
-    color: #4a5568;
+    color: var(--text-main);
     line-height: 1.6;
     margin: 0 0 20px 0;
 }
@@ -362,8 +362,8 @@
 .sidebar-btn {
     width: 100%;
     padding: 14px;
-    background: #2d3748;
-    color: #fff;
+    background: var(--text-dark);
+    color: var(--white);
     border: none;
     border-radius: 6px;
     font-weight: 700;
@@ -373,7 +373,7 @@
 }
 
 .sidebar-btn:hover {
-    background: #1a202c;
+    background: var(--text-dark);
 }
 
 .trust-seals {
@@ -388,16 +388,16 @@
     gap: 12px;
     font-size: 14px;
     font-weight: 600;
-    color: #4a5568;
+    color: var(--text-main);
     padding: 12px;
-    background: #fff;
+    background: var(--white);
     border-radius: 6px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border-light);
 }
 
 .seal i {
     font-size: 20px;
-    color: #4CAF50;
+    color: var(--primary);
 }
 
 /* Responsive */

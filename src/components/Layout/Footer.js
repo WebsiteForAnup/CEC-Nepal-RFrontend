@@ -403,7 +403,7 @@ const Footer = ({ company = {} }) => {
       <div className={styles.footerBottom}>
         <div className={styles.container}>
           <div className={styles.footerBottomContent}>
-            <p>&copy; {new Date().getFullYear()} {shortName || name || 'Company'}. All Rights Reserved.</p>
+            <p>&copy; {new Date().getFullYear()} {shortName.split(' ').join('') || name || 'Company'}. All Rights Reserved.</p>
             <div className={styles.footerLinks}>
               <Link to="/privacy">Privacy Policy</Link>
               <span className={styles.separator}>|</span>

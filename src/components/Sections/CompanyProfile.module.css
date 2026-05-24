@@ -1,6 +1,6 @@
 .companyProfile {
   padding: 100px 0;
-  background-color: #f8fafc;
+  background-color: var(--bg-light);
   position: relative;
   overflow: hidden;
 }
@@ -39,7 +39,7 @@
 }
 
 .profileCard {
-  background: white;
+  background: var(--white);
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -51,14 +51,14 @@
 
 .profileCard:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.1);
+  box-shadow: 0 20px 40px var(--bg-hover);
   border-color: var(--primary);
 }
 
 .iconWrapper {
   width: 60px;
   height: 60px;
-  background-color: rgba(16, 185, 129, 0.1);
+  background-color: var(--bg-hover);
   color: var(--primary);
   border-radius: 12px;
   display: flex;
@@ -78,7 +78,7 @@
 
 .content {
   font-size: var(--fs-body);
-  color: #64748b;
+  color: var(--text-muted);
   line-height: 1.7;
   margin-bottom: 0;
 }
@@ -94,7 +94,7 @@
   padding-left: 25px;
   margin-bottom: 12px;
   font-size: var(--fs-body);
-  color: #64748b;
+  color: var(--text-muted);
   line-height: 1.5;
 }
 

@@ -1,6 +1,6 @@
 .projects {
   padding: 100px 0;
-  background-color: #fcfdfc;
+  background-color: var(--white);
 }
 
 .container {
@@ -31,7 +31,7 @@
 }
 
 .subtitle {
-  color: #64748b;
+  color: var(--text-muted);
   font-size: var(--fs-body);
   max-width: 700px;
   margin: 0 auto 20px;
@@ -56,19 +56,19 @@
 
 .categoryBtn {
   padding: 12px 28px;
-  background: white;
-  border: 1px solid #e2e8f0;
+  background: var(--white);
+  border: 1px solid var(--border-light);
   border-radius: 50px;
   font-size: 14px;
   font-weight: 600;
-  color: #4a5568;
+  color: var(--text-main);
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0,0,0,0.03);
 }
 
 .categoryBtn:hover {
-  background: #f8f9fa;
+  background: var(--bg-light);
   border-color: var(--primary);
   color: var(--primary);
   transform: translateY(-2px);
@@ -77,26 +77,26 @@
 .categoryBtn.active {
   background: var(--primary);
   border-color: var(--primary);
-  color: white;
-  box-shadow: 0 10px 20px rgba(70, 163, 60, 0.2);
+  color: var(--white);
+  box-shadow: 0 10px 20px var(--bg-hover);
 }
 
 /* Two-Column Explorer Body */
 .explorerBody {
   display: grid;
   grid-template-columns: 380px 1fr;
-  background: white;
+  background: var(--white);
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
-  border: 1px solid #edf2f7;
+  border: 1px solid var(--border-light);
   height: 850px; /* Fixed height for homepage stability */
 }
 
 /* Sidebar List */
 .sidebarList {
   background: #f1f5f9;
-  border-right: 1px solid #e2e8f0;
+  border-right: 1px solid var(--border-light);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -104,14 +104,14 @@
 
 .sidebarHeader {
   padding: 25px;
-  background: white;
-  border-bottom: 1px solid #e2e8f0;
+  background: var(--white);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .sidebarHeader h3 {
   font-size: 16px;
   font-weight: 800;
-  color: #1a202c;
+  color: var(--text-dark);
   margin: 0 0 5px 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -119,7 +119,7 @@
 
 .count {
   font-size: 12px;
-  color: #718096;
+  color: var(--text-muted);
   font-weight: 500;
 }
 
@@ -136,11 +136,11 @@
 }
 
 .projectItem:hover {
-  background: rgba(70, 163, 60, 0.04);
+  background: var(--bg-hover);
 }
 
 .projectItem.active {
-  background: white;
+  background: var(--white);
   border-left: 6px solid var(--primary);
   box-shadow: -5px 0 15px rgba(0,0,0,0.05);
 }
@@ -148,7 +148,7 @@
 .itemInfo h4 {
   font-size: var(--fs-body);
   font-weight: 700;
-  color: #1a202c;
+  color: var(--text-dark);
   margin: 0 0 8px 0;
   line-height: 1.3;
 }
@@ -161,14 +161,14 @@
   display: flex;
   justify-content: space-between;
   font-size: var(--fs-small);
-  color: #718096;
+  color: var(--text-muted);
 }
 
 /* Detail Panel */
 .detailPanel {
   flex: 1;
   overflow-y: auto;
-  background: white;
+  background: var(--white);
   display: flex;
   flex-direction: column;
 }
@@ -192,13 +192,13 @@
   right: 0;
   padding: 40px;
   background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-  color: white;
+  color: var(--white);
 }
 
 .detailOverlay h2 {
   font-size: var(--fs-h2);
   font-weight: 800;
-  color: white;
+  color: var(--white);
   margin-bottom: 15px;
 }
 
@@ -234,9 +234,9 @@
 
 .infoBox {
   padding: 20px;
-  background: #f8f9fa;
+  background: var(--bg-light);
   border-radius: 16px;
-  border: 1px solid #edf2f7;
+  border: 1px solid var(--border-light);
 }
 
 .infoBox strong {
@@ -251,7 +251,7 @@
 .infoBox span {
   font-size: 15px;
   font-weight: 700;
-  color: #2d3748;
+  color: var(--text-dark);
 }
 
 /* Technical Specifications Grid */
@@ -262,7 +262,7 @@
 .technicalSection h3 {
   font-size: var(--fs-h3);
   font-weight: 800;
-  color: #1a202c;
+  color: var(--text-dark);
   margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 2px solid #f1f5f9;
@@ -279,14 +279,14 @@
   align-items: flex-start;
   gap: 15px;
   padding: 18px;
-  background: #fcfdfd;
-  border: 1px solid #edf2f7;
+  background: var(--white);
+  border: 1px solid var(--border-light);
   border-radius: 12px;
   transition: all 0.3s ease;
 }
 
 .specBox:hover {
-  background: white;
+  background: var(--white);
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   transform: translateY(-2px);
   border-color: var(--primary);
@@ -308,7 +308,7 @@
 .specBox strong {
   font-size: 11px;
   text-transform: uppercase;
-  color: #718096;
+  color: var(--text-muted);
   letter-spacing: 0.8px;
   margin-bottom: 4px;
   font-weight: 700;
@@ -317,7 +317,7 @@
 .specBox span {
   font-size: 14px;
   font-weight: 600;
-  color: #2d3748;
+  color: var(--text-dark);
   line-height: 1.4;
 }
 
@@ -328,12 +328,12 @@
 .descriptionSection h3 {
   font-size: var(--fs-h3);
   font-weight: 800;
-  color: #1a202c;
+  color: var(--text-dark);
   margin-bottom: 15px;
 }
 
 .descriptionSection p {
-  color: #4a5568;
+  color: var(--text-main);
   line-height: 1.8;
   font-size: var(--fs-body);
 }
@@ -341,7 +341,7 @@
 .timelineSection h3 {
   font-size: 20px;
   font-weight: 800;
-  color: #1a202c;
+  color: var(--text-dark);
   margin-bottom: 25px;
 }
 
@@ -365,26 +365,26 @@
   border-radius: 50%;
   margin-top: 6px;
   flex-shrink: 0;
-  box-shadow: 0 0 0 4px rgba(70, 163, 60, 0.15);
+  box-shadow: 0 0 0 4px var(--bg-hover);
 }
 
 .timelineItem p {
   margin: 0;
   font-size: 15px;
-  color: #4a5568;
+  color: var(--text-main);
   font-weight: 500;
 }
 
 .actions {
   margin-top: 50px;
   padding-top: 30px;
-  border-top: 1px solid #edf2f7;
+  border-top: 1px solid var(--border-light);
 }
 
 .inquiryBtn {
   padding: 16px 36px;
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: white;
+  color: var(--white);
   border: none;
   border-radius: 50px;
   font-weight: 800;
@@ -393,14 +393,14 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  box-shadow: 0 10px 20px rgba(70, 163, 60, 0.3);
+  box-shadow: 0 10px 20px var(--bg-hover);
   transition: all 0.3s ease;
   text-transform: uppercase;
 }
 
 .inquiryBtn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(70, 163, 60, 0.4);
+  box-shadow: 0 15px 30px var(--bg-hover);
 }
 
 .placeholder {
@@ -409,7 +409,7 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  color: #cbd5e0;
+  color: var(--border-light);
   padding: 60px;
   text-align: center;
 }
@@ -441,7 +441,7 @@
   .sidebarList {
     height: 400px;
     border-right: none;
-    border-bottom: 2px solid #edf2f7;
+    border-bottom: 2px solid var(--border-light);
   }
 
   .detailHero {
