@@ -37,7 +37,7 @@ const Team = ({
               className={styles.memberCard}
             >
               <div className={styles.cardImageWrapper}>
-                <img src={member.image_url} alt={member.name} />
+                <img src={member.image_url || '/images/cec-logo.png'} alt={member.name} />
               </div>
               <div className={styles.cardBody}>
                 <h3 className={styles.memberName}>{member.name}</h3>
@@ -123,7 +123,7 @@ const Team = ({
 
               <div className={styles.modalBody}>
                 <div className={styles.modalImageSide}>
-                  <img src={selectedMember.image_url} alt={selectedMember.name} />
+                  <img src={selectedMember.image_url || '/images/cec-logo.png'} alt={selectedMember.name} />
                 </div>
 
                 <div className={styles.modalInfoSide}>
