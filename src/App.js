@@ -9,6 +9,8 @@ import Gallery from './pages/Gallery';
 import Downloads from './pages/Downloads';
 import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import TeamPage from './pages/TeamPage';
+import Careers from './pages/Careers';
 import useScrollToTop from './hooks/useScrollToTop';
 
 function AppContent() {
@@ -26,6 +28,8 @@ function AppContent() {
         <Route path="/downloads" element={<Downloads />} />
         <Route path="/terms" element={<TermsOfService />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/team" element={<TeamPage />} />
+        <Route path="/careers" element={<Careers />} />
       </Routes>
     </div>
   );

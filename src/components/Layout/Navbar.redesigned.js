@@ -146,12 +146,20 @@ const NavbarRedesigned = () => {
             >
               Projects
             </button>
-            <button 
+            <Link 
+              to="/team"
               className={styles.navLink}
-              onClick={() => scrollToSection('team')}
+              onClick={() => setMobileMenuOpen(false)}
             >
               Team
-            </button>
+            </Link>
+            <Link 
+              to="/careers"
+              className={styles.navLink}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Careers
+            </Link>
             <button 
               className={styles.navLink}
               onClick={() => scrollToSection('news-events')}
@@ -194,7 +202,7 @@ const NavbarRedesigned = () => {
             className={styles.registerBtn}
             onClick={() => scrollToSection('contact')}
           >
-            Register Now
+            Contact Us
             <i className="fas fa-arrow-right"></i>
           </button>
 

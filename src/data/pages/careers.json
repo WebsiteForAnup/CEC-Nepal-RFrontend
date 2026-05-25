@@ -1,11 +1,43 @@
 {
-  "title": "Join Our Team",
-  "subtitle": "Build your engineering career with Nepal's leading clean energy consultants.",
-  "intro": "We are always looking for passionate engineers, hydrologists, and environmental experts to join our team.",
+  "page": {
+    "title": "Careers at CEC Nepal",
+    "subtitle": "Join our team of experts and build the future of clean energy.",
+    "heroImage": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Desk.png_a02f101c.png"
+  },
   "benefits": [
-    "Work on high-impact national infrastructure projects",
-    "Collaborative and innovative engineering culture",
-    "Continuous professional learning and development opportunities",
-    "Competitive compensation and benefits packages"
+    {
+      "icon": "fas fa-chart-line",
+      "title": "Career Growth",
+      "description": "Continuous learning and professional development opportunities in the clean energy sector."
+    },
+    {
+      "icon": "fas fa-users",
+      "title": "Expert Team",
+      "description": "Collaborate with industry-leading professionals on high-impact infrastructure projects."
+    },
+    {
+      "icon": "fas fa-globe-asia",
+      "title": "National Impact",
+      "description": "Work on hydropower and infrastructure projects that shape the nation's energy landscape."
+    }
+  ],
+  "openings": [
+    {
+      "id": "civil-engineer-01",
+      "title": "Senior Civil Engineer",
+      "department": "Engineering",
+      "location": "Kathmandu, Nepal",
+      "type": "Full-Time",
+      "experience": "5+ years",
+      "description": "We are looking for an experienced Civil Engineer to lead hydropower structural designs and project supervision.",
+      "requirements": [
+        "Master's/Bachelor's degree in Civil Engineering",
+        "Proven experience in Hydropower design",
+        "Proficiency in AutoCAD and structural modeling software"
+      ],
+      "postedDate": "2026-05-15",
+      "status": "Open",
+      "applyEmail": "info@cecnepal.com.np"
+    }
   ]
 }
