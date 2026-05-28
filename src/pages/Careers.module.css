@@ -250,6 +250,15 @@
   color: var(--text-secondary, #475569);
 }
 
+.open {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.closed {
+  background: #fee2e2; /* Light red */
+  color: #991b1b;      /* Dark red */
+}
 /* Animations */
 @keyframes fadeInDown {
   from { opacity: 0; transform: translateY(-20px); }
