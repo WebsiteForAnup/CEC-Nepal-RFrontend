@@ -95,10 +95,10 @@ const NewsEvents = ({ newsAndEvents = [] }) => {
 
                 {/* See All */}
                 <div className={styles['see-all-container']}>
-                    <button className={styles['see-all-btn']} onClick={() => window.location.href = '/#news-events'}>
+                    <Link to="/news" className={styles['see-all-btn']}>
                         See All News &amp; Events
                         <i className="fas fa-arrow-right"></i>
-                    </button>
+                    </Link>
                 </div>
             </div>
         </section>

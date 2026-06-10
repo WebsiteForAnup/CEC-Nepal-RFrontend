@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import styles from './App.module.css';
 import Home from './pages/Home';
 import NewsEventDetail from './pages/NewsEventDetail';
+import NewsIndex from './pages/NewsIndex';
 import ServiceDetail from './pages/ServiceDetail';
 import ProjectDetail from './pages/ProjectDetail';
 import Gallery from './pages/Gallery';
@@ -21,6 +22,7 @@ function AppContent() {
     <div className={styles.app}>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/news" element={<NewsIndex />} />
         <Route path="/news-event/:id" element={<NewsEventDetail />} />
         <Route path="/service/:id" element={<ServiceDetail />} />
         <Route path="/project/:id" element={<ProjectDetail />} />

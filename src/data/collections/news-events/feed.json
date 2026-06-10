@@ -1,6 +1,53 @@
 {
   "newsAndEvents": [
     {
+      "id": 1,
+      "slug": "breakthrough-upper-kabeli-hydropower-tunnel",
+      "type": "news",
+      "title": "Breakthrough of 4896 m long Headrace Tunnel of Upper Kabeli Hydropower Project, 28.10 MW",
+      "date": "2026-06-07",
+      "description": "A major milestone was achieved on 7th June 2026 with the breakthrough of the 4896 m long Headrace Tunnel of Upper Kabeli Hydropower Project (28.10 MW) in eastern Nepal, where CEC Nepal is acting as the Design and Supervision Consultant.",
+      "image": "/images/news/viber_image_2026-06-07_17-20-29-514.jpg",
+      "category": "Project Milestone",
+      "author": "CEC Nepal Team",
+      "startDate": "2024-04-01",
+      "breakthroughDate": "2026-06-07",
+      "cecRole": "Design and Supervision Consultant",
+      "projectSpecs": {
+        "capacity": "28.10 MW",
+        "tunnelLength": "4896 m",
+        "location": "Taplejung/Panchthar, Nepal"
+      },
+      "content": "We are thrilled to report a landmark achievement for CEC Nepal and the Upper Kabeli Hydropower Project (28.10 MW). On 7th June 2026, the breakthrough of the 4896 m long Headrace Tunnel was successfully completed, marking the culmination of intense engineering effort, dedication, and expertise since construction commenced on 1st April 2024.\n\nAs the Design and Supervision Consultant for this vital renewable energy initiative, CEC Nepal has provided comprehensive technical supervision, quality control, and detailed engineering design throughout the tunneling process. The successful connection of the tunnel headings is a testament to the robust planning, precise surveying, and coordinated action between the developers, contractors, and our supervisory team.\n\nThis breakthrough brings us one step closer to commissioning the 28.10 MW run-of-the-river project, which will feed clean energy into Nepal's national grid, contributing to the country's sustainable development and energy security goals.",
+      "richContent": [
+        {
+          "type": "paragraph",
+          "value": "We are thrilled to report a landmark achievement for CEC Nepal and the Upper Kabeli Hydropower Project (28.10 MW). On <strong>7th June 2026</strong>, the breakthrough of the 4,896-meter-long Headrace Tunnel was successfully completed, marking the culmination of intense engineering effort, dedication, and expertise since construction commenced on <strong>1st April 2024</strong>."
+        },
+        {
+          "type": "image",
+          "url": "/images/news/viber_image_2026-06-07_17-23-08-251.jpg",
+          "caption": "Breakthrough of 4896 m long Headrace Tunnel of Upper Kabeli Hydropower Project, 28.10 MW"
+        },
+        {
+          "type": "paragraph",
+          "value": "As the <strong>Design and Supervision Consultant</strong> for this vital renewable energy initiative, CEC Nepal has provided comprehensive technical supervision, quality control, and detailed engineering design throughout the tunneling process. The successful connection of the tunnel headings is a testament to the robust planning, precise surveying, and coordinated action between the developers, contractors, and our supervisory team."
+        },
+        {
+          "type": "paragraph",
+          "value": "This breakthrough brings us one step closer to commissioning the 28.10 MW run-of-the-river project, which will feed clean energy into Nepal's national grid, contributing to the country's sustainable development and energy security goals."
+        },
+        {
+          "type":"youtube-shorts",
+          "url": "https://youtube.com/shorts/cbQLjEED2aE?feature=share",
+          "caption": "Breakthrough of 4896 m long Headrace Tunnel of Upper Kabeli Hydropower Project, 28.10 MW"
+        }
+      ],
+      "relatedNewsSlugs": [],
+      "isDemo": false
+    },
+    {
+      "id": 2,
       "slug": "cec-nepal-completes-major-infrastructure-project",
       "type": "news",
       "title": "CEC Nepal Completes Major Infrastructure Project",
@@ -10,11 +57,23 @@
       "category": "Project Update",
       "author": "CEC Nepal Team",
       "content": "CEC Nepal is proud to announce the successful completion of the major infrastructure project. This milestone represents years of dedicated work, innovative engineering solutions, and commitment to sustainable development.\n\nThe project involved multiple phases and complex engineering challenges that were overcome through our team's expertise and dedication. We implemented cutting-edge technologies and best practices in hydroelectric project development.\n\nKey achievements include:\n- 150 MW hydroelectric capacity\n- Sustainable power generation for 500,000 households\n- Environmental impact mitigation strategies\n- Community engagement and support\n- International standard compliance\n\nThis project demonstrates CEC Nepal's capability to deliver world-class infrastructure solutions that meet both technical and environmental standards. We remain committed to advancing Nepal's energy sector while maintaining our high standards of engineering excellence.",
+      "richContent": [
+        { "type": "paragraph", "value": "CEC Nepal is proud to announce the successful completion of the major infrastructure project. This milestone represents years of dedicated work, innovative engineering solutions, and commitment to sustainable development." },
+        { "type": "image", "url": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80", "caption": "Clean energy generator turbine at completion site" },
+        { "type": "paragraph", "value": "The project involved multiple phases and complex engineering challenges that were overcome through our team's expertise and dedication. We implemented cutting-edge technologies and best practices in hydroelectric project development." },
+        { "type": "youtube-shorts", "url": "https://youtube.com/shorts/cbQLjEED2aE?feature=share", "caption": "Breakthrough of 4896 m long Headrace Tunnel of Upper Kabeli Hydropower Project, 28.10 MW" },
+        { "type": "paragraph", "value": "<strong>Key achievements of this installation include:</strong><br/>• 150 MW clean hydroelectric capacity<br/>• Sustainable power generation for over 500,000 households<br/>• Comprehensive environmental impact mitigation strategies<br/>• Complete local community engagement and structural support<br/>• Full international safety and engineering standard compliance" },
+        { "type": "video", "url": "https://assets.mixkit.co/videos/preview/mixkit-waterfall-in-forest-2213-large.mp4", "caption": "Simulation: Flow velocity and turbine test parameters" },
+        { "type": "paragraph", "value": "This project demonstrates CEC Nepal's capability to deliver world-class infrastructure solutions that meet both technical and environmental standards. We remain committed to advancing Nepal's energy sector while maintaining our high standards of engineering excellence." },
+        { "type": "facebook", "url": "https://www.facebook.com/20531316728/posts/10154009990506729/", "caption": "Official announcement share from social media channels" }
+      ],
       "relatedNewsSlugs": ["industry-seminar-future-of-renewable-energy", "cec-nepal-receives-international-engineering-award"],
       "location": "Eastern Nepal",
-      "status": "Completed"
+      "status": "Completed",
+      "isDemo": true
     },
     {
+      "id": 3,
       "slug": "industry-seminar-future-of-renewable-energy",
       "type": "event",
       "title": "Industry Seminar: Future of Renewable Energy",
@@ -27,9 +86,11 @@
       "location": "Kathmandu",
       "capacity": "200 participants",
       "registration": "Available on website",
-      "relatedNewsSlugs": ["cec-nepal-receives-international-engineering-award", "career-development-workshop"]
+      "relatedNewsSlugs": ["cec-nepal-receives-international-engineering-award", "career-development-workshop"],
+      "isDemo": true
     },
     {
+      "id": 4,
       "slug": "cec-nepal-receives-international-engineering-award",
       "type": "news",
       "title": "CEC Nepal Receives International Engineering Award",
@@ -41,9 +102,11 @@
       "content": "CEC Nepal has been honored with the prestigious International Engineering Excellence Award 2026, recognizing our outstanding contributions to sustainable infrastructure development.\n\nThis award acknowledges:\n- Excellence in engineering design and implementation\n- Commitment to environmental sustainability\n- Innovation in renewable energy solutions\n- Professional ethics and integrity\n- Community impact and social responsibility\n\nThe award was presented at the International Engineering Conference in recognition of our work on multiple hydroelectric projects and our commitment to advancing Nepal's energy infrastructure.\n\nAwards and recognition are a testament to our team's dedication, expertise, and unwavering commitment to excellence. As we continue to grow, we remain committed to delivering world-class engineering solutions that benefit society and the environment.",
       "location": "International",
       "awardName": "International Engineering Excellence Award 2026",
-      "relatedNewsSlugs": ["cec-nepal-completes-major-infrastructure-project", "career-development-workshop"]
+      "relatedNewsSlugs": ["cec-nepal-completes-major-infrastructure-project", "career-development-workshop"],
+      "isDemo": true
     },
     {
+      "id": 5,
       "slug": "career-development-workshop",
       "type": "event",
       "title": "Career Development Workshop",
@@ -56,9 +119,11 @@
       "location": "Kathmandu",
       "trainer": "Expert Consultants",
       "capacity": "50 participants",
-      "relatedNewsSlugs": ["industry-seminar-future-of-renewable-energy"]
+      "relatedNewsSlugs": ["industry-seminar-future-of-renewable-energy"],
+      "isDemo": true
     },
     {
+      "id": 6,
       "slug": "expansion-announcement-new-office-in-pokhara",
       "type": "news",
       "title": "Expansion Announcement: New Office in Pokhara",
@@ -70,9 +135,11 @@
       "content": "CEC Nepal is excited to announce the opening of a new regional office in Pokhara, expanding our presence and services across Nepal.\n\nThis expansion marks a significant milestone in our growth strategy and demonstrates our commitment to serving clients throughout the country.\n\nNew Office Details:\n- Location: Pokhara Metropolitan Area\n- Services: Engineering consultation, project management, feasibility studies\n- Team: Experienced professionals with local expertise\n- Opening: Q2 2026\n\nBenefits of the Pokhara Office:\n- Closer proximity to clients in Western Nepal\n- Enhanced service delivery\n- Local employment opportunities\n- Support for regional development projects\n- Strengthened relationships with local stakeholders\n\nThis expansion will enable us to better serve our growing client base and contribute to infrastructure development in Western Nepal.",
       "location": "Pokhara",
       "team": "To be announced",
-      "relatedNewsSlugs": ["cec-nepal-completes-major-infrastructure-project", "expansion-announcement-new-office-in-pokhara"]
+      "relatedNewsSlugs": ["cec-nepal-completes-major-infrastructure-project", "expansion-announcement-new-office-in-pokhara"],
+      "isDemo": true
     },
     {
+      "id": 7,
       "slug": "community-outreach-engineering-for-change",
       "type": "event",
       "title": "Community Outreach: Engineering for Change",
@@ -84,7 +151,8 @@
       "content": "CEC Nepal's Community Outreach Program - Engineering for Change aims to bring sustainable engineering solutions to underserved communities across Nepal.\n\nProgram Overview:\n- Provide technical expertise and resources\n- Implement sustainable water and energy solutions\n- Build local capacity through training\n- Support community development initiatives\n- Create lasting positive impact\n\nTarget Communities:\n- Remote rural areas\n- Underserved municipalities\n- Communities affected by resource scarcity\n- Youth development programs\n\nHow to Participate:\n- Volunteer opportunities for professionals\n- Community engagement\n- Partnership opportunities\n- Sponsorship possibilities\n\nThrough this program, we aim to leverage our engineering expertise to create positive change and contribute to sustainable development in Nepal's communities.",
       "location": "Multiple Locations",
       "coordinator": "CSR Department",
-      "relatedNewsSlugs": ["cec-nepal-completes-major-infrastructure-project", "cec-nepal-receives-international-engineering-award"]
+      "relatedNewsSlugs": ["cec-nepal-completes-major-infrastructure-project", "cec-nepal-receives-international-engineering-award"],
+      "isDemo": true
     }
   ]
 }

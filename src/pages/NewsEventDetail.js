@@ -5,11 +5,58 @@ import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Footer from '../components/Layout/Footer';
 import newsJson from '../data/collections/news-events/feed.json';
 
+const parseYoutubeUrl = (url) => {
+    if (!url) return null;
+    
+    let videoId = '';
+    let isShort = false;
+
+    try {
+        if (url.includes('/shorts/')) {
+            isShort = true;
+            const parts = url.split('/shorts/');
+            if (parts[1]) {
+                videoId = parts[1].split(/[?#]/)[0];
+            }
+        } else if (url.includes('youtu.be/')) {
+            const parts = url.split('youtu.be/');
+            if (parts[1]) {
+                videoId = parts[1].split(/[?#]/)[0];
+            }
+        } else if (url.includes('youtube.com/watch')) {
+            const urlObj = new URL(url);
+            videoId = urlObj.searchParams.get('v');
+        } else if (url.includes('youtube.com/embed/')) {
+            const parts = url.split('youtube.com/embed/');
+            if (parts[1]) {
+                videoId = parts[1].split(/[?#]/)[0];
+            }
+        }
+    } catch (e) {
+        console.error('Error parsing YouTube URL:', e);
+    }
+
+    if (videoId) {
+        return {
+            embedUrl: `https://www.youtube.com/embed/${videoId}`,
+            isShort
+        };
+    }
+    
+    return {
+        embedUrl: url,
+        isShort: url.includes('/shorts/')
+    };
+};
+
 const NewsEventDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     
-    const sampleNewsEvents = newsJson.newsAndEvents;
+    const allNewsEvents = newsJson.newsAndEvents || [];
+    const sampleNewsEvents = process.env.NODE_ENV === 'production'
+        ? allNewsEvents.filter(item => !item.isDemo)
+        : allNewsEvents;
     const item = sampleNewsEvents.find(item => item.slug === id || item.id === parseInt(id));
 
     if (!item) {
@@ -123,11 +170,122 @@ const NewsEventDetail = () => {
                             </div>
                         )}
 
+                        {/* Project Milestone Details */}
+                        {(item.cecRole || item.startDate || item.breakthroughDate) && (
+                            <div className={styles['project-details']}>
+                                <div className={styles['detail-box']}>
+                                    <h3>Project Milestone Info</h3>
+                                    <div className={styles['detail-grid']}>
+                                        {item.cecRole && (
+                                            <div className={styles['detail-item']}>
+                                                <strong>CEC Role:</strong>
+                                                <p>{item.cecRole}</p>
+                                            </div>
+                                        )}
+                                        {item.startDate && (
+                                            <div className={styles['detail-item']}>
+                                                <strong>Start Date:</strong>
+                                                <p>{formatDate(item.startDate)}</p>
+                                            </div>
+                                        )}
+                                        {item.breakthroughDate && (
+                                            <div className={styles['detail-item']}>
+                                                <strong>Breakthrough Date:</strong>
+                                                <p>{formatDate(item.breakthroughDate)}</p>
+                                            </div>
+                                        )}
+                                        {item.projectSpecs && item.projectSpecs.capacity && (
+                                            <div className={styles['detail-item']}>
+                                                <strong>Capacity:</strong>
+                                                <p>{item.projectSpecs.capacity}</p>
+                                            </div>
+                                        )}
+                                        {item.projectSpecs && item.projectSpecs.tunnelLength && (
+                                            <div className={styles['detail-item']}>
+                                                <strong>Tunnel Length:</strong>
+                                                <p>{item.projectSpecs.tunnelLength}</p>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
                         {/* Article Content */}
                         <div className={styles['article-body']}>
-                            {item.content.split('\n\n').map((paragraph, index) => (
-                                <p key={index}>{paragraph}</p>
-                            ))}
+                            {item.richContent && item.richContent.length > 0 ? (
+                                item.richContent.map((block, index) => {
+                                    switch (block.type) {
+                                        case 'paragraph':
+                                            return (
+                                                <p key={index} className={styles['rich-media-paragraph']} dangerouslySetInnerHTML={{ __html: block.value }} />
+                                            );
+                                        case 'image':
+                                            return (
+                                                <figure key={index} className={styles['rich-media-figure']}>
+                                                    <img src={block.url} alt={block.caption || ''} className={styles['rich-media-image']} />
+                                                    {block.caption && <figcaption className={styles['rich-media-caption']}>{block.caption}</figcaption>}
+                                                </figure>
+                                            );
+                                        case 'youtube':
+                                        case 'youtube-shorts': {
+                                            const ytData = parseYoutubeUrl(block.url);
+                                            const embedUrl = ytData ? ytData.embedUrl : block.url;
+                                            const isShort = block.type === 'youtube-shorts' || (ytData ? ytData.isShort : false);
+                                            return (
+                                                <div key={index} className={styles['rich-media-container']}>
+                                                    <div className={isShort ? styles['shorts-wrapper'] : styles['video-wrapper']}>
+                                                        <iframe
+                                                            src={embedUrl}
+                                                            title={block.caption || "YouTube video"}
+                                                            frameBorder="0"
+                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                            allowFullScreen
+                                                        ></iframe>
+                                                    </div>
+                                                    {block.caption && <p className={styles['rich-media-caption']}>{block.caption}</p>}
+                                                </div>
+                                            );
+                                        }
+                                        case 'video':
+                                            return (
+                                                <div key={index} className={styles['rich-media-container']}>
+                                                    <div className={styles['video-wrapper']}>
+                                                        <video controls width="100%">
+                                                            <source src={block.url} type="video/mp4" />
+                                                            Your browser does not support the video tag.
+                                                        </video>
+                                                    </div>
+                                                    {block.caption && <p className={styles['rich-media-caption']}>{block.caption}</p>}
+                                                </div>
+                                            );
+                                        case 'facebook':
+                                            return (
+                                                <div key={index} className={styles['rich-media-container']}>
+                                                    <div className={styles['facebook-wrapper']}>
+                                                        <iframe
+                                                            src={block.url}
+                                                            width="500"
+                                                            height="650"
+                                                            scrolling="no"
+                                                            frameBorder="0"
+                                                            allowFullScreen={true}
+                                                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                                                            title={block.caption || "Facebook Post"}
+                                                        ></iframe>
+                                                    </div>
+                                                    {block.caption && <p className={styles['rich-media-caption']}>{block.caption}</p>}
+                                                </div>
+                                            );
+                                        default:
+                                            return null;
+                                    }
+                                })
+                            ) : (
+                                item.content.split('\n\n').map((paragraph, index) => (
+                                    <p key={index}>{paragraph}</p>
+                                ))
+                            )}
                         </div>
 
                         {/* CTA Button for Events */}

@@ -1,6 +1,7 @@
 import React, { useEffect, Suspense, lazy } from 'react';
 import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
-import Hero from '../components/Sections/Hero';
+import HeroSlider from '../components/Sections/HeroSlider';
+import NewsTicker from '../components/Sections/NewsTicker';
 // ─── Data sources ─────────────────────────────────────────────────────────────
 // Change any import path here to swap data without touching section components.
 import heroJson from '../data/pages/home.json';
@@ -62,8 +63,9 @@ const Home = () => {
     return (
         <>
             <NavbarRedesigned />
+            <NewsTicker news={newsAndEvents} />
             <main>
-                <Hero hero={hero} />
+                <HeroSlider hero={hero} news={newsAndEvents} />
                 <Suspense fallback={<div style={{ padding: '5vh', textAlign: 'center' }}>Loading content...</div>}>
                     <Team
                         teamCategories={teamCategories}

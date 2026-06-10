@@ -193,7 +193,11 @@ export const getProjects = (projectsJson) => {
  * @returns {Array} newsAndEvents
  */
 export const getNewsAndEvents = (newsJson) => {
-  return newsJson?.newsAndEvents || [];
+  const items = newsJson?.newsAndEvents || [];
+  if (process.env.NODE_ENV === 'production') {
+    return items.filter(item => !item.isDemo);
+  }
+  return items;
 };
 
 // ─── Company ──────────────────────────────────────────────────────────────────

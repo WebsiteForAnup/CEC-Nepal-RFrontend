@@ -160,12 +160,13 @@ const NavbarRedesigned = () => {
             >
               Careers
             </Link>
-            <button 
+            <Link 
+              to="/news"
               className={styles.navLink}
-              onClick={() => scrollToSection('news-events')}
+              onClick={() => setMobileMenuOpen(false)}
             >
               News
-            </button>
+            </Link>
 
             {/* Updates Dropdown */}
             <div 

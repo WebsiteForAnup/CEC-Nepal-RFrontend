@@ -12,7 +12,33 @@
     "secondaryCta": {
       "label": "Consult with Experts",
       "scrollTo": "contact"
-    }
+    },
+    "slides": [
+      {
+        "image": "/images/data/cecnepal.com.np_wp-content_uploads_2023_10_CEC-studies-Project-1024x726.jpg_649bbdfd.jpeg",
+        "badge": "HYDROPOWER EXCELLENCE",
+        "titleHighlight": "Seti Khola",
+        "titleSuffix": "Hydropower Project",
+        "description": "Engineering design and feasibility studies for a 22.0 MW run-of-river project utilizing advanced Himalayan tunneling technology.",
+        "link": "projects"
+      },
+      {
+        "image": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Detailed-Engineering.png_d970e6ca.png",
+        "badge": "DETAILED ENGINEERING DESIGN",
+        "titleHighlight": "Sustainable Solar",
+        "titleSuffix": "& Grid Systems",
+        "description": "Formulating DPRs, detailed structural designs, and grid-connected infrastructure surveys for renewable solar installations.",
+        "link": "services"
+      },
+      {
+        "image": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Geotechnical-InvestigationCore-Drilling-1.jpg_e22edc01.jpeg",
+        "badge": "GEOTECHNICAL SURVEYS",
+        "titleHighlight": "Himalayan Terrain",
+        "titleSuffix": "Drilling & Mapping",
+        "description": "Advanced geological mapping, geophysical core drilling supervision, and structural analysis under rigorous seismic conditions.",
+        "link": "about"
+      }
+    ]
   },
   "statistics": [
     {
