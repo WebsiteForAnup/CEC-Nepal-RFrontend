@@ -37,7 +37,7 @@ const Statistics = lazy(() => import('../components/Sections/Statistics'));
 const FAQ = lazy(() => import('../components/Sections/FAQ'));
 const Team = lazy(() => import('../components/Sections/Team'));
 const CompanyProfile = lazy(() => import('../components/Sections/CompanyProfile'));
-const NewsEvents = lazy(() => import('../components/Sections/NewsEvents'));
+// const NewsEvents = lazy(() => import('../components/Sections/NewsEvents'));
 const Contact = lazy(() => import('../components/Sections/Contact'));
 const Footer = lazy(() => import('../components/Layout/Footer'));
 
@@ -47,7 +47,7 @@ const Home = () => {
     const services = getServices(servicesJson);
     const projects = getProjects(projectsJson);
     const stats = getStatistics(statisticsJson);
-    // const newsAndEvents = getNewsAndEvents(newsJson);
+    const newsAndEvents = getNewsAndEvents(newsJson);
     const teamCategories = getTeamCategories(teamJson);
     const teamCategoryNames = getTeamCategoryNames(teamJson);
     const company = getCompany(companyJson);
@@ -66,8 +66,8 @@ const Home = () => {
             <NewsTicker news={newsAndEvents} />
             <main>
                 <HeroSlider hero={hero} news={newsAndEvents} />
-                <CompanyProfile profile={profile} />
                 <Suspense fallback={<div style={{ padding: '5vh', textAlign: 'center' }}>Loading content...</div>}>
+                    <CompanyProfile profile={profile} />
                     <Team
                         teamCategories={teamCategories}
                         menuOptions={teamCategoryNames}
