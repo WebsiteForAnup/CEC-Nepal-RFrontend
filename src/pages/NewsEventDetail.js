@@ -86,6 +86,37 @@ const NewsEventDetail = () => {
         news => item.relatedNewsSlugs && item.relatedNewsSlugs.includes(news.slug)
     );
 
+    const handleShare = (platform) => {
+        if (typeof window === 'undefined') return;
+        
+        const shareUrl = encodeURIComponent(window.location.href);
+        const shareTitle = encodeURIComponent(item.title);
+        
+        let url = '';
+        switch (platform) {
+            case 'facebook':
+                url = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
+                break;
+            case 'twitter':
+                url = `https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareTitle}`;
+                break;
+            case 'linkedin':
+                url = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
+                break;
+            case 'email':
+                url = `mailto:?subject=${shareTitle}&body=${encodeURIComponent("Check out this article: ")}${shareUrl}`;
+                break;
+            default:
+                return;
+        }
+        
+        if (platform === 'email') {
+            window.location.href = url;
+        } else {
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+    };
+
     return (
         <>
             <NavbarRedesigned />
@@ -329,16 +360,16 @@ const NewsEventDetail = () => {
                         <div className={styles['share-section']}>
                             <h3>Share</h3>
                             <div className={styles['share-buttons']}>
-                                <button className={styles['share-btn']} title="Share on Facebook" onClick={() => {/* Share on Facebook */}}>
+                                <button className={styles['share-btn']} title="Share on Facebook" onClick={() => handleShare('facebook')}>
                                     <i className="fab fa-facebook-f"></i>
                                 </button>
-                                <button className={styles['share-btn']} title="Share on Twitter" onClick={() => {/* Share on Twitter */}}>
+                                <button className={styles['share-btn']} title="Share on Twitter" onClick={() => handleShare('twitter')}>
                                     <i className="fab fa-twitter"></i>
                                 </button>
-                                <button className={styles['share-btn']} title="Share on LinkedIn" onClick={() => {/* Share on LinkedIn */}}>
+                                <button className={styles['share-btn']} title="Share on LinkedIn" onClick={() => handleShare('linkedin')}>
                                     <i className="fab fa-linkedin-in"></i>
                                 </button>
-                                <button className={styles['share-btn']} title="Share via Email" onClick={() => {/* Share via Email */}}>
+                                <button className={styles['share-btn']} title="Share via Email" onClick={() => handleShare('email')}>
                                     <i className="fas fa-envelope"></i>
                                 </button>
                             </div>
