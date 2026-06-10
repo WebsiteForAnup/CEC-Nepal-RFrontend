@@ -5,7 +5,6 @@ import styles from './HeroSlider.module.css';
 const HeroSlider = ({ hero = {}, news = [] }) => {
   const navigate = useNavigate();
   const {
-    badge,
     primaryCta,
     secondaryCta,
     slides = [],
