@@ -66,12 +66,12 @@ const Home = () => {
             <NewsTicker news={newsAndEvents} />
             <main>
                 <HeroSlider hero={hero} news={newsAndEvents} />
+                <CompanyProfile profile={profile} />
                 <Suspense fallback={<div style={{ padding: '5vh', textAlign: 'center' }}>Loading content...</div>}>
                     <Team
                         teamCategories={teamCategories}
                         menuOptions={teamCategoryNames}
                     />
-                    <CompanyProfile profile={profile} />
                     <About about={about} />
 
                     <Services services={services} />
@@ -79,7 +79,7 @@ const Home = () => {
                     <ProjectMap />
                     <Statistics stats={stats} />
                     <FAQ faqs={faqs} />
-                    <NewsEvents newsAndEvents={newsAndEvents} />
+                    {/* <NewsEvents newsAndEvents={newsAndEvents} /> */}
                     <Contact company={company} />
                 </Suspense>
             </main>
