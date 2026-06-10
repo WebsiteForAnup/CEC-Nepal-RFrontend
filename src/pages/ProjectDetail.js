@@ -4,6 +4,7 @@ import styles from './ProjectDetail.module.css';
 import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Footer from '../components/Layout/Footer';
 import projectsData from '../data/collections/projects.json';
+import { trackEvent } from '../utils/analytics';
 
 const ProjectDetail = () => {
     const { id } = useParams();
@@ -25,6 +26,13 @@ const ProjectDetail = () => {
     // Reset active image when project changes
     useEffect(() => {
         setActiveImageIndex(0);
+    }, [activeProject]);
+
+    // Track project load in Google Analytics
+    useEffect(() => {
+        if (activeProject?.name) {
+            trackEvent('content_loaded', 'Projects', activeProject.name);
+        }
     }, [activeProject]);
 
     // Initial load and URL synchronization

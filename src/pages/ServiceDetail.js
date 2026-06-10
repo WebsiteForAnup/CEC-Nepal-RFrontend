@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import styles from './ServiceDetail.module.css';
 import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Footer from '../components/Layout/Footer';
+import { trackEvent } from '../utils/analytics';
 
 const ServiceDetail = () => {
     const { id } = useParams();
@@ -28,6 +29,12 @@ const ServiceDetail = () => {
         };
         loadService();
     }, [id]);
+
+    useEffect(() => {
+        if (service?.title) {
+            trackEvent('content_loaded', 'Services', service.title);
+        }
+    }, [service]);
 
     if (loading) {
         return (

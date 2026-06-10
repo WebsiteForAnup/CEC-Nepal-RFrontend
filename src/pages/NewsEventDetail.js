@@ -4,6 +4,8 @@ import styles from './NewsEventDetail.module.css';
 import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Footer from '../components/Layout/Footer';
 import newsJson from '../data/collections/news-events/feed.json';
+import labelMappings from '../data/global/label-mappings.json';
+import { trackEvent } from '../utils/analytics';
 
 const parseYoutubeUrl = (url) => {
     if (!url) return null;
@@ -59,6 +61,12 @@ const NewsEventDetail = () => {
         : allNewsEvents;
     const item = sampleNewsEvents.find(item => item.slug === id || item.id === parseInt(id));
 
+    React.useEffect(() => {
+        if (item?.title) {
+            trackEvent('content_loaded', 'News & Events', item.title);
+        }
+    }, [item]);
+
     if (!item) {
         return (
             <>
@@ -78,8 +86,15 @@ const NewsEventDetail = () => {
     }
 
     const formatDate = (dateString) => {
+        if (!dateString) return '';
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        return new Date(dateString).toLocaleDateString('en-US', options);
+        try {
+            const date = new Date(dateString);
+            if (isNaN(date.getTime())) return dateString;
+            return date.toLocaleDateString('en-US', options);
+        } catch (e) {
+            return dateString;
+        }
     };
 
     const relatedItems = sampleNewsEvents.filter(
@@ -134,34 +149,44 @@ const NewsEventDetail = () => {
                     {/* Detail Content */}
                     <article className={styles['detail-content']}>
                         {/* Hero Image */}
-                        <div className={styles['hero-image']}>
-                            <img src={item.image} alt={item.title} />
-                            <div className={styles['badge-container']}>
-                                <span className={`${styles['badge']} ${styles[item.type]}`}>
-                                    {item.type === 'news' ? 'News' : 'Event'}
-                                </span>
+                        {item.image && (
+                            <div className={styles['hero-image']}>
+                                <img src={item.image} alt={item.title || ''} />
+                                {item.type && (
+                                    <div className={styles['badge-container']}>
+                                        <span className={`${styles['badge']} ${styles[item.type]}`}>
+                                            {item.type === 'news' ? 'News' : 'Event'}
+                                        </span>
+                                    </div>
+                                )}
                             </div>
-                        </div>
+                        )}
 
                         {/* Article Header */}
                         <div className={styles['article-header']}>
-                            <h1 className={styles['title']}>{item.title}</h1>
+                            {item.title && <h1 className={styles['title']}>{item.title}</h1>}
                             
                             {/* Meta Information */}
                             <div className={styles['meta-info']}>
-                                <div className={styles['meta-item']}>
-                                    <i className="fas fa-calendar"></i>
-                                    <span>{formatDate(item.date)}</span>
-                                </div>
-                                <div className={styles['meta-item']}>
-                                    <i className="fas fa-user"></i>
-                                    <span>{item.author}</span>
-                                </div>
-                                <div className={styles['meta-item']}>
-                                    <i className="fas fa-tag"></i>
-                                    <span>{item.category}</span>
-                                </div>
-                                {item.type === 'event' && (
+                                {item.date && (
+                                    <div className={styles['meta-item']}>
+                                        <i className="fas fa-calendar"></i>
+                                        <span>{formatDate(item.date)}</span>
+                                    </div>
+                                )}
+                                {item.author && (
+                                    <div className={styles['meta-item']}>
+                                        <i className="fas fa-user"></i>
+                                        <span>{item.author}</span>
+                                    </div>
+                                )}
+                                {item.category && (
+                                    <div className={styles['meta-item']}>
+                                        <i className="fas fa-tag"></i>
+                                        <span>{item.category}</span>
+                                    </div>
+                                )}
+                                {item.type === 'event' && item.location && (
                                     <div className={styles['meta-item']}>
                                         <i className="fas fa-map-marker-alt"></i>
                                         <span>{item.location}</span>
@@ -171,19 +196,23 @@ const NewsEventDetail = () => {
                         </div>
 
                         {/* Additional Details for Events */}
-                        {item.type === 'event' && (
+                        {item.type === 'event' && (item.date || item.location || item.capacity || item.registration) && (
                             <div className={styles['event-details']}>
                                 <div className={styles['detail-box']}>
                                     <h3>Event Details</h3>
                                     <div className={styles['detail-grid']}>
-                                        <div className={styles['detail-item']}>
-                                            <strong>Date & Time:</strong>
-                                            <p>{formatDate(item.date)}</p>
-                                        </div>
-                                        <div className={styles['detail-item']}>
-                                            <strong>Location:</strong>
-                                            <p>{item.location}</p>
-                                        </div>
+                                        {item.date && (
+                                            <div className={styles['detail-item']}>
+                                                <strong>Date & Time:</strong>
+                                                <p>{formatDate(item.date)}</p>
+                                            </div>
+                                        )}
+                                        {item.location && (
+                                            <div className={styles['detail-item']}>
+                                                <strong>Location:</strong>
+                                                <p>{item.location}</p>
+                                            </div>
+                                        )}
                                         {item.capacity && (
                                             <div className={styles['detail-item']}>
                                                 <strong>Capacity:</strong>
@@ -201,42 +230,34 @@ const NewsEventDetail = () => {
                             </div>
                         )}
 
-                        {/* Project Milestone Details */}
-                        {(item.cecRole || item.startDate || item.breakthroughDate) && (
+
+                        {/* Project Specifications */}
+                        {item.projectSpecs && Object.entries(item.projectSpecs).filter(([key, val]) => key !== 'title' && val !== null && val !== undefined && val !== '').length > 0 && (
                             <div className={styles['project-details']}>
                                 <div className={styles['detail-box']}>
-                                    <h3>Project Milestone Info</h3>
+                                    <h3>{item.projectSpecs.title || "Project Specifications"}</h3>
                                     <div className={styles['detail-grid']}>
-                                        {item.cecRole && (
-                                            <div className={styles['detail-item']}>
-                                                <strong>CEC Role:</strong>
-                                                <p>{item.cecRole}</p>
-                                            </div>
-                                        )}
-                                        {item.startDate && (
-                                            <div className={styles['detail-item']}>
-                                                <strong>Start Date:</strong>
-                                                <p>{formatDate(item.startDate)}</p>
-                                            </div>
-                                        )}
-                                        {item.breakthroughDate && (
-                                            <div className={styles['detail-item']}>
-                                                <strong>Breakthrough Date:</strong>
-                                                <p>{formatDate(item.breakthroughDate)}</p>
-                                            </div>
-                                        )}
-                                        {item.projectSpecs && item.projectSpecs.capacity && (
-                                            <div className={styles['detail-item']}>
-                                                <strong>Capacity:</strong>
-                                                <p>{item.projectSpecs.capacity}</p>
-                                            </div>
-                                        )}
-                                        {item.projectSpecs && item.projectSpecs.tunnelLength && (
-                                            <div className={styles['detail-item']}>
-                                                <strong>Tunnel Length:</strong>
-                                                <p>{item.projectSpecs.tunnelLength}</p>
-                                            </div>
-                                        )}
+                                        {Object.entries(item.projectSpecs)
+                                            .filter(([key, val]) => key !== 'title' && val !== null && val !== undefined && val !== '')
+                                            .map(([key, value]) => {
+                                                const specMappings = labelMappings.projectSpecs || {};
+                                                let label = specMappings[key] || key
+                                                    .replace(/([A-Z])/g, ' $1')
+                                                    .replace(/^./, (str) => str.toUpperCase());
+
+                                                let displayValue = value;
+                                                if (key.toLowerCase().includes('date') && typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)) {
+                                                    displayValue = formatDate(value);
+                                                }
+
+                                                return (
+                                                    <div key={key} className={styles['detail-item']}>
+                                                        <strong>{label}:</strong>
+                                                        <p>{displayValue}</p>
+                                                    </div>
+                                                );
+                                            })
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -312,11 +333,11 @@ const NewsEventDetail = () => {
                                             return null;
                                     }
                                 })
-                            ) : (
+                            ) : item.content ? (
                                 item.content.split('\n\n').map((paragraph, index) => (
                                     <p key={index}>{paragraph}</p>
                                 ))
-                            )}
+                            ) : null}
                         </div>
 
                         {/* CTA Button for Events */}
