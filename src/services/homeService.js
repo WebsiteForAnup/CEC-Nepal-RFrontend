@@ -242,8 +242,9 @@ export const getCompany = (companyJson) => {
     social: {
       facebook: config.socialMedia?.facebook,
       linkedin: config.socialMedia?.linkedin,
-      twitter: config.socialMedia?.twitter,
-      instagram: config.socialMedia?.instagram
+      youtube: config.socialMedia?.youtube,
+      instagram: config.socialMedia?.instagram,
+      twitter: config.socialMedia?.twitter
     }
   };
 };

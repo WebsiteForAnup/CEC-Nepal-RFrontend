@@ -4,15 +4,15 @@ import styles from './CompanyProfile.module.css';
 const CompanyProfile = ({ profile }) => {
   if (!profile) return null;
 
-  const { title, vision, mission, objectives, goals } = profile;
+  const { vision, mission, objectives, goals } = profile;
 
   return (
     <section id="company-profile" className={styles.companyProfile}>
       <div className={styles.container}>
-        <div className={styles.sectionHeader}>
+        {/* <div className={styles.sectionHeader}>
           <h2>{title}</h2>
           <div className={styles.line}></div>
-        </div>
+        </div> */}
 
         <div className={styles.profileGrid}>
           {/* Vision Card */}
