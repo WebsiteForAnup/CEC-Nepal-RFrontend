@@ -281,14 +281,9 @@ const Footer = ({ company = {} }) => {
                       <i className="fab fa-linkedin-in"></i>
                     </a>
                   )}
-                  {mergedSocial.twitter && (
-                    <a href={mergedSocial.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                      <i className="fab fa-twitter"></i>
-                    </a>
-                  )}
-                  {mergedSocial.instagram && (
-                    <a href={mergedSocial.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                      <i className="fab fa-instagram"></i>
+                  {mergedSocial.youtube && (
+                    <a href={mergedSocial.youtube} target="_blank" rel="noopener noreferrer" aria-label="Youtube">
+                      <i className="fab fa-youtube"></i>
                     </a>
                   )}
                 </div>
