@@ -17,10 +17,10 @@ jobs:
           node-version: "18"
 
       - name: Install Dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Build
-        run: npm install --legacy-peer-deps && npm run build:ts
+        run: npm run build:ts
 
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
