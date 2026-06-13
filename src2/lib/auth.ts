@@ -8,7 +8,7 @@ export const neonClient = createClient({
     adapter: BetterAuthReactAdapter(),
   },
   dataApi: {
-    url: import.meta.env.VITE_NEON_DATA_API_URL || '',
+    url: import.meta.env.VITE_NEON_DATA_API_URL || import.meta.env.VITE_NEON_AUTH_URL || '',
   },
 });
 

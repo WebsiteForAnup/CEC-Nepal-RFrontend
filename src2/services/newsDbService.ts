@@ -73,9 +73,9 @@ const initLocalStorage = (): NewsEventItem[] => {
   return items;
 };
 
-// Check if Neon Data API URL is configured
+// Check if Neon DB is configured
 const hasDbConfig = (): boolean => {
-  return !!import.meta.env.VITE_NEON_DATA_API_URL;
+  return !!import.meta.env.VITE_NEON_AUTH_URL;
 };
 
 export const newsDbService = {
