@@ -23,6 +23,7 @@ jobs:
         run: npm run build:ts
         env:
           VITE_NEON_AUTH_URL: ${{ vars.VITE_NEON_AUTH_URL }}
+          VITE_NEON_DATA_API_URL: ${{ vars.VITE_NEON_DATA_API_URL }}
           VITE_B2_APPLICATION_KEY_ID: ${{ vars.VITE_B2_APPLICATION_KEY_ID }}
           VITE_B2_APPLICATION_KEY: ${{ vars.VITE_B2_APPLICATION_KEY }}
           VITE_B2_BUCKET_NAME: ${{ vars.VITE_B2_BUCKET_NAME }}
