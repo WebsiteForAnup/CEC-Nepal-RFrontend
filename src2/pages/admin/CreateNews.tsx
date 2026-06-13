@@ -115,6 +115,12 @@ const CreateNews: React.FC = () => {
   // Remove block
   const deleteBlock = (index: number) => {
     setBlocks(blocks.filter((_, i) => i !== index));
+    // Clean up corresponding uploading percentage track if any
+    setBlockUploadPct((prev) => {
+      const copy = { ...prev };
+      delete copy[index];
+      return copy;
+    });
   };
 
   // Re-order blocks
@@ -128,6 +134,15 @@ const CreateNews: React.FC = () => {
     updated[index] = updated[swapIndex];
     updated[swapIndex] = temp;
     setBlocks(updated);
+
+    // Swap block upload percentages tracking map
+    setBlockUploadPct((prev) => {
+      const copy = { ...prev };
+      const tempPct = copy[index];
+      copy[index] = copy[swapIndex];
+      copy[swapIndex] = tempPct;
+      return copy;
+    });
   };
 
   // Upload featured image to B2
@@ -145,20 +160,25 @@ const CreateNews: React.FC = () => {
     }
   };
 
-  // Upload a media file for a specific content block
+  // Upload a media file or asset for a specific content block (Image, Video, Document)
   const handleBlockFileUpload = async (index: number, file: File) => {
     setBlockUploadPct((prev) => ({ ...prev, [index]: 0 }));
     const blockType = blocks[index]?.type;
+    
     const folder =
       blockType === 'video' ? 'news/videos' :
       blockType === 'document' ? 'news/documents' :
       'news/images';
+
     try {
       const result = await uploadToB2(file, folder, (pct) =>
         setBlockUploadPct((prev) => ({ ...prev, [index]: pct }))
       );
+      
       const extra: Partial<RichContentBlock> = { url: result.publicUrl };
-      if (blockType === 'document') extra.filename = file.name;
+      if (blockType === 'document') {
+        extra.filename = file.name;
+      }
       updateBlock(index, extra);
     } catch (err: any) {
       console.error(`Block ${index} upload failed:`, err);
@@ -177,6 +197,21 @@ const CreateNews: React.FC = () => {
       return;
     }
 
+    // Dynamic processing to ensure metadata structural arrays match JSON typing rules
+    const processedImportantDates = importantDates
+      .filter(d => d.date_title && d.date)
+      .map(d => {
+        if (typeof d.meta === 'string' && d.meta.trim() !== '') {
+          try {
+            // Attempt to clean JSON conversion strings safely
+            return { ...d, meta: JSON.parse(d.meta) };
+          } catch {
+            return d;
+          }
+        }
+        return d;
+      });
+
     const payload: Omit<NewsEventItem, 'id'> = {
       title,
       slug,
@@ -188,7 +223,7 @@ const CreateNews: React.FC = () => {
       author,
       content,
       cecRole: cecRole || undefined,
-      importantDates: importantDates.filter(d => d.date_title && d.date),
+      importantDates: processedImportantDates,
       awardName: awardName || undefined,
       team: team || undefined,
       richContent: blocks,
@@ -251,7 +286,6 @@ const CreateNews: React.FC = () => {
     <>
       <NavbarRedesigned />
       <div className={styles.createContainer}>
-        {/* Header section with back arrow */}
         <div className={styles.pageHeader}>
           <Link to="/admin/news" className={styles.backLink} title="Back to Publications">
             <i className="fas fa-arrow-left"></i>
@@ -505,7 +539,6 @@ const CreateNews: React.FC = () => {
               <h2 className={styles.cardSectionTitle}>Rich Content Blocks (Layout Builder)</h2>
               
               <div className={styles.richEditorContainer}>
-                {/* Blocks list */}
                 <div className={styles.blockList}>
                   {blocks.map((block, index) => (
                     <div key={index} className={styles.blockCard}>
@@ -551,10 +584,10 @@ const CreateNews: React.FC = () => {
                         </div>
                       </div>
 
-                      {/* Content inside each block */}
+                      {/* Content block dispatcher views */}
                       {block.type === 'paragraph' ? (
                         <div className={styles.formGroup}>
-                          <label>Paragraph Value (HTML elements like strong/em supported)</label>
+                          <label>Paragraph Value (HTML tags supported)</label>
                           <textarea
                             placeholder="Write paragraph text..."
                             value={block.value || ''}
@@ -564,10 +597,8 @@ const CreateNews: React.FC = () => {
                           />
                         </div>
                       ) : block.type === 'document' ? (
-                        /* ── Document block ─────────────────────────────── */
                         <div className={styles.formGroup}>
                           <label>Document File</label>
-                          {/* Upload row */}
                           <div className={styles.uploadFieldRow}>
                             <input
                               type="text"
@@ -577,54 +608,43 @@ const CreateNews: React.FC = () => {
                               className={styles.formInput}
                               style={{ flex: 1 }}
                             />
-                            {(() => {
-                              const docInputId = `block-doc-${index}`;
-                              const pct = blockUploadPct[index];
-                              return (
-                                <>
-                                  <input
-                                    id={docInputId}
-                                    type="file"
-                                    accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.zip"
-                                    style={{ display: 'none' }}
-                                    onChange={(e) => {
-                                      const f = e.target.files?.[0];
-                                      if (f) handleBlockFileUpload(index, f);
-                                      e.target.value = '';
-                                    }}
-                                  />
-                                  <button
-                                    type="button"
-                                    className={`${styles.uploadBtn} ${styles.uploadBtnDoc}`}
-                                    onClick={() => document.getElementById(docInputId)?.click()}
-                                    disabled={pct !== null}
-                                    title="Upload document to Backblaze B2"
-                                  >
-                                    {pct !== null ? (
-                                      <span className={styles.uploadBtnProgress}>{pct}%</span>
-                                    ) : (
-                                      <><i className="fas fa-file-upload" /> Upload File</>
-                                    )}
-                                  </button>
-                                </>
-                              );
-                            })()}
+                            <input
+                              id={`block-file-${index}`}
+                              type="file"
+                              accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.zip"
+                              style={{ display: 'none' }}
+                              onChange={(e) => {
+                                const f = e.target.files?.[0];
+                                if (f) handleBlockFileUpload(index, f);
+                              }}
+                            />
+                            <button
+                              type="button"
+                              className={`${styles.uploadBtn} ${styles.uploadBtnDoc}`}
+                              onClick={() => document.getElementById(`block-file-${index}`)?.click()}
+                              disabled={blockUploadPct[index] !== null && blockUploadPct[index] !== undefined}
+                              title="Upload document to Backblaze B2"
+                            >
+                              {blockUploadPct[index] !== null && blockUploadPct[index] !== undefined ? (
+                                <span className={styles.uploadBtnProgress}>{blockUploadPct[index]}%</span>
+                              ) : (
+                                <><i className="fas fa-file-upload" /> Upload File</>
+                              )}
+                            </button>
                           </div>
 
-                          {/* Progress bar */}
                           {blockUploadPct[index] !== null && blockUploadPct[index] !== undefined && (
                             <div className={styles.progressBar}>
                               <div className={styles.progressFill} style={{ width: `${blockUploadPct[index]}%` }} />
                             </div>
                           )}
 
-                          {/* Uploaded file preview card */}
                           {block.url && (
                             <div className={styles.docPreview}>
                               <i className="fas fa-file-alt" />
                               <div className={styles.docPreviewInfo}>
                                 <span className={styles.docPreviewName}>
-                                  {block.filename || block.url.split('/').pop() || 'Document'}
+                                  {block.filename || block.url.split('/').pop() || 'Document asset'}
                                 </span>
                                 <a href={block.url} target="_blank" rel="noopener noreferrer" className={styles.docPreviewLink}>
                                   <i className="fas fa-external-link-alt" /> Open
@@ -633,7 +653,6 @@ const CreateNews: React.FC = () => {
                             </div>
                           )}
 
-                          {/* Caption */}
                           <label style={{ marginTop: 12 }}>Label / Description</label>
                           <input
                             type="text"
@@ -644,7 +663,6 @@ const CreateNews: React.FC = () => {
                           />
                         </div>
                       ) : (
-                        /* ── Image / Video / YouTube / Facebook block ─────── */
                         <div className={styles.formRow}>
                           <div className={styles.formGroup} style={{ flex: 2 }}>
                             <label>Media/Embed URL *</label>
@@ -661,38 +679,33 @@ const CreateNews: React.FC = () => {
                                 className={styles.formInput}
                                 style={{ flex: 1 }}
                               />
-                              {(block.type === 'image' || block.type === 'video') && (() => {
-                                const blockFileInputId = `block-file-${index}`;
-                                const pct = blockUploadPct[index];
-                                return (
-                                  <>
-                                    <input
-                                      id={blockFileInputId}
-                                      type="file"
-                                      accept={block.type === 'video' ? 'video/*' : 'image/*'}
-                                      style={{ display: 'none' }}
-                                      onChange={(e) => {
-                                        const f = e.target.files?.[0];
-                                        if (f) handleBlockFileUpload(index, f);
-                                        e.target.value = '';
-                                      }}
-                                    />
-                                    <button
-                                      type="button"
-                                      className={styles.uploadBtn}
-                                      onClick={() => document.getElementById(blockFileInputId)?.click()}
-                                      disabled={pct !== null}
-                                      title={`Upload ${block.type} to Backblaze B2`}
-                                    >
-                                      {pct !== null ? (
-                                        <span className={styles.uploadBtnProgress}>{pct}%</span>
-                                      ) : (
-                                        <><i className={block.type === 'video' ? 'fas fa-video' : 'fas fa-image'} /> Upload</>
-                                      )}
-                                    </button>
-                                  </>
-                                );
-                              })()}
+                              {(block.type === 'image' || block.type === 'video') && (
+                                <>
+                                  <input
+                                    id={`block-file-${index}`}
+                                    type="file"
+                                    accept={block.type === 'video' ? 'video/*' : 'image/*'}
+                                    style={{ display: 'none' }}
+                                    onChange={(e) => {
+                                      const f = e.target.files?.[0];
+                                      if (f) handleBlockFileUpload(index, f);
+                                    }}
+                                  />
+                                  <button
+                                    type="button"
+                                    className={styles.uploadBtn}
+                                    onClick={() => document.getElementById(`block-file-${index}`)?.click()}
+                                    disabled={blockUploadPct[index] !== null && blockUploadPct[index] !== undefined}
+                                    title={`Upload ${block.type} to Backblaze B2`}
+                                  >
+                                    {blockUploadPct[index] !== null && blockUploadPct[index] !== undefined ? (
+                                      <span className={styles.uploadBtnProgress}>{blockUploadPct[index]}%</span>
+                                    ) : (
+                                      <><i className={block.type === 'video' ? 'fas fa-video' : 'fas fa-image'} /> Upload</>
+                                    )}
+                                  </button>
+                                </>
+                              )}
                             </div>
                             {blockUploadPct[index] !== null && blockUploadPct[index] !== undefined && (
                               <div className={styles.progressBar}>
