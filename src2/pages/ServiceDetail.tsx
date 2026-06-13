@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import styles from './ServiceDetail.module.css';
 import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Footer from '../components/Layout/Footer';
+import { serviceDbService, EngineeringService } from '../services/serviceDbService';
 import { trackEvent } from '../utils/analytics';
 
 interface CaseStudy {
@@ -45,9 +46,12 @@ const ServiceDetail: React.FC = () => {
             setLoading(true);
             setError(false);
             try {
-                // Dynamic import for Webpack/Vite
-                const data = await import(`../data/collections/services/${id}.json`);
-                setService(data.default || data);
+                const data = await serviceDbService.getServiceBySlug(id);
+                if (data) {
+                    setService(data);
+                } else {
+                    setError(true);
+                }
             } catch (err) {
                 console.error("Failed to load service", err);
                 setError(true);

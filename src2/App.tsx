@@ -19,6 +19,15 @@ import ListNews from './pages/admin/ListNews';
 import CreateNews from './pages/admin/CreateNews';
 import ListEvents from './pages/admin/ListEvents';
 import CreateEvent from './pages/admin/CreateEvent';
+import ListTeam from './pages/admin/ListTeam';
+import CreateTeam from './pages/admin/CreateTeam';
+import ListSliders from './pages/admin/ListSliders';
+import CreateSlider from './pages/admin/CreateSlider';
+import ListServices from './pages/admin/ListServices';
+import CreateService from './pages/admin/CreateService';
+import { SignedIn } from '@neondatabase/neon-js/auth/react';
+import { authClient } from './lib/auth';
+import { Link } from 'react-router-dom';
 
 function AppContent(): React.ReactElement {
   // Scroll to top on route changes
@@ -26,6 +35,44 @@ function AppContent(): React.ReactElement {
 
   return (
     <div className={styles.app}>
+      <SignedIn>
+        <div style={{
+          backgroundColor: '#002B5B', // Match site branding
+          padding: '10px 20px',
+          display: 'flex',
+          gap: '20px',
+          color: 'white',
+          alignItems: 'center',
+          justifyContent: 'center',
+          position: 'sticky',
+          top: 0,
+          zIndex: 1000
+        }}>
+          <span style={{ fontWeight: 'bold' }}>Admin Dashboard:</span>
+          <Link to="/account" style={{ color: '#ecf0f1', textDecoration: 'none', fontWeight: 500 }}>My Account</Link>
+          <Link to="/admin/news" style={{ color: '#ecf0f1', textDecoration: 'none', fontWeight: 500 }}>Manage News</Link>
+          <Link to="/admin/events" style={{ color: '#ecf0f1', textDecoration: 'none', fontWeight: 500 }}>Manage Events</Link>
+          <Link to="/admin/team" style={{ color: '#ecf0f1', textDecoration: 'none', fontWeight: 500 }}>Manage Team</Link>
+          <Link to="/admin/sliders" style={{ color: '#ecf0f1', textDecoration: 'none', fontWeight: 500 }}>Manage Sliders</Link>
+          <Link to="/admin/services" style={{ color: '#ecf0f1', textDecoration: 'none', fontWeight: 500 }}>Manage Services</Link>
+          <div style={{ marginLeft: 'auto' }}>
+            <button 
+              onClick={() => authClient.signOut()} 
+              style={{
+                background: 'rgba(255,255,255,0.1)',
+                border: '1px solid rgba(255,255,255,0.3)',
+                color: 'white',
+                padding: '4px 12px',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontWeight: 500
+              }}
+            >
+              Sign Out
+            </button>
+          </div>
+        </div>
+      </SignedIn>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<NewsIndex />} />
@@ -38,14 +85,23 @@ function AppContent(): React.ReactElement {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/careers" element={<Careers />} />
-        <Route path="/auth/:pathname" element={<Auth />} />
-        <Route path="/account/:pathname" element={<Account />} />
+        <Route path="/auth/" element={<Auth />} />
+        <Route path="/account/" element={<Account />} />
         <Route path="/admin/news" element={<ListNews />} />
         <Route path="/admin/news/create" element={<CreateNews />} />
         <Route path="/admin/news/edit/:id" element={<CreateNews />} />
         <Route path="/admin/events" element={<ListEvents />} />
         <Route path="/admin/events/create" element={<CreateEvent />} />
         <Route path="/admin/events/edit/:id" element={<CreateEvent />} />
+        <Route path="/admin/team" element={<ListTeam />} />
+        <Route path="/admin/team/create" element={<CreateTeam />} />
+        <Route path="/admin/team/edit/:id" element={<CreateTeam />} />
+        <Route path="/admin/sliders" element={<ListSliders />} />
+        <Route path="/admin/sliders/create" element={<CreateSlider />} />
+        <Route path="/admin/sliders/edit/:id" element={<CreateSlider />} />
+        <Route path="/admin/services" element={<ListServices />} />
+        <Route path="/admin/services/create" element={<CreateService />} />
+        <Route path="/admin/services/edit/:id" element={<CreateService />} />
       </Routes>
     </div>
   );

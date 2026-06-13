@@ -5,6 +5,7 @@ import Footer from '../../components/Layout/Footer';
 import { newsDbService, NewsEventItem } from '../../services/newsDbService';
 import { uploadToB2 } from '../../services/b2Service';
 import { authClient } from '../../lib/auth';
+import { SignedIn, SignedOut } from '@neondatabase/neon-js/auth/react';
 import styles from './CreateNews.module.css';
 
 interface RichContentBlock {
@@ -243,21 +244,11 @@ const CreateNews: React.FC = () => {
     }
   };
 
-  // Render Session Loading
-  if (session.isPending) {
-    return (
-      <div className={styles.centeredPage}>
-        <div className={styles.spinner} />
-        <p>Loading security session...</p>
-      </div>
-    );
-  }
+  return (
+    <>
+      <NavbarRedesigned />
 
-  // Render Unauthorized
-  if (!session.data) {
-    return (
-      <>
-        <NavbarRedesigned />
+      <SignedOut>
         <div className={styles.centeredPage}>
           <div className={styles.glassCard}>
             <div className={styles.warningIcon}>
@@ -277,14 +268,9 @@ const CreateNews: React.FC = () => {
             </div>
           </div>
         </div>
-        <Footer />
-      </>
-    );
-  }
+      </SignedOut>
 
-  return (
-    <>
-      <NavbarRedesigned />
+      <SignedIn>
       <div className={styles.createContainer}>
         <div className={styles.pageHeader}>
           <Link to="/admin/news" className={styles.backLink} title="Back to Publications">
@@ -786,6 +772,7 @@ const CreateNews: React.FC = () => {
           </form>
         )}
       </div>
+      </SignedIn>
       <Footer />
     </>
   );

@@ -4,6 +4,7 @@ import NavbarRedesigned from '../../components/Layout/Navbar.redesigned';
 import Footer from '../../components/Layout/Footer';
 import { newsDbService, NewsEventItem } from '../../services/newsDbService';
 import { authClient } from '../../lib/auth';
+import { SignedIn, SignedOut } from '@neondatabase/neon-js/auth/react';
 import styles from './CreateEvent.module.css';
 
 interface RichContentBlock {
@@ -163,21 +164,11 @@ const CreateEvent: React.FC = () => {
     }
   };
 
-  // Render Session Loading
-  if (session.isPending) {
-    return (
-      <div className={styles.centeredPage}>
-        <div className={styles.spinner} />
-        <p>Loading security session...</p>
-      </div>
-    );
-  }
+  return (
+    <>
+      <NavbarRedesigned />
 
-  // Render Unauthorized
-  if (!session.data) {
-    return (
-      <>
-        <NavbarRedesigned />
+      <SignedOut>
         <div className={styles.centeredPage}>
           <div className={styles.glassCard}>
             <div className={styles.warningIcon}>
@@ -197,14 +188,9 @@ const CreateEvent: React.FC = () => {
             </div>
           </div>
         </div>
-        <Footer />
-      </>
-    );
-  }
+      </SignedOut>
 
-  return (
-    <>
-      <NavbarRedesigned />
+      <SignedIn>
       <div className={styles.createContainer}>
         {/* Header section with back arrow */}
         <div className={styles.pageHeader}>
@@ -526,6 +512,7 @@ const CreateEvent: React.FC = () => {
           </form>
         )}
       </div>
+      </SignedIn>
       <Footer />
     </>
   );

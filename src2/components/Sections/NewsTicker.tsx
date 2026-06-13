@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './NewsTicker.module.css';
 
 interface NewsItem {
@@ -32,15 +33,15 @@ const NewsTicker: React.FC<NewsTickerProps> = ({ news = [] }) => {
         <span className={styles.pulseDot}></span>
         LATEST UPDATES
       </div>
-      <div className={styles.tickerScroll} onClick={handleTickerClick}>
+      <div className={styles.tickerScroll}>
         <div className={styles.tickerTrack}>
           {/* Double the list to create a seamless infinite loop */}
           {[...tickerItems, ...tickerItems].map((item, idx) => (
-            <span key={idx} className={styles.tickerItem}>
+            <Link key={idx} to={`/news-event/${item.slug || item.id}`} className={styles.tickerItem} style={{ textDecoration: 'none', color: 'inherit' }}>
               <span className={styles.tickerDate}>{item.date || ''}</span>
               <span className={styles.tickerTitle}>{item.title}</span>
               <span className={styles.tickerDivider}>•</span>
-            </span>
+            </Link>
           ))}
         </div>
       </div>

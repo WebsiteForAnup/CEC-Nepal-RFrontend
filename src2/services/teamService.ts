@@ -1,12 +1,13 @@
-import teamRegistry from '../data/collections/team/registry.json';
+import { neonClient } from '../lib/auth';
+import teamRegistry from '../data/collections/team/registry.json'; // keep for tabs config
 
-interface ExperienceObject {
+export interface ExperienceObject {
   joinDate?: string | number;
   recruitmentType?: string;
   more_info?: string;
 }
 
-interface MemberAssignment {
+export interface MemberAssignment {
   categories?: string[];
   designation?: string;
   meta?: Record<string, string>;
@@ -14,20 +15,31 @@ interface MemberAssignment {
 }
 
 export interface Member {
+  id?: number | string;
+  slug: string;
   name: string;
-  image?: string;
+  image_url?: string;
+  education?: string;
   experience?: string | ExperienceObject;
   more_info?: string;
+  bio?: string;
   assignments?: MemberAssignment;
   designation?: string;
   _primaryCatIndex?: number;
   _ordering?: number;
-  [key: string]: any; // fallback for other dynamic properties
+  [key: string]: any;
 }
 
 interface Tab {
   label: string;
   categories: string[];
+}
+
+export interface TeamCategory {
+  id?: number | string;
+  slug: string;
+  label: string;
+  tab_group?: string;
 }
 
 const calculateExperience = (joinDate: string | number | undefined, recruitmentType: string | undefined): string => {
@@ -62,81 +74,114 @@ const mapExperienceDetails = (m: Member): { experience: string; more_info: strin
   };
 };
 
-export const getTeamCategories = (): Record<string, Member[]> => {
-  const members = (teamRegistry.members || []) as Member[];
-  const tabs = (teamRegistry.tabs || []) as Tab[];
-  
-  const mappedCategories: Record<string, Member[]> = {};
-
-  tabs.forEach(tab => {
-    // 1. Filter members that match ANY of the categories in the tab
-    const matchedMembers = members.filter(m => {
-      const memberCats = m.assignments?.categories || [];
-      return tab.categories.some(cat => memberCats.includes(cat));
-    });
-
-    // 2. Map the members to include calculated experience and their designation
-    const mappedMembers = matchedMembers.map(m => {
-      const expDetails = mapExperienceDetails(m);
+export const teamDbService = {
+  /**
+   * Fetch all members from the Neon Database.
+   */
+  getAllTeamMembers: async (): Promise<Member[]> => {
+    try {
+      const dbUrl = import.meta.env.VITE_NEON_DATA_API_URL;
+      const hasDbConfig = !!dbUrl;
       
-      // Find the first matching category to use as their primary group for this tab
-      const primaryCat = tab.categories.find(cat => (m.assignments?.categories || []).includes(cat)) || "";
-      
-      // Get their specific designation for this category
-      const designation = m.assignments?.meta?.[primaryCat] || m.assignments?.designation || "";
-
-      return {
-        ...m,
-        experience: expDetails.experience,
-        more_info: expDetails.more_info,
-        designation: designation,
-        _primaryCatIndex: tab.categories.indexOf(primaryCat), // Used for primary sort (Group)
-        _ordering: m.assignments?.ordering || 999 // Used for secondary sort (Ordering Meta)
-      };
-    });
-
-    // 3. Multi-level sort:
-    // First, by group (the index of their matched category within the tab's `categories` array)
-    // Then, by their explicit ordering meta defined in registry.json
-    mappedMembers.sort((a, b) => {
-      if (a._primaryCatIndex !== b._primaryCatIndex) {
-        return (a._primaryCatIndex || 0) - (b._primaryCatIndex || 0);
+      if (!hasDbConfig) {
+        console.warn("VITE_NEON_DATA_API_URL not set, falling back to static team members");
+        return (teamRegistry.members || []) as Member[];
       }
-      return (a._ordering || 0) - (b._ordering || 0);
+
+      const { data, error } = await neonClient.schema('public').from('team_members').select('*');
+      if (error) {
+        console.error("Neon DB error fetching team members:", error);
+        throw error;
+      }
+      return (data || []) as Member[];
+    } catch (err) {
+      console.error('Error fetching team members:', err);
+      // Fallback to static if DB fails
+      return (teamRegistry.members || []) as Member[];
+    }
+  },
+
+  /**
+   * Fetch mapped categories based on the DB members and static tabs config.
+   */
+  getTeamCategories: async (): Promise<Record<string, Member[]>> => {
+    const members = await teamDbService.getAllTeamMembers();
+    const tabs = (teamRegistry.tabs || []) as Tab[];
+    
+    const mappedCategories: Record<string, Member[]> = {};
+
+    tabs.forEach(tab => {
+      const matchedMembers = members.filter(m => {
+        const memberCats = m.assignments?.categories || [];
+        return tab.categories.some(cat => memberCats.includes(cat));
+      });
+
+      const mappedMembers = matchedMembers.map(m => {
+        const expDetails = mapExperienceDetails(m);
+        const primaryCat = tab.categories.find(cat => (m.assignments?.categories || []).includes(cat)) || "";
+        const designation = m.assignments?.meta?.[primaryCat] || m.assignments?.designation || "";
+
+        return {
+          ...m,
+          experience: expDetails.experience,
+          more_info: expDetails.more_info,
+          designation: designation,
+          _primaryCatIndex: tab.categories.indexOf(primaryCat),
+          _ordering: m.assignments?.ordering || 999
+        };
+      });
+
+      mappedMembers.sort((a, b) => {
+        if (a._primaryCatIndex !== b._primaryCatIndex) {
+          return (a._primaryCatIndex || 0) - (b._primaryCatIndex || 0);
+        }
+        return (a._ordering || 0) - (b._ordering || 0);
+      });
+
+      mappedCategories[tab.label] = mappedMembers;
     });
 
-    mappedCategories[tab.label] = mappedMembers;
-  });
+    return mappedCategories;
+  },
 
-  return mappedCategories;
-};
+  /**
+   * Fetch categories from the Neon Database.
+   */
+  getTeamCategoriesList: async (): Promise<TeamCategory[]> => {
+    try {
+      const { data, error } = await neonClient.schema('public').from('team_categories').select('*');
+      if (error) throw error;
+      return (data || []) as TeamCategory[];
+    } catch (err) {
+      console.error('Error fetching team categories list:', err);
+      return [];
+    }
+  },
 
-/**
- * Returns a flat array of all team members across every category.
- *
- * @returns {Member[]} allMembers
- */
-export const getAllTeamMembers = (): Member[] => {
-  const categories = getTeamCategories();
-  return Object.values(categories).flat();
-};
+  /**
+   * Create a new team member
+   */
+  createTeamMember: async (member: Partial<Member>): Promise<any> => {
+    const { data, error } = await neonClient.schema('public').from('team_members').insert([member]);
+    if (error) throw error;
+    return data;
+  },
 
-/**
- * Returns team members for a specific category.
- *
- * @param {string} category - Category name (e.g. "Board of Directors")
- * @returns {Member[]} members
- */
-export const getTeamByCategory = (category: string): Member[] => {
-  const categories = getTeamCategories();
-  return categories[category] || [];
-};
+  /**
+   * Update an existing team member
+   */
+  updateTeamMember: async (id: string | number, member: Partial<Member>): Promise<any> => {
+    const { data, error } = await neonClient.schema('public').from('team_members').update(member).eq('id', id);
+    if (error) throw error;
+    return data;
+  },
 
-/**
- * Returns an array of all available category names.
- *
- * @returns {string[]} categoryNames
- */
-export const getTeamCategoryNames = (): string[] => {
-  return Object.keys(getTeamCategories());
+  /**
+   * Delete a team member
+   */
+  deleteTeamMember: async (id: string | number): Promise<any> => {
+    const { data, error } = await neonClient.schema('public').from('team_members').delete().eq('id', id);
+    if (error) throw error;
+    return data;
+  }
 };

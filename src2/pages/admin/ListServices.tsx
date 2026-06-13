@@ -2,32 +2,30 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import NavbarRedesigned from '../../components/Layout/Navbar.redesigned';
 import Footer from '../../components/Layout/Footer';
-import { newsDbService, NewsEventItem } from '../../services/newsDbService';
+import { serviceDbService, EngineeringService } from '../../services/serviceDbService';
 import { authClient } from '../../lib/auth';
 import { SignedIn, SignedOut } from '@neondatabase/neon-js/auth/react';
-import styles from './ListEvents.module.css';
+import styles from './ListEvents.module.css'; // Reusing existing admin list styles
 
-const ListEvents: React.FC = () => {
+const ListServices: React.FC = () => {
   const navigate = useNavigate();
   const session = authClient.useSession();
-  
+
   // States
-  const [items, setItems] = useState<NewsEventItem[]>([]);
+  const [items, setItems] = useState<EngineeringService[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [searchTerm, setSearchTerm] = useState<string>('');
 
-  // Fetch Events
+  // Fetch Services
   const loadItems = () => {
     setLoading(true);
-    newsDbService.getNewsAndEvents()
+    serviceDbService.getAllServices()
       .then((data) => {
-        // Filter only event type
-        const eventsOnly = data.filter(item => item.type === 'event');
-        setItems(eventsOnly);
+        setItems(data);
         setLoading(false);
       })
       .catch((err) => {
-        console.error('Failed to load events', err);
+        console.error('Failed to load services', err);
         setLoading(false);
       });
   };
@@ -36,26 +34,24 @@ const ListEvents: React.FC = () => {
     loadItems();
   }, []);
 
-  // Delete Event
+  // Delete Service
   const handleDelete = async (id: string | number) => {
-    if (window.confirm('Are you sure you want to delete this event?')) {
+    if (window.confirm('Are you sure you want to delete this service?')) {
       try {
-        await newsDbService.deleteNewsAndEvent(id);
+        await serviceDbService.deleteService(id);
         loadItems();
       } catch (err) {
-        console.error('Failed to delete event', err);
-        alert('Failed to delete event');
+        console.error('Failed to delete service', err);
+        alert('Failed to delete service');
       }
     }
   };
 
-  // Filter & Search Events
+  // Filter & Search Services
   const filteredItems = items.filter((item) => {
     const matchesSearch =
       item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (item.category && item.category.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (item.location && item.location.toLowerCase().includes(searchTerm.toLowerCase()));
+      (item.category && item.category.toLowerCase().includes(searchTerm.toLowerCase()));
     return matchesSearch;
   });
 
@@ -71,14 +67,11 @@ const ListEvents: React.FC = () => {
             </div>
             <h2 className={styles.cardTitle}>Admin Access Required</h2>
             <p className={styles.cardText}>
-              Please sign in to manage events. Authenticated actions are secured by database policy.
+              Please sign in to manage engineering services.
             </p>
             <div className={styles.actionRow}>
               <Link to="/auth/sign-in" className={styles.primaryBtn}>
                 Sign In
-              </Link>
-              <Link to="/" className={styles.secondaryBtn}>
-                Back to Site
               </Link>
             </div>
           </div>
@@ -91,27 +84,23 @@ const ListEvents: React.FC = () => {
           <div className={styles.adminHeader}>
             <div>
               <span className={styles.badge}>Security Session Active</span>
-              <h1 className={styles.mainTitle}>Events Manager</h1>
+              <h1 className={styles.mainTitle}>Engineering Services Manager</h1>
               <p className={styles.subtitle}>
-                Signed in as <span className={styles.userEmail}>{session?.data?.user?.email || 'Admin'}</span>. Manage upcoming events populated in the database.
+                Signed in as <span className={styles.userEmail}>{session?.data?.user?.email || 'Admin'}</span>. Manage services shown on the public site.
               </p>
             </div>
-            <Link to="/admin/events/create" className={styles.createBtn} style={{ textDecoration: 'none' }}>
-              <i className="fas fa-plus"></i> Add Event
+            <Link to="/admin/services/create" className={styles.createBtn} style={{ textDecoration: 'none' }}>
+              <i className="fas fa-plus"></i> Add Service
             </Link>
           </div>
 
           {/* Dashboard Controls */}
           <div className={styles.controlsBar}>
-            <div className={styles.tabGroup}>
-              <button className={styles.tabBtn} onClick={() => navigate('/admin/news')}>News Articles</button>
-              <button className={`${styles.tabBtn} ${styles.activeTab}`}>Upcoming Events</button>
-            </div>
             <div className={styles.searchBox}>
               <i className="fas fa-search"></i>
               <input
                 type="text"
-                placeholder="Search by event title, location, description, or category..."
+                placeholder="Search by service title or category..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className={styles.searchInput}
@@ -128,19 +117,20 @@ const ListEvents: React.FC = () => {
               </div>
             ) : filteredItems.length === 0 ? (
               <div className={styles.emptyState}>
-                <i className="fas fa-calendar-alt"></i>
-                <h3>No events found</h3>
-                <p>Try refining your search or add a new event to populate the database.</p>
+                <i className="fas fa-cogs"></i>
+                <h3>No services found</h3>
+                <p>Try refining your search or add a new service.</p>
               </div>
             ) : (
               <div className={styles.tableResponsive}>
                 <table className={styles.adminTable}>
                   <thead>
                     <tr>
-                      <th>Location</th>
-                      <th>Event Title & Category</th>
-                      <th>Event Date</th>
-                      <th>Status</th>
+                      <th>Icon</th>
+                      <th>Service Title & Slug</th>
+                      <th>Category</th>
+                      <th>Detail Page</th>
+                      <th>Ordering Rank</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
@@ -148,46 +138,59 @@ const ListEvents: React.FC = () => {
                     {filteredItems.map((item) => (
                       <tr key={item.id}>
                         <td>
-                          <span className={styles.locationBadge}>
-                            <i className="fas fa-map-marker-alt"></i> {item.location || 'N/A'}
-                          </span>
+                          <div style={{ fontSize: '24px', color: '#00B4D8' }}>
+                            <i className={item.icon || 'fas fa-cog'}></i>
+                          </div>
                         </td>
                         <td>
                           <div className={styles.titleCol}>
                             <span className={styles.tableTitle}>{item.title}</span>
-                            <span className={styles.tableCategory}>{item.category || 'General'}</span>
+                            <span className={styles.tableCategory}>{item.slug}</span>
                           </div>
                         </td>
-                        <td>{item.date}</td>
                         <td>
-                          <span className={`${styles.statusBadge} ${item.status === 'Completed' ? styles.statusCompleted : styles.statusOpen}`}>
-                            {item.status || 'Active'}
+                          <span className={styles.statusBadge} style={{ display: 'inline-block' }}>
+                            {item.category || 'General'}
                           </span>
                         </td>
                         <td>
+                          {item.has_page ? (
+                            <span style={{ color: '#2ecc71', fontWeight: 'bold' }}>
+                              <i className="fas fa-check-circle"></i> Yes
+                            </span>
+                          ) : (
+                            <span style={{ color: '#e74c3c' }}>
+                              <i className="fas fa-times-circle"></i> No
+                            </span>
+                          )}
+                        </td>
+                        <td>{item.ordering_rank}</td>
+                        <td>
                           <div className={styles.btnGroup}>
                             <button
-                              onClick={() => navigate(`/admin/events/edit/${item.id}`)}
+                              onClick={() => navigate(`/admin/services/edit/${item.id}`)}
                               className={styles.editBtn}
                               title="Edit"
                             >
                               <i className="fas fa-edit"></i>
                             </button>
                             <button
-                              onClick={() => handleDelete(item.id)}
+                              onClick={() => handleDelete(item.id as string | number)}
                               className={styles.deleteBtn}
                               title="Delete"
                             >
                               <i className="fas fa-trash"></i>
                             </button>
-                            <Link
-                              to={`/news-event/${item.slug}`}
-                              className={styles.viewBtn}
-                              title="View Public Page"
-                              target="_blank"
-                            >
-                              <i className="fas fa-external-link-alt"></i>
-                            </Link>
+                            {item.has_page && (
+                              <Link
+                                to={`/service/${item.slug}`}
+                                className={styles.viewBtn}
+                                title="View Public Page"
+                                target="_blank"
+                              >
+                                <i className="fas fa-external-link-alt"></i>
+                              </Link>
+                            )}
                           </div>
                         </td>
                       </tr>
@@ -204,4 +207,4 @@ const ListEvents: React.FC = () => {
   );
 };
 
-export default ListEvents;
+export default ListServices;

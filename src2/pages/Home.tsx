@@ -10,7 +10,8 @@ import servicesJson from '../data/collections/services.json';
 import projectsJson from '../data/collections/projects.json';
 import statisticsJson from '../data/pages/home.json';
 import { newsDbService } from '../services/newsDbService';
-import teamJson from '../data/collections/team/registry.json';
+import { sliderDbService } from '../services/sliderDbService';
+import { serviceDbService } from '../services/serviceDbService';
 import companyJson from '../data/global/site-config.json';
 import faqJson from '../data/collections/faq.json';
 import profileJson from '../data/pages/company_profile.json';
@@ -18,11 +19,8 @@ import profileJson from '../data/pages/company_profile.json';
 import {
     getHero,
     getAbout,
-    getServices,
     getProjects,
     getStatistics,
-    getTeamCategories,
-    getTeamCategoryNames,
     getCompany,
     getCompanyProfile,
     getFAQs,
@@ -42,12 +40,11 @@ const Footer = lazy(() => import('../components/Layout/Footer'));
 const Home: React.FC = () => {
     const hero = getHero(heroJson);
     const about = getAbout(aboutJson);
-    const services = getServices(servicesJson);
     const projects = getProjects(projectsJson);
     const stats = getStatistics(statisticsJson);
     const [newsAndEvents, setNewsAndEvents] = React.useState<any[]>([]);
-    const teamCategories = getTeamCategories(teamJson);
-    const teamCategoryNames = getTeamCategoryNames(teamJson);
+    const [dynamicHero, setDynamicHero] = React.useState<any>(hero);
+    const [dynamicServices, setDynamicServices] = React.useState<any[]>([]);
     const company = getCompany(companyJson);
     const profile = getCompanyProfile(profileJson);
     const faqs = getFAQs(faqJson);
@@ -57,6 +54,24 @@ const Home: React.FC = () => {
             document.title = `Home | ${company.name}`;
         }
     }, [company]);
+
+    useEffect(() => {
+        sliderDbService.getAllSliders()
+            .then(data => {
+                if (data && data.length > 0) {
+                    setDynamicHero({ ...hero, slides: data });
+                }
+            })
+            .catch(console.error);
+
+        serviceDbService.getAllServices()
+            .then(data => {
+                if (data && data.length > 0) {
+                    setDynamicServices(data);
+                }
+            })
+            .catch(console.error);
+    }, []);
 
     useEffect(() => {
         newsDbService.getNewsAndEvents()
@@ -76,16 +91,13 @@ const Home: React.FC = () => {
             <NavbarRedesigned />
             <NewsTicker news={newsAndEvents} />
             <main>
-                <HeroSlider hero={hero} news={newsAndEvents} />
+                <HeroSlider hero={dynamicHero} news={newsAndEvents} />
                 <Suspense fallback={<div style={{ padding: '5vh', textAlign: 'center' }}>Loading content...</div>}>
                     <CompanyProfile profile={profile} />
-                    <Team
-                        teamCategories={teamCategories}
-                        menuOptions={teamCategoryNames}
-                    />
+                    <Team />
                     <About about={about} />
 
-                    <Services services={services} />
+                    <Services services={dynamicServices} />
                     <Projects projects={projects} />
                     <ProjectMap />
                     <Statistics stats={stats} />

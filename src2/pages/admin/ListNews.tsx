@@ -4,6 +4,7 @@ import NavbarRedesigned from '../../components/Layout/Navbar.redesigned';
 import Footer from '../../components/Layout/Footer';
 import { newsDbService, NewsEventItem } from '../../services/newsDbService';
 import { authClient } from '../../lib/auth';
+import { SignedIn, SignedOut } from '@neondatabase/neon-js/auth/react';
 import styles from './ListNews.module.css';
 
 const ListNews: React.FC = () => {
@@ -57,21 +58,11 @@ const ListNews: React.FC = () => {
     return matchesSearch;
   });
 
-  // Render Session Loading
-  if (session.isPending) {
-    return (
-      <div className={styles.centeredPage}>
-        <div className={styles.spinner} />
-        <p>Loading security session...</p>
-      </div>
-    );
-  }
-
-  // Render Unauthorized
-  if (!session.data) {
-    return (
-      <>
-        <NavbarRedesigned />
+  return (
+    <>
+      <NavbarRedesigned />
+      
+      <SignedOut>
         <div className={styles.centeredPage}>
           <div className={styles.glassCard}>
             <div className={styles.warningIcon}>
@@ -91,116 +82,112 @@ const ListNews: React.FC = () => {
             </div>
           </div>
         </div>
-        <Footer />
-      </>
-    );
-  }
+      </SignedOut>
 
-  return (
-    <>
-      <NavbarRedesigned />
-      <div className={styles.adminContainer}>
-        {/* Admin Header */}
-        <div className={styles.adminHeader}>
-          <div>
-            <span className={styles.badge}>Security Session Active</span>
-            <h1 className={styles.mainTitle}>News Articles Manager</h1>
-            <p className={styles.subtitle}>
-              Signed in as <span className={styles.userEmail}>{session.data.user.email}</span>. Manage publications populated in the database.
-            </p>
-          </div>
-          <Link to="/admin/news/create" className={styles.createBtn} style={{ textDecoration: 'none' }}>
-            <i className="fas fa-plus"></i> Add News Article
-          </Link>
-        </div>
-
-        {/* Dashboard Controls */}
-        <div className={styles.controlsBar}>
-          <div className={styles.tabGroup}>
-            <button className={`${styles.tabBtn} ${styles.activeTab}`}>News Articles</button>
-            <button className={styles.tabBtn} onClick={() => navigate('/admin/events')}>Upcoming Events</button>
-          </div>
-          <div className={styles.searchBox}>
-            <i className="fas fa-search"></i>
-            <input
-              type="text"
-              placeholder="Search news by title, description, or category..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className={styles.searchInput}
-            />
-          </div>
-        </div>
-
-        {/* Database List / Table */}
-        <div className={styles.tableCard}>
-          {loading ? (
-            <div className={styles.tableSpinner}>
-              <div className={styles.spinner} />
-              <p>Fetching database records...</p>
+      <SignedIn>
+        <div className={styles.adminContainer}>
+          {/* Admin Header */}
+          <div className={styles.adminHeader}>
+            <div>
+              <span className={styles.badge}>Security Session Active</span>
+              <h1 className={styles.mainTitle}>News Articles Manager</h1>
+              <p className={styles.subtitle}>
+                Signed in as <span className={styles.userEmail}>{session?.data?.user?.email || 'Admin'}</span>. Manage publications populated in the database.
+              </p>
             </div>
-          ) : filteredItems.length === 0 ? (
-            <div className={styles.emptyState}>
-              <i className="fas fa-folder-open"></i>
-              <h3>No news articles found</h3>
-              <p>Try refining your search or add a new record to populate the database.</p>
+            <Link to="/admin/news/create" className={styles.createBtn} style={{ textDecoration: 'none' }}>
+              <i className="fas fa-plus"></i> Add News Article
+            </Link>
+          </div>
+
+          {/* Dashboard Controls */}
+          <div className={styles.controlsBar}>
+            <div className={styles.tabGroup}>
+              <button className={`${styles.tabBtn} ${styles.activeTab}`}>News Articles</button>
+              <button className={styles.tabBtn} onClick={() => navigate('/admin/events')}>Upcoming Events</button>
             </div>
-          ) : (
-            <div className={styles.tableResponsive}>
-              <table className={styles.adminTable}>
-                <thead>
-                  <tr>
-                    <th>Title & Category</th>
-                    <th>Publish Date</th>
-                    <th>Author</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredItems.map((item) => (
-                    <tr key={item.id}>
-                      <td>
-                        <div className={styles.titleCol}>
-                          <span className={styles.tableTitle}>{item.title}</span>
-                          <span className={styles.tableCategory}>{item.category || 'General'}</span>
-                        </div>
-                      </td>
-                      <td>{item.date}</td>
-                      <td>{item.author || 'CEC Nepal Team'}</td>
-                      <td>
-                        <div className={styles.btnGroup}>
-                          <button
-                            onClick={() => navigate(`/admin/news/edit/${item.id}`)}
-                            className={styles.editBtn}
-                            title="Edit"
-                          >
-                            <i className="fas fa-edit"></i>
-                          </button>
-                          <button
-                            onClick={() => handleDelete(item.id)}
-                            className={styles.deleteBtn}
-                            title="Delete"
-                          >
-                            <i className="fas fa-trash"></i>
-                          </button>
-                          <Link
-                            to={`/news-event/${item.slug}`}
-                            className={styles.viewBtn}
-                            title="View Public Page"
-                            target="_blank"
-                          >
-                            <i className="fas fa-external-link-alt"></i>
-                          </Link>
-                        </div>
-                      </td>
+            <div className={styles.searchBox}>
+              <i className="fas fa-search"></i>
+              <input
+                type="text"
+                placeholder="Search news by title, description, or category..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className={styles.searchInput}
+              />
+            </div>
+          </div>
+
+          {/* Database List / Table */}
+          <div className={styles.tableCard}>
+            {loading ? (
+              <div className={styles.tableSpinner}>
+                <div className={styles.spinner} />
+                <p>Fetching database records...</p>
+              </div>
+            ) : filteredItems.length === 0 ? (
+              <div className={styles.emptyState}>
+                <i className="fas fa-folder-open"></i>
+                <h3>No news articles found</h3>
+                <p>Try refining your search or add a new record to populate the database.</p>
+              </div>
+            ) : (
+              <div className={styles.tableResponsive}>
+                <table className={styles.adminTable}>
+                  <thead>
+                    <tr>
+                      <th>Title & Category</th>
+                      <th>Publish Date</th>
+                      <th>Author</th>
+                      <th>Actions</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
+                  </thead>
+                  <tbody>
+                    {filteredItems.map((item) => (
+                      <tr key={item.id}>
+                        <td>
+                          <div className={styles.titleCol}>
+                            <span className={styles.tableTitle}>{item.title}</span>
+                            <span className={styles.tableCategory}>{item.category || 'General'}</span>
+                          </div>
+                        </td>
+                        <td>{item.date}</td>
+                        <td>{item.author || 'CEC Nepal Team'}</td>
+                        <td>
+                          <div className={styles.btnGroup}>
+                            <button
+                              onClick={() => navigate(`/admin/news/edit/${item.id}`)}
+                              className={styles.editBtn}
+                              title="Edit"
+                            >
+                              <i className="fas fa-edit"></i>
+                            </button>
+                            <button
+                              onClick={() => handleDelete(item.id)}
+                              className={styles.deleteBtn}
+                              title="Delete"
+                            >
+                              <i className="fas fa-trash"></i>
+                            </button>
+                            <Link
+                              to={`/news-event/${item.slug}`}
+                              className={styles.viewBtn}
+                              title="View Public Page"
+                              target="_blank"
+                            >
+                              <i className="fas fa-external-link-alt"></i>
+                            </Link>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      </SignedIn>
       <Footer />
     </>
   );

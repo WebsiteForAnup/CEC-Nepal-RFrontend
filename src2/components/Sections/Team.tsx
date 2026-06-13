@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Team.module.css';
 import teamRegistry from '../../data/collections/team/registry.json';
-import { getTeamCategories, Member } from '../../services/teamService';
-
-const mappedCategories = getTeamCategories();
+import { teamDbService, Member } from '../../services/teamService';
 
 interface Stat {
   value: string;
@@ -18,8 +16,6 @@ interface JoinTeam {
 }
 
 interface TeamProps {
-  teamCategories?: Record<string, Member[]>;
-  menuOptions?: string[];
   title?: string;
   subtitle?: string;
   stats?: Stat[];
@@ -27,25 +23,44 @@ interface TeamProps {
 }
 
 const Team: React.FC<TeamProps> = ({ 
-  teamCategories = mappedCategories, 
-  menuOptions = Object.keys(mappedCategories),
   title = teamRegistry.title || "Our Team",
   subtitle = teamRegistry.subtitle || "Meet the experts behind CEC Nepal's success",
   stats = teamRegistry.stats as Stat[] || [],
   joinTeam = teamRegistry.joinTeam || {}
 }) => {
+  const [teamCategories, setTeamCategories] = useState<Record<string, Member[]>>({});
+  const [menuOptions, setMenuOptions] = useState<string[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  
   const [selectedMember, setSelectedMember] = useState<Member | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState<string>(
-    menuOptions[0] || Object.keys(teamCategories)[0] || ''
-  );
+  const [selectedCategory, setSelectedCategory] = useState<string>('');
 
-  React.useEffect(() => {
-    if (menuOptions.length > 0 && !menuOptions.includes(selectedCategory)) {
-      setSelectedCategory(menuOptions[0]);
-    }
-  }, [menuOptions, selectedCategory]);
+  useEffect(() => {
+    teamDbService.getTeamCategories()
+      .then(categories => {
+        setTeamCategories(categories);
+        const options = Object.keys(categories);
+        setMenuOptions(options);
+        if (options.length > 0) {
+          setSelectedCategory(options[0]);
+        }
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error("Failed to load team categories", err);
+        setLoading(false);
+      });
+  }, []);
 
   const renderContent = () => {
+    if (loading) {
+      return (
+        <div style={{ textAlign: 'center', padding: '40px 0' }}>
+          <p>Loading team members...</p>
+        </div>
+      );
+    }
+
     const currentTeam = teamCategories[selectedCategory] || [];
 
     return (

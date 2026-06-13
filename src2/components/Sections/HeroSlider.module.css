@@ -1,7 +1,7 @@
 /* HeroSlider.module.css */
 
 .heroContainer {
-  height: 50vh;
+  height: 100%;
   min-height: 400px;
   background-color: #030712; /* Rich dark brand background */
   overflow: hidden;
