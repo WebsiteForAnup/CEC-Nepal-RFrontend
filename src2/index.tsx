@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import siteConfig from './data/global/site-config.json';
 import { initGA } from './utils/analytics';
+import { NeonAuthUIProvider } from '@neondatabase/neon-js/auth/react';
+import '@neondatabase/neon-js/ui/css';
+import { authClient } from './lib/auth';
+
 
 // Initialize Google Analytics
 initGA();
@@ -28,6 +32,8 @@ if (!rootElement) {
 const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    <App />
+    <NeonAuthUIProvider emailOTP authClient={authClient}>
+      <App />
+    </NeonAuthUIProvider>
   </React.StrictMode>
 );

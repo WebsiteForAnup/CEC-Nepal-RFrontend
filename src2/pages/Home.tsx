@@ -9,7 +9,7 @@ import aboutJson from '../data/pages/about.json';
 import servicesJson from '../data/collections/services.json';
 import projectsJson from '../data/collections/projects.json';
 import statisticsJson from '../data/pages/home.json';
-import newsJson from '../data/collections/news-events/feed.json';
+import { newsDbService } from '../services/newsDbService';
 import teamJson from '../data/collections/team/registry.json';
 import companyJson from '../data/global/site-config.json';
 import faqJson from '../data/collections/faq.json';
@@ -21,7 +21,6 @@ import {
     getServices,
     getProjects,
     getStatistics,
-    getNewsAndEvents,
     getTeamCategories,
     getTeamCategoryNames,
     getCompany,
@@ -46,7 +45,7 @@ const Home: React.FC = () => {
     const services = getServices(servicesJson);
     const projects = getProjects(projectsJson);
     const stats = getStatistics(statisticsJson);
-    const newsAndEvents = getNewsAndEvents(newsJson);
+    const [newsAndEvents, setNewsAndEvents] = React.useState<any[]>([]);
     const teamCategories = getTeamCategories(teamJson);
     const teamCategoryNames = getTeamCategoryNames(teamJson);
     const company = getCompany(companyJson);
@@ -58,6 +57,19 @@ const Home: React.FC = () => {
             document.title = `Home | ${company.name}`;
         }
     }, [company]);
+
+    useEffect(() => {
+        newsDbService.getNewsAndEvents()
+            .then((data) => {
+                const filtered = process.env.NODE_ENV === 'production'
+                    ? data.filter(item => !item.isDemo)
+                    : data;
+                setNewsAndEvents(filtered);
+            })
+            .catch((err) => {
+                console.error('Failed to load dynamic news on Home', err);
+            });
+    }, []);
 
     return (
         <>

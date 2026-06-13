@@ -3,7 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import styles from './NewsEventDetail.module.css';
 import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Footer from '../components/Layout/Footer';
-import newsJson from '../data/collections/news-events/feed.json';
+import { newsDbService, NewsEventItem } from '../services/newsDbService';
 import labelMappings from '../data/global/label-mappings.json';
 import { trackEvent } from '../utils/analytics';
 
@@ -56,52 +56,51 @@ const parseYoutubeUrl = (url: string | undefined): YoutubeParsed | null => {
     };
 };
 
-interface RichContentBlock {
-  type: string;
-  value?: string;
-  url?: string;
-  caption?: string;
-}
-
-interface NewsEventItem {
-  id: number;
-  slug: string;
-  title: string;
-  image?: string;
-  type?: string;
-  date?: string;
-  author?: string;
-  category?: string;
-  location?: string;
-  capacity?: string;
-  registration?: string;
-  excerpt?: string;
-  description?: string;
-  content?: string;
-  isDemo?: boolean;
-  relatedNewsSlugs?: string[];
-  projectSpecs?: {
-    title?: string;
-    [key: string]: any;
-  };
-  richContent?: RichContentBlock[];
-}
-
 const NewsEventDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
-    
-    const allNewsEvents = (newsJson.newsAndEvents || []) as NewsEventItem[];
-    const sampleNewsEvents = process.env.NODE_ENV === 'production'
-        ? allNewsEvents.filter(item => !item.isDemo)
-        : allNewsEvents;
-    const item = sampleNewsEvents.find(item => item.slug === id || (id && item.id === parseInt(id)));
+    const [item, setItem] = React.useState<NewsEventItem | null>(null);
+    const [sampleNewsEvents, setSampleNewsEvents] = React.useState<NewsEventItem[]>([]);
+    const [loading, setLoading] = React.useState<boolean>(true);
+
+    React.useEffect(() => {
+        if (!id) return;
+        setLoading(true);
+        newsDbService.getNewsAndEvents()
+            .then((data) => {
+                const filteredList = process.env.NODE_ENV === 'production'
+                    ? data.filter(i => !i.isDemo)
+                    : data;
+                setSampleNewsEvents(filteredList);
+                const foundItem = filteredList.find(
+                    (i) => i.slug === id || String(i.id) === String(id)
+                );
+                setItem((foundItem as unknown as NewsEventItem) || null);
+                setLoading(false);
+            })
+            .catch((err) => {
+                console.error(err);
+                setLoading(false);
+            });
+    }, [id]);
 
     React.useEffect(() => {
         if (item?.title) {
             trackEvent('content_loaded', 'News & Events', item.title);
         }
     }, [item]);
+
+    if (loading) {
+        return (
+            <>
+                <NavbarRedesigned />
+                <div className={styles['container']} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '50vh' }}>
+                    <div style={{ border: '4px solid rgba(0,0,0,0.1)', borderLeftColor: '#0c4a6e', borderRadius: '50%', width: '36px', height: '36px', animation: 'spin 1s linear infinite' }} />
+                    <style>{`@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`}</style>
+                </div>
+            </>
+        );
+    }
 
     if (!item) {
         return (
@@ -281,7 +280,7 @@ const NewsEventDetail: React.FC = () => {
                                                     .replace(/([A-Z])/g, ' $1')
                                                     .replace(/^./, (str) => str.toUpperCase());
 
-                                                let displayValue = value;
+                                                let displayValue = String(value);
                                                 if (key.toLowerCase().includes('date') && typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)) {
                                                     displayValue = formatDate(value);
                                                 }
@@ -294,6 +293,24 @@ const NewsEventDetail: React.FC = () => {
                                                 );
                                             })
                                         }
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Important Milestone Dates */}
+                        {item.importantDates && item.importantDates.length > 0 && (
+                            <div className={styles['project-details']}>
+                                <div className={styles['detail-box']}>
+                                    <h3>Key Milestones & Dates</h3>
+                                    <div className={styles['detail-grid']}>
+                                        {item.importantDates.map((dateObj, index) => (
+                                            <div key={index} className={styles['detail-item']}>
+                                                <strong>{dateObj.date_title}:</strong>
+                                                <p>{formatDate(dateObj.date)}</p>
+                                                {dateObj.meta && <span style={{ fontSize: '12px', color: '#64748b', display: 'block', marginTop: '2px' }}>{String(dateObj.meta)}</span>}
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>

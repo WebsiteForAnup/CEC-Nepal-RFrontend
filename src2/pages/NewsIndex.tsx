@@ -2,33 +2,32 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Footer from '../components/Layout/Footer';
-import newsData from '../data/collections/news-events/feed.json';
+import { newsDbService, NewsEventItem } from '../services/newsDbService';
 import styles from './NewsIndex.module.css';
-
-interface NewsItem {
-  id: string | number;
-  type: string;
-  title: string;
-  image?: string;
-  date: string;
-  description?: string;
-  category?: string;
-  content?: string;
-  isDemo?: boolean;
-}
 
 const NewsIndex: React.FC = () => {
   const navigate = useNavigate();
-  const allNewsAndEvents = (newsData.newsAndEvents || []) as NewsItem[];
-  const newsAndEvents = process.env.NODE_ENV === 'production'
-    ? allNewsAndEvents.filter(item => !item.isDemo)
-    : allNewsAndEvents;
+  const [newsAndEvents, setNewsAndEvents] = useState<NewsEventItem[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [selectedType, setSelectedType] = useState<string>('all');
 
   useEffect(() => {
     document.title = 'News & Events | CEC Nepal';
     window.scrollTo(0, 0);
+
+    newsDbService.getNewsAndEvents()
+      .then((data) => {
+        const filtered = process.env.NODE_ENV === 'production'
+          ? data.filter(item => !item.isDemo)
+          : data;
+        setNewsAndEvents(filtered);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error('Failed to load news', err);
+        setLoading(false);
+      });
   }, []);
 
   const formatDate = (dateString: string): string => {
@@ -114,7 +113,12 @@ const NewsIndex: React.FC = () => {
         {/* Grid Results Section */}
         <section className={styles.gridSection}>
           <div className={styles.container}>
-            {filteredItems.length > 0 ? (
+            {loading ? (
+              <div style={{ display: 'flex', justifyContent: 'center', padding: '60px 0' }}>
+                <div style={{ border: '4px solid rgba(0,0,0,0.1)', borderLeftColor: '#0c4a6e', borderRadius: '50%', width: '36px', height: '36px', animation: 'spin 1s linear infinite' }} />
+                <style>{`@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`}</style>
+              </div>
+            ) : filteredItems.length > 0 ? (
               <div className={styles.newsGrid}>
                 {filteredItems.map((item) => (
                   <article 

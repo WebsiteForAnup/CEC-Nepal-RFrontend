@@ -3,11 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1068.0",
+    "@aws-sdk/s3-request-presigner": "^3.1068.0",
+    "@hono/node-server": "^2.0.4",
     "@neondatabase/neon-js": "^0.6.2-beta",
+    "@neondatabase/serverless": "^1.1.0",
+    "dotenv": "^17.4.2",
     "emailjs-com": "^3.2.0",
+    "hono": "^4.12.25",
     "leaflet": "^1.9.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
     "react-router-dom": "^7.17.0"
   },
   "scripts": {
