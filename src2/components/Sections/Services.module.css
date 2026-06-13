@@ -1,0 +1,253 @@
+.services {
+  padding: 100px 0;
+  scroll-margin-top: 80px;
+  background: var(--bg-light); /* Switched to an off-var(--white) to make the crisp var(--white) cards pop */
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.sectionHeader.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionHeader h2 {
+  font-size: var(--fs-h2, 2.25rem);
+  margin-bottom: 10px;
+  color: var(--text-dark);
+  font-weight: 800;
+}
+
+.sectionHeader .line {
+  width: 60px;
+  height: 4px;
+  background: var(--primary, var(--primary));
+  margin: 0 auto;
+}
+
+/* Flex wrapper elements to fix React-Router Link dimension collapsing */
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+.wrapperDiv {
+  display: flex;
+}
+
+.serviceCard {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transform: translateY(40px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.clickableCard {
+  cursor: pointer;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.serviceCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+}
+
+.imgContainer {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  background: var(--border-light);
+}
+
+.imgContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.serviceCard:hover .imgContainer img {
+  transform: scale(1.08);
+}
+
+.categoryBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  color: var(--white);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.serviceContent {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Pushes child links/buttons uniformly to the base edge */
+}
+
+.iconWrapper {
+  width: 50px;
+  height: 50px;
+  background: var(--primary-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: var(--primary, var(--primary));
+}
+
+.serviceCard:hover .iconWrapper {
+  background: var(--primary, var(--primary));
+}
+
+.serviceCard:hover .icon {
+  color: var(--white);
+}
+
+.serviceContent h3 {
+  font-size: var(--fs-h3, 1.35rem);
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.description {
+  color: var(--text-main);
+  line-height: 1.6;
+  font-size: calc(var(--fs-body, 1rem) - 0.05rem);
+  text-align: left;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  transition: all 0.3s linear;
+}
+
+/* Explicit treatment for expanded paragraphs so they don't choke layouts */
+.description.expanded {
+  font-size: 0.925rem;
+  color: var(--text-dark);
+}
+
+/* Bottom Action Elements styled cleanly */
+.cardFooterLink, .readMoreBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--primary, var(--primary));
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: auto;
+  border: none;
+  background: none;
+  padding: 0;
+  text-align: left;
+  width: max-content;
+}
+
+.readMoreBtn {
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.readMoreBtn:hover {
+  color: var(--primary, var(--primary));
+}
+
+.cardFooterLink i, .readMoreBtn i {
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.serviceCard:hover .cardFooterLink i {
+  transform: translateX(4px);
+}
+
+.ctaContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border-light);
+}
+
+.getInTouchBtn {
+  padding: 16px 44px;
+  background: linear-gradient(135deg, var(--primary, var(--primary)), var(--primary-dark, var(--primary)));
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px var(--bg-hover);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.getInTouchBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px var(--bg-hover);
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 60px 0;
+  }
+  
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .imgContainer {
+    height: 180px;
+  }
+}

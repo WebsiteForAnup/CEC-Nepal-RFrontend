@@ -1,0 +1,44 @@
+{
+  "slug": "detail-engineering-design",
+  "icon": "fas fa-drafting-compass",
+  "title": "Detail Engineering Design",
+  "subheadline": "Precision engineering blueprints for flawless execution.",
+  "description": "Precise engineering design and CAD drafting.",
+  "image": "/images/services/detail-engineering.jpg",
+  "category": "Engineering",
+  "fullDescription": "Our detailed engineering design services provide accurate blueprints, 3D models, and comprehensive technical specifications necessary for flawless construction and execution.",
+  "painPoints": "Vague or inaccurate engineering designs lead to costly change orders, construction delays, and compromised structural integrity. Clients need absolute precision to transition smoothly to the construction phase.",
+  "approach": "We leverage advanced 3D modeling and finite element analysis to produce constructible, optimized designs. Every drawing undergoes rigorous peer review to ensure compliance with stringent international codes.",
+  "capabilities": [
+    "Structural & Civil 3D Design",
+    "Hydromechanical & Electromechanical Specifications",
+    "Tender Document Preparation (FIDIC)",
+    "Construction Drawings & Bill of Quantities (BoQ)",
+    "Finite Element Analysis (FEA)"
+  ],
+  "techStack": [
+    "AutoCAD",
+    "SAP2000",
+    "STAAD.Pro",
+    "SolidWorks",
+    "ANSYS",
+    "Civil 3D"
+  ],
+  "process": [
+    "Design Basis Finalization",
+    "Preliminary Layout & Modeling",
+    "Detailed Analysis & Drawing Preparation",
+    "Peer Review & IFC (Issued for Construction) Release"
+  ],
+  "caseStudy": {
+    "title": "Lower Piluwa HPP",
+    "metric": "Capacity: 990 kW | Status: Generation",
+    "description": "Compact hydropower facility delivering clean energy through efficient detailed project reporting and design. Demonstrates viability of micro-hydropower for rural electrification."
+  },
+  "testimonial": {
+    "quote": "The level of detail in CEC's construction drawings meant zero change orders during the civil works phase. Highly recommended.",
+    "author": "Sunil Thapa",
+    "title": "Project Director",
+    "company": "Himalayan Constructors"
+  }
+}

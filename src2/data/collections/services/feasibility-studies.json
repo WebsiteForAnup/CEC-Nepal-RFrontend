@@ -1,0 +1,43 @@
+{
+  "slug": "feasibility-studies",
+  "icon": "fas fa-search-location",
+  "title": "Feasibility Studies",
+  "subheadline": "Minimizing risk and validating economic viability from the ground up.",
+  "description": "Comprehensive site evaluation and project feasibility.",
+  "image": "/images/services/feasibility.jpg",
+  "category": "Consulting",
+  "fullDescription": "We conduct in-depth feasibility studies to evaluate the technical, economic, and environmental viability of projects before implementation. This ensures minimized risks and optimized planning.",
+  "painPoints": "Project developers often struggle with unexpected regulatory roadblocks, hidden site costs, and uncertain financial models. We provide early-stage clarity to prevent multi-million dollar mistakes down the line.",
+  "approach": "Our multidisciplinary team conducts rigorous site reconnaissance, socio-environmental baseline surveys, and financial modeling. We deliver bankable feasibility reports that satisfy stringent lender requirements and international standards.",
+  "capabilities": [
+    "Site Reconnaissance & Alternatives Analysis",
+    "Geological & Topographical Appraisals",
+    "Hydrological & Meteorological Studies",
+    "Economic & Financial Modeling (IRR, NPV)",
+    "Environmental & Social Impact Screening"
+  ],
+  "techStack": [
+    "ArcGIS",
+    "HEC-RAS",
+    "AutoCAD Civil 3D",
+    "RETScreen",
+    "MS Project"
+  ],
+  "process": [
+    "Data Collection & Initial Reconnaissance",
+    "Alternative Scheme Selection",
+    "Technical & Financial Analysis",
+    "Final Bankable Report Delivery"
+  ],
+  "caseStudy": {
+    "title": "Kabeli-B HEP",
+    "metric": "Capacity: 25 MW | Status: Generation",
+    "description": "A run-of-river hydroelectric project located in eastern Nepal, providing clean energy to the national grid. This strategic project demonstrates excellence in sustainable energy development with comprehensive technical audit and supervision."
+  },
+  "testimonial": {
+    "quote": "CEC Nepal's feasibility report was the most thorough technical document our credit committee had seen in years. It made project approval seamless.",
+    "author": "Rajendra Shrestha",
+    "title": "Chief Investment Officer",
+    "company": "Energy Infrastructure Fund"
+  }
+}

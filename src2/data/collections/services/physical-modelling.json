@@ -1,0 +1,41 @@
+{
+  "slug": "physical-modelling",
+  "icon": "fas fa-cubes",
+  "title": "Physical Modelling",
+  "subheadline": "Simulating complex fluid dynamics for safe, optimized designs.",
+  "description": "Scale modelling for complex engineering structures.",
+  "image": "/images/services/physical-modelling.jpg",
+  "category": "Engineering",
+  "fullDescription": "We create precise physical models to simulate real-world conditions for complex hydraulic and structural engineering projects, allowing for rigorous testing before full-scale construction.",
+  "painPoints": "Numerical models (CFD) alone cannot always predict complex hydraulic phenomena like cavitation, scouring, or vibration. Clients need physical proof that massive structures will behave safely under extreme conditions.",
+  "approach": "We construct scaled, highly instrumented physical models in our hydraulics lab. We run extensive flow simulations to visualize real-world behavior, optimizing the design to prevent structural failure.",
+  "capabilities": [
+    "Hydraulic Scale Modeling (Dams, Spillways)",
+    "Sediment Transport Simulation",
+    "Energy Dissipation Testing",
+    "Flow Velocity & Pressure Profiling",
+    "Design Optimization & Calibration"
+  ],
+  "techStack": [
+    "Acoustic Doppler Velocimeters",
+    "Pressure Transducers",
+    "FLOW-3D (for hybrid modeling)"
+  ],
+  "process": [
+    "Froude/Reynolds Scale Determination",
+    "Physical Model Construction & Instrumentation",
+    "Test Runs under Varying Scenarios (PMF)",
+    "Data Analysis & Design Refinement Recommendations"
+  ],
+  "caseStudy": {
+    "title": "Kabeli-B HEP",
+    "metric": "Capacity: 25 MW | Status: Generation",
+    "description": "A run-of-river hydroelectric project located in eastern Nepal, providing clean energy to the national grid. This strategic project demonstrates excellence in sustainable energy development with comprehensive technical audit and supervision."
+  },
+  "testimonial": {
+    "quote": "Seeing the physical model in action gave our international investors the ultimate confidence. CEC Nepal's lab work is world-class.",
+    "author": "David Chen",
+    "title": "Project Sponsor",
+    "company": "Global Hydro Investments"
+  }
+}
