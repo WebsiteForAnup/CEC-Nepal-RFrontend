@@ -75,7 +75,7 @@ const initLocalStorage = (): NewsEventItem[] => {
 
 // Check if Neon DB is configured
 const hasDbConfig = (): boolean => {
-  return !!import.meta.env.VITE_NEON_AUTH_URL;
+  return !!import.meta.env.VITE_NEON_DATA_API_URL;
 };
 
 export const newsDbService = {
@@ -83,13 +83,18 @@ export const newsDbService = {
    * Fetch all news and events
    */
   async getNewsAndEvents(): Promise<NewsEventItem[]> {
+    console.log('getNewsAndEvents called. hasDbConfig:', hasDbConfig());
+    console.log('VITE_NEON_AUTH_URL:', import.meta.env.VITE_NEON_AUTH_URL);
     if (hasDbConfig()) {
       try {
+        console.log('Fetching from Neon DB...');
         const { data, error } = await neonClient
+          .schema('public')
           .from('news_events')
           .select('*')
           .order('date', { ascending: false });
         
+        console.log('DB fetch result:', { data, error });
         if (error) throw error;
         
         // Map database snake_case columns back to camelCase properties
@@ -136,6 +141,7 @@ export const newsDbService = {
     if (hasDbConfig()) {
       try {
         const { data, error } = await neonClient
+          .schema('public')
           .from('news_events')
           .select('*')
           .eq('slug', slug)
@@ -213,6 +219,7 @@ export const newsDbService = {
         };
 
         const { data, error } = await neonClient
+          .schema('public')
           .from('news_events')
           .insert([dbRow])
           .select()
@@ -295,6 +302,7 @@ export const newsDbService = {
         if (item.coordinator !== undefined) dbRow.coordinator = item.coordinator;
 
         const { data, error } = await neonClient
+          .schema('public')
           .from('news_events')
           .update(dbRow)
           .eq('id', id)
@@ -356,6 +364,7 @@ export const newsDbService = {
     if (hasDbConfig()) {
       try {
         const { error } = await neonClient
+          .schema('public')
           .from('news_events')
           .delete()
           .eq('id', id);
