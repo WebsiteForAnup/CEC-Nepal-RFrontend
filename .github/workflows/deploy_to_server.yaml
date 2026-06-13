@@ -21,6 +21,19 @@ jobs:
 
       - name: Build
         run: npm run build:ts
+        env:
+          VITE_NEON_AUTH_URL: ${{ vars.VITE_NEON_AUTH_URL }}
+          VITE_B2_APPLICATION_KEY_ID: ${{ vars.VITE_B2_APPLICATION_KEY_ID }}
+          VITE_B2_APPLICATION_KEY: ${{ vars.VITE_B2_APPLICATION_KEY }}
+          VITE_B2_BUCKET_NAME: ${{ vars.VITE_B2_BUCKET_NAME }}
+          VITE_B2_ENDPOINT_URL: ${{ vars.VITE_B2_ENDPOINT_URL }}
+          VITE_B2_BUCKET_ID: ${{ vars.VITE_B2_BUCKET_ID }}
+          B2_APPLICATION_KEY_ID: ${{ vars.B2_APPLICATION_KEY_ID }}
+          B2_APPLICATION_KEY: ${{ vars.B2_APPLICATION_KEY }}
+          B2_BUCKET_NAME: ${{ vars.B2_BUCKET_NAME }}
+          B2_ENDPOINT_URL: ${{ vars.B2_ENDPOINT_URL }}
+          B2_BUCKET_ID: ${{ vars.B2_BUCKET_ID }}
+          DATABASE_URL: ${{ vars.DATABASE_URL }}
 
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
