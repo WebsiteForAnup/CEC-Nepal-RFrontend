@@ -3,6 +3,7 @@
   color: var(--white);
   position: relative;
   overflow: hidden;
+  /* margin: 100px; */
 }
 
 .footer::before {
@@ -24,7 +25,7 @@
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 100%;
   margin: auto;
   padding: 0 2rem;
 }

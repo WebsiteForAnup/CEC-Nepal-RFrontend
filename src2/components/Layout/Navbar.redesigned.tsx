@@ -155,21 +155,30 @@ const NavbarRedesigned: React.FC = () => {
             <Link 
               to="/team"
               className={styles.navLink}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setShowUpdatesDropdown(false);
+              }}
             >
               Team
             </Link>
             <Link 
               to="/careers"
               className={styles.navLink}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setShowUpdatesDropdown(false);
+              }}
             >
               Careers
             </Link>
             <Link 
               to="/news"
               className={styles.navLink}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setShowUpdatesDropdown(false);
+              }}
             >
               News
             </Link>
@@ -177,19 +186,43 @@ const NavbarRedesigned: React.FC = () => {
             {/* Updates Dropdown */}
             <div 
               className={styles.dropdownContainer}
-              onMouseEnter={() => setShowUpdatesDropdown(true)}
-              onMouseLeave={() => setShowUpdatesDropdown(false)}
+              onMouseEnter={() => {
+                if (window.innerWidth > 768) setShowUpdatesDropdown(true);
+              }}
+              onMouseLeave={() => {
+                if (window.innerWidth > 768) setShowUpdatesDropdown(false);
+              }}
             >
-              <button className={styles.navLink} onClick={(e) => e.preventDefault()}>
+              <button 
+                className={styles.navLink} 
+                onClick={(e) => {
+                  e.preventDefault();
+                  setShowUpdatesDropdown(!showUpdatesDropdown);
+                }}
+              >
                 Updates
-                <i className="fas fa-chevron-down"></i>
+                <i className={`fas fa-chevron-down ${styles.dropdownIcon} ${showUpdatesDropdown ? styles.rotateIcon : ''}`}></i>
               </button>
               <div className={`${styles.dropdownMenu} ${showUpdatesDropdown ? styles.visible : ''}`}>
-                <Link to="/gallery" className={styles.dropdownItem}>
+                <Link 
+                  to="/gallery" 
+                  className={styles.dropdownItem}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    setShowUpdatesDropdown(false);
+                  }}
+                >
                   <i className="fas fa-image"></i>
                   <span>Gallery</span>
                 </Link>
-                <Link to="/downloads" className={styles.dropdownItem}>
+                <Link 
+                  to="/downloads" 
+                  className={styles.dropdownItem}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    setShowUpdatesDropdown(false);
+                  }}
+                >
                   <i className="fas fa-download"></i>
                   <span>Downloads</span>
                 </Link>
@@ -201,6 +234,15 @@ const NavbarRedesigned: React.FC = () => {
               onClick={() => scrollToSection('contact')}
             >
               Contact
+            </button>
+
+            {/* Mobile-only CTA Button inside menu */}
+            <button 
+              className={styles.mobileRegisterBtn}
+              onClick={() => scrollToSection('contact')}
+            >
+              Contact Us
+              <i className="fas fa-arrow-right"></i>
             </button>
           </div>
 
@@ -216,7 +258,12 @@ const NavbarRedesigned: React.FC = () => {
           {/* Mobile Hamburger Menu */}
           <button
             className={`${styles.hamburger} ${mobileMenuOpen ? styles.active : ''}`}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => {
+              setMobileMenuOpen(!mobileMenuOpen);
+              if (mobileMenuOpen) {
+                setShowUpdatesDropdown(false); // Reset dropdown when closing menu
+              }
+            }}
             aria-label="Toggle menu"
           >
             <span className={styles.hamburgerLine}></span>
