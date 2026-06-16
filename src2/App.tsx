@@ -85,7 +85,7 @@ function AppContent(): React.ReactElement {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/careers" element={<Careers />} />
-        <Route path="/auth/" element={<Auth />} />
+        <Route path="/auth/:pathname" element={<Auth />} />
         <Route path="/account/" element={<Account />} />
         <Route path="/admin/news" element={<ListNews />} />
         <Route path="/admin/news/create" element={<CreateNews />} />
