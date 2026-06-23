@@ -25,6 +25,8 @@ import ListSliders from './pages/admin/ListSliders';
 import CreateSlider from './pages/admin/CreateSlider';
 import ListServices from './pages/admin/ListServices';
 import CreateService from './pages/admin/CreateService';
+import GalleryAdmin from './pages/admin/GalleryAdmin';
+import CreateGallery from './pages/admin/CreateGallery';
 import { SignedIn } from '@neondatabase/neon-js/auth/react';
 import { authClient } from './lib/auth';
 import { Link } from 'react-router-dom';
@@ -55,6 +57,7 @@ function AppContent(): React.ReactElement {
           <Link to="/admin/team" style={{ color: '#ecf0f1', textDecoration: 'none', fontWeight: 500 }}>Manage Team</Link>
           <Link to="/admin/sliders" style={{ color: '#ecf0f1', textDecoration: 'none', fontWeight: 500 }}>Manage Sliders</Link>
           <Link to="/admin/services" style={{ color: '#ecf0f1', textDecoration: 'none', fontWeight: 500 }}>Manage Services</Link>
+          <Link to="/admin/gallery" style={{ color: '#ecf0f1', textDecoration: 'none', fontWeight: 500 }}>Manage Gallery</Link>
           <div style={{ marginLeft: 'auto' }}>
             <button 
               onClick={() => authClient.signOut()} 
@@ -102,6 +105,9 @@ function AppContent(): React.ReactElement {
         <Route path="/admin/services" element={<ListServices />} />
         <Route path="/admin/services/create" element={<CreateService />} />
         <Route path="/admin/services/edit/:id" element={<CreateService />} />
+        <Route path="/admin/gallery" element={<GalleryAdmin />} />
+        <Route path="/admin/gallery/create" element={<CreateGallery />} />
+        <Route path="/admin/gallery/edit/:id" element={<CreateGallery />} />
       </Routes>
     </div>
   );

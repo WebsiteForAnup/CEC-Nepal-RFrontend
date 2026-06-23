@@ -1,21 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Gallery.module.css';
 import NavbarRedesigned from '../components/Layout/Navbar.redesigned';
 import Footer from '../components/Layout/Footer';
-import galleryJson from '../data/collections/gallery.json';
-
-interface GalleryImage {
-  slug: string;
-  image: string;
-  title: string;
-  category: string;
-  description: string;
-}
+import { galleryDbService, GalleryImage } from '../services/galleryDbService';
 
 const Gallery: React.FC = () => {
-    const galleryImages = galleryJson.gallery as GalleryImage[];
+    const [galleryImages, setGalleryImages] = useState<GalleryImage[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
     const [selectedCategory, setSelectedCategory] = useState<string>('all');
     const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
+
+    useEffect(() => {
+        setLoading(true);
+        galleryDbService.getAllGalleryImages()
+            .then(data => {
+                setGalleryImages(data);
+                setLoading(false);
+            })
+            .catch(err => {
+                console.error("Failed to fetch gallery images:", err);
+                setLoading(false);
+            });
+    }, []);
 
     const categories = ['all', ...Array.from(new Set(galleryImages.map(img => img.category)))];
 
@@ -55,24 +61,36 @@ const Gallery: React.FC = () => {
                     </div>
 
                     {/* Gallery Grid */}
-                    <div className={styles['gallery-grid']}>
-                        {filteredImages.map(image => (
-                            <div 
-                                key={image.slug} 
-                                className={styles['gallery-item']}
-                                onClick={() => setSelectedImage(image)}
-                            >
-                                <img src={image.image} alt={image.title} />
-                                <div className={styles['image-overlay']}>
-                                    <div className={styles['image-info']}>
-                                        <span className={styles['category-badge']}>{image.category}</span>
-                                        <h3>{image.title}</h3>
-                                        <p>{image.description}</p>
+                    {loading ? (
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '300px', gap: '15px' }}>
+                            <div className={styles['spinner']} />
+                            <p style={{ color: '#64748b', fontSize: '15px' }}>Loading project gallery...</p>
+                        </div>
+                    ) : filteredImages.length === 0 ? (
+                        <div style={{ textAlign: 'center', padding: '60px 20px', color: '#64748b' }}>
+                            <i className="fas fa-image" style={{ fontSize: '48px', color: '#cbd5e1', marginBottom: '16px', display: 'block' }}></i>
+                            <p>No gallery images found.</p>
+                        </div>
+                    ) : (
+                        <div className={styles['gallery-grid']}>
+                            {filteredImages.map(image => (
+                                <div 
+                                    key={image.slug} 
+                                    className={styles['gallery-item']}
+                                    onClick={() => setSelectedImage(image)}
+                                >
+                                    <img src={image.image} alt={image.title} />
+                                    <div className={styles['image-overlay']}>
+                                        <div className={styles['image-info']}>
+                                            <span className={styles['category-badge']}>{image.category}</span>
+                                            <h3>{image.title}</h3>
+                                            <p>{image.description}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
+                            ))}
+                        </div>
+                    )}
 
                     {/* Stats Section */}
                     <div className={styles['stats-section']}>
