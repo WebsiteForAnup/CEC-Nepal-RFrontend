@@ -1,17 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import NavbarRedesigned from '../../components/Layout/Navbar.redesigned';
 import Footer from '../../components/Layout/Footer';
 import { newsDbService, NewsEventItem } from '../../services/newsDbService';
+import { uploadToB2 } from '../../services/b2Service';
 import { authClient } from '../../lib/auth';
 import { SignedIn, SignedOut } from '@neondatabase/neon-js/auth/react';
 import styles from './CreateEvent.module.css';
 
 interface RichContentBlock {
-  type: 'paragraph' | 'image' | 'video' | 'youtube-shorts' | 'facebook';
+  type: 'paragraph' | 'image' | 'video' | 'youtube-shorts' | 'facebook' | 'document';
   value?: string;
   url?: string;
   caption?: string;
+  /** Original filename shown in document block previews */
+  filename?: string;
 }
 
 const CreateEvent: React.FC = () => {
@@ -40,6 +43,13 @@ const CreateEvent: React.FC = () => {
 
   // Rich Content Blocks State
   const [blocks, setBlocks] = useState<RichContentBlock[]>([]);
+
+  // Upload state: featured image
+  const [featuredUploadPct, setFeaturedUploadPct] = useState<number | null>(null);
+  const featuredFileRef = useRef<HTMLInputElement>(null);
+
+  // Upload state: per-block (keyed by block index)
+  const [blockUploadPct, setBlockUploadPct] = useState<Record<number, number | null>>({});
 
   // Load editing item if ID exists in URL
   useEffect(() => {
@@ -107,6 +117,12 @@ const CreateEvent: React.FC = () => {
   // Remove block
   const deleteBlock = (index: number) => {
     setBlocks(blocks.filter((_, i) => i !== index));
+    // Clean up corresponding uploading percentage track if any
+    setBlockUploadPct((prev) => {
+      const copy = { ...prev };
+      delete copy[index];
+      return copy;
+    });
   };
 
   // Re-order blocks
@@ -120,6 +136,58 @@ const CreateEvent: React.FC = () => {
     updated[index] = updated[swapIndex];
     updated[swapIndex] = temp;
     setBlocks(updated);
+
+    // Swap block upload percentages tracking map
+    setBlockUploadPct((prev) => {
+      const copy = { ...prev };
+      const tempPct = copy[index];
+      copy[index] = copy[swapIndex];
+      copy[swapIndex] = tempPct;
+      return copy;
+    });
+  };
+
+  // Upload featured image to B2
+  const handleFeaturedImageUpload = async (file: File) => {
+    setFeaturedUploadPct(0);
+    try {
+      const result = await uploadToB2(file, 'events/featured', (pct) => setFeaturedUploadPct(pct));
+      setImage(result.publicUrl);
+    } catch (err: any) {
+      console.error('Featured image upload failed:', err);
+      alert(`Upload failed: ${err.message}`);
+    } finally {
+      setFeaturedUploadPct(null);
+      if (featuredFileRef.current) featuredFileRef.current.value = '';
+    }
+  };
+
+  // Upload a media file or asset for a specific content block (Image, Video, Document)
+  const handleBlockFileUpload = async (index: number, file: File) => {
+    setBlockUploadPct((prev) => ({ ...prev, [index]: 0 }));
+    const blockType = blocks[index]?.type;
+    
+    const folder =
+      blockType === 'video' ? 'events/videos' :
+      blockType === 'document' ? 'events/documents' :
+      'events/images';
+
+    try {
+      const result = await uploadToB2(file, folder, (pct) =>
+        setBlockUploadPct((prev) => ({ ...prev, [index]: pct }))
+      );
+      
+      const extra: Partial<RichContentBlock> = { url: result.publicUrl };
+      if (blockType === 'document') {
+        extra.filename = file.name;
+      }
+      updateBlock(index, extra);
+    } catch (err: any) {
+      console.error(`Block ${index} upload failed:`, err);
+      alert(`Upload failed: ${err.message}`);
+    } finally {
+      setBlockUploadPct((prev) => ({ ...prev, [index]: null }));
+    }
   };
 
   // Submit Form
@@ -276,14 +344,50 @@ const CreateEvent: React.FC = () => {
                 </div>
 
                 <div className={styles.formGroup}>
-                  <label>Featured Event Image URL</label>
-                  <input
-                    type="text"
-                    placeholder="e.g. /images/events/seminar.jpg or Unsplash link"
-                    value={image}
-                    onChange={(e) => setImage(e.target.value)}
-                    className={styles.formInput}
-                  />
+                  <label>Featured Event Image</label>
+                  <div className={styles.uploadFieldRow}>
+                    <input
+                      type="text"
+                      placeholder="Paste URL or upload a file →"
+                      value={image}
+                      onChange={(e) => setImage(e.target.value)}
+                      className={styles.formInput}
+                      style={{ flex: 1 }}
+                    />
+                    <input
+                      type="file"
+                      accept="image/*"
+                      ref={featuredFileRef}
+                      style={{ display: 'none' }}
+                      onChange={(e) => {
+                        const f = e.target.files?.[0];
+                        if (f) handleFeaturedImageUpload(f);
+                      }}
+                    />
+                    <button
+                      type="button"
+                      className={styles.uploadBtn}
+                      onClick={() => featuredFileRef.current?.click()}
+                      disabled={featuredUploadPct !== null}
+                      title="Upload image to Backblaze B2"
+                    >
+                      {featuredUploadPct !== null ? (
+                        <span className={styles.uploadBtnProgress}>{featuredUploadPct}%</span>
+                      ) : (
+                        <><i className="fas fa-cloud-upload-alt" /> Upload</>  
+                      )}
+                    </button>
+                  </div>
+                  {featuredUploadPct !== null && (
+                    <div className={styles.progressBar}>
+                      <div className={styles.progressFill} style={{ width: `${featuredUploadPct}%` }} />
+                    </div>
+                  )}
+                  {image && (
+                    <div className={styles.imagePreview}>
+                      <img src={image} alt="Featured preview" />
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -383,7 +487,9 @@ const CreateEvent: React.FC = () => {
                           block.type === 'paragraph' ? styles.paragraphBadge : 
                           block.type === 'image' ? styles.imageBadge : 
                           block.type === 'youtube-shorts' ? styles.youtubeBadge : 
-                          block.type === 'video' ? styles.videoBadge : styles.facebookBadge
+                          block.type === 'video' ? styles.videoBadge : 
+                          block.type === 'document' ? styles.documentBadge : 
+                          styles.facebookBadge
                         }`}>
                           Block #{index + 1}: {block.type}
                         </span>
@@ -418,10 +524,10 @@ const CreateEvent: React.FC = () => {
                         </div>
                       </div>
 
-                      {/* Content inside each block */}
+                      {/* Content block dispatcher views */}
                       {block.type === 'paragraph' ? (
                         <div className={styles.formGroup}>
-                          <label>Paragraph Value (HTML elements like strong/em supported)</label>
+                          <label>Paragraph Value (HTML tags supported)</label>
                           <textarea
                             placeholder="Write paragraph text..."
                             value={block.value || ''}
@@ -430,22 +536,127 @@ const CreateEvent: React.FC = () => {
                             rows={4}
                           />
                         </div>
+                      ) : block.type === 'document' ? (
+                        <div className={styles.formGroup}>
+                          <label>Document File</label>
+                          <div className={styles.uploadFieldRow}>
+                            <input
+                              type="text"
+                              placeholder="Paste a document URL or upload a file →"
+                              value={block.url || ''}
+                              onChange={(e) => updateBlock(index, { url: e.target.value })}
+                              className={styles.formInput}
+                              style={{ flex: 1 }}
+                            />
+                            <input
+                              id={`block-file-${index}`}
+                              type="file"
+                              accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.zip"
+                              style={{ display: 'none' }}
+                              onChange={(e) => {
+                                const f = e.target.files?.[0];
+                                if (f) handleBlockFileUpload(index, f);
+                              }}
+                            />
+                            <button
+                              type="button"
+                              className={`${styles.uploadBtn} ${styles.uploadBtnDoc}`}
+                              onClick={() => document.getElementById(`block-file-${index}`)?.click()}
+                              disabled={blockUploadPct[index] !== null && blockUploadPct[index] !== undefined}
+                              title="Upload document to Backblaze B2"
+                            >
+                              {blockUploadPct[index] !== null && blockUploadPct[index] !== undefined ? (
+                                <span className={styles.uploadBtnProgress}>{blockUploadPct[index]}%</span>
+                              ) : (
+                                <><i className="fas fa-file-upload" /> Upload File</>
+                              )}
+                            </button>
+                          </div>
+
+                          {blockUploadPct[index] !== null && blockUploadPct[index] !== undefined && (
+                            <div className={styles.progressBar}>
+                              <div className={styles.progressFill} style={{ width: `${blockUploadPct[index]}%` }} />
+                            </div>
+                          )}
+
+                          {block.url && (
+                            <div className={styles.docPreview}>
+                              <i className="fas fa-file-alt" />
+                              <div className={styles.docPreviewInfo}>
+                                <span className={styles.docPreviewName}>
+                                  {block.filename || block.url.split('/').pop() || 'Document asset'}
+                                </span>
+                                <a href={block.url} target="_blank" rel="noopener noreferrer" className={styles.docPreviewLink}>
+                                  <i className="fas fa-external-link-alt" /> Open
+                                </a>
+                              </div>
+                            </div>
+                          )}
+
+                          <label style={{ marginTop: 12 }}>Label / Description</label>
+                          <input
+                            type="text"
+                            placeholder="e.g. Project Report 2024, Terms of Reference"
+                            value={block.caption || ''}
+                            onChange={(e) => updateBlock(index, { caption: e.target.value })}
+                            className={styles.formInput}
+                          />
+                        </div>
                       ) : (
                         <div className={styles.formRow}>
                           <div className={styles.formGroup} style={{ flex: 2 }}>
                             <label>Media/Embed URL *</label>
-                            <input
-                              type="text"
-                              placeholder={
-                                block.type === 'image' ? 'e.g. /images/events/photo.jpg' : 
-                                block.type === 'youtube-shorts' ? 'e.g. https://youtube.com/shorts/...' : 
-                                block.type === 'video' ? 'e.g. https://assets.mixkit.co/...' : 'e.g. Facebook URL'
-                              }
-                              value={block.url || ''}
-                              onChange={(e) => updateBlock(index, { url: e.target.value })}
-                              className={styles.formInput}
-                              required
-                            />
+                            <div className={styles.uploadFieldRow}>
+                              <input
+                                type="text"
+                                placeholder={
+                                  block.type === 'image' ? 'Paste URL or upload →' :
+                                  block.type === 'youtube-shorts' ? 'e.g. https://youtube.com/shorts/...' :
+                                  block.type === 'video' ? 'Paste URL or upload →' : 'e.g. Facebook URL'
+                                }
+                                value={block.url || ''}
+                                onChange={(e) => updateBlock(index, { url: e.target.value })}
+                                className={styles.formInput}
+                                style={{ flex: 1 }}
+                              />
+                              {(block.type === 'image' || block.type === 'video') && (
+                                <>
+                                  <input
+                                    id={`block-file-${index}`}
+                                    type="file"
+                                    accept={block.type === 'video' ? 'video/*' : 'image/*'}
+                                    style={{ display: 'none' }}
+                                    onChange={(e) => {
+                                      const f = e.target.files?.[0];
+                                      if (f) handleBlockFileUpload(index, f);
+                                    }}
+                                  />
+                                  <button
+                                    type="button"
+                                    className={styles.uploadBtn}
+                                    onClick={() => document.getElementById(`block-file-${index}`)?.click()}
+                                    disabled={blockUploadPct[index] !== null && blockUploadPct[index] !== undefined}
+                                    title={`Upload ${block.type} to Backblaze B2`}
+                                  >
+                                    {blockUploadPct[index] !== null && blockUploadPct[index] !== undefined ? (
+                                      <span className={styles.uploadBtnProgress}>{blockUploadPct[index]}%</span>
+                                    ) : (
+                                      <><i className={block.type === 'video' ? 'fas fa-video' : 'fas fa-image'} /> Upload</>
+                                    )}
+                                  </button>
+                                </>
+                              )}
+                            </div>
+                            {blockUploadPct[index] !== null && blockUploadPct[index] !== undefined && (
+                              <div className={styles.progressBar}>
+                                <div className={styles.progressFill} style={{ width: `${blockUploadPct[index]}%` }} />
+                              </div>
+                            )}
+                            {block.type === 'image' && block.url && (
+                              <div className={styles.imagePreview}>
+                                <img src={block.url} alt="Block preview" />
+                              </div>
+                            )}
                           </div>
                           <div className={styles.formGroup} style={{ flex: 1 }}>
                             <label>Caption / Text</label>
@@ -480,6 +691,9 @@ const CreateEvent: React.FC = () => {
                   </button>
                   <button type="button" onClick={() => addBlock('facebook')} className={styles.addBlockBtn}>
                     <i className="fab fa-facebook"></i> Facebook Embed
+                  </button>
+                  <button type="button" onClick={() => addBlock('document')} className={`${styles.addBlockBtn} ${styles.addBlockBtnDoc}`}>
+                    <i className="fas fa-file-alt"></i> Document
                   </button>
                 </div>
               </div>

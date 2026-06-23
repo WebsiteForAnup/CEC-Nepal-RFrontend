@@ -425,3 +425,180 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+/* =============================
+   Backblaze B2 Upload Controls
+   ============================= */
+
+.uploadFieldRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.uploadBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 18px;
+  height: 44px;
+  background: linear-gradient(135deg, #b45309 0%, #d97706 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 10px rgba(217, 119, 6, 0.25);
+  flex-shrink: 0;
+}
+
+.uploadBtn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #92400e 0%, #b45309 100%);
+  box-shadow: 0 5px 14px rgba(217, 119, 6, 0.35);
+  transform: translateY(-1px);
+}
+
+.uploadBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.uploadBtnProgress {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.5px;
+}
+
+/* Thin animated progress bar */
+.progressBar {
+  height: 4px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #d97706 0%, #fcd34d 50%, #d97706 100%);
+  background-size: 200% 100%;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+  animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Tiny image preview below the upload field */
+.imagePreview {
+  margin-top: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  max-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+  animation: fadeIn 0.3s ease;
+}
+
+.imagePreview img {
+  max-width: 100%;
+  max-height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+/* =============================
+   Document Block Styles
+   ============================= */
+
+.documentBadge {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* Teal upload button for the document block */
+.uploadBtnDoc {
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  box-shadow: 0 3px 10px rgba(13, 148, 136, 0.25);
+}
+
+.uploadBtnDoc:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+  box-shadow: 0 5px 14px rgba(13, 148, 136, 0.35);
+}
+
+/* Teal "Document" button in the creator bar */
+.addBlockBtnDoc {
+  border-color: #99f6e4;
+  color: #0f766e;
+}
+
+.addBlockBtnDoc:hover {
+  background: #0d9488;
+  color: #ffffff;
+  border-color: #0d9488;
+  box-shadow: 0 4px 8px rgba(13, 148, 136, 0.2);
+}
+
+/* File preview card shown after a document is uploaded */
+.docPreview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 12px 16px;
+  background: #f0fdfa;
+  border: 1px solid #99f6e4;
+  border-radius: 10px;
+  animation: fadeIn 0.3s ease;
+  font-size: 14px;
+  color: #0f766e;
+}
+
+.docPreview > i {
+  font-size: 22px;
+  color: #0d9488;
+  flex-shrink: 0;
+}
+
+.docPreviewInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.docPreviewName {
+  font-weight: 600;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 360px;
+}
+
+.docPreviewLink {
+  font-size: 12px;
+  color: #0d9488;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s ease;
+}
+
+.docPreviewLink:hover {
+  color: #0f766e;
+  text-decoration: underline;
+}
