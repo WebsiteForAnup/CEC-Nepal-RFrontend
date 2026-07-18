@@ -94,7 +94,7 @@ const Home: React.FC = () => {
                 <HeroSlider hero={dynamicHero} news={newsAndEvents} />
                 <Suspense fallback={<div style={{ padding: '5vh', textAlign: 'center' }}>Loading content...</div>}>
                     <CompanyProfile profile={profile} />
-                    <Team />
+                    {/* <Team /> */}
                     <About about={about} />
 
                     <Services services={dynamicServices} />
