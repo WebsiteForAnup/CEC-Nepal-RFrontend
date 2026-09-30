@@ -1,0 +1,12 @@
+{
+  "projectSpecs": {
+    "capacity": "Capacity",
+    "tunnelLength": "Tunnel Length",
+    "location": "Location",
+    "startDate": "Start Date",
+    "breakthroughDate": "Breakthrough Date",
+    "endDate": "End Date",
+    "cecRole": "CEC Role",
+    "stakeholders": "Stakeholders"
+  }
+}

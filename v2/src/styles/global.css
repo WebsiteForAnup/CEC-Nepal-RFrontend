@@ -1,0 +1,10 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #fafafa; color: #18212b; font-family: system-ui, sans-serif; line-height: 1.6; }
+a { color: inherit; }
+button, input, select, textarea { font: inherit; }
+button, a { touch-action: manipulation; }
+:focus-visible { outline: 3px solid #215bca; outline-offset: 3px; }
+.v2-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding: 1rem 1.5rem; border-bottom: 1px solid #e1e5ea; background: #fff; }
+.v2-header nav, .v2-admin-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+.v2-admin-nav { padding: 1rem 1.5rem; background: #18212b; color: white; }
+.v2-admin-nav button { margin-left: auto; cursor: pointer; }

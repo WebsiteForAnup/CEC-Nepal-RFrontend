@@ -1,0 +1,42 @@
+{
+  "slug": "due-diligence-audit",
+  "icon": "fas fa-clipboard-check",
+  "title": "Due Diligence Audit",
+  "subheadline": "Independent technical verification for secure investments.",
+  "description": "Thorough technical and financial project auditing.",
+  "image": "/images/services/due-diligence.jpg",
+  "category": "Auditing",
+  "fullDescription": "We perform meticulous due diligence audits to assess the current status, risks, and compliance of projects, providing stakeholders with transparent and actionable insights.",
+  "painPoints": "Investors and acquiring firms face immense risk when stepping into existing projects with unknown technical liabilities, unverified billings, or compliance gaps.",
+  "approach": "Acting as the Lender's Engineer, we conduct forensic technical audits, verify structural integrity, scrutinize financial expenditure against physical progress, and identify critical regulatory risks.",
+  "capabilities": [
+    "Lender's Independent Engineering (LIE)",
+    "Technical & Financial Verification",
+    "Regulatory & Environmental Compliance Audit",
+    "Asset Condition & Lifecycle Assessment",
+    "Contractual Risk Mitigation (FIDIC)"
+  ],
+  "techStack": [
+    "MS Project",
+    "Primavera P6",
+    "ISO 9001 Auditing",
+    "Financial Modeling Tools"
+  ],
+  "process": [
+    "Document & Contract Review",
+    "On-Site Forensic Inspection",
+    "Gap Analysis & Valuation",
+    "Comprehensive Audit Reporting & Recommendations"
+  ],
+  "caseStudy": {
+    "title": "Kabeli-B HEP",
+    "metric": "Capacity: 25 MW | Status: Generation",
+    "description": "A run-of-river hydroelectric project located in eastern Nepal, providing clean energy to the national grid. This strategic project demonstrates excellence in sustainable energy development with comprehensive technical audit and supervision."
+  },
+  "testimonial": {
+    "quote": "CEC's due diligence report saved us from a disastrous acquisition. Their technical depth and financial acumen are unmatched.",
+    "author": "Bipin Karki",
+    "title": "Managing Partner",
+    "company": "Nepal Private Equity"
+  }
+}

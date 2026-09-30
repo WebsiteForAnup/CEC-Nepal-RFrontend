@@ -17,6 +17,10 @@
     "react-router-dom": "^7.17.0"
   },
   "scripts": {
+    "dev:v2": "npm --prefix v2 run dev",
+    "build:v2": "npm --prefix v2 run build",
+    "preview:v2": "npm --prefix v2 run preview",
+    "typecheck:v2": "npm --prefix v2 run typecheck",
     "dev:js": "cross-env APP_ENV=js vite",
     "dev:ts": "cross-env APP_ENV=ts vite",
     "build:js": "cross-env APP_ENV=js cross-env BUILD_PATH='./docs' vite build",

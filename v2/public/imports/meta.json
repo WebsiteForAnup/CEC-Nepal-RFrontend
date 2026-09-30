@@ -1,0 +1,169 @@
+{
+  "workbook": "CEC_project_List.xlsx",
+  "sheets": [
+    {
+      "index": 1,
+      "name": "Extra Activities",
+      "slug": "extra_activities",
+      "row_count": 23,
+      "columns": [],
+      "image_count": 1
+    },
+    {
+      "index": 2,
+      "name": "Seti 22 MW",
+      "slug": "seti_22_mw",
+      "row_count": 25,
+      "columns": [
+        "Features",
+        "Description",
+        "Remarks"
+      ],
+      "image_count": 6
+    },
+    {
+      "index": 3,
+      "name": "Dobhan 28.5",
+      "slug": "dobhan_285",
+      "row_count": 25,
+      "columns": [
+        "Features",
+        "Description",
+        "Remarks"
+      ],
+      "image_count": 0
+    },
+    {
+      "index": 4,
+      "name": "Pema 75 MW",
+      "slug": "pema_75_mw",
+      "row_count": 25,
+      "columns": [
+        "Features",
+        "Description",
+        "Remarks"
+      ],
+      "image_count": 0
+    },
+    {
+      "index": 5,
+      "name": "Rudi A SHP",
+      "slug": "rudi_a_shp",
+      "row_count": 23,
+      "columns": [
+        "Features",
+        "Description",
+        "Remarks"
+      ],
+      "image_count": 0
+    },
+    {
+      "index": 6,
+      "name": "Upper Sani Bheri 90 MW",
+      "slug": "upper_sani_bheri_90_mw",
+      "row_count": 25,
+      "columns": [
+        "Features",
+        "Description",
+        "Remarks"
+      ],
+      "image_count": 0
+    },
+    {
+      "index": 7,
+      "name": "Super Dana Storage 60",
+      "slug": "super_dana_storage_60",
+      "row_count": 25,
+      "columns": [
+        "Features",
+        "Description",
+        "Remarks"
+      ],
+      "image_count": 0
+    },
+    {
+      "index": 8,
+      "name": "Super Dordi KHA, 54 MW",
+      "slug": "super_dordi_kha_54_mw",
+      "row_count": 30,
+      "columns": [
+        "Features",
+        "Description",
+        "Remarks"
+      ],
+      "image_count": 8
+    },
+    {
+      "index": 9,
+      "name": "Uppwe Hewa, 8.5 MW",
+      "slug": "uppwe_hewa_85_mw",
+      "row_count": 30,
+      "columns": [
+        "Features",
+        "Description",
+        "Remarks"
+      ],
+      "image_count": 19
+    },
+    {
+      "index": 10,
+      "name": "Sisuwa Khola Hydroelectric Proj",
+      "slug": "sisuwa_khola_hydroelectric_proj",
+      "row_count": 30,
+      "columns": [
+        "Features",
+        "Description",
+        "Remarks"
+      ],
+      "image_count": 5
+    },
+    {
+      "index": 11,
+      "name": "Balephi Khola Hydroelectric Pro",
+      "slug": "balephi_khola_hydroelectric_pro",
+      "row_count": 30,
+      "columns": [
+        "Features",
+        "Description",
+        "Remarks"
+      ],
+      "image_count": 0
+    },
+    {
+      "index": 12,
+      "name": "Nar Khola Hydroelectric Project",
+      "slug": "nar_khola_hydroelectric_project",
+      "row_count": 32,
+      "columns": [
+        "Features",
+        "Description",
+        "Remarks"
+      ],
+      "image_count": 0
+    },
+    {
+      "index": 13,
+      "name": "Syalque Khola Hydropower Projec",
+      "slug": "syalque_khola_hydropower_projec",
+      "row_count": 29,
+      "columns": [
+        "Features",
+        "Description",
+        "Remarks"
+      ],
+      "image_count": 0
+    },
+    {
+      "index": 14,
+      "name": "Upper Chameliya Hydropower Proj",
+      "slug": "upper_chameliya_hydropower_proj",
+      "row_count": 30,
+      "columns": [
+        "Features",
+        "Description",
+        "Remarks"
+      ],
+      "image_count": 1
+    }
+  ]
+}

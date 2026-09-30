@@ -1,0 +1,41 @@
+{
+  "slug": "bill-verification",
+  "icon": "fas fa-file-invoice-dollar",
+  "title": "Bill Verification",
+  "subheadline": "Protecting your budget through rigorous measurement audits.",
+  "description": "Accurate assessment and verification of project bills.",
+  "image": "/images/services/bill-verification.jpg",
+  "category": "Financial",
+  "fullDescription": "We offer independent bill verification services to ensure that contractors' invoices accurately reflect the work completed, preventing overpayment and ensuring financial integrity.",
+  "painPoints": "Contractors often submit inflated interim payment certificates (IPCs). Project owners lack the granular field data to verify exact quantities, leading to substantial overpayments.",
+  "approach": "We cross-reference submitted IPCs against precise on-site measurements and contractual Bill of Quantities (BoQ). We certify only what has been verifiably built to specification.",
+  "capabilities": [
+    "Interim Payment Certificate (IPC) Verification",
+    "Quantity Surveying & Field Measurements",
+    "Variation Order (VO) Assessment",
+    "Price Escalation Calculation",
+    "Final Account Settlement"
+  ],
+  "techStack": [
+    "Excel (Advanced Macros)",
+    "AutoCAD (for area/volume calcs)",
+    "Total Station Data Analysis"
+  ],
+  "process": [
+    "Receipt of Contractor IPC",
+    "Joint Field Measurement & Verification",
+    "Contractual & BoQ Cross-Check",
+    "Issuance of Certified Payment Recommendation"
+  ],
+  "caseStudy": {
+    "title": "Jogmai Khola SHP",
+    "metric": "Capacity: 7.60 MW | Status: Generation",
+    "description": "Small hydropower project utilizing the Jogmai Khola river for sustainable electricity generation. Features comprehensive bank monitoring and construction supervision ensuring quality and financial compliance."
+  },
+  "testimonial": {
+    "quote": "Their bill verification service practically paid for itself. CEC's strict adherence to the contract protected our budget at every milestone.",
+    "author": "Sushila Sharma",
+    "title": "Chief Financial Officer",
+    "company": "Himalaya Roadways"
+  }
+}

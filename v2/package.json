@@ -1,0 +1,42 @@
+{
+  "name": "react-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1068.0",
+    "@aws-sdk/s3-request-presigner": "^3.1068.0",
+    "@hono/node-server": "^2.0.4",
+    "@neondatabase/neon-js": "^0.6.2-beta",
+    "@neondatabase/serverless": "^1.1.0",
+    "dotenv": "^17.4.2",
+    "emailjs-com": "^3.2.0",
+    "hono": "^4.12.25",
+    "leaflet": "^1.9.4",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.17.0"
+  },
+  "scripts": {
+    "dev": "node server.mjs",
+    "build": "vite build --outDir dist/client && vite build --ssr src/entry-server.tsx --outDir dist/server",
+    "start": "node server.mjs --production",
+    "preview": "node server.mjs --production",
+    "typecheck": "tsc --project tsconfig.json",
+    "test:ssr": "node --test tests/ssr.test.mjs",
+    "test:kml": "node --test tests/kml.test.mjs",
+    "format": "prettier --write src/components/public src/pages/*.tsx src/pages/admin/ProjectMaps.tsx src/hooks/usePageMotion.ts src/hooks/useProjectMapEditor.ts src/services/projectGeography.ts src/services/projectMapAdminService.ts src/services/publicContent.ts src/services/kml.ts src/styles/site.css src/styles/project-maps-admin.css src/App.tsx src/AdminApp.tsx tests",
+    "format:check": "prettier --check src/components/public src/pages/*.tsx src/pages/admin/ProjectMaps.tsx src/hooks/usePageMotion.ts src/hooks/useProjectMapEditor.ts src/services/projectGeography.ts src/services/projectMapAdminService.ts src/services/publicContent.ts src/services/kml.ts src/styles/site.css src/styles/project-maps-admin.css src/App.tsx src/AdminApp.tsx tests"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.21",
+    "@types/node": "^25.9.3",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.1.1",
+    "@xmldom/xmldom": "^0.9.12",
+    "cross-env": "^10.1.0",
+    "prettier": "^3.9.9",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.16"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "construction-supervision",
+  "icon": "fas fa-hard-hat",
+  "title": "Construction Supervision and Monitoring",
+  "subheadline": "Ensuring quality, safety, and compliance on the ground.",
+  "description": "On-site supervision ensuring quality and safety.",
+  "image": "/images/services/construction-supervision.jpg",
+  "category": "Management",
+  "fullDescription": "Our construction supervision teams ensure that projects are built according to design specifications, adhering strictly to safety regulations and quality standards.",
+  "painPoints": "Without rigorous on-site oversight, contractors may cut corners, leading to substandard work, safety hazards, and massive cost overruns. Clients need an independent eye to enforce quality.",
+  "approach": "We deploy resident engineers and quality control experts to monitor daily progress. We enforce strict adherence to IFC drawings, manage contractor disputes, and ensure rigorous HSE compliance.",
+  "capabilities": [
+    "Resident Engineering & Site Management",
+    "Quality Assurance & Quality Control (QA/QC)",
+    "Health, Safety, and Environment (HSE) Monitoring",
+    "Progress Tracking & Schedule Management",
+    "Contract Administration & Claim Management"
+  ],
+  "techStack": [
+    "Primavera P6",
+    "AutoCAD",
+    "Procore",
+    "Drone Mapping (UAV)"
+  ],
+  "process": [
+    "Site Mobilization & Baseline Setup",
+    "Daily Monitoring & QA/QC Inspections",
+    "Monthly Progress & Non-Compliance Reporting",
+    "Final Snagging & Handover Certification"
+  ],
+  "caseStudy": {
+    "title": "Jogmai Khola SHP",
+    "metric": "Capacity: 7.60 MW | Status: Generation",
+    "description": "Small hydropower project utilizing the Jogmai Khola river for sustainable electricity generation. Features comprehensive bank monitoring and construction supervision ensuring quality and financial compliance."
+  },
+  "testimonial": {
+    "quote": "Having CEC Nepal's engineers on site gave us total peace of mind. They managed the contractors firmly but fairly, ensuring top-tier quality.",
+    "author": "Nabin Poudel",
+    "title": "Director of Infrastructure",
+    "company": "National Development Authority"
+  }
+}

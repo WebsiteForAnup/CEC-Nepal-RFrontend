@@ -86,8 +86,9 @@ function b2ProxyPlugin() {
 export default defineConfig(() => {
   // Determine if we are running the JS (src) or TS (src2) version
   const isTypeScript = process.env.APP_ENV === 'ts';
-  const targetDir = isTypeScript ? 'src2' : 'src';
-  const outDir = process.env.BUILD_PATH || './docs';
+  const isV2 = process.env.APP_ENV === 'v2';
+  const targetDir = isV2 ? 'v2' : isTypeScript ? 'src2' : 'src';
+  const outDir = process.env.BUILD_PATH || (isV2 ? './dist/v2' : './docs');
 
   return {
     root: targetDir,
@@ -104,7 +105,7 @@ export default defineConfig(() => {
       emptyOutDir: true,
     },
     server: {
-      port: 3000,
+      port: isV2 ? 3001 : 3000,
       open: true,
       // No proxy rules needed — b2ProxyPlugin handles all B2 traffic
     },

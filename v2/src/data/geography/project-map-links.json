@@ -1,0 +1,21 @@
+{
+  "source": "Legacy CEC project map; reference geometry only, not surveyed boundaries.",
+  "links": [
+    { "projectSlug": "upper-kabeli-hpp", "featureNumber": 1 },
+    { "projectSlug": "upper-phawa-hep", "featureNumber": 4 },
+    { "projectSlug": "mewa-khola-hep", "featureNumber": 5 },
+    { "projectSlug": "kabeli-b-hep", "featureNumber": 6 },
+    { "projectSlug": "jogmai-khola-shp", "featureNumber": 9 },
+    { "projectSlug": "upper-puwa-i-shp", "featureNumber": 11 },
+    { "projectSlug": "piluwa-khola-shp", "featureNumber": 12 },
+    { "projectSlug": "lower-piluwa-hpp", "featureNumber": 13 },
+    { "projectSlug": "hewa-khola-shp", "featureNumber": 14 },
+    { "projectSlug": "taksar-pikhuwa-khola-hpp", "featureNumber": 24 },
+    { "projectSlug": "upper-khorunga-khola-shp", "featureNumber": 27 },
+    { "projectSlug": "jiri-khola-shp", "featureNumber": 31 },
+    { "projectSlug": "singati-khola-hydropower-project", "featureNumber": 32 },
+    { "projectSlug": "seti-khola-hydropower-project", "featureNumber": 44 },
+    { "projectSlug": "rudi-a-shp", "featureNumber": 45 },
+    { "projectSlug": "super-dordi-kha-54-mw", "featureNumber": 52 }
+  ]
+}

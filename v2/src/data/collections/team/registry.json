@@ -1,0 +1,996 @@
+{
+  "title": "Our Team",
+  "subtitle": "Meet the experts behind CEC Nepal's success",
+  "stats": [
+    {
+      "value": "45+",
+      "label": "Experienced Team Members"
+    },
+    {
+      "value": "330+",
+      "label": "Combined Years of Experience"
+    }
+  ],
+  "joinTeam": {
+    "title": "Join Our Team",
+    "description": "We're always looking for talented engineers and consultants passionate about clean energy.",
+    "ctaLabel": "Contact Us for Opportunities",
+    "ctaLink": "#contact"
+  },
+  "tabs": [
+    {
+      "id": "board_member",
+      "label": "Board of Directors",
+      "categories": [
+        "board_member"
+      ]
+    },
+    {
+      "id": "expert_staff",
+      "label": "Key Personnels & Staffs",
+      "categories": [
+        "expert_staff",
+        "staff"
+      ]
+    }
+  ],
+  "members": [
+    {
+      "slug": "mani-raj-dahal",
+      "name": "Mr. Mani Raj Dahal",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_01_mani-raj-dahal-300x225.jpg_1c40d999.jpeg",
+      "education": "MSc Hydraulic Engineering & River Basin Development (IHE Delft, Netherlands), BE Civil Engineering (IOE Pulchowk)",
+      "experience": {
+        "joinDate": "2000",
+        "recruitmentType": "Consultant",
+        "more_info": "Technical consultant for numerous hydropower projects"
+      },
+      "bio": "Founder and Director of Clean Energy Consultants Pvt. Ltd., one of Nepal's leading hydropower consultancy firms with extensive expertise in hydropower development and technical consultancy.",
+      "assignments": {
+        "categories": [
+          "board_member",
+          "expert_staff"
+        ],
+        "meta": {
+          "board_member": "Executive Chairman",
+          "expert_staff": "Hydropower and Hydraulics Expert"
+        },
+        "ordering": 1
+      }
+    },
+    {
+      "slug": "santosh-dhakal",
+      "name": "Er. Santosh Dhakal",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_Er-S-Photo.png_36c39907.png",
+      "education": "ME Electrical Engineering",
+      "experience": {
+        "joinDate": "2006",
+        "recruitmentType": "Consultant",
+        "more_info": "Electrical Engineer and Electromechanical Expert at CEC, 60+ hydropower projects designed"
+      },
+      "bio": "Board Director at Clean Energy Consultants since mid-2006. Has led the electrical and electromechanical design for approximately 60 hydropower projects with several more under feasibility and detailed design stages. Currently working with Hydro Tasmania, Australia.",
+      "assignments": {
+        "categories": [
+          "board_member",
+          "expert_staff"
+        ],
+        "meta": {
+          "board_member": "Director",
+          "expert_staff": "Electrical and Electromechanical Expert"
+        },
+        "ordering": 2
+      }
+    },
+    {
+      "slug": "narayan-poudel",
+      "name": "Mr. Narayan Poudel",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2024_12_image_2024-12-24_202752759.png_4bbc5a34.png",
+      "education": "Chartered Accountant",
+      "experience": {
+        "joinDate": "2010",
+        "recruitmentType": "Consultant",
+        "more_info": "Extensive professional experience in finance and project financial analysis"
+      },
+      "bio": "Finance Director at Clean Energy Consultants Pvt. Ltd. Leads financial feasibility studies, project financial analysis, and overall financial assessment for hydropower projects. Also serves as Finance Director for Aayu Entertainment Pvt. Ltd. and Chairman of Finman Services Pvt. Ltd.",
+      "assignments": {
+        "categories": [
+          "board_member",
+          "expert_staff"
+        ],
+        "meta": {
+          "board_member": "Finance Director",
+          "expert_staff": "Finance Director"
+        },
+        "ordering": 3
+      }
+    },
+    {
+      "slug": "kosa-raj-chapagain",
+      "name": "Er. Kosa Raj Chapagain",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Kosa-Raj-Chapagain-1024x768.jpg_61cb41ef.jpeg",
+      "education": "BE Civil Engineering",
+      "experience": {
+        "joinDate": "2011",
+        "recruitmentType": "Consultant",
+        "more_info": "Senior Civil Engineer and Project Manager at CEC"
+      },
+      "bio": "Project Director and Board Member at Clean Energy Consultants since mid-2011. Brings extensive expertise in feasibility studies, detailed design, and project monitoring. Responsible for overseeing major hydropower project implementations and technical delivery.",
+      "assignments": {
+        "categories": [
+          "board_member",
+          "expert_staff"
+        ],
+        "meta": {
+          "board_member": "Director",
+          "expert_staff": "Cost and Construction Quality Control Expert"
+        },
+        "ordering": 4
+      }
+    },
+    {
+      "slug": "chhatra-basnet",
+      "name": "Dr. Chhatra Bahadur Basnet, PhD",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Chhatra-Basnet-scaled.jpg_7ead7717.jpeg",
+      "education": "PhD Rock Mechanics(NTNU Norway), MSc Hydropower Development(NTNU Norway), BE Civil (IOE Pulchowk)",
+      "experience": {
+        "joinDate": "2008",
+        "recruitmentType": "Full-time",
+        "more_info": "18+ in Hydropower and Tunnelling sectors of Nepal and abroad, strategic leadership and innovation"
+      },
+      "bio": "Chief Executive Officer with 18 years of pivotal experience at Clean Energy Consultants Pvt. Ltd. Dr. Basnet has shaped the company's strategic direction, driving innovation and sustainable engineering practices in the hydropower sector. Leads organizational vision and technical excellence.",
+      "assignments": {
+        "categories": [
+          "board_member",
+          "expert_staff"
+        ],
+        "meta": {
+          "board_member": "Director/Chief Executive Officer (CEO)",
+          "expert_staff": "Geotechnical and Tunnelling Expert/CEO"
+        },
+        "ordering": 5
+      }
+    },
+    {
+      "slug": "bishnu-raj-baral",
+      "name": "Dr. Bishnu Raj Baral",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Bishnu-R-Baral-982x1024.jpg_6c137cbe.jpeg",
+      "education": "PhD Sediment (QMUL, UK), MSc Hydraulic Engineering and Sediment Transport (IHE Delft, Netherlands), BE Civil (IOE, Pulchowk)",
+      "experience": {
+        "joinDate": "2008",
+        "recruitmentType": "Consultant",
+        "more_info": "5 years international research (UK, Italy, Netherlands), 18+ years hydropower consulting"
+      },
+      "bio": "",
+      "assignments": {
+        "categories": [
+          "board_member",
+          "expert_staff"
+        ],
+        "meta": {
+          "board_member": "Director",
+          "expert_staff": "Hydraulics and Sediment Transport Expert"
+        },
+        "ordering": 6
+      }
+    },
+    {
+      "slug": "ghan-bahadur-shrestha",
+      "name": "Mr. Ghan Bahadur Shrestha",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Ghan-B-Shrestha-1024x768.jpg_79e1ad02.jpeg",
+      "education": "MSc Geology",
+      "experience": {
+        "joinDate": "2015",
+        "recruitmentType": "Consultant",
+        "more_info": "Major national projects: Nalsing Gad (410 MW), Melamchi Water Supply, Kabeli-3 (49 MW), Upper Chameliya (40 MW)"
+      },
+      "bio": "Geological and geophysical expert with specialized expertise in geological mapping, geophysical surveys, drilling supervision, GIS, and remote sensing. Extensive experience on significant national hydropower projects. Brings critical earth science expertise to complex feasibility and design phases.",
+      "assignments": {
+        "categories": [
+          "expert_staff"
+        ],
+        "meta": {
+          "expert_staff": "Sr. Geologist / RS & GIS / Tunneling & Geophysics Expert"
+        },
+        "ordering": 7
+      }
+    },
+    {
+      "slug": "dinesh-silwal",
+      "name": "Er. Dinesh Silwal",
+      "image_url": "/images/team/image_0_31.jpg",
+      "education": "Msc. in Construction Management",
+      "experience": {
+        "joinDate": "2013",
+        "recruitmentType": "Full-time",
+        "more_info": "15+ years of experience in Hydropower"
+      },
+      "bio": "A Hydropower construction professional specializing in project planning, design, tunneling, surface construction, electro-mechanical installation, quality control, and successful execution of multiple Hydropower projects.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Civil Engineer"
+        },
+        "ordering": 8
+      }
+    },
+    {
+      "slug": "kb-garamja",
+      "name": "Er. Kamal Bikram Garamja",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Kamal-B-Garamja-894x1024.jpg_d4935a5b.jpeg",
+      "education": "BE Civil (PU), Diploma Civil(CTEVT)",
+      "experience": {
+        "joinDate": "2016",
+        "recruitmentType": "Full-time",
+        "more_info": "19+ years of continuous professional experience in the hydropower sector, including design, construction, and project supervision."
+      },
+      "bio": "Possesses extensive expertise in topographical surveying, 3D terrain and map preparation, 3D modeling and visualization, engineering model analysis, quantity estimation, and the preparation of technical drawings and models at various stages of project development. Experienced in delivering practical, efficient, and technically sound solutions for hydropower and infrastructure projects.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Civil Engineer"
+        },
+        "ordering": 9
+      }
+    },
+    {
+      "slug": "prajwal-khatiwada",
+      "name": "Prajwal Khatiwada",
+      "image_url": "/images/team/resources_image_0_10.jpg",
+      "education": "BE in Electrical and Electronics Engineering(KU)",
+      "experience": {
+        "joinDate": "2022",
+        "recruitmentType": "Full-time",
+        "more_info": "Electrical Engineer with 6+ years of professional experience"
+      },
+      "bio": "Electrical Engineer with 6+ years of professional experience, including 4+ years in the hydropower sector, comprising 1 year in power plant operation and maintenance and 3+ years in hydropower, substation, and transmission line design, drafting, technical documentation, supervision, and testing of electromechanical equipment.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Electrical Engineer"
+        },
+        "ordering": 16
+      }
+    },
+    {
+      "slug": "nanda-lal-pal",
+      "name": "ER.Nand Lal Pal",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Nanda-Lal-Pal.jpg_4d5ee1ed.jpeg",
+      "education": "Bachelor in Industrial Engineering, IOE Thapathali Campus (TU)",
+      "experience": {
+        "joinDate": "2023",
+        "recruitmentType": "Full-time",
+        "more_info": "12+ years of experience in Hydropower, design, drawing, fabrication, erection, supervision and testing of Hydromechanical components"
+      },
+      "bio": "Mechanical Engineer with 12+ years of experience in Hydropower and 3 years of experience (Qatar) as Mechanical Engineer.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Mechanical Engineer"
+        },
+        "ordering": 14
+      }
+    },
+    {
+      "slug": "prajwal-poudel",
+      "name": "Er. Prajwal Poudel",
+      "image_url": "/images/team/resources_image_0_1.jpg",
+      "education": "Msc. in Hydropower Engineering",
+      "experience": {
+        "joinDate": "2022",
+        "recruitmentType": "Full-time",
+        "more_info": "8+ years of experience in the hydropower sector, specializing in planning,hydrological study and feasibility studies."
+      },
+      "bio": "Serving clients at CEC since 2018, specializing in planning, hydrological study, and feasibility studies.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Hydropower Engineer"
+        },
+        "ordering": 15
+      }
+    },
+    {
+      "slug": "rajan-mahat",
+      "name": "Mr. Rajan Mahat",
+      "image_url": "/images/team/resources_image_0_15.jpg",
+      "education": "Msc. in Engineering Geology",
+      "experience": {
+        "joinDate": "2022",
+        "recruitmentType": "Full-time",
+        "more_info": "6+ Years of Experience in Geological field- Geological and Geotechnical investigation, Geological mapping, Construction supervision and monitering and Design coordination."
+      },
+      "bio": "Currently serving at CEC since 2021, contributing to the study, design and execution of hydropower projects.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Engineering Geologist"
+        },
+        "ordering": 19
+      }
+    },
+    {
+      "slug": "charchit-khan-thakuri",
+      "name": "Er. Charchit Khan Thakuri",
+      "image_url": "/images/team/resources_image_0_0.jpg",
+      "education": "Msc. in Construction Engineering and Management",
+      "experience": {
+        "joinDate": "2023",
+        "recruitmentType": "Full-time",
+        "more_info": "9+ Years of Experience in Hydropower Development — encompassing project planning, design coordination, construction management, and site supervision."
+      },
+      "bio": "Currently serving at CEC since 2022, contributing to the execution and oversight of hydropower infrastructure projects.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Civil Engineer"
+        },
+        "ordering": 10
+      }
+    },
+    {
+      "slug": "suraj-shreesh",
+      "name": "Er. Suraj Shreesh",
+      "image_url": "/images/team/resources_image_0_12.jpg",
+      "education": "Msc. in Rock and Tunnel Engineering",
+      "experience": {
+        "joinDate": "2023",
+        "recruitmentType": "Full-time",
+        "more_info": "1 Year+ in Road Sector, 5 years + in Hydropower Sector"
+      },
+      "bio": "Engaged in preparation of Feasibility Report of Gulangdi Khola small Hydropower Project, Enagaged in Site Supervision, design/technical coordination and full construction works of Setikhola Hydropower project (22MW). Associated with CEC since 2021.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Civil Engineer / Tunnel Engineer"
+        },
+        "ordering": 18
+      }
+    },
+    {
+      "slug": "minu-chitrakar",
+      "name": "Mrs. Minu Chitrakar",
+      "image_url": "/images/team/resources_image_0_3.jpg",
+      "education": "Diploma in Civil Engineering",
+      "experience": {
+        "joinDate": "2003",
+        "recruitmentType": "Full-time",
+        "more_info": "CAD Engineer with 10+ years of experience in the hydropower sector and over 28 years of professional drafting experience."
+      },
+      "bio": "Currently serving at CEC since 2015 as a CAD Engineer.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "CAD Engineer"
+        },
+        "ordering": 13
+      }
+    },
+    {
+      "slug": "pramod-gautam",
+      "name": "Mr. Pramod Gautam",
+      "image_url": "/images/team/resources_image_0_2.jpg",
+      "education": "M.Sc. in Geology",
+      "experience": {
+        "joinDate": "2025",
+        "recruitmentType": "Full-time",
+        "more_info": "5+ years of experience in Geology profession covering Geological Field Mapping, Geotechnical Investigations, Construction supervision and monitoring."
+      },
+      "bio": "Since joining CEC in 2022, involved in studies and execution of hydropower projects including pre-feasibility assessments to deatailed investigation, construction implementation and execution.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Geologist"
+        },
+        "ordering": 19
+      }
+    },
+    {
+      "slug": "purna-raj-tamang",
+      "name": "Mr. Purna Bahadur Tamang",
+      "image_url": "/images/data/cecnepal.com.np_wp-content_uploads_2023_11_Purna-B-Tamang-853x1024.jpg_b5ac7ea6.jpeg",
+      "education": "Diploma in Civil Engineering (CTEVT)",
+      "experience": {
+        "joinDate": "2025",
+        "recruitmentType": "Full-time",
+        "more_info": "3+ years of hands-on experience in hydropower developement, with specialized skills in site supervision, DGPS/topographic surveying and report writing."
+      },
+      "bio": "Since joining CEC in 2023 AD, has actively contributed to civil works execution, quality assurance, construction coordination, technical documentation, and IFC drawing preparation.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Civil Overseer"
+        },
+        "ordering": 32
+      }
+    },
+    {
+      "slug": "buddha-raj-tamang",
+      "name": "Buddhi Lal Tamang",
+      "image_url": "/images/team/resources_image_0_7.jpg",
+      "education": "M.Sc. in Engineering Geology",
+      "experience": {
+        "joinDate": "2023",
+        "recruitmentType": "Full-time",
+        "more_info": "4+ years of professional experience, including road tunnel, landslide hazard mapping and hydropower sector."
+      },
+      "bio": "Serving since 2024 at CEC, contributing to hydropower projects, including pre-feasibility assessments, site investigation, and site supervision.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Engineering Geologist"
+        },
+        "ordering": 21
+      }
+    },
+    {
+      "slug": "insan-maharjan",
+      "name": "Insan Maharjan",
+      "image_url": "",
+      "education": "",
+      "experience": {
+        "joinDate": "",
+        "recruitmentType": "",
+        "more_info": ""
+      },
+      "bio": "",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": ""
+        },
+        "ordering": 11
+      }
+    },
+    {
+      "slug": "daya-bikram-pandey",
+      "name": "Daya Bikram Pandey",
+      "image_url": "",
+      "education": "",
+      "experience": {
+        "joinDate": "",
+        "recruitmentType": "",
+        "more_info": ""
+      },
+      "bio": "",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": ""
+        },
+        "ordering": 12
+      }
+    },
+    {
+      "slug": "krishna-singh-mahar",
+      "name": "Krishna Singh Mahar",
+      "image_url": "",
+      "education": "",
+      "experience": {
+        "joinDate": "",
+        "recruitmentType": "",
+        "more_info": ""
+      },
+      "bio": "",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": ""
+        },
+        "ordering": 12
+      }
+    },
+    {
+      "slug": "ajaya-kumar-shrestha",
+      "name": "Er. Ajay Shrestha",
+      "image_url": "/images/team/resources_image_0_29.jpg",
+      "education": "Msc. in Earthquake Engineering",
+      "experience": {
+        "joinDate": "",
+        "recruitmentType": "Full-time",
+        "more_info": "10+ years of experience in civil and structural engineering."
+      },
+      "bio": "Experienced in hydropower, urban development and reconstruction sectors.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Structural Engineer"
+        },
+        "ordering": 16
+      }
+    },
+    {
+      "slug": "kapil-adhikari",
+      "name": "Er. Kapil Raj Adhikari",
+      "image_url": "/images/team/resources_image_0_24.jpg",
+      "education": "MSc. in Rock and Tunnel Engineer",
+      "experience": {
+        "joinDate": "2024",
+        "recruitmentType": "Full-time",
+        "more_info": "7+ years of professional experience, including 2+ years in the hydropower sector."
+      },
+      "bio": "Experienced in tunnel and underground hydropower works, including excavation, primary support systems, software-based modeling, stress analysis, and optimization of underground and slope protection structures.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Rock and Tunnel Engineer/Civil Engineer"
+        },
+        "ordering": 17
+      }
+    },
+    {
+      "slug": "ruksana-shrestha",
+      "name": "Er. Rukshana Shrestha",
+      "image_url": "/images/team/resources_image_0_4.jpg",
+      "education": "Msc. in Rock and Tunnel Engineering",
+      "experience": {
+        "joinDate": "2025",
+        "recruitmentType": "Full-time",
+        "more_info": "2 years + in Building Sector, 4 years + in Hydropower sector."
+      },
+      "bio": "Exposure to hydropower project construction, infrastructure development, site supervision, design/technical coordination, and project execution.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Civil Engineer cum Tunnel Engineer"
+        },
+        "ordering": 20
+      }
+    },
+    {
+      "slug": "manoj-parajuli",
+      "name": "Mr. Manoj Parajuli",
+      "image_url": "/images/team/resources_image_0_23.jpg",
+      "education": "Msc. in Geology",
+      "experience": {
+        "joinDate": "2022",
+        "recruitmentType": "Full-time",
+        "more_info": "2+ years of experience in the geology profession, covering geological field mapping, geotechnical investigations, and construction supervision."
+      },
+      "bio": "Involved in the planning and execution of hydropower projects at CEC, covering activities from pre-feasibility studies to construction implementation.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Geologist"
+        },
+        "ordering": 22
+      }
+    },
+    {
+      "slug": "anuj-siwakoti",
+      "name": "Anuj Siwakoti",
+      "image_url": "",
+      "education": "",
+      "experience": {
+        "joinDate": "",
+        "recruitmentType": "",
+        "more_info": ""
+      },
+      "bio": "",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": ""
+        },
+        "ordering": 23
+      }
+    },
+    {
+      "slug": "rajan-poudel",
+      "name": "Er. Rajan Poudel",
+      "image_url": "/images/team/resources_image_0_18.jpg",
+      "education": "Msc. in Construction Engineering and Management",
+      "experience": {
+        "joinDate": "",
+        "recruitmentType": "Full-time",
+        "more_info": "13+ Years of Experience in Hydropower Developement."
+      },
+      "bio": "Encompassing project management, tunnel engineering, construction supervision and quality assurance.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Civil Engineer"
+        },
+        "ordering": 24
+      }
+    },
+    {
+      "slug": "sumit-sukla",
+      "name": "Er. Sumit Shukla",
+      "image_url": "",
+      "education": "BE Civil (IOE, Central Pulchowk Campus)",
+      "experience": {
+        "joinDate": "",
+        "recruitmentType": "Full-time",
+        "more_info": "10+ yeras in Hydropower design, supervison and construction."
+      },
+      "bio": "",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Civil Engineer"
+        },
+        "ordering": 25
+      }
+    },
+    {
+      "slug": "gaurav-ghale",
+      "name": "Er. Gaurab Ghale",
+      "image_url": "/images/team/resources_image_0_22.jpg",
+      "education": "B.E. Civil (PoU)",
+      "experience": {
+        "joinDate": "",
+        "recruitmentType": "Full-time",
+        "more_info": "2+ Years of experience in Hydropower Sectors."
+      },
+      "bio": "Actively involve in drawing and report preparation, sound in cost estimation, construction supervision, bill preparation and verification.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Civil Engineer"
+        },
+        "ordering": 26
+      }
+    },
+    {
+      "slug": "ram-poudel",
+      "name": "Er. Ram Paudel",
+      "image_url": "/images/team/resources_image_0_19.jpg",
+      "education": "BE Civil (Po.U)",
+      "experience": {
+        "joinDate": "",
+        "recruitmentType": "Full-time",
+        "more_info": "2 years + in Building Sector, 2 years + in hydropower sector."
+      },
+      "bio": "Contributing to feasibility report preparation, technical documentation, and supporting Issued for Construction (IFC) drawings and project deliverables.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Civil Engineer"
+        },
+        "ordering": 27
+      }
+    },
+    {
+      "slug": "swikar-subedi",
+      "name": "Er. Swikar Subedi",
+      "image_url": "/images/team/resources_image_0_20.jpg",
+      "education": "Bachelors in Civil Engineering",
+      "experience": {
+        "joinDate": "",
+        "recruitmentType": "Full-time",
+        "more_info": "2 years of professional experience in the hydropower sector."
+      },
+      "bio": "Contributing to detail drawing, feasibility and detailed project report preparation. Experienced in BOQ/Cost preparation and technical documentation.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Civil Engineer"
+        },
+        "ordering": 28
+      }
+    },
+    {
+      "slug": "ayush-acharya",
+      "name": "Er. Aayush Acharya",
+      "image_url": "/images/team/resources_image_0_21.jpg",
+      "education": "Bachelors in Civil Engineering",
+      "experience": {
+        "joinDate": "",
+        "recruitmentType": "Full-time",
+        "more_info": "2 years of professional experience in the hydropower sector."
+      },
+      "bio": "Contributing to feasibility and detailed project report preparation. Experienced in BOQ/Cost preparation, technical documentation, and supporting project deliverables.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Civil Engineer"
+        },
+        "ordering": 29
+      }
+    },
+    {
+      "slug": "saju-limbu",
+      "name": "Ms. Saju Limbu",
+      "image_url": "/images/team/resources_image_0_17.jpg",
+      "education": "Bachelor in Geology",
+      "experience": {
+        "joinDate": "2024",
+        "recruitmentType": "Full-time",
+        "more_info": "2 + years experiance igeological and geotechnical investigation for hydropower projects."
+      },
+      "bio": "Contributing to geological drawing, report writing, and core logging.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Geologist"
+        },
+        "ordering": 30
+      }
+    },
+    {
+      "slug": "prakriti-kuikel",
+      "name": "Er. Prakriti Kuikel",
+      "image_url": "/images/team/resources_image_0_11.jpg",
+      "education": "Bachelor in Civil Engineering, PoU, Pokhara Engineering College",
+      "experience": {
+        "joinDate": "",
+        "recruitmentType": "Full-time",
+        "more_info": "1 year + of Experience in the Hydropower sector."
+      },
+      "bio": "Contributing to feasibility studies, technical documentation and infrastructure planning including cost estimation.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Civil Engineer"
+        },
+        "ordering": 31
+      }
+    },
+    {
+      "slug": "lokendra-raj-bhatta",
+      "name": "Lokendra Raj Bhatt",
+      "image_url": "/images/team/resources_image_0_25.jpg",
+      "education": "Diploma In Civil Engineer (CTEVT)",
+      "experience": {
+        "joinDate": "2024",
+        "recruitmentType": "Full-time",
+        "more_info": "10+ Years of Experience in Hydropower Construction."
+      },
+      "bio": "Involving project planning, construction and site supervision, specifically contributing to Upper kabeli hydropower projects.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Civil Overseer"
+        },
+        "ordering": 33
+      }
+    },
+    {
+      "slug": "aasish-neupane",
+      "name": "Aashish Neupane",
+      "image_url": "/images/team/resources_image_0_27.jpg",
+      "education": "Diploma In Survey Engineer (CTEVT)",
+      "experience": {
+        "joinDate": "2026",
+        "recruitmentType": "Full-time",
+        "more_info": "12+ years of practical experience in hydropower, tunnel, road, and transportation infrastructure projects across Nepal."
+      },
+      "bio": "Skilled in GPS and Total Station operation, traverse surveying, tunnel alignment, and topographic surveys. Currently in CEC since 2026.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Surveyor"
+        },
+        "ordering": 33
+      }
+    },
+    {
+      "slug": "prem-shrestha",
+      "name": "Prem Kumar Shrestha",
+      "image_url": "/images/team/resources_image_0_26.jpg",
+      "education": "Diploma in Mechanical Engineering IOE",
+      "experience": {
+        "joinDate": "",
+        "recruitmentType": "Full-time",
+        "more_info": "5+ years of experience in hydropower projects and 8+ years of expertise in NDT inspection and quality control."
+      },
+      "bio": "Skilled in supervision of penstock fabrication & installation, welding supervision, hydro stat pressure testing, and UT/MT/PT/RT inspection.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "HM Incharge"
+        },
+        "ordering": 34
+      }
+    },
+    {
+      "slug": "sheela-kumari-kumal",
+      "name": "Ms. Sheela Kumari Kumal",
+      "image_url": "/images/team/resources_image_0_5.jpg",
+      "education": "Diploma In Civil Engineer (CTEVT)",
+      "experience": {
+        "joinDate": "2024",
+        "recruitmentType": "Full-time",
+        "more_info": "2 + years experiance in Hydropower sector."
+      },
+      "bio": "Currently serving at CEC since 2024 as a CAD Engineer.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "CAD Engineer"
+        },
+        "ordering": 35
+      }
+    },
+    {
+      "slug": "anil-kumar-kadayat",
+      "name": "Mr. Anil Kumar Kadayat",
+      "image_url": "/images/team/resources_image_0_16.jpg",
+      "education": "Diploma in Civil Engineering (CTEVT)",
+      "experience": {
+        "joinDate": "2024",
+        "recruitmentType": "Full-time",
+        "more_info": "3+ years of hands-on experience in building, road and hydropower construction projects."
+      },
+      "bio": "Specialized skills in site supervision, topographic surveying, and technical report writing.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Civil Overseer"
+        },
+        "ordering": 36
+      }
+    },
+    {
+      "slug": "aman-dev",
+      "name": "Aman Dev",
+      "image_url": "",
+      "education": "",
+      "experience": {
+        "joinDate": "",
+        "recruitmentType": "",
+        "more_info": ""
+      },
+      "bio": "",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": ""
+        },
+        "ordering": 37
+      }
+    },
+    {
+      "slug": "mani-tamang",
+      "name": "Mani Tamang",
+      "image_url": "",
+      "education": "",
+      "experience": {
+        "joinDate": "",
+        "recruitmentType": "",
+        "more_info": ""
+      },
+      "bio": "",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": ""
+        },
+        "ordering": 38
+      }
+    },
+    {
+      "slug": "mohan-katwal",
+      "name": "Mr. Mohan Katwal",
+      "image_url": "/images/team/resources_image_0_14.jpg",
+      "education": "Diploma in Civil Engineering (CTEVT)",
+      "experience": {
+        "joinDate": "2026",
+        "recruitmentType": "Full-time",
+        "more_info": "Over one year of hands-on experience in hydropower development."
+      },
+      "bio": "Specialized skills in site supervision, topographic surveying, AutoCAD drafting, and site safety management.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Civil Overseer"
+        },
+        "ordering": 39
+      }
+    },
+    {
+      "slug": "mamata-acharya",
+      "name": "Er. Mamata Acharya",
+      "image_url": "/images/team/resources_image_0_28.jpg",
+      "education": "Bachelors in Electrical Engineering",
+      "experience": {
+        "joinDate": "",
+        "recruitmentType": "Full-time",
+        "more_info": "1+ year of experience in hydropower sector."
+      },
+      "bio": "Contributing to feasibility studies, technical documentation, BoQ preparation and SLD preparation.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Electrical Engineer"
+        },
+        "ordering": 40
+      }
+    },
+    {
+      "slug": "elish-ghimire",
+      "name": "Mr. Elish Ghimire",
+      "image_url": "/images/team/resources_image_0_31.jpg",
+      "education": "BBS last Year Running",
+      "experience": {
+        "joinDate": "2025",
+        "recruitmentType": "Full-time",
+        "more_info": "3+ years of professional experience in the hydropower sector, specializing in accounting and financial support."
+      },
+      "bio": "Contributing to financial record keeping, billing, documentation, and administrative support for hydropower projects.",
+      "assignments": {
+        "categories": [
+          "staff"
+        ],
+        "meta": {
+          "staff": "Accountant"
+        },
+        "ordering": 41
+      }
+    }
+  ]
+}

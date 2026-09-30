@@ -1,0 +1,260 @@
+/* components/Sections/Statistics.module.css */
+
+.statistics {
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, var(--bg-light) 0%, #f1f5f9 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+  opacity: 0;
+}
+
+.sectionHeader.animate {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.sectionHeader h2 {
+  font-size: var(--fs-h2);
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+}
+
+.line {
+  height: 4px;
+  width: 60px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.statCard {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--border-light);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.statCard.slideIn {
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  border-color: var(--secondary);
+}
+
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.3rem;
+}
+
+.suffix {
+  font-size: var(--fs-h4);
+  color: var(--primary);
+  margin-left: 0.15rem;
+}
+
+.label {
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+}
+
+.breakdown {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--border-light);
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.breakdown h3 {
+  font-size: var(--fs-h4);
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.statusBars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.statusItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.barLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.progressBar {
+  width: 100%;
+  height: 10px;
+  background: var(--border-light);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .statistics {
+    padding: 2rem 1rem;
+  }
+
+  .sectionHeader h2 {
+    font-size: var(--fs-h2);
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .statCard {
+    padding: 1.25rem;
+  }
+
+  .value {
+    font-size: var(--fs-h1);
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+
+  .breakdown {
+    padding: 1.5rem;
+  }
+
+  .breakdown h3 {
+    font-size: var(--fs-h4);
+    margin-bottom: 1.25rem;
+  }
+
+  .statusBars {
+    gap: 1rem;
+  }
+
+  .statusItem {
+    gap: 0.4rem;
+  }
+
+  .barLabel {
+    font-size: var(--fs-small);
+  }
+
+  .progressBar {
+    height: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .statistics {
+    padding: 1.5rem 1rem;
+  }
+
+  .sectionHeader h2 {
+    font-size: var(--fs-h2);
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .statCard {
+    padding: 1rem;
+  }
+
+  .value {
+    font-size: var(--fs-h1);
+  }
+
+  .icon {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .label {
+    font-size: var(--fs-small);
+  }
+
+  .breakdown {
+    padding: 1.25rem;
+  }
+
+  .breakdown h3 {
+    font-size: var(--fs-h4);
+    margin-bottom: 1rem;
+  }
+
+  .statusBars {
+    gap: 0.8rem;
+  }
+
+  .barLabel {
+    font-size: var(--fs-small);
+  }
+
+  .progressBar {
+    height: 7px;
+  }
+}
+

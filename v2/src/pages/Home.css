@@ -1,0 +1,4 @@
+.v2-home { max-width: 72rem; margin: 0 auto; padding: 6rem 1.5rem; }
+.v2-home h1 { max-width: 48rem; font-size: clamp(2rem, 5vw, 4rem); line-height: 1.15; margin: 0 0 1.5rem; }
+.v2-home p { max-width: 42rem; color: #56606c; }
+.v2-home .v2-home__eyebrow { font-size: .8rem; text-transform: uppercase; letter-spacing: .15em; margin-bottom: 1rem; }

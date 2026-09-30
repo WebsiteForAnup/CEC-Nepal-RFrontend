@@ -1,0 +1,36 @@
+{
+  "title": "Company Profile",
+  "vision": {
+    "title": "Our Vision",
+    "content": "Clean and green energy generation and effective water resource management for a sustainable future and shared prosperity.",
+    "icon": "fas fa-eye"
+  },
+  "mission": {
+    "title": "Our Mission",
+    "content": "Transform emerging challenges in hydropower, solar energy, green energy, water resources management, environmental sustainability, and infrastructure projects into opportunities.",
+    "icon": "fas fa-bullseye"
+  },
+  "objectives": {
+    "title": "Core Objectives",
+    "items": [
+      "Identification of hydropower projects, including desk studies, surveys, investigations, and detailed engineering design.",
+      "Physical modeling of river structures, such as headworks, for design optimization.",
+      "Troubleshooting studies and problem-solving for operational hydropower projects.",
+      "Advanced geophysical (ERT, SRT, MASW) and geotechnical investigations and surveys.",
+      "Design, construction, and operation support for underground structures like tunnels and caverns.",
+      "Research on sustainable renewable energy resources and innovative solution development."
+    ],
+    "icon": "fas fa-list-check"
+  },
+  "goals": {
+    "title": "Our Strategic Goals",
+    "items": [
+      "Assisting clients in selecting and purchasing international electromechanical equipment.",
+      "Creating bankable documents for financial institutions to support clean energy financing.",
+      "Monitoring, supervising, and verifying construction activities according to international guidelines.",
+      "Providing advisory services and property evaluations for renewable energy industries.",
+      "Acting as arbitrator and adjudicator to resolve project construction conflicts."
+    ],
+    "icon": "fas fa-flag"
+  }
+}

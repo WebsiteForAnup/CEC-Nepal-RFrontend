@@ -1,0 +1,49 @@
+{
+  "email": "info@cecnepal.com.np",
+  "phone": "+977-1-55917841",
+  "formspreeId": "xyzqwbdb",
+  "officeHours": [
+    {
+      "days": "Sun - Fri",
+      "openTime": "10:00 AM",
+      "closeTime": "5:00 PM"
+    },
+    {
+      "days": "Sat",
+      "openTime": "Closed",
+      "closeTime": "Closed"
+    }
+  ],
+  "headquarters": "Kathmandu, Nepal",
+  "addressLines": [
+    "Kathmandu, Nepal"
+  ],
+  "mapCoordinates": [
+    {
+      "latitude": "27.705004",
+      "longitude": "85.3385191",
+      "zoom": 14,
+      "popUpDetails": {
+        "name": "Clean Energy Consultants Pvt. Ltd.",
+        "address": "Kathmandu, Nepal",
+        "phone": "+977-1-55917841",
+        "email": "info@cecnepal.com.np",
+        "type": "Corporate Office"
+      },
+      "priority": 1
+    },
+    {
+      "latitude": "28.1626116",
+      "longitude": "84.0536315",
+      "zoom": 14,
+      "popUpDetails": {
+        "name": "Clean Energy Consultants Pvt. Ltd.",
+        "address": "Pokhara, Nepal",
+        "phone": "+977-9851118196",
+        "email": "info@cecnepal.com.np",
+        "type": "Pokhara Office"
+      },
+      "priority": 2
+    }
+  ]
+}
