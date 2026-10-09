@@ -27,7 +27,7 @@ function createPopup(feature: Feature, record: MapLayer) {
   if (project) {
     const link = document.createElement('a');
     link.href = '/project/' + project.slug;
-    link.textContent = 'Explore project ↗';
+    link.textContent = 'Explore project';
     popup.append(link);
   } else if (record.id.startsWith('reference-')) {
     const note = document.createElement('p');

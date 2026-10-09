@@ -1,5 +1,4 @@
 import Page from '../components/public/Page';
-import Arrow from '../components/public/Arrow';
 import { publicContent, serviceGroups } from '../services/publicContent';
 import LeafletMap from '../components/public/LeafletMap';
 import type { MapLayer } from '../services/projectGeography';
@@ -39,11 +38,9 @@ export default function Contact() {
             ))}
             <a href={'mailto:' + data.email}>
               {data.email}
-              <Arrow diagonal />
             </a>
             <a href={'tel:' + data.phone}>
               {data.phone}
-              <Arrow diagonal />
             </a>
           </address>
           <h3>Office hours</h3>
@@ -105,7 +102,6 @@ export default function Contact() {
             </p>
             <button type="submit" className="cec-button cec-button--dark">
               Send inquiry
-              <Arrow diagonal />
             </button>
           </form>
         </section>
@@ -132,7 +128,6 @@ export default function Contact() {
                 rel="noreferrer"
               >
                 Open map
-                <Arrow diagonal />
               </a>
             </article>
           ))}

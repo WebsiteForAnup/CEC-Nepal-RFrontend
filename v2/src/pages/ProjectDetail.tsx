@@ -4,7 +4,6 @@ import Facts from '../components/public/Facts';
 import Inquiry from '../components/public/Inquiry';
 import PhotoGallery from '../components/public/PhotoGallery';
 import ProjectLinks from '../components/public/ProjectLinks';
-import Arrow from '../components/public/Arrow';
 import NotFound from './NotFound';
 import ProjectGeography from '../components/public/ProjectGeography';
 import { publicContent, getProjectServices } from '../services/publicContent';
@@ -100,7 +99,6 @@ export default function ProjectDetail() {
             {services.map((service) => (
               <Link key={service.slug} className="cec-sidebar-link" to={'/service/' + service.slug}>
                 {service.title}
-                <Arrow diagonal />
               </Link>
             ))}
             {!services.length && <p>{project.cecInputs}</p>}

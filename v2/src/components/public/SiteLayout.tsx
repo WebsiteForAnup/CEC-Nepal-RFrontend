@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { publicContent } from '../../services/publicContent';
-import Arrow from './Arrow';
 import NewsMarquee from './NewsMarquee';
 import MegaMenuContent from './MegaMenuContent';
 import usePageMotion from '../../hooks/usePageMotion';
@@ -49,10 +48,7 @@ export default function SiteLayout() {
             <i />
             Clean energy. Lasting progress.
           </span>
-          <a href={'mailto:' + publicContent.contact.email}>
-            {publicContent.contact.email}
-            <Arrow diagonal />
-          </a>
+          <a href={'mailto:' + publicContent.contact.email}>{publicContent.contact.email}</a>
         </div>
       </div>
       <header
@@ -108,8 +104,7 @@ export default function SiteLayout() {
               </button>
             ))}
             <Link className="cec-button cec-button--lime" to="/contact">
-              Let’s talk
-              <Arrow diagonal />
+              Contact us
             </Link>
           </nav>
         </div>
@@ -144,7 +139,6 @@ export default function SiteLayout() {
                   }
                 >
                   View overview
-                  <Arrow diagonal />
                 </Link>
                 <button
                   className="cec-mega-close"
@@ -189,14 +183,13 @@ export default function SiteLayout() {
               </p>
               <a className="cec-text-link" href={'mailto:' + publicContent.contact.email}>
                 {publicContent.contact.email}
-                <Arrow diagonal />
               </a>
             </div>
             <div>
               <h2>Explore CEC</h2>
               <Link to="/about">About us</Link>
               <Link to="/projects">Our projects</Link>
-              <Link to="/team">Our people</Link>
+              <Link to="/team">Our team</Link>
               <Link to="/careers">Careers</Link>
             </div>
             <div>
@@ -212,7 +205,7 @@ export default function SiteLayout() {
               <Link to="/downloads">Resources</Link>
               <Link to="/contact">Contact us</Link>
               <a href={publicContent.company.socialMedia.linkedin} target="_blank" rel="noreferrer">
-                LinkedIn ↗
+                LinkedIn
               </a>
             </div>
           </div>

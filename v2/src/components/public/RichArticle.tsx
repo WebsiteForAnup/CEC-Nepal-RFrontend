@@ -85,7 +85,7 @@ export default function RichArticle({
               return (
                 <p key={index}>
                   <a className="cec-text-link" href={block.url} target="_blank" rel="noreferrer">
-                    {block.caption || 'View the Facebook post'} ↗
+                    {block.caption || 'View the Facebook post'}
                   </a>
                 </p>
               );

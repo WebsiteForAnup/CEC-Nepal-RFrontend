@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { publicContent as data } from '../services/publicContent';
-import Arrow from '../components/public/Arrow';
 const expertise = [
   ['01', 'Plan your project', '/service/feasibility-studies'],
   ['02', 'Know your terrain', '/service/survey-investigations'],
@@ -47,8 +46,7 @@ export default function Home() {
             Your engineering partner, from concept to commissioning.
           </p>
           <Link className="cec-button cec-button--lime" to="/contact">
-            Talk to our experts
-            <Arrow diagonal />
+            Contact us
           </Link>
         </div>
         <div className="cec-container cec-hero-foot">
@@ -59,7 +57,6 @@ export default function Home() {
               <br />
               <strong>22 MW of renewable potential</strong>
             </span>
-            <Arrow diagonal />
           </Link>
         </div>
       </section>
@@ -69,7 +66,6 @@ export default function Home() {
             <Link key={number} to={href}>
               <span>{number}</span>
               <strong>{title}</strong>
-              <Arrow diagonal />
             </Link>
           ))}
         </div>
@@ -88,8 +84,7 @@ export default function Home() {
           </p>
           <p>{data.about.intro}</p>
           <Link className="cec-text-link" to="/about">
-            Discover CEC Nepal
-            <Arrow diagonal />
+            About CEC Nepal
           </Link>
         </div>
       </section>
@@ -103,7 +98,6 @@ export default function Home() {
           <div>
             <span>ON THE GROUND.</span>
             <strong>Always looking ahead.</strong>
-            <Arrow diagonal />
           </div>
         </div>
         <div className="cec-approach-copy">
@@ -120,8 +114,7 @@ export default function Home() {
             and on-site supervision together to help your project move forward with confidence.
           </p>
           <Link className="cec-text-link" to="/services">
-            See how we help
-            <Arrow diagonal />
+            Our services
           </Link>
         </div>
       </section>
@@ -153,7 +146,6 @@ export default function Home() {
           </div>
           <Link className="cec-text-link" to="/projects">
             Explore our portfolio
-            <Arrow diagonal />
           </Link>
         </div>
         <div className="cec-project-grid">
@@ -171,9 +163,6 @@ export default function Home() {
                 />
                 <span className="cec-project-number">0{index + 1}</span>
                 <span className="cec-project-capacity">{project.capacity}</span>
-                <span className="cec-project-arrow">
-                  <Arrow diagonal />
-                </span>
               </Link>
               <p className="cec-eyebrow">{project.location} / HYDROPOWER</p>
               <h3>
@@ -198,7 +187,6 @@ export default function Home() {
             <p>Integrated engineering for hydropower, renewable energy, and infrastructure.</p>
             <Link className="cec-text-link" to="/services">
               All our services
-              <Arrow diagonal />
             </Link>
           </div>
           <div className="cec-services-list">
@@ -206,7 +194,7 @@ export default function Home() {
               const service = data.services.find((item) => item.slug === slug);
               return (
                 service && (
-                  <details key={slug} open={index === 0}>
+                  <details key={slug} name="home-services" open={index === 0}>
                     <summary>
                       <span>0{index + 1}</span>
                       <h3>{service.title}</h3>
@@ -216,7 +204,6 @@ export default function Home() {
                       <p>{service.description}</p>
                       <Link className="cec-text-link" to={'/service/' + slug}>
                         Explore service
-                        <Arrow diagonal />
                       </Link>
                     </div>
                   </details>
@@ -234,7 +221,6 @@ export default function Home() {
           </div>
           <Link className="cec-text-link" to="/news">
             All news & events
-            <Arrow diagonal />
           </Link>
         </div>
         <div className="cec-news-grid">
@@ -250,7 +236,7 @@ export default function Home() {
               <div>
                 <time dateTime={item.date}>{item.date}</time>
                 <Link to={'/news-event/' + item.slug} aria-label={'Read ' + item.title}>
-                  <Arrow diagonal />
+                  Read story
                 </Link>
               </div>
             </article>
@@ -260,28 +246,24 @@ export default function Home() {
       <section className="cec-contact-band">
         <div className="cec-container">
           <div>
-            <p className="cec-eyebrow">LET’S TAKE THE NEXT STEP TOGETHER</p>
+            <p className="cec-eyebrow">PROJECT INQUIRIES</p>
             <h2>
-              Your vision.
+              Engineering expertise.
               <br />
-              <span>Our expertise.</span>
+              <span>Project delivery.</span>
             </h2>
           </div>
           <div>
             <p>
-              Planning a new project or advancing an existing one?
+              Contact CEC Nepal for engineering consultancy and project support.
               <br />
-              Let’s turn your next step into lasting progress.
+              Our team supports projects from feasibility through commissioning.
             </p>
             <Link className="cec-button cec-button--dark" to="/contact">
-              Start a conversation
-              <Arrow diagonal />
+              Contact us
             </Link>
           </div>
         </div>
-        <span className="cec-contact-symbol" aria-hidden="true">
-          ↗
-        </span>
       </section>
     </main>
   );

@@ -77,7 +77,7 @@ export default function ProjectGeography(props: GeographyProps) {
       <nav className="cec-map-project-links" aria-label="Projects on the map">
         {projects.map((project) => (
           <Link key={project.slug} to={'/project/' + project.slug}>
-            {project.name} ↗
+            {project.name}
           </Link>
         ))}
       </nav>

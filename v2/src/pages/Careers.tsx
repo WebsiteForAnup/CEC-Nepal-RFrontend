@@ -1,5 +1,4 @@
 import Page from '../components/public/Page';
-import Arrow from '../components/public/Arrow';
 import { publicContent } from '../services/publicContent';
 export default function Careers() {
   const { page, benefits, openings } = publicContent.careers;
@@ -30,7 +29,6 @@ export default function Careers() {
               href={'mailto:' + publicContent.contact.email + '?subject=Career%20inquiry'}
             >
               Introduce yourself
-              <Arrow diagonal />
             </a>
           </div>
         )}
@@ -63,7 +61,6 @@ export default function Careers() {
                   href={'mailto:' + item.applyEmail + '?subject=' + encodeURIComponent(item.title)}
                 >
                   Apply by email
-                  <Arrow diagonal />
                 </a>
               )}
             </details>

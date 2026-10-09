@@ -5,11 +5,18 @@ import { readFile, stat } from 'node:fs/promises';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const production = process.argv.includes('--production');
-const port = Number(process.env.PORT || 3001);
+let port = Number(process.env.PORT || 3001);
+if (!Number.isInteger(port) || port < 1 || port > 65535) {
+  throw new Error('PORT must be an integer between 1 and 65535.');
+}
 const clientRoot = path.join(root, 'dist/client');
+const server = http.createServer((req, res) => {
+  if (vite) vite.middlewares(req, res, () => { void handle(req, res); });
+  else void handle(req, res);
+});
 const vite = production ? null : await (await import('vite')).createServer({
   root, configFile: path.join(root, 'vite.config.js'),
-  server: { middlewareMode: true, hmr: { port: port + 1 } }, appType: 'custom',
+  server: { middlewareMode: true, hmr: { server } }, appType: 'custom',
 });
 const productionRender = production ? (await import(pathToFileURL(path.join(root, 'dist/server/entry-server.mjs')).href)).render : null;
 const mime = { '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.html': 'text/html', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.ico': 'image/x-icon', '.pdf': 'application/pdf', '.woff2': 'font/woff2', '.geojson': 'application/geo+json' };
@@ -46,10 +53,29 @@ async function handle(req, res) {
     res.writeHead(500, { 'Content-Type': 'text/plain' }); res.end('Unable to render this page.');
   }
 }
-const server = http.createServer((req, res) => {
-  if (vite) vite.middlewares(req, res, () => { void handle(req, res); });
-  else void handle(req, res);
-});
-server.listen(port, '127.0.0.1', () => console.log('CEC Nepal SSR running at http://localhost:' + port));
+async function listen() {
+  for (let attempt = 0; ; attempt++) {
+    try {
+      await new Promise((resolve, reject) => {
+        const onError = error => { server.off('listening', onListening); reject(error); };
+        const onListening = () => { server.off('error', onError); resolve(); };
+        server.once('error', onError);
+        server.once('listening', onListening);
+        server.listen(port, '127.0.0.1');
+      });
+      console.log('CEC Nepal SSR running at http://localhost:' + port);
+      return;
+    } catch (error) {
+      if (error.code !== 'EADDRINUSE' || production || process.env.PORT || attempt >= 19 || port === 65535) throw error;
+      console.log('Port ' + port + ' is already in use; trying ' + (port + 1) + '.');
+      port++;
+    }
+  }
+}
+try { await listen(); } catch (error) {
+  console.error('Unable to start CEC Nepal SSR: ' + (error.code === 'EADDRINUSE' ? 'port ' + port + ' is already in use.' : error.message));
+  await vite?.close();
+  process.exitCode = 1;
+}
 async function close() { await vite?.close(); server.close(() => process.exit(0)); }
 process.on('SIGINT', close); process.on('SIGTERM', close);

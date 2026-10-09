@@ -137,7 +137,6 @@ function CollectionCard({ item, detailPath }: { item: Item; detailPath: string }
         {item.capacity && <strong>{item.capacity}</strong>}
         <Link className="cec-text-link" to={detailPath + item.slug}>
           Discover more
-          <Arrow diagonal />
         </Link>
       </div>
     </article>

@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import Page from '../components/public/Page';
 import { InlineCopy } from '../components/public/RichArticle';
 import Inquiry from '../components/public/Inquiry';
-import Arrow from '../components/public/Arrow';
 import { publicContent as data } from '../services/publicContent';
 export default function About() {
   return (
@@ -21,7 +20,6 @@ export default function About() {
           <p>{data.about.history.milestone}</p>
           <Link className="cec-text-link" to="/team">
             Meet our people
-            <Arrow diagonal />
           </Link>
         </div>
       </section>
@@ -45,7 +43,6 @@ export default function About() {
         </ul>
         <Link className="cec-text-link" to="/company-profile">
           Our vision & objectives
-          <Arrow diagonal />
         </Link>
       </section>
       <Inquiry />

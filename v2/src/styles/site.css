@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap');
 
-/* CEC's supplied palette, supported by navy, warm white, and muted sage. */
+/* STRIVE-inspired navy, slate blue, and soft neutral public-site palette. */
 body {
   margin: 0;
 }
 .cec-site {
-  --cec-blue: hsl(240 97.64% 49.8%);
-  --cec-lime: hsl(67.47 99.09% 57.06%);
-  --cec-orange: hsl(28 89.64% 50.78%);
-  --cec-green: hsl(135 100% 36.08%);
-  --cec-ink: hsl(0 0% 0.98%);
-  --cec-navy: #142b38;
-  --cec-paper: #f5f5ee;
-  --cec-sage: #e9eee7;
-  --cec-muted: #5b6467;
-  --cec-line: #d6ddd7;
+  --cec-blue: #42658b;
+  --cec-lime: #dce8f0;
+  --cec-orange: #b76129;
+  --cec-green: #32735d;
+  --cec-ink: #182b42;
+  --cec-navy: #233b5c;
+  --cec-paper: #f6f7f8;
+  --cec-sage: #eaf0f4;
+  --cec-muted: #526476;
+  --cec-line: #d7e0e8;
   background: white;
   color: var(--cec-navy);
   font:
@@ -39,10 +39,10 @@ body {
   color: inherit;
 }
 .cec-site h2 {
-  font-size: clamp(2.2rem, 3.7vw, 3.8rem);
+  font-size: var(--cec-section-size, clamp(1.875rem, 3.7vw, 3.5rem));
 }
 .cec-site h3 {
-  font-size: 1.35rem;
+  font-size: var(--cec-card-size, 1.35rem);
   letter-spacing: -0.025em;
 }
 .cec-site p {
@@ -86,7 +86,7 @@ body {
 }
 .cec-eyebrow {
   font:
-    600 11px/1.5 'DM Sans',
+    600 12px/1.5 'DM Sans',
     sans-serif !important;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -95,7 +95,7 @@ body {
   color: var(--cec-blue);
 }
 .cec-green-text {
-  color: #008a36;
+  color: #32735d;
 }
 .cec-button {
   display: inline-flex;
@@ -160,7 +160,7 @@ body {
 .cec-topbar {
   background: var(--cec-navy);
   color: #e8edec;
-  font-size: 10px;
+  font-size: 12px;
 }
 .cec-topbar .cec-container {
   display: flex;
@@ -222,7 +222,7 @@ body {
 }
 .cec-brand small {
   display: block;
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 0.18em;
   margin-top: 8px;
 }
@@ -267,7 +267,7 @@ body {
   width: 245px;
   background: white;
   padding: 15px 24px;
-  box-shadow: 0 10px 40px #142b3820;
+  box-shadow: 0 10px 40px #233b5c20;
   border-top: 3px solid var(--cec-lime);
 }
 .cec-nav-more a {
@@ -303,8 +303,8 @@ body {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, #102736d9 0%, #142b3870 50%, #0e29282e 100%),
-    linear-gradient(0deg, #142b388c, transparent 35%);
+    linear-gradient(90deg, #102736d9 0%, #233b5c70 50%, #0e29282e 100%),
+    linear-gradient(0deg, #233b5c8c, transparent 35%);
   pointer-events: none;
 }
 .cec-hero-shape {
@@ -378,7 +378,7 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.14em;
 }
 .cec-hero-foot > a {
@@ -390,7 +390,7 @@ body {
   line-height: 1.65;
 }
 .cec-hero-foot strong {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0;
   font-weight: 500;
 }
@@ -405,11 +405,11 @@ body {
   display: grid;
   grid-template-columns: 1fr 20px;
   padding: 24px 20px 27px;
-  border-left: 1px solid #d6ddd7;
+  border-left: 1px solid #d7e0e8;
   position: relative;
 }
 .cec-expertise a:last-child {
-  border-right: 1px solid #d6ddd7;
+  border-right: 1px solid #d7e0e8;
 }
 .cec-expertise a::before {
   content: '';
@@ -434,7 +434,7 @@ body {
 }
 .cec-expertise a > span {
   grid-column: 1 / -1;
-  font-size: 10px;
+  font-size: 12px;
   color: #747c78;
   margin-bottom: 18px;
 }
@@ -499,7 +499,7 @@ body {
   grid-template-columns: 1fr 22px;
 }
 .cec-field-photo span {
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.13em;
   grid-column: 1;
 }
@@ -537,7 +537,7 @@ body {
   align-items: center;
 }
 .cec-impact-heading .cec-eyebrow {
-  font-size: 9px !important;
+  font-size: 12px !important;
   color: #b6c8c5;
   margin-bottom: 20px;
 }
@@ -560,7 +560,7 @@ body {
   flex-direction: column-reverse;
 }
 .cec-impact dt {
-  font-size: 11px;
+  font-size: 12px;
   color: #d0dcdb;
 }
 .cec-impact dd {
@@ -623,17 +623,17 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, #142b38b8, transparent 55%);
+  background: linear-gradient(0deg, #233b5cb8, transparent 55%);
 }
 .cec-project-number {
   position: absolute;
   top: 16px;
   left: 18px;
   z-index: 1;
-  background: #142b38aa;
+  background: #233b5caa;
   color: white;
   padding: 3px 8px;
-  font-size: 10px;
+  font-size: 12px;
 }
 .cec-project-capacity {
   position: absolute;
@@ -663,8 +663,8 @@ body {
 }
 .cec-project > .cec-eyebrow {
   margin: 20px 0 9px;
-  font-size: 9px !important;
-  color: #5b6467;
+  font-size: 12px !important;
+  color: #526476;
 }
 .cec-project h3 {
   font-size: 20px;
@@ -672,7 +672,7 @@ body {
 }
 .cec-project > p:last-child {
   color: var(--cec-muted);
-  font-size: 11px;
+  font-size: 12px;
   margin: 0;
 }
 .cec-services {
@@ -713,7 +713,7 @@ body {
 }
 .cec-services-list summary > span:first-child {
   color: #68756d;
-  font-size: 10px;
+  font-size: 12px;
 }
 .cec-services-list h3 {
   font-size: 19px;
@@ -759,8 +759,8 @@ body {
 }
 .cec-news article > .cec-eyebrow {
   margin: 20px 0 11px;
-  color: #008a36;
-  font-size: 9px !important;
+  color: #32735d;
+  font-size: 12px !important;
 }
 .cec-news h3 {
   font-size: 20px;
@@ -773,7 +773,7 @@ body {
   justify-content: space-between;
   border-top: 1px solid var(--cec-line);
   padding-top: 14px;
-  font-size: 10px;
+  font-size: 12px;
   color: var(--cec-muted);
 }
 .cec-contact-band {
@@ -810,7 +810,7 @@ body {
   right: -20px;
   top: -105px;
   font-size: 450px;
-  color: #142b380b;
+  color: #233b5c0b;
   line-height: 1;
 }
 .cec-footer {
@@ -843,14 +843,14 @@ body {
   margin-left: 4px;
 }
 .cec-footer-top p {
-  font-size: 13px;
+  font-size: 1rem;
   line-height: 1.7;
   color: #c6d1d0;
   margin-block: 24px;
 }
 .cec-footer-top h2 {
   font:
-    600 11px/1.5 'DM Sans',
+    600 1.125rem/1.5 'DM Sans',
     sans-serif;
   letter-spacing: 0.04em;
   margin-bottom: 20px;
@@ -858,12 +858,14 @@ body {
 }
 .cec-footer-top > div > a:not(.cec-footer-brand):not(.cec-text-link) {
   display: block;
-  font-size: 11px;
-  color: #c6d1d0;
-  margin-bottom: 12px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e0e7ed;
+  padding-block: 0.375rem;
+  margin-bottom: 0.25rem;
 }
 .cec-footer-top .cec-text-link {
-  font-size: 11px;
+  font-size: 1rem;
   gap: 14px;
 }
 .cec-footer a:hover {
@@ -874,13 +876,26 @@ body {
   justify-content: space-between;
   gap: 20px;
   border-top: 1px solid #ffffff21;
-  font-size: 9px;
+  font-size: 0.875rem;
   color: #b7c4c3;
   padding-block: 22px;
 }
 .cec-footer-bottom > div {
   display: flex;
   gap: 25px;
+  flex-wrap: wrap;
+}
+.cec-site .cec-footer-top .cec-text-link {
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+}
+.cec-footer-top > div {
+  min-width: 0;
+}
+.cec-footer-bottom a {
+  font-size: 1rem;
+  line-height: 1.6;
+  padding-block: 0.375rem;
 }
 
 /* The same visual language on the SSR page templates. */
@@ -975,7 +990,7 @@ body {
 .cec-filter label {
   display: grid;
   gap: 8px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
 }
 .cec-filter label:first-child {
@@ -986,7 +1001,7 @@ body {
   min-width: 200px;
 }
 .cec-filter > a {
-  font-size: 11px;
+  font-size: 12px;
   padding-bottom: 16px;
   text-decoration: underline;
 }
@@ -1019,7 +1034,7 @@ body {
   padding: 16px 25px;
 }
 .cec-results-count {
-  font-size: 11px !important;
+  font-size: 12px !important;
   margin-block: 25px !important;
 }
 .cec-collection-grid {
@@ -1047,10 +1062,10 @@ body {
 }
 .cec-collection-card .cec-eyebrow {
   margin-bottom: 10px;
-  color: #008a36;
+  color: #32735d;
 }
 .cec-collection-card time {
-  font-size: 10px;
+  font-size: 12px;
 }
 .cec-collection-card p:not(.cec-eyebrow) {
   font-size: 13px;
@@ -1187,7 +1202,7 @@ body {
     gap: 30px;
   }
   .cec-expertise strong {
-    font-size: 11px;
+    font-size: 12px;
   }
   .cec-expertise a {
     padding-inline: 15px;
@@ -1226,7 +1241,7 @@ body {
     right: 0;
     background: white;
     padding: 20px 36px 30px;
-    box-shadow: 0 20px 30px #142b381a;
+    box-shadow: 0 20px 30px #233b5c1a;
     gap: 8px;
   }
   .cec-nav-more > div {
@@ -1356,7 +1371,7 @@ body {
     min-height: 30px;
   }
   .cec-topbar {
-    font-size: 8px;
+    font-size: 12px;
   }
   .cec-topbar a {
     gap: 4px;
@@ -1374,7 +1389,7 @@ body {
     font-size: 19px;
   }
   .cec-brand small {
-    font-size: 6px;
+    font-size: 12px;
   }
   .cec-brand img {
     width: 32px;
@@ -1391,8 +1406,8 @@ body {
   }
   .cec-hero::after {
     background:
-      linear-gradient(90deg, #142b38c9, #142b3850),
-      linear-gradient(0deg, #142b38a6, transparent 45%);
+      linear-gradient(90deg, #233b5cc9, #233b5c50),
+      linear-gradient(0deg, #233b5ca6, transparent 45%);
   }
   .cec-hero-content {
     padding: 66px 9px 120px;
@@ -1401,7 +1416,7 @@ body {
     font-size: clamp(39px, 10.7vw, 55px);
   }
   .cec-hero .cec-eyebrow {
-    font-size: 8px !important;
+    font-size: 12px !important;
     margin-bottom: 26px;
   }
   .cec-headline-band {
@@ -1416,7 +1431,7 @@ body {
     max-width: 320px;
   }
   .cec-hero-foot {
-    font-size: 7px;
+    font-size: 12px;
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
@@ -1426,7 +1441,7 @@ body {
     padding-left: 10px;
   }
   .cec-hero-foot strong {
-    font-size: 9px;
+    font-size: 12px;
   }
   .cec-hero-shape {
     right: -30%;
@@ -1479,7 +1494,7 @@ body {
     font-size: 34px;
   }
   .cec-impact dt {
-    font-size: 8px;
+    font-size: 12px;
     max-width: 95px;
   }
   .cec-section-heading {
@@ -1694,7 +1709,7 @@ body {
   margin: 20px 0 28px;
 }
 .cec-mega-inner .cec-eyebrow {
-  font-size: 9px !important;
+  font-size: 12px !important;
 }
 .cec-mega-close {
   margin-top: 30px;
@@ -1715,7 +1730,7 @@ body {
   margin: 0 0 14px;
 }
 .cec-mega-columns p {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--cec-muted);
   min-height: 40px;
 }
@@ -1739,7 +1754,7 @@ body {
   display: block;
   margin-top: 6px;
   color: var(--cec-muted);
-  font-size: 10px;
+  font-size: 12px;
 }
 .cec-mega-columns svg {
   width: 15px;
@@ -1779,10 +1794,10 @@ body {
 .cec-marquee-label {
   flex-shrink: 0;
   padding: 13px 30px;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.12em;
-  border-right: 1px solid #142b3829;
+  border-right: 1px solid #233b5c29;
 }
 .cec-marquee-window {
   flex: 1;
@@ -1805,7 +1820,7 @@ body {
   gap: 22px;
   padding-inline: 25px;
   white-space: nowrap;
-  font-size: 11px;
+  font-size: 12px;
 }
 .cec-marquee-copy svg {
   width: 12px;
@@ -1813,7 +1828,7 @@ body {
 .cec-marquee > button {
   flex-shrink: 0;
   border: 0;
-  border-left: 1px solid #142b3829;
+  border-left: 1px solid #233b5c29;
   background: inherit;
   padding: 13px 20px;
   cursor: pointer;
@@ -1833,17 +1848,14 @@ body {
     background-color 0.8s ease,
     color 0.6s ease;
 }
-.cec-motion-ready .cec-partner.is-in-view {
-  background-color: #edf1dc;
+.cec-home > section.cec-container {
+  background: transparent;
 }
 .cec-motion-ready .cec-services.is-in-view {
-  background-color: #e8ede4;
-}
-.cec-motion-ready .cec-news.is-in-view {
-  background-color: #f4f0e4;
+  background-color: #eaf0f4;
 }
 .cec-motion-ready .cec-impact.is-in-view {
-  background-color: #123e39;
+  background-color: #233b5c;
 }
 .cec-motion-ready .cec-contact-band.is-in-view {
   background-color: var(--cec-lime);
@@ -1887,7 +1899,7 @@ body {
   display: flex;
   gap: 12px;
   margin-bottom: 35px;
-  font-size: 11px;
+  font-size: 12px;
 }
 .cec-breadcrumb a {
   text-decoration: underline;
@@ -2081,7 +2093,7 @@ body {
   font-size: 32px;
 }
 .cec-project-highlights span {
-  font-size: 11px;
+  font-size: 12px;
 }
 .cec-timeline {
   list-style: none;
@@ -2254,7 +2266,7 @@ body {
   display: inline-block;
   background: var(--cec-sage);
   padding: 7px 12px;
-  font-size: 11px;
+  font-size: 12px;
 }
 .cec-contact-layout {
   grid-template-columns: 1fr 1.2fr;
@@ -2270,7 +2282,7 @@ body {
   gap: 20px;
 }
 .cec-form-note {
-  font-size: 11px;
+  font-size: 12px;
 }
 .cec-form-note a {
   text-decoration: underline;
@@ -2442,7 +2454,7 @@ body {
     min-height: 0;
   }
   .cec-marquee-label {
-    font-size: 8px;
+    font-size: 12px;
     padding-inline: 12px;
   }
   .cec-marquee > button {
@@ -2493,7 +2505,7 @@ body {
   }
   .cec-lightbox button {
     padding: 8px;
-    font-size: 11px;
+    font-size: 12px;
   }
 }
 .cec-map-canvas {
@@ -2514,7 +2526,7 @@ body {
   font-size: 12px;
 }
 .cec-map-legend span:nth-child(1) {
-  color: #008a36;
+  color: #32735d;
 }
 .cec-map-legend span:nth-child(2) {
   color: #c6630a;
@@ -2544,18 +2556,18 @@ body {
   margin: 10px 0;
 }
 .cec-map-shell .leaflet-control a {
-  color: #142b38;
+  color: #233b5c;
 }
 .cec-map-shell img.leaflet-tile {
   max-width: none;
 }
 .cec-map-shell .leaflet-control-attribution {
-  font-size: 10px;
+  font-size: 12px;
 }
 .cec-header--mega {
   position: sticky;
   top: 0;
-  box-shadow: 0 2px 12px #00182520;
+  box-shadow: none;
 }
 .cec-marquee > button {
   display: flex;
@@ -2601,11 +2613,301 @@ body {
   }
   .cec-map-shell .leaflet-control-layers {
     max-width: 165px;
-    font-size: 11px;
+    font-size: 12px;
   }
   .cec-header--mega {
     max-height: 100dvh;
     overflow-y: auto;
     overflow-x: clip;
   }
+}
+
+/* Fluid type scale shared by desktop, tablet, and phone layouts. */
+.cec-site {
+  --cec-body-size: clamp(1rem, 0.95rem + 0.22vw, 1.125rem);
+  --cec-title-size: clamp(2.125rem, 1.3rem + 3.2vw, 4.5rem);
+  --cec-section-size: clamp(1.875rem, 1.25rem + 2.1vw, 3.5rem);
+  --cec-card-size: clamp(1.125rem, 1rem + 0.65vw, 1.5rem);
+  font-size: var(--cec-body-size);
+}
+
+.cec-site :where(h2),
+.cec-contact-band h2 {
+  font-size: var(--cec-section-size);
+  line-height: 1.15;
+}
+.cec-hero h1,
+.cec-page-heading h1 {
+  font-size: var(--cec-title-size);
+  line-height: 1.12;
+}
+.cec-site :where(h3) {
+  font-size: var(--cec-card-size);
+  line-height: 1.3;
+}
+.cec-site .cec-lead {
+  font-size: clamp(1.125rem, 1rem + 0.6vw, 1.375rem);
+  line-height: 1.55;
+}
+.cec-site .cec-hero-intro {
+  font-size: var(--cec-body-size) !important;
+  line-height: 1.65;
+}
+.cec-site .cec-button,
+.cec-site .cec-text-link,
+.cec-site .cec-nav-trigger {
+  font-size: clamp(0.875rem, 0.82rem + 0.2vw, 1rem);
+}
+.cec-site .cec-button,
+.cec-site .cec-text-link {
+  gap: 12px;
+}
+.cec-site .cec-text-link:hover {
+  border-bottom-width: 2px;
+}
+.cec-site .cec-page-content > article p,
+.cec-site .cec-rich-article p {
+  font-size: var(--cec-body-size);
+  line-height: 1.75;
+}
+.cec-site .cec-brand small {
+  font-size: 10px;
+}
+@media (max-width: 600px) {
+  .cec-site .cec-hero .cec-eyebrow {
+    font-size: 12px !important;
+  }
+  .cec-site .cec-button {
+    min-height: 48px;
+  }
+  .cec-site .cec-hero-foot {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+}
+
+/* Home type scale: rem respects the reader's preferred root font size.
+   Interpolate from phone to tablet, then tablet to a wide desktop. */
+.cec-site .cec-home {
+  --home-hero: clamp(2.5rem, 1.5rem + 4.1667vw, 3.5rem);
+  --home-support: clamp(1.125rem, 1rem + 0.5208vw, 1.25rem);
+  --home-heading: clamp(1.875rem, 1.375rem + 2.0833vw, 2.375rem);
+  --home-lead: clamp(1.25rem, 1.125rem + 0.5208vw, 1.375rem);
+  --home-body: clamp(1.0625rem, 1rem + 0.2604vw, 1.125rem);
+  --home-card: clamp(1.3125rem, 1.125rem + 0.7813vw, 1.5rem);
+  --home-description: clamp(1rem, 0.9375rem + 0.2604vw, 1.0625rem);
+  --home-label: clamp(1rem, 0.9375rem + 0.2604vw, 1.0625rem);
+  --home-meta: clamp(0.8125rem, 0.75rem + 0.2604vw, 0.875rem);
+  --home-stat: clamp(2.5rem, 1.75rem + 3.125vw, 3.25rem);
+  font-size: var(--home-body);
+}
+.cec-site .cec-home h1 {
+  font-size: var(--home-hero);
+  line-height: 1.15;
+  font-weight: 600;
+}
+.cec-site .cec-home h2 {
+  font-size: var(--home-heading);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+.cec-site .cec-home h3,
+.cec-site .cec-home .cec-field-photo strong {
+  font-size: var(--home-card);
+  line-height: 1.3;
+  font-weight: 600;
+}
+.cec-site .cec-home p:not(.cec-eyebrow) {
+  font-size: var(--home-body);
+  line-height: 1.65;
+  max-width: 60ch;
+}
+.cec-site .cec-home .cec-hero-intro {
+  font-size: var(--home-support) !important;
+}
+.cec-site .cec-home .cec-lead,
+.cec-site .cec-home .cec-impact-heading > p:last-child {
+  font-size: var(--home-lead);
+  line-height: 1.55;
+  font-weight: 400;
+}
+.cec-site .cec-home .cec-services-list details > div p,
+.cec-site .cec-home .cec-project > p:last-child {
+  font-size: var(--home-description);
+}
+.cec-site .cec-home .cec-eyebrow {
+  font-size: var(--home-meta) !important;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+}
+.cec-site .cec-home .cec-button,
+.cec-site .cec-home .cec-text-link,
+.cec-site .cec-home .cec-news article > div > a {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.cec-site .cec-home .cec-expertise strong,
+.cec-site .cec-home .cec-impact dt {
+  font-size: var(--home-label);
+  line-height: 1.5;
+}
+.cec-site .cec-home .cec-expertise a {
+  grid-template-columns: minmax(0, 1fr);
+}
+.cec-site .cec-home .cec-expertise a > span,
+.cec-site .cec-home .cec-hero-foot,
+.cec-site .cec-home .cec-hero-foot strong,
+.cec-site .cec-home .cec-project-capacity,
+.cec-site .cec-home .cec-field-photo span,
+.cec-site .cec-home .cec-services-list summary > span:first-child,
+.cec-site .cec-home .cec-news article > div {
+  font-size: var(--home-meta);
+  line-height: 1.5;
+}
+.cec-site .cec-home .cec-impact dd {
+  font-size: var(--home-stat);
+  line-height: 1.1;
+}
+.cec-site .cec-home .cec-news article > div {
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+/* Give the partner introduction more presence without widening the text measure. */
+.cec-site .cec-home .cec-partner h2 {
+  font-size: clamp(2.25rem, 1.5rem + 3.125vw, 4rem);
+  line-height: 1.15;
+}
+.cec-site .cec-home .cec-partner p:not(.cec-eyebrow) {
+  font-size: clamp(1.125rem, 1.03125rem + 0.390625vw, 1.375rem);
+  line-height: 1.65;
+  max-width: 48ch;
+}
+.cec-site .cec-home .cec-partner .cec-lead {
+  font-size: clamp(1.375rem, 1.1875rem + 0.78125vw, 1.75rem);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+.cec-site .cec-home .cec-partner .cec-eyebrow {
+  font-size: 0.9375rem !important;
+}
+.cec-site .cec-home .cec-partner .cec-text-link {
+  font-size: 1.125rem;
+}
+@media (min-width: 48rem) {
+  .cec-site .cec-home {
+    --home-hero: clamp(3.5rem, 2rem + 3.125vw, 4.5rem);
+    --home-support: clamp(1.25rem, 1.0625rem + 0.3906vw, 1.375rem);
+    --home-heading: clamp(2.375rem, 1.4375rem + 1.9531vw, 3rem);
+    --home-lead: clamp(1.375rem, 1.1875rem + 0.3906vw, 1.5rem);
+    --home-card: clamp(1.5rem, 1.3125rem + 0.3906vw, 1.625rem);
+    --home-description: clamp(1.0625rem, 0.96875rem + 0.1953vw, 1.125rem);
+    --home-label: clamp(1.0625rem, 0.96875rem + 0.1953vw, 1.125rem);
+    --home-stat: clamp(3.25rem, 2.125rem + 2.3438vw, 4rem);
+  }
+}
+
+/* Taller brand panel paired with a compact navigation band. */
+.cec-site .cec-header--mega {
+  --header-brand-height: 7rem;
+  --header-nav-height: 4.675rem;
+  border: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--cec-navy) 0 var(--header-nav-height),
+    transparent var(--header-nav-height) 100%
+  );
+}
+.cec-site .cec-header--mega .cec-header-inner {
+  min-height: var(--header-brand-height);
+  align-items: flex-start;
+  width: calc(100% - 4rem);
+  max-width: none;
+}
+.cec-site .cec-brand--trapezoid {
+  min-height: var(--header-brand-height);
+  align-self: flex-start;
+  gap: 1rem;
+  padding-right: 2.5rem;
+}
+.cec-site .cec-brand--trapezoid::before {
+  background: white;
+}
+.cec-site .cec-brand--trapezoid img {
+  width: 6rem;
+  height: 6rem;
+  object-fit: contain;
+}
+.cec-site .cec-header--mega .cec-nav {
+  min-height: var(--header-nav-height);
+}
+.cec-site .cec-header--mega .cec-nav-trigger {
+  padding-block: 0.875rem;
+  justify-content: flex-start;
+  gap: 0.25rem;
+}
+.cec-site .cec-header--mega .cec-nav-trigger > span {
+  position: relative;
+  top: -0.3em;
+  font-size: 0.75em;
+  line-height: 1;
+}
+.cec-site .cec-header--mega .cec-nav .cec-button {
+  min-height: 2.75rem;
+  padding-block: 0.625rem;
+}
+@media (max-width: 68.75rem) {
+  .cec-site .cec-brand--trapezoid {
+    gap: 0.75rem;
+    padding-right: 1.5rem;
+  }
+  .cec-site .cec-brand--trapezoid img {
+    width: 5rem;
+    height: 6rem;
+  }
+}
+@media (max-width: 53.125rem) {
+  .cec-site .cec-header--mega .cec-header-inner {
+    width: calc(100% - 2.5rem);
+  }
+  .cec-site .cec-header--mega {
+    --header-brand-height: 5.5rem;
+    --header-nav-height: 3.825rem;
+  }
+  .cec-site .cec-brand--trapezoid img {
+    width: 4rem;
+    height: 5rem;
+  }
+  .cec-site .cec-header--mega .cec-menu-toggle {
+    min-height: var(--header-nav-height);
+  }
+  .cec-site .cec-header--mega .cec-nav.is-open {
+    min-height: auto;
+  }
+}
+@media (max-width: 30rem) {
+  .cec-site .cec-brand--trapezoid {
+    gap: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .cec-site .cec-brand--trapezoid strong {
+    font-size: 1.25rem;
+  }
+  .cec-site .cec-brand--trapezoid strong span {
+    font-size: 1rem;
+  }
+  .cec-site .cec-brand--trapezoid small {
+    max-width: 8rem;
+    font-size: 0.5rem;
+    letter-spacing: 0.08em;
+  }
+}
+
+/* The source logo is a wide canvas; crop its empty side margins in the header. */
+.cec-site .cec-header--mega .cec-brand--trapezoid img {
+  width: calc(var(--header-brand-height) - 0.5rem);
+  height: calc(var(--header-brand-height) - 0.5rem);
+  object-fit: cover;
+  object-position: 44% center;
+  flex-shrink: 0;
 }

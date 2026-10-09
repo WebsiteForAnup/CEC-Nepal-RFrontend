@@ -2,7 +2,6 @@ import { Link, useParams } from 'react-router-dom';
 import Page from '../components/public/Page';
 import Inquiry from '../components/public/Inquiry';
 import ProjectLinks from '../components/public/ProjectLinks';
-import Arrow from '../components/public/Arrow';
 import NotFound from './NotFound';
 import { publicContent, findService, getServiceProjects } from '../services/publicContent';
 export default function ServiceDetail() {
@@ -74,7 +73,6 @@ export default function ServiceDetail() {
               {caseProject && (
                 <Link className="cec-text-link" to={'/project/' + caseProject.slug}>
                   Explore project
-                  <Arrow diagonal />
                 </Link>
               )}
             </section>
@@ -114,7 +112,6 @@ export default function ServiceDetail() {
                   to={'/service/' + service.slug}
                 >
                   {service.title}
-                  <Arrow diagonal />
                 </Link>
               ))}
           </section>
@@ -124,7 +121,6 @@ export default function ServiceDetail() {
       {projects.length > 0 && (
         <Link className="cec-text-link" to={'/projects?service=' + id}>
           All projects for this service
-          <Arrow diagonal />
         </Link>
       )}
     </Page>

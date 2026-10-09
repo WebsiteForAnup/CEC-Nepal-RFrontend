@@ -1,6 +1,5 @@
 import { Link, useSearchParams } from 'react-router-dom';
 import Page from '../components/public/Page';
-import Arrow from '../components/public/Arrow';
 import { publicContent } from '../services/publicContent';
 export default function Downloads() {
   const [params] = useSearchParams();
@@ -48,7 +47,6 @@ export default function Downloads() {
             {item.downloadUrl && item.downloadUrl !== '#' ? (
               <a className="cec-text-link" href={item.downloadUrl} download>
                 Download
-                <Arrow diagonal />
               </a>
             ) : (
               <p className="cec-unavailable">File not published yet.</p>

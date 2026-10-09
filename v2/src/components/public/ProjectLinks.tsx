@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import Arrow from './Arrow';
 export default function ProjectLinks({
   projects,
   title = 'Projects with this expertise',
@@ -27,7 +26,6 @@ export default function ProjectLinks({
                 {project.capacity} / {project.status}
               </span>
               <h3>{project.name}</h3>
-              <Arrow diagonal />
             </div>
           </Link>
         ))}

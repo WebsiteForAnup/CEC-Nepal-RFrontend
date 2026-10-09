@@ -4,7 +4,6 @@ import Facts from '../components/public/Facts';
 import RichArticle from '../components/public/RichArticle';
 import Inquiry from '../components/public/Inquiry';
 import NotFound from './NotFound';
-import Arrow from '../components/public/Arrow';
 import { publicContent, getRelatedNews } from '../services/publicContent';
 import labels from '../data/global/label-mappings.json';
 export default function NewsDetail() {
@@ -65,7 +64,6 @@ export default function NewsDetail() {
                 item.registration.startsWith('http://')) && (
                 <a className="cec-text-link" href={item.registration}>
                   Event registration
-                  <Arrow diagonal />
                 </a>
               )}
           </section>
@@ -82,7 +80,6 @@ export default function NewsDetail() {
                   <p className="cec-eyebrow">{news.category}</p>
                   <h3>{news.title}</h3>
                   <time dateTime={news.date}>{news.date}</time>
-                  <Arrow diagonal />
                 </div>
               </Link>
             ))}

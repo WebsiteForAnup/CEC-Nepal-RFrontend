@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { publicContent, serviceGroups, serviceCategories } from '../../services/publicContent';
-import Arrow from './Arrow';
 
 const explore = [
   ['Company profile', '/company-profile', 'Our mission, vision, and objectives.'],
@@ -24,7 +23,6 @@ export default function MegaMenuContent({ activeMenu }: { activeMenu: Menu }) {
                 service && (
                   <Link key={slug} to={'/service/' + slug}>
                     {service.title}
-                    <Arrow diagonal />
                   </Link>
                 )
               );
@@ -38,7 +36,6 @@ export default function MegaMenuContent({ activeMenu }: { activeMenu: Menu }) {
             {Object.entries(serviceCategories).map(([slug, category]) => (
               <Link key={slug} to={'/projects?service=' + slug}>
                 {category}
-                <Arrow diagonal />
               </Link>
             ))}
           </section>
@@ -47,7 +44,6 @@ export default function MegaMenuContent({ activeMenu }: { activeMenu: Menu }) {
             {[...new Set(publicContent.projects.map((project) => project.status))].map((status) => (
               <Link key={status} to={'/projects?category=' + encodeURIComponent(status)}>
                 {status}
-                <Arrow diagonal />
               </Link>
             ))}
           </section>
@@ -57,10 +53,7 @@ export default function MegaMenuContent({ activeMenu }: { activeMenu: Menu }) {
               src="/images/gallery/projects/seti-khola-hydro.jpg"
               alt="Seti Khola hydropower site"
             />
-            <Link to="/project/seti-khola-hydropower-project">
-              Seti Khola · 22 MW
-              <Arrow diagonal />
-            </Link>
+            <Link to="/project/seti-khola-hydropower-project">Seti Khola · 22 MW</Link>
           </section>
         </>
       )}
@@ -71,24 +64,14 @@ export default function MegaMenuContent({ activeMenu }: { activeMenu: Menu }) {
             {publicContent.news.slice(0, 3).map((item) => (
               <Link key={item.slug} to={'/news-event/' + item.slug}>
                 {item.title}
-                <Arrow diagonal />
               </Link>
             ))}
           </section>
           <section>
             <h3>Resources</h3>
-            <Link to="/downloads">
-              Downloads & publications
-              <Arrow diagonal />
-            </Link>
-            <Link to="/gallery">
-              Our work in pictures
-              <Arrow diagonal />
-            </Link>
-            <Link to="/news">
-              All news & events
-              <Arrow diagonal />
-            </Link>
+            <Link to="/downloads">Downloads & publications</Link>
+            <Link to="/gallery">Our work in pictures</Link>
+            <Link to="/news">All news & events</Link>
           </section>
         </>
       )}
@@ -96,14 +79,8 @@ export default function MegaMenuContent({ activeMenu }: { activeMenu: Menu }) {
         <>
           <section>
             <h3>Who we are</h3>
-            <Link to="/about">
-              About CEC Nepal
-              <Arrow diagonal />
-            </Link>
-            <Link to="/contact">
-              Offices & contact
-              <Arrow diagonal />
-            </Link>
+            <Link to="/about">About CEC Nepal</Link>
+            <Link to="/contact">Offices & contact</Link>
           </section>
           <section>
             <h3>People & purpose</h3>
@@ -113,7 +90,6 @@ export default function MegaMenuContent({ activeMenu }: { activeMenu: Menu }) {
                   {label}
                   <small>{description}</small>
                 </span>
-                <Arrow diagonal />
               </Link>
             ))}
           </section>
