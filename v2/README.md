@@ -20,7 +20,66 @@ the HTML template; node server.mjs supplies the server-rendered content.
 Set PORT to change the HTTP port. Development HMR uses PORT + 1.
 Deploy using a Node server; this is no longer a static-only deployment.
 
+## Live sitemap
+
+`/sitemap.xml` reads the published JSON collections on every request. Additions,
+slug changes, deletions, and explicit `updated_at`, `updatedAt`, or `lastModified`
+timestamps appear on the next request without restarting the sitemap generator.
+Demo articles and private routes are excluded. `/robots.txt` advertises the sitemap.
+Both endpoints disable caching so a proxy does not retain outdated URLs.
+
+The server loads `v2/.env`; shell/deployment environment variables take precedence.
+Copy `.env.example` to `.env` for local development. Set
+`PORT=3001` and leave `SITE_URL` empty locally; changing `PORT` automatically
+changes the default sitemap origin after restarting the server. Set
+`SITE_URL=https://cecnepal.anup.pro.np` to the canonical production origin.
+When `SITE_URL` is unset, the default is `http://localhost:<server port>` (normally
+`http://localhost:3001`). `SITE_URL` in `v2/.env` is re-read on every sitemap and
+robots request, so edits apply on refresh. Shell/deployment variables override
+the file and require a restart when changed. Restart once after updating the
+server code to enable this behavior; other environment settings remain startup-only.
+Deploy `server.mjs`, `sitemap.mjs`, `src/data`, and `dist` together, and route both
+endpoints through the Node server rather than a static fallback in Nginx.
+Run `node --test tests/sitemap.test.mjs` to verify live updates.
+
+The public pages still use bundled JSON: publishing changed JSON requires the
+normal site build/deployment so those URLs render correctly. This endpoint does
+not publish Neon admin records or browser-local drafts. Database-driven sitemap
+updates require the public pages and sitemap to share a live published-content
+source; until that is connected, keep deployed JSON and page bundles in sync.
+
 ## Page structure
+
+### Editing Home and the site layout
+
+`src/pages/Home.tsx` composes nine named sections from `src/components/home`.
+Edit the corresponding section for content, links, or interactions; reorder or
+remove its component in Home to change the page composition. Featured project
+and service selections live with their sections.
+
+`SiteLayout.tsx` assembles the top bar, `SiteHeader`, news ticker, page outlet,
+and `SiteFooter`. Navigation state and keyboard handling belong to SiteHeader.
+
+Home, SiteHeader, and SiteFooter each own a CSS Module next to their source.
+The generated module root scopes existing semantic `cec-*` classes to the
+component, preserving motion hooks and avoiding style leakage. `:where` keeps
+the scope from increasing selector specificity. Shared site tokens, typography,
+buttons, containers, and the other public page templates remain in `styles/site.css`.
+Keep future section-specific overrides in the owning module instead of appending
+them to the shared stylesheet.
+
+The root palette lives in `src/color.css`; edit its semantic tokens to update
+shared colors. Name classes for their role, such as `cec-nav-button`,
+`cec-action-button`, and `cec-feature-button`, rather than their current color.
+Color tokens follow `--cec-{purpose}-{component}-{state}`: for example,
+`--cec-background-navbar`, `--cec-text-footer-description`, and
+`--cec-background-event-editor-action-hover`. Use `background`, `text`,
+`border`, `shadow`, or `focus` for a specific property, and `color` for
+shared brand, accent, or status colors. Omit component and state when unnecessary.
+All first-party CSS and inline component colors use this palette, including
+admin screens and map status colors. `resolveCssColor` resolves tokens for
+Leaflet drawing, which needs concrete color values. Run `npm run test:colors`
+to catch literal colors, obsolete names, and references to undefined tokens.
 
 Public pages: Home, About, CompanyProfile, Services, ServiceDetail, Projects,
 ProjectDetail, Team, News, NewsDetail, Gallery, Downloads, Careers, FAQ, Contact,

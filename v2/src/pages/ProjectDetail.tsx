@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import Page from '../components/public/Page';
+import ContentImage from '../components/public/ContentImage';
 import Facts from '../components/public/Facts';
 import Inquiry from '../components/public/Inquiry';
 import PhotoGallery from '../components/public/PhotoGallery';
@@ -27,6 +28,7 @@ export default function ProjectDetail() {
       </nav>
       <div className="cec-detail-layout">
         <article>
+          {!photos.length && <ContentImage className="cec-detail-image" alt="CEC Nepal logo" />}
           <div className="cec-project-highlights">
             <div>
               <span>CAPACITY</span>

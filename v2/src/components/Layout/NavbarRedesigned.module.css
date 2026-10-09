@@ -4,9 +4,9 @@
 
 /* ========== TOP UTILITY BAR ========== */
 .topBar {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  background: linear-gradient(135deg, var(--cec-color-primary) 0%, var(--cec-color-primary-hover) 100%);
   padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--cec-border-footer);
   position: relative; /* Scrolls away */
   z-index: 1001;
 }
@@ -30,13 +30,13 @@
 }
 
 .taglineSection i {
-  color: var(--primary);
+  color: var(--cec-color-primary);
   font-size: 1.1rem;
   flex-shrink: 0;
 }
 
 .tagline {
-  color: var(--white);
+  color: var(--cec-background-default);
   font-size: var(--fs-small);
   font-weight: 500;
   margin: 0;
@@ -50,8 +50,8 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  background: var(--white);
-  color: var(--primary);
+  background: var(--cec-background-default);
+  color: var(--cec-color-primary);
   border: none;
   padding: 0.5rem 1.2rem;
   border-radius: 6px;
@@ -60,13 +60,13 @@
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px var(--cec-shadow-navigation-6);
 }
 
 .callButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  background: var(--bg-light);
+  box-shadow: 0 4px 12px var(--cec-background-footer-input);
+  background: var(--cec-background-page);
 }
 
 .callButton:active {
@@ -82,8 +82,8 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--white);
-  border-bottom: 1px solid var(--white);
+  background: var(--cec-background-default);
+  border-bottom: 1px solid var(--cec-background-default);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   padding: 1.25rem 0;
   width: 100%;
@@ -96,12 +96,12 @@
   width: 95%;
   max-width: 1400px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--cec-background-navigation-glass);
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(12px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--cec-border-navigation);
   border-radius: 100px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px var(--cec-shadow-navigation-alternate);
   padding: 0.75rem 0;
 }
 
@@ -150,14 +150,14 @@
 .logoText {
   font-size: var(--fs-h4);
   font-weight: 700;
-  color: var(--secondary);
+  color: var(--cec-color-secondary);
   letter-spacing: -0.5px;
   /* text-transform: uppercase; */
   font-family: 'Montserrat', 'Inter', sans-serif;
 }
 
 .logoHighlight {
-  color: var(--primary);
+  color: var(--cec-color-primary);
   font-weight: 800;
 }
 
@@ -174,7 +174,7 @@
   background: transparent;
   background-color: transparent;
   border: none;
-  color: var(--text-main);
+  color: var(--cec-text-body);
   font-size: var(--fs-small);
   font-weight: 500;
   cursor: pointer;
@@ -191,7 +191,7 @@
 }
 
 .navLink:hover {
-  color: var(--primary);
+  color: var(--cec-color-primary);
   background-color: transparent;
   box-shadow: none;
   transform: none;
@@ -204,7 +204,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  background: linear-gradient(90deg, var(--cec-color-primary), var(--cec-color-secondary));
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 2px;
 }
@@ -225,8 +225,8 @@
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--white);
-  border: 1px solid var(--white);
+  background: var(--cec-background-default);
+  border: 1px solid var(--cec-background-default);
   border-radius: 8px;
   min-width: 200px;
   margin-top: 1rem;
@@ -234,7 +234,7 @@
   visibility: hidden;
   pointer-events: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px var(--cec-shadow-navigation-4);
   padding: 0.75rem 0;
   z-index: 1000;
 }
@@ -251,7 +251,7 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.75rem 1.5rem;
-  color: var(--text-main);
+  color: var(--cec-text-body);
   text-decoration: none;
   font-size: var(--fs-small);
   font-weight: 500;
@@ -265,8 +265,8 @@
 }
 
 .dropdownItem:hover {
-  background: var(--bg-light);
-  color: var(--primary);
+  background: var(--cec-background-page);
+  color: var(--cec-color-primary);
   padding-left: 1.75rem;
 }
 
@@ -279,8 +279,8 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  color: var(--white);
+  background: linear-gradient(135deg, var(--cec-color-primary) 0%, var(--cec-color-primary-hover) 100%);
+  color: var(--cec-background-default);
   border: none;
   padding: 0.6rem 1.4rem;
   border-radius: 8px;
@@ -291,12 +291,12 @@
   flex-shrink: 0;
   font-family: 'Montserrat', 'Inter', sans-serif;
   letter-spacing: 0.3px;
-  box-shadow: 0 4px 12px rgba(0, 74, 173, 0.25);
+  box-shadow: 0 4px 12px var(--cec-shadow-navigation-2-alternate);
 }
 
 .registerBtn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 74, 173, 0.35);
+  box-shadow: 0 6px 20px var(--cec-shadow-navigation-3-alternate);
 }
 
 .registerBtn:active {
@@ -336,7 +336,7 @@
 .hamburgerLine {
   width: 24px;
   height: 2.5px;
-  background: var(--text-dark);
+  background: var(--cec-text-heading);
   border-radius: 2px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -361,7 +361,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--cec-background-navigation-overlay);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -381,14 +381,14 @@
 }
 
 .modalContent {
-  background: var(--white);
+  background: var(--cec-background-default);
   border-radius: 12px;
   padding: 2.5rem;
   max-width: 600px;
   width: 100%;
   position: relative;
   animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 60px var(--cec-shadow-navigation-6);
   max-height: 90vh;
   overflow-y: auto;
 }
@@ -408,7 +408,7 @@
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  background: var(--white);
+  background: var(--cec-background-default);
   border: none;
   width: 36px;
   height: 36px;
@@ -417,34 +417,34 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-dark);
+  color: var(--cec-text-heading);
   font-size: 1.2rem;
   transition: all 0.2s ease;
   z-index: 10;
 }
 
 .closeBtn:hover {
-  background: var(--primary);
-  color: var(--white);
+  background: var(--cec-color-primary);
+  color: var(--cec-background-default);
   transform: rotate(90deg);
 }
 
 .modalHeader {
   margin-bottom: 2rem;
-  border-bottom: 2px solid var(--white);
+  border-bottom: 2px solid var(--cec-background-default);
   padding-bottom: 1.5rem;
 }
 
 .modalHeader h2 {
   font-size: var(--fs-h3);
-  color: var(--text-dark);
+  color: var(--cec-text-heading);
   margin: 0 0 0.5rem 0;
   font-weight: 700;
   font-family: 'Montserrat', 'Inter', sans-serif;
 }
 
 .modalHeader p {
-  color: var(--text-main);
+  color: var(--cec-text-body);
   font-size: 0.95rem;
   margin: 0;
   line-height: 1.5;
@@ -468,26 +468,26 @@
 .modalContent select {
   width: 100%;
   padding: 0.85rem 1rem;
-  border: 1.5px solid var(--border-light);
+  border: 1.5px solid var(--cec-border-subtle);
   border-radius: 8px;
   font-size: var(--fs-body);
   font-family: 'Inter', 'Montserrat', sans-serif;
   transition: all 0.2s ease;
-  background: var(--white);
-  color: var(--text-dark);
+  background: var(--cec-background-default);
+  color: var(--cec-text-heading);
 }
 
 .modalContent input:focus,
 .modalContent textarea:focus,
 .modalContent select:focus {
   outline: none;
-  border-color: var(--primary);
-  background: var(--white);
-  box-shadow: 0 0 0 3px var(--bg-hover);
+  border-color: var(--cec-color-primary);
+  background: var(--cec-background-default);
+  box-shadow: 0 0 0 3px var(--cec-background-hover);
 }
 
 .modalContent input::placeholder {
-  color: var(--text-muted);
+  color: var(--cec-text-secondary);
 }
 
 .modalContent textarea {
@@ -497,8 +497,8 @@
 }
 
 .submitBtn {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  color: var(--white);
+  background: linear-gradient(135deg, var(--cec-color-primary) 0%, var(--cec-color-primary-hover) 100%);
+  color: var(--cec-background-default);
   border: none;
   padding: 1rem 1.5rem;
   border-radius: 8px;
@@ -512,12 +512,12 @@
   justify-content: center;
   gap: 0.6rem;
   font-family: 'Montserrat', 'Inter', sans-serif;
-  box-shadow: 0 4px 12px rgba(0, 74, 173, 0.25);
+  box-shadow: 0 4px 12px var(--cec-shadow-navigation-2-alternate);
 }
 
 .submitBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 74, 173, 0.35);
+  box-shadow: 0 6px 20px var(--cec-shadow-navigation-3-alternate);
 }
 
 .submitBtn:active {
@@ -590,7 +590,7 @@
     margin: 0;
     padding: 0.75rem 0;
     border: none;
-    border-bottom: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--cec-border-subtle);
   }
 
   .container {
@@ -604,8 +604,8 @@
     right: 0;
     flex-direction: column;
     gap: 0;
-    background: var(--white);
-    border-bottom: 1px solid var(--border-light);
+    background: var(--cec-background-default);
+    border-bottom: 1px solid var(--cec-border-subtle);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -614,17 +614,17 @@
 
   .navCenter.active {
     max-height: 700px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 24px var(--cec-shadow-navigation-4);
     overflow-y: auto;
   }
 
   .navLink {
     padding: 1rem 1.5rem;
-    border-bottom: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--cec-border-subtle);
     justify-content: flex-start;
     gap: 1rem;
     width: 100%;
-    color: var(--text-dark);
+    color: var(--cec-text-heading);
   }
 
   .navLink i {
@@ -638,7 +638,7 @@
   }
 
   .navLink:hover {
-    background: var(--bg-light);
+    background: var(--cec-background-page);
   }
 
   .dropdownContainer {
@@ -655,7 +655,7 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     margin: 0;
     box-shadow: none;
-    background: var(--bg-light);
+    background: var(--cec-background-page);
     border: none;
     padding: 0;
   }
@@ -669,7 +669,7 @@
 
   .dropdownItem {
     padding: 0.85rem 1.5rem 0.85rem 3rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid var(--cec-border-navigation-alternate);
   }
 
   .dropdownItem:hover {
@@ -689,8 +689,8 @@
     align-items: center;
     justify-content: center;
     gap: 0.6rem;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: var(--white);
+    background: linear-gradient(135deg, var(--cec-color-primary) 0%, var(--cec-color-primary-hover) 100%);
+    color: var(--cec-background-default);
     border: none;
     padding: 0.85rem 1.5rem;
     border-radius: 8px;
@@ -701,13 +701,13 @@
     width: calc(100% - 3rem);
     font-family: 'Montserrat', 'Inter', sans-serif;
     letter-spacing: 0.3px;
-    box-shadow: 0 4px 12px rgba(0, 149, 74, 0.2);
+    box-shadow: 0 4px 12px var(--cec-shadow-navigation-4-alternate);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .mobileRegisterBtn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 149, 74, 0.3);
+    box-shadow: 0 6px 20px var(--cec-shadow-navigation-5-alternate);
   }
 
   .mobileRegisterBtn:active {

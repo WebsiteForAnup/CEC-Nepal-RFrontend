@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import Page from '../components/public/Page';
+import ContentImage from '../components/public/ContentImage';
 import Facts from '../components/public/Facts';
 import RichArticle from '../components/public/RichArticle';
 import Inquiry from '../components/public/Inquiry';
@@ -24,7 +25,7 @@ export default function NewsDetail() {
             <time dateTime={item.date}>{item.date}</time>
             {item.author && <span>By {item.author}</span>}
           </p>
-          {item.image && <img className="cec-detail-image" src={item.image} alt={item.title} />}
+          <ContentImage className="cec-detail-image" src={item.image} alt={item.title} />
           <RichArticle blocks={item.richContent} content={item.content} />
           {item.importantDates?.length > 0 && (
             <section>

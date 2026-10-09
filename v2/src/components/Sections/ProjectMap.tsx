@@ -3,6 +3,7 @@ import styles from './ProjectMap.module.css';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import geoData from '../../data/mygeodata/all_projects.json';
+import { resolveCssColor } from '../../styles/resolveCssColor';
 
 // Fix Leaflet default icon paths in Webpack environments
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -14,252 +15,257 @@ L.Icon.Default.mergeOptions({
 
 // Dynamic color hashing engine
 const getColorByStatus = (status: any): string => {
-    const cleanStatus = String(status).toLowerCase().trim();
-    
-    if (cleanStatus === 'generation') return '#10b981';           
-    if (cleanStatus === 'under construction') return '#f59e0b';    
-    if (cleanStatus === 'testing and commisioning') return '#06b6d4'; 
-    if (cleanStatus === 'ppa stage') return '#3b82f6';             
-    if (cleanStatus === 'unspecified') return '#94a3b8';           
+  const cleanStatus = String(status).toLowerCase().trim();
 
-    let hash = 0;
-    for (let i = 0; i < cleanStatus.length; i++) {
-        hash = cleanStatus.charCodeAt(i) + ((hash << 5) - hash);
-    }
-    
-    const hue = Math.abs(hash) % 360;
-    return `hsl(${hue}, 75%, 50%)`;
+  if (cleanStatus === 'generation') return 'var(--cec-color-status-success)';
+  if (cleanStatus === 'under construction') return 'var(--cec-color-project-status-building)';
+  if (cleanStatus === 'testing and commisioning') return 'var(--cec-color-project-status-commissioning)';
+  if (cleanStatus === 'ppa stage') return 'var(--cec-color-project-status-contract)';
+  if (cleanStatus === 'unspecified') return 'var(--cec-color-project-status-reference)';
+
+  return 'var(--cec-color-project-status-reference)';
 };
 
 const ProjectMap: React.FC = () => {
-    const mapContainerRef = useRef<HTMLDivElement | null>(null);
-    const mapRef = useRef<L.Map | null>(null);
-    const [mapLoaded, setMapLoaded] = useState<boolean>(false);
+  const mapContainerRef = useRef<HTMLDivElement | null>(null);
+  const mapRef = useRef<L.Map | null>(null);
+  const [mapLoaded, setMapLoaded] = useState<boolean>(false);
 
-    useEffect(() => {
-        if (!mapContainerRef.current) return;
+  useEffect(() => {
+    if (!mapContainerRef.current) return;
 
-        let nepalLayerBounds: L.LatLngBounds | null = null;
-        const filterLayers: Record<string, L.Layer> = {};
+    let nepalLayerBounds: L.LatLngBounds | null = null;
+    const filterLayers: Record<string, L.Layer> = {};
 
-        if (!mapRef.current) {
-            mapRef.current = L.map(mapContainerRef.current, {
-                center: [28.3949, 84.1240], // Default center (Nepal)
-                zoom: 7,
-                scrollWheelZoom: false,
-                zoomControl: false
-            });
+    if (!mapRef.current) {
+      mapRef.current = L.map(mapContainerRef.current, {
+        center: [28.3949, 84.124], // Default center (Nepal)
+        zoom: 7,
+        scrollWheelZoom: false,
+        zoomControl: false,
+      });
 
-            // 1. DEFINE BASEMAP VARIANT TILES
-            const googleSat = L.tileLayer('http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}', {
-                maxZoom: 20,
-                attribution: 'Map data &copy; <a href="https://www.google.com/maps">Google Maps</a>'
-            }).addTo(mapRef.current); // Added by default
+      // 1. DEFINE BASEMAP VARIANT TILES
+      const googleSat = L.tileLayer('http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        attribution: 'Map data &copy; <a href="https://www.google.com/maps">Google Maps</a>',
+      }).addTo(mapRef.current); // Added by default
 
-            const osmStandard = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            });
+      const osmStandard = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      });
 
-            const googleTerrain = L.tileLayer('http://mt0.google.com/vt/lyrs=p&hl=en&x={x}&y={y}&z={z}', {
-                maxZoom: 20,
-                attribution: 'Map data &copy; <a href="https://www.google.com/maps">Google Maps</a>'
-            });
+      const googleTerrain = L.tileLayer('http://mt0.google.com/vt/lyrs=p&hl=en&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        attribution: 'Map data &copy; <a href="https://www.google.com/maps">Google Maps</a>',
+      });
 
-            const googleHybrid = L.tileLayer('http://mt0.google.com/vt/lyrs=y&hl=en&x={x}&y={y}&z={z}', {
-                maxZoom: 20,
-                attribution: 'Map data &copy; <a href="https://www.google.com/maps">Google Maps</a>'
-            });
+      const googleHybrid = L.tileLayer('http://mt0.google.com/vt/lyrs=y&hl=en&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        attribution: 'Map data &copy; <a href="https://www.google.com/maps">Google Maps</a>',
+      });
 
-            // Set up radio button menu dictionary
-            const baseMaps = { 
-                "Google Satellite": googleSat,
-                "Google Hybrid": googleHybrid,
-                "Google Terrain": googleTerrain,
-                "OpenStreetMap": osmStandard
-            };
+      // Set up radio button menu dictionary
+      const baseMaps = {
+        'Google Satellite': googleSat,
+        'Google Hybrid': googleHybrid,
+        'Google Terrain': googleTerrain,
+        OpenStreetMap: osmStandard,
+      };
 
-            // Tooltip template engine
-            const onEachFeature = (feature: any, layer: L.Layer) => {
-                if (feature.properties && feature.properties.description) {
-                    const popupContent = `<div class="${styles.customPopup}">${feature.properties.description}</div>`;
-                    (layer as any).options.interactive = true;
-                    layer.bindTooltip(popupContent, { sticky: true, opacity: 1, direction: 'auto' });
-                }
-            };
+      // Tooltip template engine
+      const onEachFeature = (feature: any, layer: L.Layer) => {
+        if (feature.properties && feature.properties.description) {
+          const popupContent = `<div class="${styles.customPopup}">${feature.properties.description}</div>`;
+          (layer as any).options.interactive = true;
+          layer.bindTooltip(popupContent, { sticky: true, opacity: 1, direction: 'auto' });
+        }
+      };
 
-            // DYNAMIC STATUS PARSING ENGINE
-            const featuresGroupedByStatus: Record<string, any[]> = {};
+      // DYNAMIC STATUS PARSING ENGINE
+      const featuresGroupedByStatus: Record<string, any[]> = {};
 
-            const data = geoData as any;
-            if (data && data.features) {
-                data.features.forEach((feature: any) => {
-                    if (feature.geometry && feature.geometry.type === 'Point') {
-                        const coords = feature.geometry.coordinates;
-                        if (coords && coords[0] === 0 && coords[1] === 0) return;
-                    }
+      const data = geoData as any;
+      if (data && data.features) {
+        data.features.forEach((feature: any) => {
+          if (feature.geometry && feature.geometry.type === 'Point') {
+            const coords = feature.geometry.coordinates;
+            if (coords && coords[0] === 0 && coords[1] === 0) return;
+          }
 
-                    let statusName = 'Unspecified';
-                    const description = feature.properties?.description;
+          let statusName = 'Unspecified';
+          const description = feature.properties?.description;
 
-                    if (description) {
-                        const match = description.match(/Status:<\/b>\s*([^<]+)/i);
-                        if (match && match[1] && match[1].trim() !== "") {
-                            statusName = match[1].trim();
-                        }
-                    }
-
-                    if (!featuresGroupedByStatus[statusName]) {
-                        featuresGroupedByStatus[statusName] = [];
-                    }
-                    featuresGroupedByStatus[statusName].push(feature);
-                });
+          if (description) {
+            const match = description.match(/Status:<\/b>\s*([^<]+)/i);
+            if (match && match[1] && match[1].trim() !== '') {
+              statusName = match[1].trim();
             }
+          }
 
-            // BUILD INDIVIDUAL GEOJSON FILTER LAYERS DYNAMICALLY
-            Object.keys(featuresGroupedByStatus).forEach(status => {
-                const statusColor = getColorByStatus(status);
+          if (!featuresGroupedByStatus[statusName]) {
+            featuresGroupedByStatus[statusName] = [];
+          }
+          featuresGroupedByStatus[statusName].push(feature);
+        });
+      }
 
-                if (mapRef.current) {
-                    const statusGeoJsonLayer = L.geoJSON(featuresGroupedByStatus[status], {
-                        style: {
-                            color: statusColor,
-                            weight: 2,
-                            opacity: 1,
-                            fillColor: statusColor,
-                            fillOpacity: 0.4,
-                            interactive: true
-                        },
-                        pointToLayer: (feature, latlng) => {
-                            return L.circleMarker(latlng, {
-                                radius: 6,
-                                fillColor: statusColor,
-                                color: "#fff",
-                                weight: 2,
-                                opacity: 1,
-                                fillOpacity: 0.8,
-                                interactive: true
-                            });
-                        },
-                        onEachFeature
-                    }).addTo(mapRef.current);
+      // BUILD INDIVIDUAL GEOJSON FILTER LAYERS DYNAMICALLY
+      Object.keys(featuresGroupedByStatus).forEach((status) => {
+        const statusColor = resolveCssColor(getColorByStatus(status));
 
-                    filterLayers[status] = statusGeoJsonLayer;
-                }
-            });
+        if (mapRef.current) {
+          const statusGeoJsonLayer = L.geoJSON(featuresGroupedByStatus[status], {
+            style: {
+              color: statusColor,
+              weight: 2,
+              opacity: 1,
+              fillColor: statusColor,
+              fillOpacity: 0.4,
+              interactive: true,
+            },
+            pointToLayer: (feature, latlng) => {
+              return L.circleMarker(latlng, {
+                radius: 6,
+                fillColor: statusColor,
+                color: resolveCssColor('var(--cec-background-default)'),
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 0.8,
+                interactive: true,
+              });
+            },
+            onEachFeature,
+          }).addTo(mapRef.current);
 
-            // Initialize control layers panel synchronously including new base maps choices
-            const layersControl = L.control.layers(baseMaps, filterLayers, { 
-                collapsed: true, 
-                position: 'topleft' 
+          filterLayers[status] = statusGeoJsonLayer;
+        }
+      });
+
+      // Initialize control layers panel synchronously including new base maps choices
+      const layersControl = L.control
+        .layers(baseMaps, filterLayers, {
+          collapsed: true,
+          position: 'topleft',
+        })
+        .addTo(mapRef.current);
+
+      // Custom Zoom to Fit Control
+      const ZoomToFitControl = (L.Control as any).extend({
+        options: { position: 'topright' },
+        onAdd: function () {
+          const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+          const button = L.DomUtil.create('a', '', container);
+          button.innerHTML = '<i class="fas fa-expand"></i>';
+          button.href = '#';
+          button.title = 'Zoom to fit Nepal';
+          button.role = 'button';
+          button.style.display = 'flex';
+          button.style.alignItems = 'center';
+          button.style.justifyContent = 'center';
+          button.style.color = 'var(--cec-text-map-popup)';
+          button.style.fontSize = '14px';
+
+          L.DomEvent.disableClickPropagation(button);
+          L.DomEvent.on(button, 'click', function (e) {
+            L.DomEvent.preventDefault(e);
+            if (nepalLayerBounds && mapRef.current) {
+              mapRef.current.fitBounds(nepalLayerBounds, { padding: [20, 20], maxZoom: 12 });
+            } else if (mapRef.current) {
+              const firstKey = Object.keys(filterLayers)[0];
+              if (firstKey) {
+                mapRef.current.fitBounds((filterLayers[firstKey] as any).getBounds(), {
+                  padding: [20, 20],
+                  maxZoom: 12,
+                });
+              }
+            }
+          });
+
+          return container;
+        },
+      });
+      new ZoomToFitControl().addTo(mapRef.current);
+
+      // Fetch Nepal Outline Asynchronously
+      fetch('/nepal_outline.geojson')
+        .then((res) => res.json())
+        .then((nepalData) => {
+          if (mapRef.current) {
+            const nepalLayer = L.geoJSON(nepalData, {
+              style: {
+                color: resolveCssColor('var(--cec-text-heading)'),
+                weight: 3,
+                opacity: 0.6,
+                fillColor: 'transparent',
+                interactive: false,
+              },
             }).addTo(mapRef.current);
 
-            // Custom Zoom to Fit Control
-            const ZoomToFitControl = (L.Control as any).extend({
-                options: { position: 'topright' },
-                onAdd: function() {
-                    const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
-                    const button = L.DomUtil.create('a', '', container);
-                    button.innerHTML = '<i class="fas fa-expand"></i>';
-                    button.href = '#';
-                    button.title = 'Zoom to fit Nepal';
-                    button.role = 'button';
-                    button.style.display = 'flex';
-                    button.style.alignItems = 'center';
-                    button.style.justifyContent = 'center';
-                    button.style.color = '#2d3748';
-                    button.style.fontSize = '14px';
+            nepalLayer.bringToBack();
 
-                    L.DomEvent.disableClickPropagation(button);
-                    L.DomEvent.on(button, 'click', function(e) {
-                        L.DomEvent.preventDefault(e);
-                        if (nepalLayerBounds && mapRef.current) {
-                            mapRef.current.fitBounds(nepalLayerBounds, { padding: [20, 20], maxZoom: 12 });
-                        } else if (mapRef.current) {
-                            const firstKey = Object.keys(filterLayers)[0];
-                            if (firstKey) {
-                                mapRef.current.fitBounds((filterLayers[firstKey] as any).getBounds(), { padding: [20, 20], maxZoom: 12 });
-                            }
-                        }
-                    });
+            layersControl.addOverlay(nepalLayer, 'Nepal Outline');
 
-                    return container;
-                }
-            });
-            new ZoomToFitControl().addTo(mapRef.current);
-
-            // Fetch Nepal Outline Asynchronously
-            fetch('/nepal_outline.geojson')
-                .then(res => res.json())
-                .then(nepalData => {
-                    if (mapRef.current) {
-                        const nepalLayer = L.geoJSON(nepalData, {
-                            style: {
-                                color: '#000000',
-                                weight: 3,
-                                opacity: 0.6,
-                                fillColor: 'transparent',
-                                interactive: false
-                            }
-                        }).addTo(mapRef.current);
-
-                        nepalLayer.bringToBack();
-                        
-                        layersControl.addOverlay(nepalLayer, "Nepal Outline");
-
-                        nepalLayerBounds = nepalLayer.getBounds();
-                        mapRef.current.fitBounds(nepalLayerBounds, { padding: [20, 20], maxZoom: 12 });
-                        setMapLoaded(true);
-                    }
-                })
-                .catch(err => {
-                    console.error("Error loading Nepal Outline Layer", err);
-                    if (mapRef.current) {
-                        const keys = Object.keys(filterLayers);
-                        if (keys.length > 0) {
-                            const temporaryGroup = L.featureGroup(Object.values(filterLayers));
-                            mapRef.current.fitBounds(temporaryGroup.getBounds(), { padding: [20, 20] });
-                        }
-                    }
-                    setMapLoaded(true);
-                });
-        }
-
-        return () => {
-            if (mapRef.current) {
-                mapRef.current.remove();
-                mapRef.current = null;
+            nepalLayerBounds = nepalLayer.getBounds();
+            mapRef.current.fitBounds(nepalLayerBounds, { padding: [20, 20], maxZoom: 12 });
+            setMapLoaded(true);
+          }
+        })
+        .catch((err) => {
+          console.error('Error loading Nepal Outline Layer', err);
+          if (mapRef.current) {
+            const keys = Object.keys(filterLayers);
+            if (keys.length > 0) {
+              const temporaryGroup = L.featureGroup(Object.values(filterLayers));
+              mapRef.current.fitBounds(temporaryGroup.getBounds(), { padding: [20, 20] });
             }
-        };
-    }, []);
+          }
+          setMapLoaded(true);
+        });
+    }
 
-    const enableScrollZoom = () => {
-        if (mapRef.current) {
-            mapRef.current.scrollWheelZoom.enable();
-        }
+    return () => {
+      if (mapRef.current) {
+        mapRef.current.remove();
+        mapRef.current = null;
+      }
     };
+  }, []);
 
-    return (
-        <section className={styles.mapSection} id="project-map">
-            <div className={styles.container}>
-                <div className={styles.sectionHeader}>
-                    <h2>Hydropower Footprint</h2>
-                    <div className={styles.line}></div>
-                    <p className={styles.subtitle}>Explore our nationwide presence across Nepal categorized dynamically by operational status.</p>
-                </div>
+  const enableScrollZoom = () => {
+    if (mapRef.current) {
+      mapRef.current.scrollWheelZoom.enable();
+    }
+  };
 
-                <div className={styles.mapWrapper} onClick={enableScrollZoom} onMouseLeave={() => mapRef.current?.scrollWheelZoom.disable()}>
-                    <div className={styles.mapOverlayHint} style={{ display: mapLoaded ? 'none' : 'flex' }}>
-                        <span>Loading Map...</span>
-                    </div>
-                    <div ref={mapContainerRef} className={styles.mapContainer}></div>
-                    <div className={styles.interactionHint}>
-                        Click on the map to enable scroll-to-zoom
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+  return (
+    <section className={styles.mapSection} id="project-map">
+      <div className={styles.container}>
+        <div className={styles.sectionHeader}>
+          <h2>Hydropower Footprint</h2>
+          <div className={styles.line}></div>
+          <p className={styles.subtitle}>
+            Explore our nationwide presence across Nepal categorized dynamically by operational
+            status.
+          </p>
+        </div>
+
+        <div
+          className={styles.mapWrapper}
+          onClick={enableScrollZoom}
+          onMouseLeave={() => mapRef.current?.scrollWheelZoom.disable()}
+        >
+          <div className={styles.mapOverlayHint} style={{ display: mapLoaded ? 'none' : 'flex' }}>
+            <span>Loading Map...</span>
+          </div>
+          <div ref={mapContainerRef} className={styles.mapContainer}></div>
+          <div className={styles.interactionHint}>Click on the map to enable scroll-to-zoom</div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default ProjectMap;

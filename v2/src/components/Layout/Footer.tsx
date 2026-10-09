@@ -171,13 +171,13 @@ const Footer: React.FC<FooterProps> = ({ company = {} }) => {
               if (coord.popUpDetails) {
                 const { name: pName, address, phone, email, type } = coord.popUpDetails;
                 const popupContent = `
-                  <div style="font-family: inherit; color: #1e293b; padding: 4px; min-width: 150px;">
-                    <strong style="display: block; font-size: 12px; color: #10b981; margin-bottom: 2px;">${pName}</strong>
-                    ${type ? `<span style="display: inline-block; font-size: 9px; background: #e2e8f0; color: #475569; padding: 1px 4px; border-radius: 3px; margin-bottom: 4px;">${type}</span>` : ''}
-                    ${address ? `<div style="font-size: 10px; margin-bottom: 1px;"><i class="fas fa-map-marker-alt" style="color: #10b981; margin-right: 3px;"></i>${address}</div>` : ''}
-                    ${phone ? `<div style="font-size: 10px; margin-bottom: 1px;"><i class="fas fa-phone" style="color: #10b981; margin-right: 3px;"></i>${phone}</div>` : ''}
-                    ${email ? `<div style="font-size: 10px; margin-bottom: 4px;"><i class="fas fa-envelope" style="color: #10b981; margin-right: 3px;"></i>${email}</div>` : ''}
-                    <a href="https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${cLat},${cLng}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; gap: 4px; font-size: 10px; background: #10b981; color: white; padding: 3px 8px; border-radius: 4px; text-decoration: none; font-weight: 600; margin-top: 4px;">
+                  <div style="font-family: inherit; color: var(--cec-text-popup); padding: 4px; min-width: 150px;">
+                    <strong style="display: block; font-size: 12px; color: var(--cec-color-status-success); margin-bottom: 2px;">${pName}</strong>
+                    ${type ? `<span style="display: inline-block; font-size: 9px; background: var(--cec-border-subtle); color: var(--cec-text-popup-label); padding: 1px 4px; border-radius: 3px; margin-bottom: 4px;">${type}</span>` : ''}
+                    ${address ? `<div style="font-size: 10px; margin-bottom: 1px;"><i class="fas fa-map-marker-alt" style="color: var(--cec-color-status-success); margin-right: 3px;"></i>${address}</div>` : ''}
+                    ${phone ? `<div style="font-size: 10px; margin-bottom: 1px;"><i class="fas fa-phone" style="color: var(--cec-color-status-success); margin-right: 3px;"></i>${phone}</div>` : ''}
+                    ${email ? `<div style="font-size: 10px; margin-bottom: 4px;"><i class="fas fa-envelope" style="color: var(--cec-color-status-success); margin-right: 3px;"></i>${email}</div>` : ''}
+                    <a href="https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${cLat},${cLng}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; gap: 4px; font-size: 10px; background: var(--cec-color-status-success); color: var(--cec-background-default); padding: 3px 8px; border-radius: 4px; text-decoration: none; font-weight: 600; margin-top: 4px;">
                       <i class="fas fa-street-view"></i> Street View
                     </a>
                   </div>

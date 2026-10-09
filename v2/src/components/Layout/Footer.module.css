@@ -1,6 +1,6 @@
 .footer {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--text-main) 100%);
-  color: var(--white);
+  background: linear-gradient(135deg, var(--cec-color-primary) 0%, var(--cec-text-body) 100%);
+  color: var(--cec-background-default);
   position: relative;
   overflow: hidden;
   /* margin: 100px; */
@@ -13,9 +13,9 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    var(--primary) 50%, 
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--cec-color-primary) 50%,
     transparent 100%
   );
 }
@@ -47,7 +47,7 @@
   align-items: center;
   gap: 0.8rem;
   margin-bottom: 1.5rem;
- background-color: var(--white);
+ background-color: var(--cec-background-default);
   border-radius: 20px;
   padding: 5px;
 }
@@ -56,24 +56,24 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--cec-color-primary);
   object-fit: cover;
 }
 
 .footerLogo h3 {
-  
+
   font-size: var(--fs-h3);
   font-weight: 700;
-  color: var(--secondary-dark);
+  color: var(--cec-color-secondary-hover);
   margin: 0;
 }
 
 .footerLogo span {
-  color: var(--primary);
+  color: var(--cec-color-primary);
 }
 
 .footerDesc {
-  color: var(--bg-light);
+  color: var(--cec-background-page);
   line-height: 1.7;
   margin-bottom: 1.5rem;
   font-size: var(--fs-small);
@@ -81,7 +81,7 @@
 
 /* Column Headings */
 .footerCol h4 {
-  color: var(--white);
+  color: var(--cec-background-default);
   font-size: var(--fs-h4);
   font-weight: 600;
   margin-bottom: 1.5rem;
@@ -96,7 +96,7 @@
   left: 0;
   width: 40px;
   height: 3px;
-  background: linear-gradient(90deg, var(--primary) 0%, transparent 100%);
+  background: linear-gradient(90deg, var(--cec-color-primary) 0%, transparent 100%);
 }
 
 /* Links */
@@ -111,7 +111,7 @@
 }
 
 .footerCol ul li a {
-  color: var(--bg-light);
+  color: var(--cec-background-page);
   text-decoration: none;
   font-size: var(--fs-small);
   transition: all 0.3s ease;
@@ -127,12 +127,12 @@
   left: -15px;
   width: 0;
   height: 2px;
-  background: var(--primary);
+  background: var(--cec-color-primary);
   transition: width 0.3s ease;
 }
 
 .footerCol ul li a:hover {
-  color: var(--primary);
+  color: var(--cec-color-primary);
   padding-left: 15px;
 }
 
@@ -145,12 +145,12 @@
   display: flex;
   align-items: flex-start;
   gap: 0.8rem;
-  color: var(--bg-light);
+  color: var(--cec-background-page);
   font-size: var(--fs-small);
 }
 
 .contactInfo i {
-  color: var(--primary);
+  color: var(--cec-color-primary);
   font-size: 1rem;
   margin-top: 0.2rem;
   min-width: 20px;
@@ -168,9 +168,9 @@
 }
 
 .mapTabBtn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--bg-light);
+  background: var(--cec-background-footer-panel);
+  border: 1px solid var(--cec-border-footer);
+  color: var(--cec-background-page);
   padding: 0.3rem 0.6rem;
   border-radius: 4px;
   font-size: 11px;
@@ -180,15 +180,15 @@
 }
 
 .mapTabBtn:hover {
-  background: var(--primary-transparent);
-  border-color: var(--primary);
-  color: var(--white);
+  background: var(--cec-background-primary-tint);
+  border-color: var(--cec-color-primary);
+  color: var(--cec-background-default);
 }
 
 .activeMapTab {
-  background: var(--primary) !important;
-  border-color: var(--primary) !important;
-  color: var(--white) !important;
+  background: var(--cec-color-primary) !important;
+  border-color: var(--cec-color-primary) !important;
+  color: var(--cec-background-default) !important;
   box-shadow: var(--shadow-glow);
 }
 
@@ -196,7 +196,7 @@
   width: 100%;
   height: 180px;
   border-radius: 8px;
-  border: 1px solid var(--primary);
+  border: 1px solid var(--cec-color-primary);
   overflow: hidden;
   box-shadow: var(--shadow-md);
   z-index: 10;
@@ -206,28 +206,28 @@
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  background: var(--primary-transparent);
-  color: var(--primary);
+  background: var(--cec-background-primary-tint);
+  color: var(--cec-color-primary);
   padding: 0.1rem 0.5rem;
   border-radius: 12px;
   font-size: 10px;
   font-weight: 600;
   margin-left: 0.6rem;
-  border: 1px solid var(--primary);
+  border: 1px solid var(--cec-color-primary);
 }
 
 .statusClosed {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  background: rgba(239, 68, 68, 0.15);
-  color: var(--error);
+  background: var(--cec-background-footer-error);
+  color: var(--cec-color-error);
   padding: 0.1rem 0.5rem;
   border-radius: 12px;
   font-size: 10px;
   font-weight: 600;
   margin-left: 0.6rem;
-  border: 1px solid rgba(239, 68, 68, 0.2);
+  border: 1px solid var(--cec-border-footer-error);
 }
 
 .statusDot {
@@ -271,7 +271,7 @@
 }
 
 .socials a {
-  color: var(--white);
+  color: var(--cec-background-default);
   font-size: 1.1rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
@@ -279,9 +279,9 @@
   justify-content: center;
   width: 45px;
   height: 45px;
-  background: var(--primary-transparent);
+  background: var(--cec-background-primary-tint);
   border-radius: 50%;
-  border: 1px solid var(--primary);
+  border: 1px solid var(--cec-color-primary);
   position: relative;
   overflow: hidden;
 }
@@ -294,7 +294,7 @@
   width: 0;
   height: 0;
   border-radius: 50%;
-  background: var(--primary);
+  background: var(--cec-color-primary);
   transition: all 0.5s ease;
   transform: translate(-50%, -50%);
   z-index: -1;
@@ -306,17 +306,17 @@
 }
 
 .socials a:hover {
-  color: var(--white);
-  border-color: var(--primary);
+  color: var(--cec-background-default);
+  border-color: var(--cec-color-primary);
   transform: translateY(-5px) scale(1.1);
   box-shadow: var(--shadow-glow);
 }
 
 /* Footer Bottom */
 .footerBottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--cec-border-footer);
   padding: 1.5rem 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--cec-background-footer-input);
 }
 
 .footerBottomContent {
@@ -330,7 +330,7 @@
 .footerBottomContent p {
   margin: 0;
   font-size: var(--fs-small);
-  color: var(--white);
+  color: var(--cec-background-default);
 }
 
 .footerLinks {
@@ -340,18 +340,18 @@
 }
 
 .footerLinks a {
-  color: var(--white);
+  color: var(--cec-background-default);
   text-decoration: none;
   font-size: var(--fs-small);
   transition: color 0.3s ease;
 }
 
 .footerLinks a:hover {
-  color: var(--primary);
+  color: var(--cec-color-primary);
 }
 
 .separator {
-  color: var(--text-main);
+  color: var(--cec-text-body);
 }
 
 /* Responsive Design */

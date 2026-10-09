@@ -2,8 +2,13 @@ import http from 'node:http';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { readFile, stat } from 'node:fs/promises';
+import { generateSitemap, generateRobots, siteOrigin, resolveSiteOrigin } from './sitemap.mjs';
+import { config as loadEnv } from 'dotenv';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
+const environmentSiteUrl = process.env.SITE_URL;
+loadEnv({ path: path.join(root, '.env'), quiet: true });
+siteOrigin();
 const production = process.argv.includes('--production');
 let port = Number(process.env.PORT || 3001);
 if (!Number.isInteger(port) || port < 1 || port > 65535) {
@@ -11,6 +16,8 @@ if (!Number.isInteger(port) || port < 1 || port > 65535) {
 }
 const clientRoot = path.join(root, 'dist/client');
 const server = http.createServer((req, res) => {
+  const pathname = new URL(req.url || '/', 'http://localhost').pathname;
+  if (pathname === '/sitemap.xml' || pathname === '/robots.txt') { void handle(req, res); return; }
   if (vite) vite.middlewares(req, res, () => { void handle(req, res); });
   else void handle(req, res);
 });
@@ -26,6 +33,12 @@ async function handle(req, res) {
     if (!['GET', 'HEAD'].includes(req.method)) { res.writeHead(405, { Allow: 'GET, HEAD' }); res.end(); return; }
     const url = req.url || '/';
     const pathname = decodeURIComponent(new URL(url, 'http://localhost').pathname);
+    if (pathname === '/sitemap.xml' || pathname === '/robots.txt') {
+      const canonicalOrigin = await resolveSiteOrigin(root, { environmentUrl: environmentSiteUrl, port });
+      const body = pathname === '/sitemap.xml' ? await generateSitemap(root, canonicalOrigin) : generateRobots(canonicalOrigin);
+      res.writeHead(200, { 'Content-Type': pathname === '/sitemap.xml' ? 'application/xml; charset=utf-8' : 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' });
+      res.end(req.method === 'HEAD' ? undefined : body); return;
+    }
     if (production && pathname !== '/' && pathname !== '/index.html') {
       const file = path.resolve(clientRoot, '.' + pathname);
       if (file.startsWith(clientRoot + path.sep)) {

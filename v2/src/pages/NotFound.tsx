@@ -7,7 +7,7 @@ export default function NotFound() {
         <p className="cec-eyebrow">404 / PAGE NOT FOUND</p>
         <h2>We couldn’t find that page.</h2>
         <p>Explore our work or get in touch to find what you need.</p>
-        <Link className="cec-button cec-button--dark" to="/">
+        <Link className="cec-button cec-action-button" to="/">
           Back to home
         </Link>
       </div>

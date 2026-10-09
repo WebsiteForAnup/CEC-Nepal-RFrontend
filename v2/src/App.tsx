@@ -1,3 +1,4 @@
+import './color.css';
 import { useEffect, useState, lazy, Suspense } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { getPageMetadata } from './routing/metadata';

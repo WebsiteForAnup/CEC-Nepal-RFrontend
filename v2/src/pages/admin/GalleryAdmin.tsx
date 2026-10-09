@@ -179,8 +179,8 @@ const GalleryAdmin: React.FC = () => {
                               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                             />
                           ) : (
-                            <div style={{ width: '100%', height: '100%', background: '#f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                              <i className="fas fa-image" style={{ color: '#94a3b8' }}></i>
+                            <div style={{ width: '100%', height: '100%', background: 'var(--cec-background-navigation-panel)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                              <i className="fas fa-image" style={{ color: 'var(--cec-color-project-status-reference)' }}></i>
                             </div>
                           )}
                         </div>

@@ -18,7 +18,7 @@ export default function Gallery() {
             ))}
           </select>
         </label>
-        <button className="cec-button cec-button--dark" type="submit">
+        <button className="cec-button cec-action-button" type="submit">
           Filter
         </button>
         <Link to="/gallery">Clear filter</Link>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import ContentImage from './ContentImage';
 export default function ProjectLinks({
   projects,
   title = 'Projects with this expertise',
@@ -20,7 +21,7 @@ export default function ProjectLinks({
       <div className="cec-related-grid">
         {projects.slice(0, 3).map((project) => (
           <Link key={project.slug} to={'/project/' + project.slug}>
-            {project.image_url && <img src={project.image_url} alt="" loading="lazy" />}
+            <ContentImage src={project.image_url} alt="" loading="lazy" />
             <div>
               <span>
                 {project.capacity} / {project.status}

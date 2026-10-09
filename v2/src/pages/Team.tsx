@@ -1,5 +1,6 @@
 import { Link, useSearchParams } from 'react-router-dom';
 import Page from '../components/public/Page';
+import ContentImage from '../components/public/ContentImage';
 import Inquiry from '../components/public/Inquiry';
 import { publicContent } from '../services/publicContent';
 export default function Team() {
@@ -28,7 +29,7 @@ export default function Team() {
           Find a team member
           <input name="q" type="search" defaultValue={query} key={query} />
         </label>
-        <button type="submit" className="cec-button cec-button--dark">
+        <button type="submit" className="cec-button cec-action-button">
           Search
         </button>
       </form>
@@ -46,9 +47,7 @@ export default function Team() {
                 {filtered.map((member: any) => (
                   <li key={member.slug}>
                     <article>
-                      {member.image_url && (
-                        <img src={member.image_url} alt={member.name} loading="lazy" />
-                      )}
+                      <ContentImage src={member.image_url} alt={member.name} loading="lazy" />
                       <h3>{member.name}</h3>
                       <p className="cec-person-role">{member.designation}</p>
                       <p>{member.education}</p>

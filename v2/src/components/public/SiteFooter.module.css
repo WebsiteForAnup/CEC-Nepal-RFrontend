@@ -1,0 +1,133 @@
+/* Footer layout, links, and responsive spacing. */
+
+:global(.cec-footer):where(.root) {
+  background: var(--cec-background-footer);
+  color: var(--cec-background-default);
+  padding-top: 70px;
+}
+:where(.root) :global(.cec-footer-top) {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.3fr 1fr;
+  gap: 45px;
+  padding-bottom: 65px;
+}
+:where(.root) :global(.cec-footer-brand) {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  font:
+    800 33px/1 'Manrope',
+    sans-serif;
+  letter-spacing: -0.04em;
+}
+:where(.root) :global(.cec-footer-brand) > span:not(:global(.cec-brand-dot)) {
+  font-size: 26px;
+}
+:where(.root) :global(.cec-footer-top) p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--cec-text-footer-description);
+  margin-block: 24px;
+}
+:where(.root) :global(.cec-footer-top) h2 {
+  font:
+    600 1.125rem/1.5 'DM Sans',
+    sans-serif;
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+  color: var(--cec-background-default);
+}
+:where(.root)
+  :global(.cec-footer-top)
+  > div
+  > a:not(:global(.cec-footer-brand)):not(:global(.cec-text-link)) {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--cec-text-footer);
+  padding-block: 0.375rem;
+  margin-bottom: 0.25rem;
+}
+:where(.root) :global(.cec-footer-top) :global(.cec-text-link) {
+  font-size: 1rem;
+  gap: 14px;
+}
+:global(.cec-footer):where(.root) a:hover {
+  color: var(--cec-background-highlight);
+}
+:where(.root) :global(.cec-footer-bottom) {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid var(--cec-border-footer-bottom);
+  font-size: 0.875rem;
+  color: var(--cec-text-footer-meta);
+  padding-block: 22px;
+}
+:where(.root) :global(.cec-footer-bottom) > div {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+:global(.cec-site) :where(.root) :global(.cec-footer-top) :global(.cec-text-link) {
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+}
+:where(.root) :global(.cec-footer-top) > div {
+  min-width: 0;
+}
+:where(.root) :global(.cec-footer-bottom) a {
+  font-size: 1rem;
+  line-height: 1.6;
+  padding-block: 0.375rem;
+}
+@media (max-width: 1100px) {
+  :where(.root) :global(.cec-footer-top) {
+    gap: 30px;
+  }
+}
+@media (max-width: 850px) {
+  :where(.root) :global(.cec-footer-top) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  :where(.root) :global(.cec-footer-top) > div:first-child {
+    grid-column: 1 / -1;
+  }
+  :where(.root) :global(.cec-footer-top) > div:first-child p {
+    display: inline-block;
+    margin-left: 35px;
+    margin-block: 0;
+  }
+  :where(.root) :global(.cec-footer-top) > div:first-child :global(.cec-text-link) {
+    float: right;
+    margin-top: 15px;
+  }
+  :where(.root) :global(.cec-footer-bottom) {
+    flex-direction: column;
+  }
+}
+@media (max-width: 600px) {
+  :global(.cec-footer):where(.root) {
+    padding-top: 50px;
+  }
+  :where(.root) :global(.cec-footer-top) {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+    padding-bottom: 40px;
+  }
+  :where(.root) :global(.cec-footer-top) > div:first-child p {
+    display: block;
+    margin: 20px 0;
+  }
+  :where(.root) :global(.cec-footer-top) > div:first-child :global(.cec-text-link) {
+    float: none;
+    margin-top: 0;
+  }
+  :where(.root) :global(.cec-footer-top) > div:last-child {
+    grid-column: 1 / -1;
+  }
+  :where(.root) :global(.cec-footer-bottom) > div {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+}

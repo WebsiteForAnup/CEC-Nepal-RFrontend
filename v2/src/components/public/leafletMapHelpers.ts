@@ -1,16 +1,17 @@
 import type { Feature } from 'geojson';
+import { resolveCssColor } from '../../styles/resolveCssColor';
 import type { Layer, Map as LeafletMap } from 'leaflet';
 import { publicContent } from '../../services/publicContent';
 import { getLayerStatus, type MapLayer } from '../../services/projectGeography';
 
 type LeafletLibrary = typeof import('leaflet');
 const STATUS_COLORS: Record<string, string> = {
-  Generation: '#00b82e',
-  'Under Construction': '#f27a11',
-  'PPA Stage': '#0804fb',
-  'Feasibility Stage': '#8056b3',
-  Ongoing: '#008d99',
-  'Not specified': '#68756d',
+  Generation: 'var(--cec-color-primary-hover)',
+  'Under Construction': 'var(--cec-color-project-status-construction)',
+  'PPA Stage': 'var(--cec-color-project-status-ppa)',
+  'Feasibility Stage': 'var(--cec-color-project-status-feasibility)',
+  Ongoing: 'var(--cec-color-project-status-ongoing)',
+  'Not specified': 'var(--cec-color-project-status-unspecified)',
 };
 
 function createPopup(feature: Feature, record: MapLayer) {
@@ -62,14 +63,14 @@ function addProjectLayers(L: LeafletLibrary, map: LeafletMap, records: MapLayer[
   const bounds = L.latLngBounds([]);
   for (const record of records) {
     const status = getLayerStatus(record);
-    const color = STATUS_COLORS[status] || '#0804fb';
+    const color = resolveCssColor(STATUS_COLORS[status] || 'var(--cec-color-project-status-ppa)');
     if (!overlays[status]) overlays[status] = L.layerGroup().addTo(map);
     const features = L.geoJSON(record.geojson, {
       style: { color, weight: 3, fillOpacity: 0.12 },
       pointToLayer: (_feature, point) =>
         L.circleMarker(point, {
           radius: 7,
-          color: '#fff',
+          color: resolveCssColor('var(--cec-background-default)'),
           weight: 2,
           fillColor: color,
           fillOpacity: 1,

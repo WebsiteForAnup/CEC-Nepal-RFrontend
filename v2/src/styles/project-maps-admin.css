@@ -3,13 +3,13 @@
   margin: 50px auto;
   padding: 25px;
   font-family: Arial, sans-serif;
-  color: #142b38;
+  color: var(--cec-text-map-admin);
 }
 .cec-map-admin h1 {
   font-size: 34px;
 }
 .cec-map-admin form {
-  background: #f5f5ee;
+  background: var(--cec-background-map-admin);
   padding: 25px;
   margin: 30px 0;
 }
@@ -26,14 +26,14 @@
 .cec-map-admin input,
 .cec-map-admin select {
   padding: 13px;
-  border: 1px solid #acb8b0;
-  background: white;
+  border: 1px solid var(--cec-border-map-admin);
+  background: var(--cec-background-default);
   font: inherit;
 }
 .cec-map-admin button {
   padding: 13px 20px;
-  background: #142b38;
-  color: white;
+  background: var(--cec-text-map-admin);
+  color: var(--cec-background-default);
   border: 0;
   cursor: pointer;
 }
@@ -47,18 +47,18 @@
   align-items: center;
   gap: 20px;
   padding: 25px 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--cec-border-map-admin-divider);
 }
 .cec-map-admin a {
-  color: #0804fb;
+  color: var(--cec-color-project-status-ppa);
 }
 .cec-map-admin .map-error {
-  color: #a32020;
+  color: var(--cec-text-map-admin-error);
 }
 .cec-map-canvas {
   height: 440px;
   min-height: 300px;
-  background: #e9eee7;
+  background: var(--cec-background-map-canvas);
   z-index: 0;
 }
 .cec-map-shell .leaflet-popup-content small {
@@ -66,6 +66,6 @@
   margin-top: 12px;
 }
 .cec-map-shell .leaflet-popup-content a {
-  color: #0804fb;
+  color: var(--cec-color-project-status-ppa);
   text-decoration: underline;
 }

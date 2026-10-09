@@ -149,8 +149,8 @@ const ListTeam: React.FC = () => {
                             {item.image_url ? (
                               <img src={item.image_url} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             ) : (
-                              <div style={{ width: '100%', height: '100%', background: '#333', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                <i className="fas fa-user" style={{ color: '#aaa' }}></i>
+                              <div style={{ width: '100%', height: '100%', background: 'var(--cec-background-media-placeholder)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <i className="fas fa-user" style={{ color: 'var(--cec-text-editor-hint)' }}></i>
                               </div>
                             )}
                           </div>
@@ -171,7 +171,7 @@ const ListTeam: React.FC = () => {
                                 <span className={styles.statusBadge} style={{ marginRight: '8px', display: 'inline-block' }}>
                                   {formattedCat}
                                 </span>
-                                {metaDesig && <span style={{ fontSize: '0.85rem', color: '#ccc' }}> {metaDesig}</span>}
+                                {metaDesig && <span style={{ fontSize: '0.85rem', color: 'var(--cec-text-editor-label)' }}> {metaDesig}</span>}
                               </div>
                             );
                           })}

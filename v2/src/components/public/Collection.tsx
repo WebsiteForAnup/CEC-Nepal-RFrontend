@@ -3,6 +3,7 @@ import Page from './Page';
 import Arrow from './Arrow';
 import { serviceCategories } from '../../services/publicContent';
 import ProjectGeography from './ProjectGeography';
+import ContentImage from './ContentImage';
 type Item = {
   slug: string;
   title?: string;
@@ -81,7 +82,7 @@ export default function Collection({
             </select>
           </label>
         )}
-        <button type="submit" className="cec-button cec-button--dark">
+        <button type="submit" className="cec-button cec-action-button">
           Filter
           <Arrow />
         </button>
@@ -122,11 +123,9 @@ export default function Collection({
 function CollectionCard({ item, detailPath }: { item: Item; detailPath: string }) {
   return (
     <article className="cec-collection-card">
-      {(item.image || item.image_url) && (
-        <Link to={detailPath + item.slug} tabIndex={-1} aria-hidden="true">
-          <img src={item.image || item.image_url} alt="" loading="lazy" />
-        </Link>
-      )}
+      <Link to={detailPath + item.slug} tabIndex={-1} aria-hidden="true">
+        <ContentImage src={item.image || item.image_url} alt="" loading="lazy" />
+      </Link>
       <div>
         <p className="cec-eyebrow">{item.category || item.status}</p>
         <h2>

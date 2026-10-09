@@ -1,7 +1,7 @@
 .about {
   padding: 100px 0;
   scroll-margin-top: 80px;
-  background: var(--bg-light);
+  background: var(--cec-background-page);
 }
 
 .container {
@@ -31,19 +31,19 @@
 .aboutText h2 {
   font-size: var(--fs-h2);
   margin-bottom: 1.5rem;
-  color: var(--text-dark);
+  color: var(--cec-text-heading);
 }
 
 .aboutText p {
   font-size: var(--fs-body);
   line-height: 1.8;
-  color: var(--text-muted);
+  color: var(--cec-text-secondary);
   margin-bottom: 2rem;
 }
 
 .potentialBox {
-  background: linear-gradient(135deg, var(--bg-hover) 0%, var(--bg-hover) 100%);
-  border-left: 4px solid var(--primary);
+  background: linear-gradient(135deg, var(--cec-background-hover) 0%, var(--cec-background-hover) 100%);
+  border-left: 4px solid var(--cec-color-primary);
   padding: 1.5rem;
   border-radius: 8px;
   margin-bottom: 2.5rem;
@@ -51,14 +51,14 @@
 }
 
 .potentialBox:hover {
-  background: linear-gradient(135deg, var(--bg-hover) 0%, var(--bg-hover) 100%);
+  background: linear-gradient(135deg, var(--cec-background-hover) 0%, var(--cec-background-hover) 100%);
   border-left-width: 6px;
   transform: translateX(5px);
 }
 
 .potentialBox h3 {
   font-size: var(--fs-h3);
-  color: var(--primary);
+  color: var(--cec-color-primary);
   margin-bottom: 1rem;
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
@@ -67,25 +67,25 @@
 .potentialText {
   font-size: 1rem;
   line-height: 1.8;
-  color: var(--text-main);
+  color: var(--cec-text-body);
   margin: 0 !important;
 }
 
 .potentialText strong {
-  color: var(--primary);
+  color: var(--cec-color-primary);
   font-weight: 700;
 }
 
 .intentTitle {
   font-size: 1.3rem;
-  color: var(--text-dark);
+  color: var(--cec-text-heading);
   margin-bottom: 1.5rem;
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
 }
 
 .subTitle {
-  color: var(--primary);
+  color: var(--cec-color-primary);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -104,19 +104,19 @@
   align-items: center;
   gap: 0.8rem;
   font-weight: 500;
-  color: var(--text-dark);
+  color: var(--cec-text-heading);
   transition: all 0.3s ease;
   padding: 0.5rem;
   border-radius: 8px;
 }
 
 .featItem:hover {
-  background: var(--bg-hover);
+  background: var(--cec-background-hover);
   transform: translateX(10px);
 }
 
 .featItem i {
-  color: var(--primary);
+  color: var(--cec-color-primary);
   font-size: 1.2rem;
   transition: transform 0.3s ease;
 }
@@ -140,27 +140,27 @@
 }
 
 .statCard {
-  background: var(--white);
+  background: var(--cec-background-default);
   padding: 2rem;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px var(--cec-shadow-navigation-2);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .statCard:hover {
   transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 20px 40px var(--bg-hover);
+  box-shadow: 0 20px 40px var(--cec-background-hover);
 }
 
 .statCard h3 {
   font-size: var(--fs-h2);
-  color: var(--primary);
+  color: var(--cec-color-primary);
   margin-bottom: 0.5rem;
 }
 
 .statCard p {
-  color: var(--text-muted);
+  color: var(--cec-text-secondary);
   font-size: 1rem;
 }
 

@@ -1,0 +1,992 @@
+/* Home-only layouts and responsive typography. Shared site tokens are inherited. */
+
+:where(.root) :global(.cec-hero) {
+  min-height: 620px;
+  position: relative;
+  overflow: hidden;
+  color: var(--cec-background-default);
+  background: var(--cec-color-brand);
+}
+:where(.root) :global(.cec-hero-image) {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  object-position: center 47%;
+}
+:where(.root) :global(.cec-hero)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, var(--cec-background-hero-overlay-start) 0%, var(--cec-background-hero-overlay-middle) 50%, var(--cec-background-hero-overlay-end) 100%),
+    linear-gradient(0deg, var(--cec-background-hero-overlay-bottom), transparent 35%);
+  pointer-events: none;
+}
+:where(.root) :global(.cec-hero-shape) {
+  position: absolute;
+  z-index: 1;
+  width: 265px;
+  height: 960px;
+  right: 10%;
+  top: -170px;
+  transform: rotate(25deg);
+  border-left: 1px solid var(--cec-border-hero-shape);
+  border-right: 85px solid var(--cec-border-hero-shape-fill);
+}
+:where(.root) :global(.cec-hero-content) {
+  position: relative;
+  z-index: 2;
+  padding-block: 65px 105px;
+}
+:where(.root) :global(.cec-hero) :global(.cec-eyebrow) {
+  color: var(--cec-text-hero);
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 27px;
+}
+:where(.root) :global(.cec-hero) :global(.cec-eyebrow) > span {
+  width: 18px;
+  height: 2px;
+  background: var(--cec-background-highlight);
+}
+:where(.root) :global(.cec-hero) h1 {
+  font-size: clamp(42px, 5vw, 67px);
+  line-height: 1.13;
+  font-weight: 650;
+  letter-spacing: -0.045em;
+}
+:where(.root) :global(.cec-headline-band) {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+  padding: 0 22px 5px 0;
+  margin-bottom: 6px;
+}
+:where(.root) :global(.cec-headline-band)::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0 -19px 0 -18px;
+  background: var(--cec-color-accent);
+  transform: skew(-16deg);
+}
+:where(.root) :global(.cec-headline-band--cec-color-brand-accent) {
+  color: var(--cec-color-brand);
+}
+:where(.root) :global(.cec-headline-band--cec-color-brand-accent)::before {
+  background: var(--cec-background-highlight);
+}
+:where(.root) :global(.cec-hero-intro) {
+  margin-top: 26px !important;
+  margin-bottom: 26px !important;
+  font-size: 14px !important;
+  line-height: 1.75;
+  color: var(--cec-text-hero-intro) !important;
+}
+:where(.root) :global(.cec-hero-foot) {
+  position: absolute;
+  bottom: 27px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+}
+:where(.root) :global(.cec-hero-foot) > a {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-left: 19px;
+  border-left: 2px solid var(--cec-background-highlight);
+  line-height: 1.65;
+}
+:where(.root) :global(.cec-hero-foot) strong {
+  font-size: 12px;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+:where(.root) :global(.cec-expertise) {
+  background: var(--cec-background-subtle);
+}
+:where(.root) :global(.cec-expertise) :global(.cec-container) {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+:where(.root) :global(.cec-expertise) a {
+  display: grid;
+  grid-template-columns: 1fr 20px;
+  padding: 24px 20px 27px;
+  border-left: 1px solid var(--cec-border-default);
+  position: relative;
+}
+:where(.root) :global(.cec-expertise) a:last-child {
+  border-right: 1px solid var(--cec-border-default);
+}
+:where(.root) :global(.cec-expertise) a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--cec-color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s;
+}
+:where(.root) :global(.cec-expertise) a:hover::before {
+  transform: scaleX(1);
+}
+:where(.root) :global(.cec-expertise) a:nth-child(2)::before {
+  background: var(--cec-color-success);
+}
+:where(.root) :global(.cec-expertise) a:nth-child(4)::before {
+  background: var(--cec-color-attention);
+}
+:where(.root) :global(.cec-expertise) a > span {
+  grid-column: 1 / -1;
+  font-size: 12px;
+  color: var(--cec-text-expertise);
+  margin-bottom: 18px;
+}
+:where(.root) :global(.cec-expertise) strong {
+  font-size: 12px;
+  line-height: 1.5;
+  max-width: 105px;
+  font-weight: 600;
+}
+:where(.root) :global(.cec-expertise) svg {
+  width: 16px;
+  align-self: end;
+}
+:where(.root) :global(.cec-partner) {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 100px;
+  padding-block: 97px 90px;
+}
+:where(.root) :global(.cec-partner) :global(.cec-eyebrow) {
+  margin-bottom: 25px;
+}
+:where(.root) :global(.cec-partner) > div:nth-child(2) {
+  padding-top: 35px;
+}
+:where(.root) :global(.cec-partner) > div:nth-child(2) > p:not(:global(.cec-lead)) {
+  color: var(--cec-text-muted);
+  font-size: 14px;
+}
+:where(.root) :global(.cec-partner) :global(.cec-lead) {
+  font-size: 21px;
+  letter-spacing: -0.02em;
+  line-height: 1.5;
+}
+:where(.root) :global(.cec-partner) :global(.cec-text-link) {
+  margin-top: 12px;
+}
+:where(.root) :global(.cec-approach) {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 90px;
+  padding-bottom: 100px;
+  align-items: center;
+}
+:where(.root) :global(.cec-field-photo) {
+  position: relative;
+  height: 480px;
+}
+:where(.root) :global(.cec-field-photo) > img {
+  width: 100%;
+  height: 100%;
+  object-position: 45% center;
+}
+:where(.root) :global(.cec-field-photo) > div {
+  position: absolute;
+  bottom: -22px;
+  left: 25px;
+  right: -25px;
+  background: var(--cec-background-highlight);
+  padding: 23px 28px;
+  display: grid;
+  grid-template-columns: 1fr 22px;
+}
+:where(.root) :global(.cec-field-photo) span {
+  font-size: 12px;
+  letter-spacing: 0.13em;
+  grid-column: 1;
+}
+:where(.root) :global(.cec-field-photo) strong {
+  grid-column: 1;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+:where(.root) :global(.cec-field-photo) svg {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  align-self: center;
+}
+:where(.root) :global(.cec-approach-copy) h2 {
+  margin-bottom: 27px;
+}
+:where(.root) :global(.cec-approach-copy) > p:not(:global(.cec-eyebrow)) {
+  color: var(--cec-text-muted);
+  font-size: 14px;
+  max-width: 385px;
+}
+:where(.root) :global(.cec-approach-copy) :global(.cec-text-link) {
+  margin-top: 12px;
+}
+:where(.root) :global(.cec-impact) {
+  background: var(--cec-color-brand);
+  color: var(--cec-background-default);
+  padding-block: 65px;
+}
+:where(.root) :global(.cec-impact) > :global(.cec-container) {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 55px;
+  align-items: center;
+}
+:where(.root) :global(.cec-impact-heading) :global(.cec-eyebrow) {
+  font-size: 12px !important;
+  color: var(--cec-text-impact-heading);
+  margin-bottom: 20px;
+}
+:where(.root) :global(.cec-impact-heading) > p:last-child {
+  font:
+    500 25px/1.4 'Manrope',
+    sans-serif;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+:where(.root) :global(.cec-impact) dl {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0;
+}
+:where(.root) :global(.cec-impact) dl > div {
+  padding-left: 25px;
+  border-left: 1px solid var(--cec-border-impact);
+  display: flex;
+  flex-direction: column-reverse;
+}
+:where(.root) :global(.cec-impact) dt {
+  font-size: 12px;
+  color: var(--cec-text-impact);
+}
+:where(.root) :global(.cec-impact) dd {
+  margin: 0 0 12px;
+  font:
+    500 clamp(35px, 4vw, 53px)/1 'Manrope',
+    sans-serif;
+  letter-spacing: -0.04em;
+  color: var(--cec-background-highlight);
+}
+:where(.root) :global(.cec-impact) dl > div:nth-child(2) dd {
+  color: var(--cec-text-impact-generation);
+}
+:where(.root) :global(.cec-impact) dl > div:nth-child(3) dd {
+  color: var(--cec-text-impact-development);
+}
+:where(.root) :global(.cec-projects),
+:where(.root) :global(.cec-news) {
+  padding-block: 95px 100px;
+}
+:where(.root) :global(.cec-project-grid),
+:where(.root) :global(.cec-news-grid) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+:where(.root) :global(.cec-project-image) {
+  display: block;
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  background: var(--cec-color-brand);
+}
+:where(.root) :global(.cec-project-image) > img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+}
+:where(.root) :global(.cec-project-image):hover > img {
+  transform: scale(1.04);
+}
+:where(.root) :global(.cec-project-image)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, var(--cec-background-project-image), transparent 55%);
+}
+:where(.root) :global(.cec-project-number) {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  z-index: 1;
+  background: var(--cec-background-project-number);
+  color: var(--cec-background-default);
+  padding: 3px 8px;
+  font-size: 12px;
+}
+:where(.root) :global(.cec-project-capacity) {
+  position: absolute;
+  bottom: 20px;
+  left: 22px;
+  color: var(--cec-background-default);
+  font:
+    500 34px/1 'Manrope',
+    sans-serif;
+  letter-spacing: -0.03em;
+  z-index: 1;
+}
+:where(.root) :global(.cec-project-arrow) {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--cec-background-highlight);
+  padding: 15px;
+  display: flex;
+  z-index: 1;
+}
+:where(.root) :global(.cec-project):nth-child(2) :global(.cec-project-arrow) {
+  background: var(--cec-color-success);
+}
+:where(.root) :global(.cec-project):nth-child(3) :global(.cec-project-arrow) {
+  background: var(--cec-color-attention);
+}
+:where(.root) :global(.cec-project) > :global(.cec-eyebrow) {
+  margin: 20px 0 9px;
+  font-size: 12px !important;
+  color: var(--cec-text-muted);
+}
+:where(.root) :global(.cec-project) h3 {
+  font-size: 20px;
+  margin-bottom: 9px;
+}
+:where(.root) :global(.cec-project) > p:last-child {
+  color: var(--cec-text-muted);
+  font-size: 12px;
+  margin: 0;
+}
+:where(.root) :global(.cec-services) {
+  background: var(--cec-background-subtle);
+  padding-block: 85px;
+}
+:where(.root) :global(.cec-services-inner) {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 105px;
+}
+:where(.root) :global(.cec-services) h2 {
+  margin-bottom: 25px;
+}
+:where(.root) :global(.cec-services-inner) > div:first-child > p:not(:global(.cec-eyebrow)) {
+  color: var(--cec-text-muted);
+  font-size: 14px;
+  max-width: 310px;
+}
+:where(.root) :global(.cec-services) :global(.cec-text-link) {
+  margin-top: 15px;
+}
+:where(.root) :global(.cec-services-list) details {
+  border-top: 1px solid var(--cec-border-services-list);
+}
+:where(.root) :global(.cec-services-list) details:last-child {
+  border-bottom: 1px solid var(--cec-border-services-list);
+}
+:where(.root) :global(.cec-services-list) summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-block: 26px;
+}
+:where(.root) :global(.cec-services-list) summary::-webkit-details-marker {
+  display: none;
+}
+:where(.root) :global(.cec-services-list) summary > span:first-child {
+  color: var(--cec-color-project-status-unspecified);
+  font-size: 12px;
+}
+:where(.root) :global(.cec-services-list) h3 {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  flex: 1;
+}
+:where(.root) :global(.cec-disclosure-sign)::after {
+  content: '+';
+  font-size: 23px;
+  font-weight: 400;
+}
+:where(.root) :global(.cec-services-list) details[open] :global(.cec-disclosure-sign)::after {
+  content: '−';
+}
+:where(.root) :global(.cec-services-list) details[open] h3 {
+  color: var(--cec-color-accent);
+}
+:where(.root) :global(.cec-services-list) details > div {
+  padding: 0 36px 26px;
+}
+:where(.root) :global(.cec-services-list) details > div p {
+  color: var(--cec-text-muted);
+  font-size: 14px;
+}
+:where(.root) :global(.cec-services-list) :global(.cec-text-link) {
+  font-size: 12px;
+  margin-top: 4px;
+}
+:where(.root) :global(.cec-news-image) {
+  display: block;
+  height: 205px;
+  overflow: hidden;
+  background: var(--cec-background-muted);
+}
+:where(.root) :global(.cec-news-image) img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+}
+:where(.root) :global(.cec-news-image):hover img {
+  transform: scale(1.04);
+}
+:where(.root) :global(.cec-news) article > :global(.cec-eyebrow) {
+  margin: 20px 0 11px;
+  color: var(--cec-color-success);
+  font-size: 12px !important;
+}
+:where(.root) :global(.cec-news) h3 {
+  font-size: 20px;
+  line-height: 1.35;
+  margin-bottom: 25px;
+}
+:where(.root) :global(.cec-news) article > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--cec-border-default);
+  padding-top: 14px;
+  font-size: 12px;
+  color: var(--cec-text-muted);
+}
+:where(.root) :global(.cec-contact-band) {
+  background: var(--cec-background-highlight);
+  position: relative;
+  overflow: hidden;
+  padding-block: 75px;
+}
+:where(.root) :global(.cec-contact-band) > :global(.cec-container) {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: end;
+}
+:where(.root) :global(.cec-contact-band) h2 {
+  font-size: clamp(35px, 4.7vw, 62px);
+}
+:where(.root) :global(.cec-contact-band) h2 span {
+  color: var(--cec-text-contact-band);
+}
+:where(.root) :global(.cec-contact-band) :global(.cec-eyebrow) {
+  margin-bottom: 22px;
+}
+:where(.root) :global(.cec-contact-band) p:not(:global(.cec-eyebrow)) {
+  font-size: 14px;
+}
+:where(.root) :global(.cec-contact-band) :global(.cec-button) {
+  margin-top: 12px;
+}
+:where(.root) :global(.cec-contact-symbol) {
+  position: absolute;
+  right: -20px;
+  top: -105px;
+  font-size: 450px;
+  color: var(--cec-text-contact-symbol);
+  line-height: 1;
+}
+@media (min-width: 1500px) {
+  :where(.root) :global(.cec-hero) {
+    min-height: 710px;
+  }
+  :where(.root) :global(.cec-hero-content) {
+    padding-top: 88px;
+  }
+  :where(.root) :global(.cec-hero) h1 {
+    font-size: 78px;
+  }
+}
+@media (max-width: 1100px) {
+  :where(.root) :global(.cec-partner),
+  :where(.root) :global(.cec-approach) {
+    gap: 55px;
+  }
+  :where(.root) :global(.cec-services-inner) {
+    gap: 65px;
+  }
+  :where(.root) :global(.cec-project-image) {
+    height: 270px;
+  }
+  :where(.root) :global(.cec-expertise) strong {
+    font-size: 12px;
+  }
+  :where(.root) :global(.cec-expertise) a {
+    padding-inline: 15px;
+  }
+  :where(.root) :global(.cec-impact) > :global(.cec-container) {
+    gap: 25px;
+  }
+}
+@media (max-width: 850px) {
+  :where(.root) :global(.cec-hero) {
+    min-height: 630px;
+  }
+  :where(.root) :global(.cec-hero-content) {
+    padding-top: 60px;
+  }
+  :where(.root) :global(.cec-hero) h1 {
+    font-size: 62px;
+  }
+  :where(.root) :global(.cec-expertise) :global(.cec-container) {
+    width: 100%;
+    overflow-x: auto;
+    grid-template-columns: repeat(5, minmax(160px, 1fr));
+  }
+  :where(.root) :global(.cec-expertise) a {
+    padding-inline: 22px;
+  }
+  :where(.root) :global(.cec-partner) {
+    gap: 40px;
+    padding-block: 75px;
+  }
+  :where(.root) :global(.cec-approach) {
+    gap: 45px;
+  }
+  :where(.root) :global(.cec-field-photo) {
+    height: 380px;
+  }
+  :where(.root) :global(.cec-approach) h2 {
+    font-size: 42px;
+  }
+  :where(.root) :global(.cec-field-photo) > div {
+    left: 15px;
+    right: -15px;
+    padding: 18px;
+  }
+  :where(.root) :global(.cec-field-photo) strong {
+    font-size: 16px;
+  }
+  :where(.root) :global(.cec-impact) > :global(.cec-container) {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  :where(.root) :global(.cec-impact) dl > div:first-child {
+    border-left: 0;
+    padding-left: 0;
+  }
+  :where(.root) :global(.cec-projects),
+  :where(.root) :global(.cec-news) {
+    padding-block: 75px;
+  }
+  :where(.root) :global(.cec-project-grid),
+  :where(.root) :global(.cec-news-grid) {
+    gap: 18px;
+  }
+  :where(.root) :global(.cec-project-image) {
+    height: 225px;
+  }
+  :where(.root) :global(.cec-project) h3 {
+    font-size: 18px;
+  }
+  :where(.root) :global(.cec-project-capacity) {
+    font-size: 25px;
+    left: 14px;
+  }
+  :where(.root) :global(.cec-services-inner) {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 40px;
+  }
+  :where(.root) :global(.cec-services) h2 {
+    font-size: 40px;
+  }
+  :where(.root) :global(.cec-services-list) h3 {
+    font-size: 17px;
+  }
+  :where(.root) :global(.cec-services-list) summary {
+    gap: 12px;
+  }
+  :where(.root) :global(.cec-news-image) {
+    height: 170px;
+  }
+  :where(.root) :global(.cec-news) h3 {
+    font-size: 17px;
+  }
+  :where(.root) :global(.cec-contact-band) > :global(.cec-container) {
+    gap: 40px;
+  }
+}
+@media (max-width: 600px) {
+  :where(.root) :global(.cec-hero) {
+    min-height: 650px;
+  }
+  :where(.root) :global(.cec-hero-image) {
+    object-position: 62% center;
+  }
+  :where(.root) :global(.cec-hero)::after {
+    background:
+      linear-gradient(90deg, var(--cec-background-hero-mobile-overlay-start), var(--cec-background-hero-mobile-overlay-end)),
+      linear-gradient(0deg, var(--cec-background-hero-mobile-overlay-bottom), transparent 45%);
+  }
+  :where(.root) :global(.cec-hero-content) {
+    padding: 66px 9px 120px;
+  }
+  :where(.root) :global(.cec-hero) h1 {
+    font-size: clamp(39px, 10.7vw, 55px);
+  }
+  :where(.root) :global(.cec-hero) :global(.cec-eyebrow) {
+    font-size: 12px !important;
+    margin-bottom: 26px;
+  }
+  :where(.root) :global(.cec-headline-band) {
+    padding-right: 9px;
+  }
+  :where(.root) :global(.cec-headline-band)::before {
+    inset-inline: -9px;
+  }
+  :where(.root) :global(.cec-hero-intro) {
+    font-size: 12px !important;
+    margin-top: 25px !important;
+    max-width: 320px;
+  }
+  :where(.root) :global(.cec-hero-foot) {
+    font-size: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    bottom: 20px;
+  }
+  :where(.root) :global(.cec-hero-foot) > a {
+    padding-left: 10px;
+  }
+  :where(.root) :global(.cec-hero-foot) strong {
+    font-size: 12px;
+  }
+  :where(.root) :global(.cec-hero-shape) {
+    right: -30%;
+  }
+  :where(.root) :global(.cec-expertise) a {
+    padding: 20px;
+  }
+  :where(.root) :global(.cec-expertise) a > span {
+    margin-bottom: 10px;
+  }
+  :where(.root) :global(.cec-partner) {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding-block: 60px;
+  }
+  :where(.root) :global(.cec-partner) h2 {
+    font-size: 38px;
+  }
+  :where(.root) :global(.cec-partner) > div:nth-child(2) {
+    padding: 0;
+  }
+  :where(.root) :global(.cec-partner) :global(.cec-lead) {
+    font-size: 19px;
+  }
+  :where(.root) :global(.cec-approach) {
+    grid-template-columns: 1fr;
+    gap: 55px;
+    padding-bottom: 65px;
+  }
+  :where(.root) :global(.cec-field-photo) {
+    height: 335px;
+    margin-right: 14px;
+  }
+  :where(.root) :global(.cec-field-photo) > div {
+    right: -14px;
+  }
+  :where(.root) :global(.cec-approach-copy) h2 {
+    font-size: 44px;
+  }
+  :where(.root) :global(.cec-impact) {
+    padding-block: 45px;
+  }
+  :where(.root) :global(.cec-impact-heading) > p:last-child {
+    font-size: 22px;
+  }
+  :where(.root) :global(.cec-impact) dl > div {
+    padding-left: 14px;
+  }
+  :where(.root) :global(.cec-impact) dd {
+    font-size: 34px;
+  }
+  :where(.root) :global(.cec-impact) dt {
+    font-size: 12px;
+    max-width: 95px;
+  }
+  :where(.root) :global(.cec-project-grid),
+  :where(.root) :global(.cec-news-grid) {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  :where(.root) :global(.cec-project-image) {
+    height: 340px;
+  }
+  :where(.root) :global(.cec-project-capacity) {
+    font-size: 37px;
+    left: 20px;
+  }
+  :where(.root) :global(.cec-project) h3 {
+    font-size: 23px;
+  }
+  :where(.root) :global(.cec-projects),
+  :where(.root) :global(.cec-news) {
+    padding-block: 60px;
+  }
+  :where(.root) :global(.cec-services) {
+    padding-block: 60px;
+  }
+  :where(.root) :global(.cec-services-inner) {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  :where(.root) :global(.cec-services-list) summary {
+    padding-block: 23px;
+  }
+  :where(.root) :global(.cec-services-list) details > div {
+    padding-left: 25px;
+  }
+  :where(.root) :global(.cec-news-image) {
+    height: 240px;
+  }
+  :where(.root) :global(.cec-news) h3 {
+    font-size: 22px;
+  }
+  :where(.root) :global(.cec-contact-band) {
+    padding-block: 55px;
+  }
+  :where(.root) :global(.cec-contact-band) > :global(.cec-container) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  :where(.root) :global(.cec-contact-band) h2 {
+    font-size: 44px;
+  }
+  :where(.root) :global(.cec-contact-symbol) {
+    top: 0;
+    font-size: 300px;
+  }
+}
+:global(.cec-home):where(.root) > section {
+  transition:
+    background-color 0.8s ease,
+    color 0.6s ease;
+}
+:global(.cec-home):where(.root) > section:global(.cec-container) {
+  background: transparent;
+}
+:global(.cec-motion-ready) :where(.root) :global(.cec-services):global(.is-in-view) {
+  background-color: var(--cec-background-muted);
+}
+:global(.cec-motion-ready) :where(.root) :global(.cec-impact):global(.is-in-view) {
+  background-color: var(--cec-color-brand);
+}
+:global(.cec-motion-ready) :where(.root) :global(.cec-contact-band):global(.is-in-view) {
+  background-color: var(--cec-background-highlight);
+}
+:where(.root) :global(.cec-expertise) a,
+:where(.root) :global(.cec-project),
+:where(.root) :global(.cec-news) article {
+  transition:
+    background 0.35s,
+    transform 0.35s;
+}
+:where(.root) :global(.cec-expertise) a:hover {
+  background: var(--cec-background-highlight);
+}
+:where(.root) :global(.cec-project):hover,
+:where(.root) :global(.cec-news) article:hover {
+  transform: translateY(-5px);
+}
+:where(.root) :global(.cec-services-list) details {
+  transition: background 0.35s;
+}
+:where(.root) :global(.cec-services-list) details:hover {
+  background: var(--cec-background-services-list);
+}
+:where(.root) :global(.cec-project-highlights) {
+  display: flex;
+  gap: 40px;
+  background: var(--cec-background-highlight);
+  padding: 30px;
+  margin-bottom: 30px;
+}
+:where(.root) :global(.cec-project-highlights) strong {
+  display: block;
+  font-size: 32px;
+}
+:where(.root) :global(.cec-project-highlights) span {
+  font-size: 12px;
+}
+@media (max-width: 600px) {
+  :where(.root) :global(.cec-project-highlights) {
+    gap: 25px;
+    padding: 22px;
+  }
+}
+:where(.root) :global(.cec-project-map) {
+  margin: 40px 0 55px;
+}
+:where(.root) :global(.cec-contact-band) h2 {
+  font-size: var(--cec-section-size);
+  line-height: 1.15;
+}
+:where(.root) :global(.cec-hero) h1 {
+  font-size: var(--cec-title-size);
+  line-height: 1.12;
+}
+:global(.cec-site) :where(.root) :global(.cec-hero-intro) {
+  font-size: var(--cec-body-size) !important;
+  line-height: 1.65;
+}
+@media (max-width: 600px) {
+  :global(.cec-site) :where(.root) :global(.cec-hero) :global(.cec-eyebrow) {
+    font-size: 12px !important;
+  }
+  :global(.cec-site) :where(.root) :global(.cec-hero-foot) {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+}
+:global(.cec-site) :global(.cec-home):where(.root) {
+  --home-hero: clamp(2.5rem, 1.5rem + 4.1667vw, 3.5rem);
+  --home-support: clamp(1.125rem, 1rem + 0.5208vw, 1.25rem);
+  --home-heading: clamp(1.875rem, 1.375rem + 2.0833vw, 2.375rem);
+  --home-lead: clamp(1.25rem, 1.125rem + 0.5208vw, 1.375rem);
+  --home-body: clamp(1.0625rem, 1rem + 0.2604vw, 1.125rem);
+  --home-card: clamp(1.3125rem, 1.125rem + 0.7813vw, 1.5rem);
+  --home-description: clamp(1rem, 0.9375rem + 0.2604vw, 1.0625rem);
+  --home-label: clamp(1rem, 0.9375rem + 0.2604vw, 1.0625rem);
+  --home-meta: clamp(0.8125rem, 0.75rem + 0.2604vw, 0.875rem);
+  --home-stat: clamp(2.5rem, 1.75rem + 3.125vw, 3.25rem);
+  font-size: var(--home-body);
+}
+:global(.cec-site) :global(.cec-home):where(.root) h1 {
+  font-size: var(--home-hero);
+  line-height: 1.15;
+  font-weight: 600;
+}
+:global(.cec-site) :global(.cec-home):where(.root) h2 {
+  font-size: var(--home-heading);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+:global(.cec-site) :global(.cec-home):where(.root) h3,
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-field-photo) strong {
+  font-size: var(--home-card);
+  line-height: 1.3;
+  font-weight: 600;
+}
+:global(.cec-site) :global(.cec-home):where(.root) p:not(:global(.cec-eyebrow)) {
+  font-size: var(--home-body);
+  line-height: 1.65;
+  max-width: 60ch;
+}
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-hero-intro) {
+  font-size: var(--home-support) !important;
+}
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-lead),
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-impact-heading) > p:last-child {
+  font-size: var(--home-lead);
+  line-height: 1.55;
+  font-weight: 400;
+}
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-services-list) details > div p,
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-project) > p:last-child {
+  font-size: var(--home-description);
+}
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-eyebrow) {
+  font-size: var(--home-meta) !important;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+}
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-button),
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-text-link),
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-news) article > div > a {
+  font-size: 1rem;
+  font-weight: 600;
+}
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-expertise) strong,
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-impact) dt {
+  font-size: var(--home-label);
+  line-height: 1.5;
+}
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-expertise) a {
+  grid-template-columns: minmax(0, 1fr);
+}
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-expertise) a > span,
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-hero-foot),
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-hero-foot) strong,
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-project-capacity),
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-field-photo) span,
+:global(.cec-site)
+  :global(.cec-home):where(.root)
+  :global(.cec-services-list)
+  summary
+  > span:first-child,
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-news) article > div {
+  font-size: var(--home-meta);
+  line-height: 1.5;
+}
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-impact) dd {
+  font-size: var(--home-stat);
+  line-height: 1.1;
+}
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-news) article > div {
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-partner) h2 {
+  font-size: clamp(2.25rem, 1.5rem + 3.125vw, 4rem);
+  line-height: 1.15;
+}
+:global(.cec-site)
+  :global(.cec-home):where(.root)
+  :global(.cec-partner)
+  p:not(:global(.cec-eyebrow)) {
+  font-size: clamp(1.125rem, 1.03125rem + 0.390625vw, 1.375rem);
+  line-height: 1.65;
+  max-width: 48ch;
+}
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-partner) :global(.cec-lead) {
+  font-size: clamp(1.375rem, 1.1875rem + 0.78125vw, 1.75rem);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-partner) :global(.cec-eyebrow) {
+  font-size: 0.9375rem !important;
+}
+:global(.cec-site) :global(.cec-home):where(.root) :global(.cec-partner) :global(.cec-text-link) {
+  font-size: 1.125rem;
+}
+@media (min-width: 48rem) {
+  :global(.cec-site) :global(.cec-home):where(.root) {
+    --home-hero: clamp(3.5rem, 2rem + 3.125vw, 4.5rem);
+    --home-support: clamp(1.25rem, 1.0625rem + 0.3906vw, 1.375rem);
+    --home-heading: clamp(2.375rem, 1.4375rem + 1.9531vw, 3rem);
+    --home-lead: clamp(1.375rem, 1.1875rem + 0.3906vw, 1.5rem);
+    --home-card: clamp(1.5rem, 1.3125rem + 0.3906vw, 1.625rem);
+    --home-description: clamp(1.0625rem, 0.96875rem + 0.1953vw, 1.125rem);
+    --home-label: clamp(1.0625rem, 0.96875rem + 0.1953vw, 1.125rem);
+    --home-stat: clamp(3.25rem, 2.125rem + 2.3438vw, 4rem);
+  }
+}

@@ -2,7 +2,7 @@
 
 .statistics {
   padding: 3rem 2rem;
-  background: linear-gradient(135deg, var(--bg-light) 0%, #f1f5f9 100%);
+  background: linear-gradient(135deg, var(--cec-background-page) 0%, var(--cec-background-navigation-panel) 100%);
 }
 
 .container {
@@ -22,14 +22,14 @@
 
 .sectionHeader h2 {
   font-size: var(--fs-h2);
-  color: var(--text-dark);
+  color: var(--cec-text-heading);
   margin-bottom: 0.75rem;
 }
 
 .line {
   height: 4px;
   width: 60px;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  background: linear-gradient(90deg, var(--cec-color-primary), var(--cec-color-secondary));
   margin: 0 auto;
   border-radius: 2px;
 }
@@ -42,12 +42,12 @@
 }
 
 .statCard {
-  background: var(--white);
+  background: var(--cec-background-default);
   padding: 1.5rem;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  border: 1px solid var(--border-light);
+  box-shadow: 0 2px 8px var(--cec-shadow-statistics);
+  border: 1px solid var(--cec-border-subtle);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   transform: translateY(15px);
@@ -70,8 +70,8 @@
 
 .statCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  border-color: var(--secondary);
+  box-shadow: 0 6px 16px var(--cec-shadow-navigation-alternate);
+  border-color: var(--cec-color-secondary);
 }
 
 .icon {
@@ -83,36 +83,36 @@
 .value {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: var(--cec-text-heading);
   margin-bottom: 0.3rem;
 }
 
 .suffix {
   font-size: var(--fs-h4);
-  color: var(--primary);
+  color: var(--cec-color-primary);
   margin-left: 0.15rem;
 }
 
 .label {
   font-size: var(--fs-small);
-  color: var(--text-muted);
+  color: var(--cec-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.8px;
   font-weight: 600;
 }
 
 .breakdown {
-  background: var(--white);
+  background: var(--cec-background-default);
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  border: 1px solid var(--border-light);
+  box-shadow: 0 2px 8px var(--cec-shadow-statistics);
+  border: 1px solid var(--cec-border-subtle);
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .breakdown h3 {
   font-size: var(--fs-h4);
-  color: var(--text-dark);
+  color: var(--cec-text-heading);
   margin-bottom: 1.5rem;
   text-align: center;
 }
@@ -135,13 +135,13 @@
   align-items: center;
   font-size: var(--fs-small);
   font-weight: 600;
-  color: var(--text-dark);
+  color: var(--cec-text-heading);
 }
 
 .progressBar {
   width: 100%;
   height: 10px;
-  background: var(--border-light);
+  background: var(--cec-border-subtle);
   border-radius: 5px;
   overflow: hidden;
 }

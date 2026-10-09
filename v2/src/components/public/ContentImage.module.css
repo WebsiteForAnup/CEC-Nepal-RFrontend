@@ -1,0 +1,5 @@
+:global(.cec-site) img.fallback {
+  object-fit: contain;
+  background: var(--cec-background-default);
+  padding: 1rem;
+}

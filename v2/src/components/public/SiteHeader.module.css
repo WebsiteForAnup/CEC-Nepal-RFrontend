@@ -1,0 +1,521 @@
+/* Header, brand panel, navigation, and menu layouts. */
+
+:global(.cec-header):where(.root) {
+  position: relative;
+  z-index: 20;
+  background: var(--cec-background-default);
+}
+:where(.root) :global(.cec-header-inner) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 94px;
+  gap: 25px;
+}
+:where(.root) :global(.cec-brand) {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+:where(.root) :global(.cec-brand) img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+:where(.root) :global(.cec-brand) strong {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+  font:
+    800 28px/1 'Manrope',
+    sans-serif;
+  letter-spacing: -0.045em;
+}
+:where(.root) :global(.cec-brand) strong span {
+  font-size: 23px;
+  letter-spacing: -0.025em;
+}
+:where(.root) :global(.cec-brand) small {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  margin-top: 8px;
+}
+:where(.root) :global(.cec-nav) {
+  display: flex;
+  align-items: center;
+  gap: 31px;
+  font-size: 12px;
+  font-weight: 650;
+}
+:where(.root) :global(.cec-nav) > a:not(:global(.cec-button)) {
+  padding-block: 13px;
+  border-bottom: 2px solid transparent;
+}
+:where(.root) :global(.cec-nav) > a:hover,
+:where(.root) :global(.cec-nav) > a:global(.active) {
+  color: var(--cec-color-accent);
+  border-bottom-color: var(--cec-color-accent);
+}
+:where(.root) :global(.cec-nav) :global(.cec-button) {
+  padding: 14px 21px;
+  min-height: 48px;
+  gap: 25px;
+  font-size: 12px;
+}
+:where(.root) :global(.cec-nav-more) {
+  position: relative;
+}
+:where(.root) :global(.cec-nav-more) summary {
+  list-style: none;
+  padding-block: 13px;
+  display: flex;
+  gap: 10px;
+}
+:where(.root) :global(.cec-nav-more) summary::-webkit-details-marker {
+  display: none;
+}
+:where(.root) :global(.cec-nav-more) > div {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 245px;
+  background: var(--cec-background-default);
+  padding: 15px 24px;
+  box-shadow: 0 10px 40px var(--cec-shadow-nav-more);
+  border-top: 3px solid var(--cec-background-highlight);
+}
+:where(.root) :global(.cec-nav-more) a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 11px;
+}
+:where(.root) :global(.cec-nav-more) a:hover {
+  color: var(--cec-color-accent);
+}
+:where(.root) :global(.cec-menu-toggle) {
+  display: none;
+}
+@media (max-width: 1100px) {
+  :where(.root) :global(.cec-nav) {
+    gap: 20px;
+  }
+  :where(.root) :global(.cec-brand) strong {
+    font-size: 25px;
+  }
+  :where(.root) :global(.cec-brand) strong span {
+    font-size: 20px;
+  }
+  :where(.root) :global(.cec-brand) img {
+    width: 36px;
+    height: 36px;
+  }
+  :where(.root) :global(.cec-brand) {
+    gap: 10px;
+  }
+  :where(.root) :global(.cec-nav) :global(.cec-button) {
+    gap: 16px;
+    padding-inline: 17px;
+  }
+}
+@media (max-width: 850px) {
+  :where(.root) :global(.cec-header-inner) {
+    min-height: 80px;
+  }
+  :where(.root) :global(.cec-menu-toggle) {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    border: 0;
+    padding: 12px 0;
+    background: transparent;
+    color: var(--cec-color-brand);
+    font-size: 12px;
+  }
+  :where(.root) :global(.cec-menu-toggle) span {
+    font-size: 22px;
+  }
+  :where(.root) :global(.cec-nav) {
+    display: none;
+  }
+  :where(.root) :global(.cec-nav):global(.is-open) {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--cec-background-default);
+    padding: 20px 36px 30px;
+    box-shadow: 0 20px 30px var(--cec-shadow-nav);
+    gap: 8px;
+  }
+  :where(.root) :global(.cec-nav-more) > div {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border-top: 1px solid var(--cec-border-default);
+  }
+  :where(.root) :global(.cec-nav-more) summary {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 600px) {
+  :where(.root) :global(.cec-header-inner) {
+    min-height: 76px;
+  }
+  :where(.root) :global(.cec-brand) strong {
+    font-size: 24px;
+  }
+  :where(.root) :global(.cec-brand) strong span {
+    font-size: 19px;
+  }
+  :where(.root) :global(.cec-brand) small {
+    font-size: 12px;
+  }
+  :where(.root) :global(.cec-brand) img {
+    width: 32px;
+    height: 32px;
+  }
+  :where(.root) :global(.cec-nav):global(.is-open) {
+    padding-inline: 20px;
+  }
+}
+:global(.cec-header--mega):where(.root) {
+  background: var(--cec-background-navbar);
+  color: var(--cec-background-default);
+  position: relative;
+  z-index: 30;
+}
+:global(.cec-header--mega):where(.root) :global(.cec-header-inner) {
+  min-height: 96px;
+}
+:global(.cec-site) :where(.root) :global(.cec-brand--trapezoid) {
+  position: relative;
+  isolation: isolate;
+  align-self: stretch;
+  padding-right: 38px;
+  color: var(--cec-color-brand);
+}
+:where(.root) :global(.cec-brand--trapezoid)::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0 -28px 0 -100vw;
+  background: var(--cec-background-subtle);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 44px) 100%, 0 100%);
+}
+:where(.root) :global(.cec-nav-trigger) {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font:
+    500 13px 'DM Sans',
+    sans-serif;
+  cursor: pointer;
+  transition: color 0.25s;
+}
+:where(.root) :global(.cec-nav-trigger):hover,
+:where(.root) :global(.cec-nav-trigger)[aria-expanded='true'] {
+  color: var(--cec-background-highlight);
+}
+:where(.root) :global(.cec-nav-trigger) span {
+  transition: transform 0.25s;
+}
+:where(.root) :global(.cec-nav-trigger)[aria-expanded='true'] span {
+  transform: rotate(180deg);
+}
+:where(.root) :global(.cec-mega-panel) {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--cec-background-subtle);
+  color: var(--cec-color-brand);
+  border-top: 4px solid var(--cec-background-highlight);
+  box-shadow: 0 20px 40px var(--cec-shadow-mega-panel);
+  animation: revealMenu 0.25s ease-out;
+}
+:where(.root) :global(.cec-mega-inner) {
+  display: grid;
+  grid-template-columns: 1fr 2.7fr;
+  gap: 65px;
+  padding-block: 42px 46px;
+}
+:where(.root) :global(.cec-mega-inner) aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-right: 1px solid var(--cec-border-default);
+  padding-right: 35px;
+}
+:where(.root) :global(.cec-mega-inner) h2 {
+  font-size: 32px;
+  line-height: 1.15;
+  margin: 20px 0 28px;
+}
+:where(.root) :global(.cec-mega-inner) :global(.cec-eyebrow) {
+  font-size: 12px !important;
+}
+:where(.root) :global(.cec-mega-close) {
+  margin-top: 30px;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--cec-text-muted);
+  cursor: pointer;
+  font-size: 12px;
+}
+:where(.root) :global(.cec-mega-columns) {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+}
+:where(.root) :global(.cec-mega-columns) h3 {
+  font-size: 15px;
+  margin: 0 0 14px;
+}
+:where(.root) :global(.cec-mega-columns) p {
+  font-size: 12px;
+  color: var(--cec-text-muted);
+  min-height: 40px;
+}
+:where(.root) :global(.cec-mega-columns) a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--cec-border-default);
+  font-size: 12px;
+  transition:
+    color 0.25s,
+    padding 0.25s;
+}
+:where(.root) :global(.cec-mega-columns) a:hover {
+  color: var(--cec-color-accent);
+  padding-left: 8px;
+}
+:where(.root) :global(.cec-mega-columns) small {
+  display: block;
+  margin-top: 6px;
+  color: var(--cec-text-muted);
+  font-size: 12px;
+}
+:where(.root) :global(.cec-mega-columns) svg {
+  width: 15px;
+  flex-shrink: 0;
+}
+:where(.root) :global(.cec-mega-columns) img {
+  width: 100%;
+  height: 135px;
+  object-fit: cover;
+}
+@media (max-width: 1000px) {
+  :where(.root) :global(.cec-mega-inner) {
+    gap: 30px;
+    grid-template-columns: 1fr 3fr;
+  }
+  :where(.root) :global(.cec-mega-columns) {
+    gap: 20px;
+  }
+}
+@media (max-width: 850px) {
+  :global(.cec-header--mega):where(.root) :global(.cec-menu-toggle) {
+    color: var(--cec-background-default);
+  }
+  :global(.cec-header--mega):where(.root) :global(.cec-header-inner) {
+    flex-wrap: wrap;
+    min-height: 80px;
+  }
+  :where(.root) :global(.cec-brand--trapezoid) {
+    min-height: 80px;
+  }
+  :global(.cec-header--mega):where(.root) :global(.cec-nav):global(.is-open) {
+    position: static;
+    order: 3;
+    width: 100%;
+    padding: 20px 0;
+    background: var(--cec-background-navbar);
+    box-shadow: none;
+  }
+  :where(.root) :global(.cec-nav-trigger) {
+    justify-content: space-between;
+    padding: 14px 0;
+  }
+  :where(.root) :global(.cec-mega-panel) {
+    position: static;
+    max-height: 65vh;
+    overflow: auto;
+  }
+  :where(.root) :global(.cec-mega-inner) {
+    grid-template-columns: 1fr;
+    padding-block: 25px;
+  }
+  :where(.root) :global(.cec-mega-inner) aside {
+    border-right: 0;
+    padding: 0;
+  }
+  :where(.root) :global(.cec-mega-inner) h2 {
+    font-size: 25px;
+    margin: 12px 0;
+  }
+  :where(.root) :global(.cec-mega-close) {
+    margin-top: 15px;
+  }
+  :where(.root) :global(.cec-mega-columns) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  :where(.root) :global(.cec-mega-columns) {
+    grid-template-columns: 1fr;
+  }
+  :where(.root) :global(.cec-mega-columns) p {
+    min-height: 0;
+  }
+}
+:global(.cec-header--mega):where(.root) {
+  position: sticky;
+  top: 0;
+  box-shadow: none;
+}
+@media (max-width: 600px) {
+  :global(.cec-header--mega):where(.root) {
+    max-height: 100dvh;
+    overflow-y: auto;
+    overflow-x: clip;
+  }
+}
+:global(.cec-site) :where(.root) :global(.cec-nav-trigger) {
+  font-size: clamp(0.875rem, 0.82rem + 0.2vw, 1rem);
+}
+:global(.cec-site) :where(.root) :global(.cec-brand) small {
+  font-size: 10px;
+}
+:global(.cec-site) :global(.cec-header--mega):where(.root) {
+  --header-brand-height: 7rem;
+  --header-nav-height: 4.675rem;
+  border: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--cec-background-navbar) 0 var(--header-nav-height),
+    transparent var(--header-nav-height) 100%
+  );
+}
+:global(.cec-site) :global(.cec-header--mega):where(.root) :global(.cec-header-inner) {
+  min-height: var(--header-brand-height);
+  align-items: flex-start;
+  width: calc(100% - 4rem);
+  max-width: none;
+}
+:global(.cec-site) :where(.root) :global(.cec-brand--trapezoid) {
+  min-height: var(--header-brand-height);
+  align-self: flex-start;
+  gap: 1rem;
+  padding-right: 2.5rem;
+}
+:global(.cec-site) :where(.root) :global(.cec-brand--trapezoid)::before {
+  background: var(--cec-background-default);
+}
+:global(.cec-site) :where(.root) :global(.cec-brand--trapezoid) img {
+  width: 6rem;
+  height: 6rem;
+  object-fit: contain;
+}
+:global(.cec-site) :global(.cec-header--mega):where(.root) :global(.cec-nav) {
+  min-height: var(--header-nav-height);
+}
+:global(.cec-site) :global(.cec-header--mega):where(.root) :global(.cec-nav-trigger) {
+  padding-block: 0.875rem;
+  justify-content: flex-start;
+  gap: 0.25rem;
+}
+:global(.cec-site) :global(.cec-header--mega):where(.root) :global(.cec-nav-trigger) > span {
+  position: relative;
+  top: -0.3em;
+  font-size: 0.75em;
+  line-height: 1;
+}
+:global(.cec-site)
+  :global(.cec-header--mega):where(.root)
+  :global(.cec-nav)
+  :global(.cec-nav-button) {
+  min-height: 2.75rem;
+  padding-block: 0.625rem;
+  background: var(--cec-background-highlight);
+  color: var(--cec-color-brand);
+}
+:where(.root) :global(.cec-nav-button):hover {
+  background: var(--cec-background-default);
+}
+@media (max-width: 68.75rem) {
+  :global(.cec-site) :where(.root) :global(.cec-brand--trapezoid) {
+    gap: 0.75rem;
+    padding-right: 1.5rem;
+  }
+  :global(.cec-site) :where(.root) :global(.cec-brand--trapezoid) img {
+    width: 5rem;
+    height: 6rem;
+  }
+}
+@media (max-width: 53.125rem) {
+  :global(.cec-site) :global(.cec-header--mega):where(.root) :global(.cec-header-inner) {
+    width: calc(100% - 2.5rem);
+  }
+  :global(.cec-site) :global(.cec-header--mega):where(.root) {
+    --header-brand-height: 5.5rem;
+    --header-nav-height: 3.825rem;
+  }
+  :global(.cec-site) :where(.root) :global(.cec-brand--trapezoid) img {
+    width: 4rem;
+    height: 5rem;
+  }
+  :global(.cec-site) :global(.cec-header--mega):where(.root) :global(.cec-menu-toggle) {
+    min-height: var(--header-nav-height);
+  }
+  :global(.cec-site) :global(.cec-header--mega):where(.root) :global(.cec-nav):global(.is-open) {
+    min-height: auto;
+  }
+}
+@media (max-width: 30rem) {
+  :global(.cec-site) :where(.root) :global(.cec-brand--trapezoid) {
+    gap: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  :global(.cec-site) :where(.root) :global(.cec-brand--trapezoid) strong {
+    font-size: 1.25rem;
+  }
+  :global(.cec-site) :where(.root) :global(.cec-brand--trapezoid) strong span {
+    font-size: 1rem;
+  }
+  :global(.cec-site) :where(.root) :global(.cec-brand--trapezoid) small {
+    max-width: 8rem;
+    font-size: 0.5rem;
+    letter-spacing: 0.08em;
+  }
+}
+:global(.cec-site) :global(.cec-header--mega):where(.root) :global(.cec-brand--trapezoid) img {
+  width: calc(var(--header-brand-height) - 0.5rem);
+  height: calc(var(--header-brand-height) - 0.5rem);
+  object-fit: cover;
+  object-position: 44% center;
+  flex-shrink: 0;
+}
+@keyframes revealMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

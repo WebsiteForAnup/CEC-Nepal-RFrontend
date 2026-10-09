@@ -29,7 +29,7 @@ export default function Downloads() {
             ))}
           </select>
         </label>
-        <button className="cec-button cec-button--dark" type="submit">
+        <button className="cec-button cec-action-button" type="submit">
           Filter
         </button>
         <Link to="/downloads">Clear filters</Link>

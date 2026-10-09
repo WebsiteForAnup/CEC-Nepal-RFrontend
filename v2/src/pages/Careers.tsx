@@ -57,7 +57,7 @@ export default function Careers() {
               </p>
               {item.status.toLowerCase() === 'open' && (
                 <a
-                  className="cec-button cec-button--dark"
+                  className="cec-button cec-action-button"
                   href={'mailto:' + item.applyEmail + '?subject=' + encodeURIComponent(item.title)}
                 >
                   Apply by email

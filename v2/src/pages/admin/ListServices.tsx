@@ -138,7 +138,7 @@ const ListServices: React.FC = () => {
                     {filteredItems.map((item) => (
                       <tr key={item.id}>
                         <td>
-                          <div style={{ fontSize: '24px', color: '#00B4D8' }}>
+                          <div style={{ fontSize: '24px', color: 'var(--cec-color-service-list-icon)' }}>
                             <i className={item.icon || 'fas fa-cog'}></i>
                           </div>
                         </td>
@@ -155,11 +155,11 @@ const ListServices: React.FC = () => {
                         </td>
                         <td>
                           {item.has_page ? (
-                            <span style={{ color: '#2ecc71', fontWeight: 'bold' }}>
+                            <span style={{ color: 'var(--cec-text-service-list-success)', fontWeight: 'bold' }}>
                               <i className="fas fa-check-circle"></i> Yes
                             </span>
                           ) : (
-                            <span style={{ color: '#e74c3c' }}>
+                            <span style={{ color: 'var(--cec-text-service-editor-error)' }}>
                               <i className="fas fa-times-circle"></i> No
                             </span>
                           )}

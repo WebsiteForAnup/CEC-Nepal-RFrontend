@@ -330,7 +330,7 @@ const CreateTeam: React.FC = () => {
                       value={recruitmentType}
                       onChange={(e) => setRecruitmentType(e.target.value)}
                       className={styles.formInput}
-                      style={{ backgroundColor: 'rgba(10, 15, 30, 0.6)' }}
+                      style={{ backgroundColor: 'var(--cec-background-team-editor-input)' }}
                     >
                       <option value="Full-time">Full-time</option>
                       <option value="Consultant">Consultant</option>
@@ -365,25 +365,25 @@ const CreateTeam: React.FC = () => {
                         setCategories(selected);
                       }}
                       className={styles.formInput}
-                      style={{ height: '120px', backgroundColor: 'rgba(10, 15, 30, 0.6)', padding: '10px' }}
+                      style={{ height: '120px', backgroundColor: 'var(--cec-background-team-editor-input)', padding: '10px' }}
                     >
                       {availableCategories.map(cat => (
-                        <option key={cat.slug} value={cat.slug} style={{ padding: '8px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                        <option key={cat.slug} value={cat.slug} style={{ padding: '8px', borderBottom: '1px solid var(--cec-border-footer)' }}>
                           {cat.label}
                         </option>
                       ))}
                     </select>
-                    <small style={{ color: '#aaa', marginTop: '5px', display: 'block' }}>Hold Ctrl (Windows) or Command (Mac) to select multiple options.</small>
+                    <small style={{ color: 'var(--cec-text-editor-hint)', marginTop: '5px', display: 'block' }}>Hold Ctrl (Windows) or Command (Mac) to select multiple options.</small>
                     
                     {categories.length > 0 && (
-                      <div style={{ marginTop: '20px', padding: '15px', background: 'rgba(0,0,0,0.2)', borderRadius: '8px' }}>
-                        <label style={{ fontSize: '0.9rem', color: '#ccc' }}>Designations per Category</label>
+                      <div style={{ marginTop: '20px', padding: '15px', background: 'var(--cec-background-footer-input)', borderRadius: '8px' }}>
+                        <label style={{ fontSize: '0.9rem', color: 'var(--cec-text-editor-label)' }}>Designations per Category</label>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '10px' }}>
                           {categories.map(catSlug => {
                             const catLabel = availableCategories.find(c => c.slug === catSlug)?.label || catSlug;
                             return (
                               <div key={catSlug} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                <span style={{ width: '150px', color: 'white', fontSize: '0.9rem' }}>{catLabel}</span>
+                                <span style={{ width: '150px', color: 'var(--cec-background-default)', fontSize: '0.9rem' }}>{catLabel}</span>
                                 <input
                                   type="text"
                                   placeholder={`Designation in ${catLabel}`}

@@ -100,7 +100,7 @@ export default function Contact() {
               Your inquiry is sent securely through Formspree. Please read our{' '}
               <a href="/privacy">privacy policy</a> before submitting.
             </p>
-            <button type="submit" className="cec-button cec-button--dark">
+            <button type="submit" className="cec-button cec-action-button">
               Send inquiry
             </button>
           </form>

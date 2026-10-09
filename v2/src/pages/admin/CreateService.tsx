@@ -306,7 +306,7 @@ const CreateService: React.FC = () => {
               {/* Detailed Content (Only used if Has Page is true) */}
               <div className={styles.formCard} style={{ opacity: hasPage ? 1 : 0.5, transition: '0.3s opacity' }}>
                 <h2 className={styles.cardSectionTitle}>2. Deep Dive Content (Used on Detail Page)</h2>
-                {!hasPage && <p style={{ color: '#e74c3c', fontSize: '0.9rem', marginBottom: '15px' }}>Check "Has Dedicated Detail Page" above to enable this content on the public site.</p>}
+                {!hasPage && <p style={{ color: 'var(--cec-text-service-editor-error)', fontSize: '0.9rem', marginBottom: '15px' }}>Check "Has Dedicated Detail Page" above to enable this content on the public site.</p>}
                 
                 <div className={styles.formGroup}>
                   <label>Detail Page Subheadline</label>
@@ -404,7 +404,7 @@ const CreateService: React.FC = () => {
               {/* Arrays */}
               <div className={styles.formCard}>
                 <h2 className={styles.cardSectionTitle}>3. Lists & Capabilities</h2>
-                <p style={{ fontSize: '0.85rem', color: '#ccc', marginBottom: '15px' }}>Enter one item per line.</p>
+                <p style={{ fontSize: '0.85rem', color: 'var(--cec-text-editor-label)', marginBottom: '15px' }}>Enter one item per line.</p>
                 
                 <div className={styles.formRow}>
                   <div className={styles.formGroup}>
@@ -457,8 +457,8 @@ const CreateService: React.FC = () => {
               <div className={styles.formCard}>
                 <h2 className={styles.cardSectionTitle}>4. Social Proof</h2>
                 
-                <div style={{ marginBottom: '30px', padding: '15px', background: 'rgba(0,0,0,0.2)', borderRadius: '8px' }}>
-                  <h3 style={{ fontSize: '1rem', marginBottom: '15px', color: 'white' }}>Featured Case Study</h3>
+                <div style={{ marginBottom: '30px', padding: '15px', background: 'var(--cec-background-footer-input)', borderRadius: '8px' }}>
+                  <h3 style={{ fontSize: '1rem', marginBottom: '15px', color: 'var(--cec-background-default)' }}>Featured Case Study</h3>
                   <div className={styles.formRow}>
                     <div className={styles.formGroup}>
                       <label>Project Title</label>
@@ -475,8 +475,8 @@ const CreateService: React.FC = () => {
                   </div>
                 </div>
 
-                <div style={{ padding: '15px', background: 'rgba(0,0,0,0.2)', borderRadius: '8px' }}>
-                  <h3 style={{ fontSize: '1rem', marginBottom: '15px', color: 'white' }}>Client Testimonial</h3>
+                <div style={{ padding: '15px', background: 'var(--cec-background-footer-input)', borderRadius: '8px' }}>
+                  <h3 style={{ fontSize: '1rem', marginBottom: '15px', color: 'var(--cec-background-default)' }}>Client Testimonial</h3>
                   <div className={styles.formGroup}>
                     <label>Quote</label>
                     <textarea value={testQuote} onChange={(e) => setTestQuote(e.target.value)} className={styles.formTextarea} rows={2} placeholder='"Having CEC Nepal engineers..."' />

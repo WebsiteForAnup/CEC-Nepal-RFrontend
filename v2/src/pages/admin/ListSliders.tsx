@@ -118,7 +118,7 @@ const ListSliders: React.FC = () => {
                             {item.image ? (
                               <img src={item.image} alt="Slider" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             ) : (
-                              <div style={{ width: '100%', height: '100%', background: '#333' }}></div>
+                              <div style={{ width: '100%', height: '100%', background: 'var(--cec-background-media-placeholder)' }}></div>
                             )}
                           </div>
                         </td>

@@ -24,6 +24,7 @@
     "typecheck": "tsc --project tsconfig.json",
     "test:ssr": "node --test tests/ssr.test.mjs",
     "test:kml": "node --test tests/kml.test.mjs",
+    "test:colors": "node --test tests/colors.test.mjs",
     "format": "prettier --write src/components/public src/pages/*.tsx src/pages/admin/ProjectMaps.tsx src/hooks/usePageMotion.ts src/hooks/useProjectMapEditor.ts src/services/projectGeography.ts src/services/projectMapAdminService.ts src/services/publicContent.ts src/services/kml.ts src/styles/site.css src/styles/project-maps-admin.css src/App.tsx src/AdminApp.tsx tests",
     "format:check": "prettier --check src/components/public src/pages/*.tsx src/pages/admin/ProjectMaps.tsx src/hooks/usePageMotion.ts src/hooks/useProjectMapEditor.ts src/services/projectGeography.ts src/services/projectMapAdminService.ts src/services/publicContent.ts src/services/kml.ts src/styles/site.css src/styles/project-maps-admin.css src/App.tsx src/AdminApp.tsx tests"
   },

@@ -75,7 +75,7 @@
       "label": "Generation",
       "count": 25,
       "percentage": 38,
-      "color": "var(--primary)"
+      "color": "var(--cec-color-primary)"
     },
     {
       "label": "Under Construction",

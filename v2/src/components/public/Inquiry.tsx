@@ -5,7 +5,7 @@ export default function Inquiry({ subject = 'your next project' }: { subject?: s
       <p className="cec-eyebrow">PROJECT INQUIRIES</p>
       <h2>Inquiries about {subject}</h2>
       <p>Contact our team for information about our services and project requirements.</p>
-      <Link className="cec-button cec-button--dark" to="/contact">
+      <Link className="cec-button cec-action-button" to="/contact">
         Contact us
       </Link>
     </aside>
